@@ -1,9 +1,0 @@
-LICENSE.txt
-README.txt
-setup.py
-htmldom/__init__.py
-htmldom/htmldom.py
-htmldom.egg-info/PKG-INFO
-htmldom.egg-info/SOURCES.txt
-htmldom.egg-info/dependency_links.txt
-htmldom.egg-info/top_level.txt
