@@ -1,6 +1,5 @@
 from genericpath import isfile
 from htmldom import htmldom
-import sys
 import os
 from html.parser import HTMLParser
 from collections import defaultdict
@@ -35,7 +34,7 @@ class MyHTMLParser(HTMLParser):
         self.count[tag] +=1
 
 
-def get_log(website, domain):
+def get_log(domain):
     print("\nCounting the number of nodes ...")
     filename = "results/" + domain
 
@@ -74,10 +73,12 @@ if __name__ == "__main__":
 
     for website in website_list:
         domain = website.split("//www.")[-1].split("/")[0]
+
         if args.just_new and isfile("results/" + domain + ".html"):
             continue
+
         get_screenshot(website, domain)
         get_code(website, domain)
-        get_log(website, domain)
+        get_log(domain)
        
 
