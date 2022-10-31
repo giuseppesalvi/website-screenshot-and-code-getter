@@ -43,7 +43,7 @@ def get_log(website, domain):
         parser = MyHTMLParser()
         parser.feed(html)
 
-    print("\nNumber of nodes: ", sum(parser.count.values()))
+    print("\nNumber of nodes: ", sum(parser.count.values()), "\n\n")
 
     with open(filename + ".log", "w") as f:
         print("Number of nodes: ", sum(parser.count.values()), file=f)
@@ -64,8 +64,8 @@ if __name__ == "__main__":
         website_list.append(args.website)
     elif args.website_list:
         with open(args.website_list, "r") as f:
-            for website_url in f.readlines():
-                website_list.append(website_url)
+            for line in f:
+                website_list.append(line.strip())
     else:
         parser.print_usage()
 
