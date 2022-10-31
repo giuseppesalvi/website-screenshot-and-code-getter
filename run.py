@@ -79,7 +79,8 @@ if __name__ == "__main__":
         parser.print_usage()
 
 
-    for website in website_list:
+    for i, website in enumerate(website_list):
+        print("[%d/%d]" %(i, len(website_list)))
         domain = website.split("//www.")[-1].split("/")[0]
 
         if args.just_new and isfile("results/" + domain + ".html"):
