@@ -43,13 +43,21 @@ def get_log(domain):
         parser = MyHTMLParser()
         parser.feed(html)
 
-    print("\nNumber of nodes: ", sum(parser.count.values()), "\n\n")
+    n_nodes = sum(parser.count.values())
+    n_elements = (len(parser.count))
 
+    print("\nNumber of nodes: ", n_nodes, "\n\n")
+
+    # Save info in the log file
     with open(filename + ".log", "w") as f:
-        print("Number of nodes: ", sum(parser.count.values()), file=f)
-        print("Number of different elements: ", (len(parser.count)), file=f)
+        print("Number of nodes: ", n_nodes, file=f)
+        print("Number of different elements: ", n_elements , file=f)
         print("Divided per element: ", file=f)
         pprint(parser.count, f)
+
+    # Save number of nodes for the given website in the summary file
+    with open("results/nodes.log", "a") as f:
+        print(domain + " " + str(n_nodes), file=f)
 
 
 if __name__ == "__main__":
