@@ -6,9 +6,11 @@ from collections import defaultdict
 from pprint import pprint
 
 def get_screenshot(website):
+    print("Generating the screenshot for: " + website + "...")
     os.system("pageres " + website + " --filename='results/<%= url %>'")
     
 def get_code(website):
+    print("\nGenerating the code ...")
     domain = website.split("//www.")[-1].split("/")[0]
 
     dom = htmldom.HtmlDom(website)
@@ -32,6 +34,7 @@ class MyHTMLParser(HTMLParser):
 
 
 def get_log(website):
+    print("\nCounting the number of nodes ...")
     domain = website.split("//www.")[-1].split("/")[0]
     filename = "results/" + domain + ".html"
 
@@ -40,13 +43,11 @@ def get_log(website):
         parser = MyHTMLParser()
         parser.feed(html)
 
-    print("number of nodes: ", sum(parser.count.values()))
-    print("divided per element: ")
-    pprint(parser.count)
+    print("\nNumber of nodes: ", sum(parser.count.values()))
 
     with open(filename + "_log", "w") as f:
-        print("number of nodes: ", sum(parser.count.values()), file=f)
-        print("divided per element: ", file=f)
+        print("Number of nodes: ", sum(parser.count.values()), file=f)
+        print("Divided per element: ", file=f)
         pprint(parser.count, f)
 
 
