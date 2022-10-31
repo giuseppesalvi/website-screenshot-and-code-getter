@@ -47,6 +47,7 @@ def get_log(website):
 
     with open(filename + "_log", "w") as f:
         print("Number of nodes: ", sum(parser.count.values()), file=f)
+        print("Number of different elements: ", (len(parser.count)), file=f)
         print("Divided per element: ", file=f)
         pprint(parser.count, f)
 
