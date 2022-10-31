@@ -6,13 +6,13 @@ from collections import defaultdict
 from pprint import pprint
 import argparse
 
-def get_screenshot(website):
+def get_screenshot(website, domain):
     print("Generating the screenshot for: " + website + " ...")
-    os.system("pageres " + website)
+    output_option = " --filename='results/" + domain + "'"
+    os.system("pageres " + website + output_option)
     
-def get_code(website):
+def get_code(website, domain):
     print("\nGenerating the code ...")
-    domain = website.split("//www.")[-1].split("/")[0]
 
     dom = htmldom.HtmlDom(website)
     dom = dom.createDom()
@@ -34,19 +34,18 @@ class MyHTMLParser(HTMLParser):
         self.count[tag] +=1
 
 
-def get_log(website):
+def get_log(website, domain):
     print("\nCounting the number of nodes ...")
-    domain = website.split("//www.")[-1].split("/")[0]
-    filename = "results/" + domain + ".html"
+    filename = "results/" + domain
 
-    with open(filename, "r") as f:
+    with open(filename + ".html", "r") as f:
         html = f.read()
         parser = MyHTMLParser()
         parser.feed(html)
 
     print("\nNumber of nodes: ", sum(parser.count.values()))
 
-    with open(filename + "_log", "w") as f:
+    with open(filename + ".log", "w") as f:
         print("Number of nodes: ", sum(parser.count.values()), file=f)
         print("Number of different elements: ", (len(parser.count)), file=f)
         print("Divided per element: ", file=f)
@@ -72,8 +71,9 @@ if __name__ == "__main__":
 
 
     for website in website_list:
-        get_screenshot(website)
-        get_code(website)
-        get_log(website)
+        domain = website.split("//www.")[-1].split("/")[0]
+        get_screenshot(website, domain)
+        get_code(website, domain)
+        get_log(website, domain)
        
 
