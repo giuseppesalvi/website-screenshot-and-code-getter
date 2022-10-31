@@ -1,3 +1,4 @@
+from genericpath import isfile
 from htmldom import htmldom
 import sys
 import os
@@ -57,7 +58,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="get screenshot and code for a website", usage="python3 run.py [--website {website_url} | --website_list {file_path}]")
     parser.add_argument("--website", help="website url")
-    parser.add_argument("--website-list", help="file path with list of website urls")
+    parser.add_argument("--website_list", help="file path with list of website urls")
+    parser.add_argument("--just_new", action='store_true',  help="process only the websites not already present")
 
     args = parser.parse_args()
     if args.website:
@@ -72,6 +74,8 @@ if __name__ == "__main__":
 
     for website in website_list:
         domain = website.split("//www.")[-1].split("/")[0]
+        if args.just_new and isfile("results/" + domain + ".html"):
+            continue
         get_screenshot(website, domain)
         get_code(website, domain)
         get_log(website, domain)
