@@ -4,10 +4,11 @@ import os
 from html.parser import HTMLParser
 from collections import defaultdict
 from pprint import pprint
+import argparse
 
 def get_screenshot(website):
     print("Generating the screenshot for: " + website + " ...")
-    os.system("pageres " + website + " --filename='results/<%= url %>'")
+    os.system("pageres " + website)
     
 def get_code(website):
     print("\nGenerating the code ...")
@@ -53,12 +54,26 @@ def get_log(website):
 
 
 if __name__ == "__main__":
+    website_list = []
 
-    args = sys.argv
-    website = args[1] 
+    parser = argparse.ArgumentParser(description="get screenshot and code for a website", usage="python3 run.py [--website {website_url} | --website_list {file_path}]")
+    parser.add_argument("--website", help="website url")
+    parser.add_argument("--website-list", help="file path with list of website urls")
 
-    get_screenshot(website)
-    get_code(website)
-    get_log(website)
+    args = parser.parse_args()
+    if args.website:
+        website_list.append(args.website)
+    elif args.website_list:
+        with open(args.website_list, "r") as f:
+            for website_url in f.readlines():
+                website_list.append(website_url)
+    else:
+        parser.print_usage()
+
+
+    for website in website_list:
+        get_screenshot(website)
+        get_code(website)
+        get_log(website)
        
 
