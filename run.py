@@ -7,7 +7,7 @@ from pprint import pprint
 import argparse
 
 def get_screenshot(website, domain):
-    print("Generating the screenshot for: " + website + " ...")
+    print("Generating the screenshot ...")
     output_option = " --filename='results/" + domain + "'"
     os.system("pageres " + website + output_option)
     
@@ -80,10 +80,11 @@ if __name__ == "__main__":
 
 
     for i, website in enumerate(website_list):
-        print("[%d/%d]" %(i, len(website_list)))
         domain = website.split("//www.")[-1].split("/")[0]
+        print("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
         if args.just_new and isfile("results/" + domain + ".html"):
+            print("Already present\n")
             continue
 
         get_screenshot(website, domain)
