@@ -6,7 +6,7 @@ from collections import defaultdict
 from pprint import pprint
 
 def get_screenshot(website):
-    os.system("pageres " + website)
+    os.system("pageres " + website + " --filename='results/<%= url %>'")
     
 def get_code(website):
     domain = website.split("//www.")[-1].split("/")[0]
