@@ -9,8 +9,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-import time
-
 def get_screenshot(website, domain):
     print("Generating the screenshot ...")
     output_option = " --filename='results/" + domain + "'"
@@ -28,6 +26,7 @@ def get_code(website, domain):
     	    f.write(node.html())
 	
 def get_code_2(website, domain):
+    print("\nGenerating the code ...")
 
     # start web browser
     browser= webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -80,6 +79,20 @@ def get_log(domain):
         print(domain + " " + str(n_nodes), file=f)
 
 
+def sort_websites_by_nodes(filepath):
+    websites = []
+    with open(filepath, "r") as f:
+        for line in f:
+            websites.append((line.strip().split(" ")[0], int(line.strip().split(" ")[1])))
+
+    websites.sort(key=lambda tup: tup[1])
+    with open(filepath, "w") as f:
+        for website in websites:
+            f.write(website[0] + " " + str(website[1]) + "\n")
+
+
+
+
 if __name__ == "__main__":
     website_list = []
 
@@ -118,5 +131,7 @@ if __name__ == "__main__":
         if args.task in ["all", "code"]:
             get_code_2(website, domain)
             get_log(domain)
+        
+    sort_websites_by_nodes("results/nodes.log")
        
 
