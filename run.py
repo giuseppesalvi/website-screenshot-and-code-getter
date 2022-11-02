@@ -80,7 +80,12 @@ if __name__ == "__main__":
 
 
     for i, website in enumerate(website_list):
-        domain = website.split("//www.")[-1].split("/")[0]
+        if website.startswith(" ") or website.startswith("#"):
+            continue
+        if "//www." in website:
+            domain = website.split("//www.")[-1].split("/")[0]
+        else:
+            domain = website.split("//")[-1].split("/")[0]
         print("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
         if args.just_new and isfile("results/" + domain + ".html"):
