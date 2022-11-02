@@ -5,6 +5,11 @@ from html.parser import HTMLParser
 from collections import defaultdict
 from pprint import pprint
 import argparse
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+import time
 
 def get_screenshot(website, domain):
     print("Generating the screenshot ...")
@@ -22,6 +27,21 @@ def get_code(website, domain):
         for node in all:
     	    f.write(node.html())
 	
+def get_code_2(website, domain):
+
+    # start web browser
+    browser= webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+    # get source code
+    browser.get(website)
+    html = browser.page_source
+
+    with open("results/" + domain + ".html", "w") as f:
+        f.write(html)
+
+    # close web browser
+    browser.close()
+
 class MyHTMLParser(HTMLParser):
     def __init__(self):
         self.count = defaultdict(int)
@@ -96,7 +116,7 @@ if __name__ == "__main__":
         if args.task in ["all", "screenshot"]:
             get_screenshot(website, domain)
         if args.task in ["all", "code"]:
-            get_code(website, domain)
+            get_code_2(website, domain)
             get_log(domain)
        
 
