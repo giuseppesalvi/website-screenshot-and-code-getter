@@ -67,6 +67,7 @@ if __name__ == "__main__":
     parser.add_argument("--website", help="website url")
     parser.add_argument("--website_list", help="file path with list of website urls")
     parser.add_argument("--just_new", action='store_true',  help="process only the websites not already present")
+    parser.add_argument("--task", help="task of the script: get screenshot, get code or both", default="all", choices=["all", "screenshot", "code"])
 
     args = parser.parse_args()
     if args.website:
@@ -92,8 +93,10 @@ if __name__ == "__main__":
             print("Already present\n")
             continue
 
-        get_screenshot(website, domain)
-        get_code(website, domain)
-        get_log(domain)
+        if args.task in ["all", "screenshot"]:
+            get_screenshot(website, domain)
+        if args.task in ["all", "code"]:
+            get_code(website, domain)
+            get_log(domain)
        
 
