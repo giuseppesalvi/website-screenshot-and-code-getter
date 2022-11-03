@@ -11,7 +11,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 
-def get_screenshot(website, domain):
+def website2domain(website):
+    if "//www." in website:
+            domain = website.split("//www.")[-1].split("/")[0]
+    else:
+            domain = website.split("//")[-1].split("/")[0]
+    return domain
+
+def get_screenshot(website):
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -34,14 +41,14 @@ def get_screenshot(website, domain):
     driver.set_window_size(w, h)
     # Obtain screenshot of page within body tag
     driver.find_element(By.TAG_NAME, "body").screenshot(
-        "results/" + domain + ".png")
+        "results/" + website2domain(website) + ".png")
     driver.set_window_size(s['width'], s['height'])
 
     # Close web driver
     driver.close()
 
 
-def get_code(website, domain):
+def get_code(website):
     print("\nGenerating the code ...")
 
     # Start web driver 
@@ -54,7 +61,7 @@ def get_code(website, domain):
     html = driver.page_source
 
     # Write html source code to file
-    with open("results/" + domain + ".html", "w") as f:
+    with open("results/" + website2domain(website) + ".html", "w") as f:
         f.write(html)
 
     # Close web driver 
@@ -142,20 +149,16 @@ if __name__ == "__main__":
     for i, website in enumerate(website_list):
         if website.startswith(" ") or website.startswith("#"):
             continue
-        if "//www." in website:
-            domain = website.split("//www.")[-1].split("/")[0]
-        else:
-            domain = website.split("//")[-1].split("/")[0]
-        print("[%d/%d] %s" % (i + 1, len(website_list), domain))
+        print("[%d/%d] %s" % (i + 1, len(website_list), website2domain(website)))
 
-        if args.just_new and isfile("results/" + domain + ".html"):
+        if args.just_new and isfile("results/" + website2domain(website)+ ".html"):
             print("Already present\n")
             continue
 
         if args.task in ["all", "screenshot"]:
-            get_screenshot(website, domain)
+            get_screenshot(website)
         if args.task in ["all", "code"]:
-            get_code(website, domain)
-            get_log(domain)
+            get_code(website)
+            get_log(website2domain(website))
         if args.task in ["all", "stats"]:
             sort_websites_by_nodes("results/nodes.log")
