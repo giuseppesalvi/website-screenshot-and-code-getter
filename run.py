@@ -12,14 +12,19 @@ from selenium.webdriver.common.by import By
 
 
 def get_screenshot(website, domain):
-    # start web browser
+    # set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
+    # set window size
     options.add_argument("--window-size=1280,1024")
+
+    # start web browser
     driver = webdriver.Chrome(service=Service(
         ChromeDriverManager().install()), options=options)
+
     # launch URL
     driver.get(website)
+
     # get window size
     s = driver.get_window_size()
     # obtain browser height and width
@@ -38,13 +43,18 @@ def get_screenshot(website, domain):
 def get_code(website, domain):
     print("\nGenerating the code ...")
 
-    dom = htmldom.HtmlDom(website)
-    dom = dom.createDom()
+    # start web browser
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
+    # get source code
+    driver.get(website)
+    html = driver.page_source
 
     with open("results/" + domain + ".html", "w") as f:
-        all = dom.find("*")
-        for node in all:
-            f.write(node.html())
+        f.write(html)
+
+    # close web browser
+    driver.close()
 
 
 class MyHTMLParser(HTMLParser):
