@@ -19,6 +19,7 @@ def website2domain(website):
     return domain
 
 def get_screenshot(website):
+    print("\nGenerating the screenshot ...")
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -46,6 +47,7 @@ def get_screenshot(website):
 
     # Close web driver
     driver.close()
+    print("Screenshot obtained!")
 
 
 def get_code(website):
@@ -66,6 +68,7 @@ def get_code(website):
 
     # Close web driver 
     driver.close()
+    print("Code obtained!")
 
 
 class MyHTMLParser(HTMLParser):
@@ -151,7 +154,7 @@ if __name__ == "__main__":
             continue
         print("[%d/%d] %s" % (i + 1, len(website_list), website2domain(website)))
 
-        if args.just_new and isfile("results/" + website2domain(website)+ ".html"):
+        if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website)+ ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")) :
             print("Already present\n")
             continue
 
