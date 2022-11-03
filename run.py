@@ -8,11 +8,44 @@ import argparse
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+#from Screenshot import Screenshot_clipping
 
 def get_screenshot(website, domain):
     print("Generating the screenshot ...")
     output_option = " --filename='results/" + domain + "'"
     os.system("pageres " + website + output_option)
+
+def get_screenshot_2(website, domain):
+    # start web browser
+    options = webdriver.ChromeOptions()
+    options.headless = True
+    options.add_argument("--window-size=1280,1024")
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    # get source code
+    #driver.get(website)
+    #driver.save_screenshot_as_file("results/" + domain + ".png")
+
+    #S = lambda X: driver.execute_script("return document.body.parentNode.scroll" + X)
+    #driver.set_window_size(S("Width"), S("Height"))
+    #driver.find_element(By.TAG_NAME, "body").screenshot("results/" + domain + ".png")
+
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    #driver.maximize_window()
+    #launch URL
+    driver.get(website)
+    #get window size
+    s = driver.get_window_size()
+    #obtain browser height and width
+    w = driver.execute_script('return document.body.parentNode.scrollWidth')
+    h = driver.execute_script('return document.body.parentNode.scrollHeight')
+    #set to new window size
+    driver.set_window_size(w, h)
+    #obtain screenshot of page within body tag
+    driver.find_element(By.TAG_NAME, "body").screenshot("results/" + domain + ".png")
+    #driver.find_element_by_tag_name('body').screenshot("tutorialspoint.png")
+    driver.set_window_size(s['width'], s['height'])
+    driver.quit()
     
 def get_code(website, domain):
     print("\nGenerating the code ...")
@@ -29,17 +62,17 @@ def get_code_2(website, domain):
     print("\nGenerating the code ...")
 
     # start web browser
-    browser= webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
     # get source code
-    browser.get(website)
-    html = browser.page_source
+    driver.get(website)
+    html = driver.page_source
 
     with open("results/" + domain + ".html", "w") as f:
         f.write(html)
 
     # close web browser
-    browser.close()
+    driver.close()
 
 class MyHTMLParser(HTMLParser):
     def __init__(self):
@@ -127,7 +160,7 @@ if __name__ == "__main__":
             continue
 
         if args.task in ["all", "screenshot"]:
-            get_screenshot(website, domain)
+            get_screenshot_2(website, domain)
         if args.task in ["all", "code"]:
             get_code_2(website, domain)
             get_log(domain)
