@@ -185,6 +185,7 @@ if __name__ == "__main__":
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code or both, sort statistics",
                         default="all", choices=["all", "screenshot", "code", "stats"])
+    parser.add_argument("--batch", help="max number of websites processed", defult=10)
 
     args = parser.parse_args()
     if args.website:
@@ -196,9 +197,9 @@ if __name__ == "__main__":
     else:
         parser.print_usage()
 
-    
-    BATCH_SIZE = 10
+    BATCH_SIZE = args.batch
     batch = 0
+
     for i, website in enumerate(website_list):
         if website.startswith(" ") or website.startswith("#"):
             continue
