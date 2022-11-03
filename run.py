@@ -9,6 +9,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
 
 
 def website2domain(website):
@@ -17,6 +18,48 @@ def website2domain(website):
     else:
             domain = website.split("//")[-1].split("/")[0]
     return domain
+
+def accept_cookies(driver):
+    try:
+        driver.find_element(By.XPATH, '//button[normalize-space()="I Accept"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+    try:
+        driver.find_element(By.XPATH, '//button[normalize-space()="Accept"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+    try:
+        driver.find_element(By.XPATH, '//button[normalize-space()="Accetta"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+    try:
+        driver.find_element(By.XPATH, '//button[normalize-space()="OK"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+    try:
+        driver.find_element(By.XPATH, '//button[normalize-space()="Ok"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+    try:
+        driver.find_element(By.XPATH, '//a[normalize-space()="OK"]').click()
+    except NoSuchElementException:
+        pass
+    except ElementNotInteractableException:
+        pass
+
+
+
+
 
 def get_screenshot(website):
     print("\nGenerating the screenshot ...")
@@ -33,6 +76,10 @@ def get_screenshot(website):
     # Launch URL
     driver.get(website)
 
+    # Accept Cookies to hide popup
+    accept_cookies(driver)
+
+
     # Get window size
     s = driver.get_window_size()
     # Obtain browser height and width
@@ -47,7 +94,7 @@ def get_screenshot(website):
 
     # Close web driver
     driver.close()
-    print("Screenshot obtained!")
+    print("Screenshot obtained!\n")
 
 
 def get_code(website):
@@ -68,7 +115,7 @@ def get_code(website):
 
     # Close web driver 
     driver.close()
-    print("Code obtained!")
+    print("Code obtained!\n")
 
 
 class MyHTMLParser(HTMLParser):
@@ -149,6 +196,9 @@ if __name__ == "__main__":
     else:
         parser.print_usage()
 
+    
+    BATCH_SIZE = 10
+    batch = 0
     for i, website in enumerate(website_list):
         if website.startswith(" ") or website.startswith("#"):
             continue
@@ -165,3 +215,7 @@ if __name__ == "__main__":
             get_log(website2domain(website))
         if args.task in ["all", "stats"]:
             sort_websites_by_nodes("results/nodes.log")
+
+        batch += 1
+        if batch >= BATCH_SIZE:
+           break
