@@ -12,48 +12,52 @@ from selenium.webdriver.common.by import By
 
 
 def get_screenshot(website, domain):
-    # set webdriver options
+    # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
-    # set window size
+    # Set window size
     options.add_argument("--window-size=1280,1024")
 
-    # start web browser
+    # Start web browser
     driver = webdriver.Chrome(service=Service(
         ChromeDriverManager().install()), options=options)
 
-    # launch URL
+    # Launch URL
     driver.get(website)
 
-    # get window size
+    # Get window size
     s = driver.get_window_size()
-    # obtain browser height and width
+    # Obtain browser height and width
     w = driver.execute_script('return document.body.parentNode.scrollWidth')
     h = driver.execute_script('return document.body.parentNode.scrollHeight')
-    # set to new window size
+    # Set to new window size
     driver.set_window_size(w, h)
-    # obtain screenshot of page within body tag
+    # Obtain screenshot of page within body tag
     driver.find_element(By.TAG_NAME, "body").screenshot(
         "results/" + domain + ".png")
-    # driver.find_element_by_tag_name('body').screenshot("tutorialspoint.png")
     driver.set_window_size(s['width'], s['height'])
-    driver.quit()
+
+    # Close web driver
+    driver.close()
 
 
 def get_code(website, domain):
     print("\nGenerating the code ...")
 
-    # start web browser
+    # Start web driver 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-    # get source code
+    # Launch URL 
     driver.get(website)
+
+    # Get source code
     html = driver.page_source
 
+    # Write html source code to file
     with open("results/" + domain + ".html", "w") as f:
         f.write(html)
 
-    # close web browser
+    # Close web driver 
     driver.close()
 
 
@@ -74,10 +78,12 @@ def get_log(domain):
     filename = "results/" + domain
 
     with open(filename + ".html", "r") as f:
+        # Read html code and pass it to parser
         html = f.read()
         parser = MyHTMLParser()
         parser.feed(html)
 
+    # Extract some statistics
     n_nodes = sum(parser.count.values())
     n_elements = (len(parser.count))
 
@@ -97,11 +103,13 @@ def get_log(domain):
 
 def sort_websites_by_nodes(filepath):
     websites = []
+    # Read list of websites and nodes from file
     with open(filepath, "r") as f:
         for line in f:
             websites.append(
                 (line.strip().split(" ")[0], int(line.strip().split(" ")[1])))
 
+    # Write the list of websites and nodes sorted by number of nodes
     websites.sort(key=lambda tup: tup[1])
     with open(filepath, "w") as f:
         for website in websites:
