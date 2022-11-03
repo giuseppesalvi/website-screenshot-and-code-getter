@@ -20,42 +20,18 @@ def website2domain(website):
     return domain
 
 def accept_cookies(driver):
-    try:
-        driver.find_element(By.XPATH, '//button[normalize-space()="I Accept"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
-    try:
-        driver.find_element(By.XPATH, '//button[normalize-space()="Accept"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
-    try:
-        driver.find_element(By.XPATH, '//button[normalize-space()="Accetta"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
-    try:
-        driver.find_element(By.XPATH, '//button[normalize-space()="OK"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
-    try:
-        driver.find_element(By.XPATH, '//button[normalize-space()="Ok"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
-    try:
-        driver.find_element(By.XPATH, '//a[normalize-space()="OK"]').click()
-    except NoSuchElementException:
-        pass
-    except ElementNotInteractableException:
-        pass
+    list_strings = ["I Accept", "Accept", "Accetta", "Ok", "Agree", "Accept All"]
+    lowercase = [str.lower() for str in list_strings]
+    uppercase = [str.upper() for str in list_strings]
+    capitalized = [str.capitalize() for str in list_strings]
+
+    for string in set(list_strings + lowercase + uppercase + capitalized):
+        try:
+            driver.find_element(By.XPATH, '//button[normalize-space()="' + string + '"]').click()
+        except NoSuchElementException:
+            pass
+        except ElementNotInteractableException:
+            pass
 
 
 
@@ -185,7 +161,7 @@ if __name__ == "__main__":
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code or both, sort statistics",
                         default="all", choices=["all", "screenshot", "code", "stats"])
-    parser.add_argument("--batch", help="max number of websites processed", defult=10)
+    parser.add_argument("--batch", type=int, help="max number of websites processed", default=10)
 
     args = parser.parse_args()
     if args.website:
