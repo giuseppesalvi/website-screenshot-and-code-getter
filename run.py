@@ -12,22 +12,26 @@ from selenium.common.exceptions import NoSuchElementException, ElementNotInterac
 
 WAIT_SCREENSHOT = 1
 
+
 def website2domain(website):
     if "//www." in website:
-            domain = website.split("//www.")[-1].split("/")[0]
+        domain = website.split("//www.")[-1].split("/")[0]
     else:
-            domain = website.split("//")[-1].split("/")[0]
+        domain = website.split("//")[-1].split("/")[0]
     return domain
 
+
 def accept_cookies(driver):
-    list_strings = ["I Accept", "Accept", "Accetta", "Ok", "Agree", "Accept All"]
+    list_strings = ["I Accept", "Accept",
+                    "Accetta", "Ok", "Agree", "Accept All"]
     lowercase = [str.lower() for str in list_strings]
     uppercase = [str.upper() for str in list_strings]
     capitalized = [str.capitalize() for str in list_strings]
 
     for string in set(list_strings + lowercase + uppercase + capitalized):
         try:
-            driver.find_element(By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
+            driver.find_element(
+                By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
         except NoSuchElementException:
             pass
         except ElementNotInteractableException:
@@ -46,28 +50,28 @@ def get_screenshot(website):
     driver = webdriver.Chrome(service=Service(
         ChromeDriverManager().install()), options=options)
 
-
     # Launch URL
     driver.get(website)
 
-    # Wait some time to allow popups to show 
+    # Wait some time to allow popups to show
     driver.implicitly_wait(WAIT_SCREENSHOT)
 
     # Accept Cookies to hide popup
     accept_cookies(driver)
 
-
     # Get window size
     s = driver.get_window_size()
+
     # Obtain browser height and width
     w = driver.execute_script('return document.body.parentNode.scrollWidth')
     h = driver.execute_script('return document.body.parentNode.scrollHeight')
+
     # Set to new window size
     driver.set_window_size(w, h)
+
     # Obtain screenshot of page within body tag
     driver.find_element(By.TAG_NAME, "body").screenshot(
         "results/" + website2domain(website) + ".png")
-    driver.set_window_size(s['width'], s['height'])
 
     # Close web driver
     driver.close()
@@ -77,10 +81,10 @@ def get_screenshot(website):
 def get_code(website):
     print("\nGenerating the code ...")
 
-    # Start web driver 
+    # Start web driver
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-    # Launch URL 
+    # Launch URL
     driver.get(website)
 
     # Get source code
@@ -90,7 +94,7 @@ def get_code(website):
     with open("results/" + website2domain(website) + ".html", "w") as f:
         f.write(html)
 
-    # Close web driver 
+    # Close web driver
     driver.close()
     print("Code obtained!\n")
 
@@ -162,7 +166,8 @@ if __name__ == "__main__":
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code or both, sort statistics",
                         default="all", choices=["all", "screenshot", "code", "stats"])
-    parser.add_argument("--batch", type=int, help="max number of websites processed", default=10)
+    parser.add_argument("--batch", type=int,
+                        help="max number of websites processed", default=10)
 
     args = parser.parse_args()
     if args.website:
@@ -180,9 +185,10 @@ if __name__ == "__main__":
     for i, website in enumerate(website_list):
         if website.startswith(" ") or website.startswith("#"):
             continue
-        print("[%d/%d] %s" % (i + 1, len(website_list), website2domain(website)))
+        print("[%d/%d] %s" %
+              (i + 1, len(website_list), website2domain(website)))
 
-        if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website)+ ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")) :
+        if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website) + ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")):
             print("Already present\n")
             continue
 
@@ -196,4 +202,4 @@ if __name__ == "__main__":
 
         batch += 1
         if batch >= BATCH_SIZE:
-           break
+            break
