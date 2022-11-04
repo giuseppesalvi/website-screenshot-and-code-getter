@@ -23,15 +23,16 @@ def website2domain(website):
 
 def accept_cookies(driver):
     list_strings = ["I Accept", "Accept",
-                    "Accetta", "Ok", "Agree", "Accept All"]
+                    "Accetta", "Ok", "Agree", "Accept All", "Accept Cookies", "Accept All Cookies", "No", "No, Thanks"]
     lowercase = [str.lower() for str in list_strings]
     uppercase = [str.upper() for str in list_strings]
     capitalized = [str.capitalize() for str in list_strings]
 
     for string in set(list_strings + lowercase + uppercase + capitalized):
         try:
-            driver.find_element(
-                By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
+            element = driver.find_element(
+                By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]')
+            element.click()
         except NoSuchElementException:
             pass
         except ElementNotInteractableException:
