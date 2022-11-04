@@ -30,9 +30,8 @@ def accept_cookies(driver):
 
     for string in set(list_strings + lowercase + uppercase + capitalized):
         try:
-            element = driver.find_element(
-                By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]')
-            element.click()
+            driver.find_element(
+                By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
         except NoSuchElementException:
             pass
         except ElementNotInteractableException:
