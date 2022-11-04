@@ -14,6 +14,8 @@ WAIT_SCREENSHOT = 1
 
 
 def website2domain(website):
+    """ Return domain of the given website URL """
+
     if "//www." in website:
         domain = website.split("//www.")[-1].split("/")[0]
     else:
@@ -22,6 +24,8 @@ def website2domain(website):
 
 
 def accept_cookies(driver):
+    """ Click to dismiss Cookies popup """
+
     list_strings = ["I Accept", "Accept",
                     "Accetta", "Ok", "Agree", "Accept All", "Accept Cookies", "Accept All Cookies", "No", "No, Thanks"]
     lowercase = [str.lower() for str in list_strings]
@@ -29,6 +33,7 @@ def accept_cookies(driver):
     capitalized = [str.capitalize() for str in list_strings]
 
     for string in set(list_strings + lowercase + uppercase + capitalized):
+        # Look for elements with text inside
         try:
             driver.find_element(
                 By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
@@ -39,6 +44,8 @@ def accept_cookies(driver):
 
 
 def get_screenshot(website):
+    """ Get Screenshot of website URL passed as argument, and save it """
+
     print("\nGenerating the screenshot ...")
     # Set webdriver options
     options = webdriver.ChromeOptions()
@@ -79,6 +86,8 @@ def get_screenshot(website):
 
 
 def get_code(website):
+    """ Get HTML code of Website URL passed as argument, and save it """
+
     print("\nGenerating the code ...")
 
     # Start web driver
@@ -100,6 +109,8 @@ def get_code(website):
 
 
 class MyHTMLParser(HTMLParser):
+    """ Parse HTML code to compute statistics """
+
     def __init__(self):
         self.count = defaultdict(int)
         super().__init__()
@@ -112,6 +123,8 @@ class MyHTMLParser(HTMLParser):
 
 
 def get_log(domain):
+    """ Save logging info for website"""
+
     print("\nCounting the number of nodes ...")
     filename = "results/" + domain
 
@@ -140,7 +153,10 @@ def get_log(domain):
 
 
 def sort_websites_by_nodes(filepath):
+    """ Sort website names in log file by ascending number of nodes """
+
     websites = []
+
     # Read list of websites and nodes from file
     with open(filepath, "r") as f:
         for line in f:
@@ -153,9 +169,8 @@ def sort_websites_by_nodes(filepath):
         for website in websites:
             f.write(website[0] + " " + str(website[1]) + "\n")
 
-
-if __name__ == "__main__":
-    website_list = []
+def init_args_parser():
+    """ Initialize args parser with arguments """
 
     parser = argparse.ArgumentParser(description="get screenshot and code for a website",
                                      usage="python3 run.py [--website {website_url} | --website_list {file_path}]")
@@ -164,14 +179,27 @@ if __name__ == "__main__":
         "--website_list", help="file path with list of website urls")
     parser.add_argument("--just_new", action='store_true',
                         help="process only the websites not already present")
-    parser.add_argument("--task", help="task of the script: get screenshot, get code or both, sort statistics",
+    parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics",
                         default="all", choices=["all", "screenshot", "code", "stats"])
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
 
+    return parser
+
+
+
+if __name__ == "__main__":
+    website_list = []
+
+    # Initialize args parser
+    parser = init_args_parser()
     args = parser.parse_args()
+
+    # Single website
     if args.website:
         website_list.append(args.website)
+
+    # List of Websites
     elif args.website_list:
         with open(args.website_list, "r") as f:
             for line in f:
@@ -182,23 +210,33 @@ if __name__ == "__main__":
     BATCH_SIZE = args.batch
     batch = 0
 
+    # Process each website in the list
     for i, website in enumerate(website_list):
+
+        # For DBG: lines that start with space or # are discarded
         if website.startswith(" ") or website.startswith("#"):
             continue
+
         print("[%d/%d] %s" %
               (i + 1, len(website_list), website2domain(website)))
 
+        # If just_new option, process only new websites
         if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website) + ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")):
             print("Already present\n")
             continue
 
-        if args.task in ["all", "screenshot"]:
-            get_screenshot(website)
+        # Get code of the website and calculate statistics
         if args.task in ["all", "code"]:
             get_code(website)
             get_log(website2domain(website))
+
+        # Sort and save statistics
         if args.task in ["all", "stats"]:
             sort_websites_by_nodes("results/nodes.log")
+
+        # Get website screenshot
+        if args.task in ["all", "screenshot"]:
+            get_screenshot(website)
 
         batch += 1
         if batch >= BATCH_SIZE:
