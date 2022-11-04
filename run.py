@@ -1,6 +1,4 @@
 from genericpath import isfile
-from htmldom import htmldom
-import os
 from html.parser import HTMLParser
 from collections import defaultdict
 from pprint import pprint
@@ -11,6 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
 
+
+WAIT_SCREENSHOT = 1
 
 def website2domain(website):
     if "//www." in website:
@@ -27,14 +27,11 @@ def accept_cookies(driver):
 
     for string in set(list_strings + lowercase + uppercase + capitalized):
         try:
-            driver.find_element(By.XPATH, '//button[normalize-space()="' + string + '"]').click()
+            driver.find_element(By.XPATH, '//*[self::a|self::button|self::div|self.span][normalize-space()="' + string + '"]').click()
         except NoSuchElementException:
             pass
         except ElementNotInteractableException:
             pass
-
-
-
 
 
 def get_screenshot(website):
@@ -49,8 +46,12 @@ def get_screenshot(website):
     driver = webdriver.Chrome(service=Service(
         ChromeDriverManager().install()), options=options)
 
+
     # Launch URL
     driver.get(website)
+
+    # Wait some time to allow popups to show 
+    driver.implicitly_wait(WAIT_SCREENSHOT)
 
     # Accept Cookies to hide popup
     accept_cookies(driver)
