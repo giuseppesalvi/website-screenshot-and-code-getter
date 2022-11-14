@@ -128,7 +128,7 @@ def get_log(domain):
     print("\nCounting the number of nodes ...")
     filename = "results/" + domain
 
-    with open(filename + ".min2.html", "r") as f:
+    with open(filename + ".html", "r") as f:
         # Read html code and pass it to parser
         html = f.read()
         parser = MyHTMLParser()
@@ -141,22 +141,17 @@ def get_log(domain):
     print("\nNumber of nodes: ", n_nodes, "\n\n")
 
     # Save info in the log file
-    #with open(filename + ".log", "w") as f:
-    #    print("Number of nodes: ", n_nodes, file=f)
-    #    print("Number of different elements: ", n_elements, file=f)
-    #    print("Divided per element: ", file=f)
-    #    pprint(parser.count, f)
-
-    # DBG
-    print("Number of nodes: ", n_nodes)
-    print("Number of different elements: ", n_elements)
-    print("Divided per element: ")
+    with open(filename + ".log", "w") as f:
+        print("Number of nodes: ", n_nodes, file=f)
+        print("Number of different elements: ", n_elements, file=f)
+        print("Divided per element: ", file=f)
+        pprint(parser.count, f)
     pprint(parser.count)
 
 
     # Save number of nodes for the given website in the summary file
-    #with open("results/nodes.log", "a") as f:
-    #    print(domain + " " + str(n_nodes), file=f)
+    with open("results/nodes.log", "a") as f:
+        print(domain + " " + str(n_nodes), file=f)
 
 
 def sort_websites_by_nodes(filepath):
@@ -238,7 +233,8 @@ if __name__ == "__main__":
             get_log(website2domain(website))
         # Get code of the website and calculate statistics
         if args.task == "log":
-            get_log(website2domain(website))
+            test_name = "test_prettify" 
+            get_log(website2domain(website) + test_name)
 
 
         # Sort and save statistics
