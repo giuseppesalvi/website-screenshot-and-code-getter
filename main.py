@@ -231,9 +231,10 @@ if __name__ == "__main__":
         if args.task in ["all", "code"]:
             get_code(website)
             get_log(website2domain(website))
+
         # Get code of the website and calculate statistics
         if args.task == "log":
-            test_name = "test_prettify" 
+            test_name = "test_prettier" 
             get_log(website2domain(website) + test_name)
 
 
