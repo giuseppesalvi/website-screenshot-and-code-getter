@@ -128,6 +128,8 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Command Line Arguments
 - `--website` : specify the url of the website 
 - `--website_list` : specify the path of the file with the list of website urls
@@ -136,7 +138,6 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 - `--batch` : max number of websites processed (default = `10`)
 
 ### Examples
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 #### Get the screenshot for the website www.polito.it
 ```python3 main.py --website https://www.polito.it --task screenshot```
