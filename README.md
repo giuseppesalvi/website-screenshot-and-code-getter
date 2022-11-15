@@ -94,7 +94,7 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 
 ### Built With
 
-* [![Python][Python.org]][Python-url]
+[![Python][Python.org]][Python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,31 +103,22 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+* python 3.9.13
   ```sh
-  npm install npm@latest -g
+  python3 --version 
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/giuseppesalvi/website-screenshot-and-code-getter.git
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+2. Install Selenium 
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   pip install selenium -U
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -137,21 +128,32 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Command Line Arguments
+- `--website` : specify the url of the website 
+- `--website_list` : specify the path of the file with the list of website urls
+- `--just_new` : process only the websites not already present in the result folder
+- `--task` : specify the task (choices = `all`, `screenshot`, `code`, `stats`, `log`, default = `all`)
+- `--batch` : max number of websites processed (default = `10`)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+### Examples
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+#### Get the screenshot for the website www.polito.it
+```python3 main.py --website https://www.polito.it --task screenshot```
+
+#### Get the screenshot and the code for the first 5 websites in the list websites.txt
+```python3 main.py --website_list websites.txt --batch 5```
+
+#### Get the screenshot and the code for 10 new websites from the list in websites.txt
+```python3 main.py --website_list websites.txt --just_new```
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [x] Accept Cookies automatically, before taking the screenshot 
+- [ ] Simplify / Prettify the output html code 
+- [ ] Remove Dynamic elements from the output html code 
 
 See the [open issues](https://github.com/giuseppesalvi/website-screenshot-and-code-getter/issues) for a full list of proposed features (and known issues).
 
@@ -180,7 +182,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the GPL License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

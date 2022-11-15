@@ -181,7 +181,7 @@ def init_args_parser():
         "--website_list", help="file path with list of website urls")
     parser.add_argument("--just_new", action='store_true',
                         help="process only the websites not already present")
-    parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics",
+    parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log",
                         default="all", choices=["all", "screenshot", "code", "stats", "log"])
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
