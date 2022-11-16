@@ -143,8 +143,8 @@ def get_log(domain):
 
     # Get image dimensions
     img = Image.open(filename + ".png")
-    height = str(img.height)
-    width = str(img.width)
+    height = img.height
+    width = img.width
 
     # Save info in the log file
     with open(filename + ".log", "w") as f:
@@ -152,9 +152,9 @@ def get_log(domain):
         print("Number of different elements: ", n_elements, file=f)
         print("Divided per element: ", file=f)
         pprint(parser.count, f)
-        print("Image dimensions: ", width, "x", height, file=f)
+        print("Image dimensions: %dx%d"%(width, height), file=f)
     # pprint(parser.count)
-    print("Image dimensions: ", width, "x", height, "\n")
+    print("Image dimensions: %dx%d"%(width, height))
 
     # Save number of nodes for the given website in the summary file
     with open("results/summary/nodes.log", "a") as f:
@@ -162,7 +162,7 @@ def get_log(domain):
 
     # Save image dimension for the given website in the summary file
     with open("results/summary/images_sizes.log", "a") as f:
-        print(domain + " " + width + "x" + height, file=f)
+        print("%s %dx%d %f"%(domain, width, height, float(width)/height), file=f)
 
 
 def sort_websites_by_nodes(filepath):
@@ -187,8 +187,8 @@ def sort_websites_by_nodes(filepath):
             last = website
 
 
-def sort_websites_by_image_size(filepath):
-    """ Sort website names in log file by ascending screenshot image size"""
+def sort_websites_by_image_aspect_ratio(filepath):
+    """ Sort website names in log file by ascending screenshot image aspect ratio"""
 
     print("\nSorting websites by ascending screenshot image size...")
     websites = []
@@ -197,15 +197,15 @@ def sort_websites_by_image_size(filepath):
     with open(filepath, "r") as f:
         for line in f:
             websites.append(
-                (line.strip().split(" ")[0], line.strip().split(" ")[1]))
+                (line.strip().split(" ")[0], line.strip().split(" ")[1], line.strip().split(" ")[2]))
 
-    # Write the list of websites and nodes sorted by number of nodes
-    websites.sort(key=lambda tup: (int(tup[1].split("x")[0]), int(tup[1].split("x")[1])))
+    # Write the list of websites and nodes sorted by aspect ratio 
+    websites.sort(key=lambda tup: (float(tup[2])), reverse=True)
     with open(filepath, "w") as f:
         last = ""
         for website in websites:
             if website != last: # Remove duplicates from the list
-                f.write(website[0] + " " + str(website[1]) + "\n")
+                f.write(website[0] + " " + str(website[1]) + " " + str(website[2]) + "\n")
             last = website
 
 
@@ -286,7 +286,7 @@ if __name__ == "__main__":
         # Sort and save statistics
         if args.task in ["all", "stats"]:
             sort_websites_by_nodes("results/summary/nodes.log")
-            sort_websites_by_image_size("results/summary/images_sizes.log")
+            sort_websites_by_image_aspect_ratio("results/summary/images_sizes.log")
 
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
