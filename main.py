@@ -153,8 +153,8 @@ def get_log(domain):
         print("Divided per element: ", file=f)
         pprint(parser.count, f)
         print("Image dimensions: ", width, "x", height, file=f)
-    pprint(parser.count)
-    print("\nImage dimensions: ", width, "x", height)
+    # pprint(parser.count)
+    print("Image dimensions: ", width, "x", height, "\n")
 
     # Save number of nodes for the given website in the summary file
     with open("results/summary/nodes.log", "a") as f:
@@ -288,3 +288,5 @@ if __name__ == "__main__":
         batch += 1
         if batch >= BATCH_SIZE:
             break
+
+        print("\n")
