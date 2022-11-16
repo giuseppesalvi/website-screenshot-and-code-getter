@@ -214,6 +214,7 @@ def init_args_parser():
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log",
                         default="all", choices=["all", "screenshot", "code", "stats", "log"])
+    parser.add_argument("--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
 
@@ -268,8 +269,10 @@ if __name__ == "__main__":
 
         # Get code of the website and calculate statistics
         if args.task == "log":
-            test_name = "" # Default = ""
-            get_log(website2domain(website) + test_name)
+            if args.test_name:
+                get_log(website2domain(website) + "_" + args.test_name)
+            else:
+                print("Add argument --test_name <name> when running --task log")
 
 
         # Sort and save statistics
