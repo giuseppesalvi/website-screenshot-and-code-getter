@@ -270,9 +270,10 @@ if __name__ == "__main__":
         # Get code of the website and calculate statistics
         if args.task == "log":
             if args.test_name:
+                # When running tests for files with suffix
                 get_log(website2domain(website) + "_" + args.test_name)
             else:
-                print("Add argument --test_name <name> when running --task log")
+                get_log(website2domain(website))
 
 
         # Sort and save statistics
