@@ -8,6 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
+from PIL import Image
 
 
 WAIT_SCREENSHOT = 1
@@ -138,7 +139,12 @@ def get_log(domain):
     n_nodes = sum(parser.count.values())
     n_elements = (len(parser.count))
 
-    print("\nNumber of nodes: ", n_nodes, "\n\n")
+    print("\nNumber of nodes: ", n_nodes, "\n")
+
+    # Get image dimensions
+    img = Image.open(filename + ".png")
+    height = str(img.height)
+    width = str(img.width)
 
     # Save info in the log file
     with open(filename + ".log", "w") as f:
@@ -146,17 +152,23 @@ def get_log(domain):
         print("Number of different elements: ", n_elements, file=f)
         print("Divided per element: ", file=f)
         pprint(parser.count, f)
+        print("Image dimensions: ", width, "x", height, file=f)
     pprint(parser.count)
-
+    print("\nImage dimensions: ", width, "x", height)
 
     # Save number of nodes for the given website in the summary file
-    with open("results/nodes.log", "a") as f:
+    with open("results/summary/nodes.log", "a") as f:
         print(domain + " " + str(n_nodes), file=f)
+
+    # Save image dimension for the given website in the summary file
+    with open("results/summary/images_sizes.log", "a") as f:
+        print(domain + " " + width+ "x" + height, file=f)
 
 
 def sort_websites_by_nodes(filepath):
     """ Sort website names in log file by ascending number of nodes """
 
+    print("\nSorting websites by number of nodes in ascending order...")
     websites = []
 
     # Read list of websites and nodes from file
@@ -168,7 +180,7 @@ def sort_websites_by_nodes(filepath):
     # Write the list of websites and nodes sorted by number of nodes
     websites.sort(key=lambda tup: tup[1])
     with open(filepath, "w") as f:
-        for website in websites:
+        for website in set(websites):
             f.write(website[0] + " " + str(website[1]) + "\n")
 
 def init_args_parser():
@@ -207,7 +219,10 @@ if __name__ == "__main__":
             for line in f:
                 website_list.append(line.strip())
     else:
-        parser.print_usage()
+        if args.task != "stats":
+            parser.print_usage()
+        else:
+            website_list.append("")
 
     BATCH_SIZE = args.batch
     batch = 0
@@ -219,8 +234,8 @@ if __name__ == "__main__":
         if website.startswith(" ") or website.startswith("#"):
             continue
 
-        print("[%d/%d] %s" %
-              (i + 1, len(website_list), website2domain(website)))
+        if args.task != "stats":
+            print("[%d/%d] %s" %(i + 1, len(website_list), website2domain(website)))
 
         # If just_new option, process only new websites
         if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website) + ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")):
@@ -234,13 +249,13 @@ if __name__ == "__main__":
 
         # Get code of the website and calculate statistics
         if args.task == "log":
-            test_name = "test_prettier" 
+            test_name = "" # Default = ""
             get_log(website2domain(website) + test_name)
 
 
         # Sort and save statistics
         if args.task in ["all", "stats"]:
-            sort_websites_by_nodes("results/nodes.log")
+            sort_websites_by_nodes("results/summary/nodes.log")
 
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
