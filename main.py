@@ -183,6 +183,25 @@ def sort_websites_by_nodes(filepath):
         for website in set(websites):
             f.write(website[0] + " " + str(website[1]) + "\n")
 
+def sort_websites_by_image_size(filepath):
+    """ Sort website names in log file by ascending screenshot image size"""
+
+    print("\nSorting websites by ascending screenshot image size...")
+    websites = []
+
+    # Read list of websites and nodes from file
+    with open(filepath, "r") as f:
+        for line in f:
+            websites.append(
+                (line.strip().split(" ")[0], line.strip().split(" ")[1]))
+
+    # Write the list of websites and nodes sorted by number of nodes
+    websites.sort(key=lambda tup: tup[1])
+    with open(filepath, "w") as f:
+        for website in set(websites):
+            f.write(website[0] + " " + str(website[1]) + "\n")
+
+
 def init_args_parser():
     """ Initialize args parser with arguments """
 
@@ -256,6 +275,7 @@ if __name__ == "__main__":
         # Sort and save statistics
         if args.task in ["all", "stats"]:
             sort_websites_by_nodes("results/summary/nodes.log")
+            sort_websites_by_image_size("results/summary/images_sizes.log")
 
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
