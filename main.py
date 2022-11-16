@@ -162,7 +162,7 @@ def get_log(domain):
 
     # Save image dimension for the given website in the summary file
     with open("results/summary/images_sizes.log", "a") as f:
-        print(domain + " " + width+ "x" + height, file=f)
+        print(domain + " " + width + "x" + height, file=f)
 
 
 def sort_websites_by_nodes(filepath):
@@ -180,8 +180,12 @@ def sort_websites_by_nodes(filepath):
     # Write the list of websites and nodes sorted by number of nodes
     websites.sort(key=lambda tup: tup[1])
     with open(filepath, "w") as f:
-        for website in set(websites):
-            f.write(website[0] + " " + str(website[1]) + "\n")
+        last = ""
+        for website in websites:
+            if website != last: # Remove duplicates from the list
+                f.write(website[0] + " " + str(website[1]) + "\n")
+            last = website
+
 
 def sort_websites_by_image_size(filepath):
     """ Sort website names in log file by ascending screenshot image size"""
@@ -198,8 +202,11 @@ def sort_websites_by_image_size(filepath):
     # Write the list of websites and nodes sorted by number of nodes
     websites.sort(key=lambda tup: tup[1])
     with open(filepath, "w") as f:
-        for website in set(websites):
-            f.write(website[0] + " " + str(website[1]) + "\n")
+        last = ""
+        for website in websites:
+            if website != last: # Remove duplicates from the list
+                f.write(website[0] + " " + str(website[1]) + "\n")
+            last = website
 
 
 def init_args_parser():
@@ -214,12 +221,12 @@ def init_args_parser():
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log",
                         default="all", choices=["all", "screenshot", "code", "stats", "log"])
-    parser.add_argument("--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
+    parser.add_argument(
+        "--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
 
     return parser
-
 
 
 if __name__ == "__main__":
@@ -255,10 +262,11 @@ if __name__ == "__main__":
             continue
 
         if args.task != "stats":
-            print("[%d/%d] %s" %(i + 1, len(website_list), website2domain(website)))
+            print("[%d/%d] %s" %
+                  (i + 1, len(website_list), website2domain(website)))
 
         # If just_new option, process only new websites
-        if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website) + ".html")) or args.task == "stats" and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")):
+        if args.just_new and ((args.task in ["all", "code"] and isfile("results/" + website2domain(website) + ".html")) or args.task in ["stats", "log"] and isfile("results/" + website2domain(website) + ".log") or args.task == "screenshot" and isfile("results/" + website2domain(website) + ".png")):
             print("Already present\n")
             continue
 
@@ -274,7 +282,6 @@ if __name__ == "__main__":
                 get_log(website2domain(website) + "_" + args.test_name)
             else:
                 get_log(website2domain(website))
-
 
         # Sort and save statistics
         if args.task in ["all", "stats"]:
