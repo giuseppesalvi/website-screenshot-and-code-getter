@@ -200,7 +200,7 @@ def sort_websites_by_image_size(filepath):
                 (line.strip().split(" ")[0], line.strip().split(" ")[1]))
 
     # Write the list of websites and nodes sorted by number of nodes
-    websites.sort(key=lambda tup: tup[1])
+    websites.sort(key=lambda tup: (int(tup[1].split("x")[0]), int(tup[1].split("x")[1])))
     with open(filepath, "w") as f:
         last = ""
         for website in websites:
