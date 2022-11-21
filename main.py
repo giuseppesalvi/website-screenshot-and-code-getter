@@ -114,13 +114,14 @@ class MyHTMLParser(HTMLParser):
         self.count[tag] += 1
 
 
-def get_log(domain):
+def get_log(domain, test_name):
     """ Save logging info for website"""
 
     print("\nCounting the number of nodes ...")
+    suffix = "_" + test_name if test_name else ""
     filename = "results/" + domain
 
-    with open(filename + ".html", "r") as f:
+    with open(filename + suffix + ".html", "r") as f:
         # Read html code and pass it to parser
         html = f.read()
         parser = MyHTMLParser()
@@ -138,7 +139,7 @@ def get_log(domain):
     width = img.width
 
     # Save info in the log file
-    with open(filename + ".log", "w") as f:
+    with open(filename + suffix + ".log", "w") as f:
         print("Number of nodes: ", n_nodes, file=f)
         print("Number of different elements: ", n_elements, file=f)
         print("Divided per element: ", file=f)
@@ -149,7 +150,7 @@ def get_log(domain):
 
     # Save number of nodes for the given website in the summary file
     with open("results/summary/nodes.log", "a") as f:
-        print(domain + " " + str(n_nodes), file=f)
+        print(domain + suffix + " " + str(n_nodes), file=f)
 
     # Save image dimension for the given website in the summary file
     with open("results/summary/images_sizes.log", "a") as f:
@@ -225,11 +226,7 @@ if __name__ == "__main__":
 
         # Get code of the website and calculate statistics
         if args.task == "log":
-            if args.test_name:
-                # When running tests for files with suffix
-                get_log(website2domain(website) + "_" + args.test_name)
-            else:
-                get_log(website2domain(website))
+            get_log(website2domain(website), args.test_name)
 
         # Sort and save statistics
         if args.task in ["all", "stats"]:
