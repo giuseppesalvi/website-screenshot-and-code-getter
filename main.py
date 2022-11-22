@@ -226,6 +226,7 @@ if __name__ == "__main__":
 
         # Get code of the website and calculate statistics
         if args.task == "log":
+            # Usually used for debug, just getting the log for a specific test
             get_log(website2domain(website), args.test_name)
 
         # Sort and save statistics

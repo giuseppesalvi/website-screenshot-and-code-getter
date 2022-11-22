@@ -2,3 +2,4 @@
 /results/*.png
 /results/*.log
 .DS_Store
+node_modules
