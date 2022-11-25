@@ -39,7 +39,9 @@ def accept_cookies(driver):
 def get_screenshot(website, file_local, test_name):
     """ Get Screenshot of website URL passed as argument, and save it """
 
-    filename = "results/" + website2domain(website) if not test_name else "results/" + website2domain(website) + "_" + test_name
+    filename = "results/" + \
+        website2domain(website) if not test_name else "results/" + \
+        website2domain(website) + "_" + test_name
 
     print("\nGenerating the screenshot ...")
     # Set webdriver options
@@ -179,7 +181,8 @@ def init_args_parser():
         "--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
-    parser.add_argument("--file_local", help="use the local html file for the screenshot instead of the url", default=False, type=bool)
+    parser.add_argument(
+        "--file_local", help="use the local html file for the screenshot instead of the url", default=False, type=bool)
 
     return parser
 
@@ -243,7 +246,8 @@ if __name__ == "__main__":
 
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
-            get_screenshot(website, file_local=args.file_local, test_name=args.test_name)
+            get_screenshot(website, file_local=args.file_local,
+                           test_name=args.test_name)
 
         batch += 1
         if batch >= BATCH_SIZE:
