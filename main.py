@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
 from PIL import Image
 from utils import *
-
+from os import path
 
 
 WAIT_SCREENSHOT = 1
@@ -39,7 +39,7 @@ def accept_cookies(driver):
 def get_screenshot(website, file_local, test_name):
     """ Get Screenshot of website URL passed as argument, and save it """
 
-    filename = "results/" + website2domain(website) + ".png" if not test_name else "results/" + website2domain(website) + "_" + test_name + ".png"
+    filename = "results/" + website2domain(website) if not test_name else "results/" + website2domain(website) + "_" + test_name
 
     print("\nGenerating the screenshot ...")
     # Set webdriver options
@@ -53,10 +53,8 @@ def get_screenshot(website, file_local, test_name):
         ChromeDriverManager().install()), options=options)
 
     # Launch URL
-    print("IN HHERE")
-    file_local = True # DBG
     if file_local:
-        driver.get("file:///Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/results/WPBeginner.com_sanitize_cleanhtml.html")
+        driver.get("file://" + path.abspath(filename + ".html"))
     else:
         driver.get(website)
 
@@ -67,7 +65,7 @@ def get_screenshot(website, file_local, test_name):
     accept_cookies(driver)
 
     # Get window size
-    s = driver.get_window_size()
+    #s = driver.get_window_size()
 
     # Obtain browser height and width
     w = driver.execute_script('return document.body.parentNode.scrollWidth')
@@ -77,7 +75,7 @@ def get_screenshot(website, file_local, test_name):
     driver.set_window_size(w, h)
 
     # Obtain screenshot of page within body tag
-    driver.find_element(By.TAG_NAME, "body").screenshot(filename)
+    driver.find_element(By.TAG_NAME, "body").screenshot(filename + ".png")
 
     # Close web driver
     driver.close()
