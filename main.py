@@ -12,6 +12,7 @@ from PIL import Image
 from utils import *
 
 
+
 WAIT_SCREENSHOT = 1
 
 
@@ -35,8 +36,10 @@ def accept_cookies(driver):
             pass
 
 
-def get_screenshot(website):
+def get_screenshot(website, file_local, test_name):
     """ Get Screenshot of website URL passed as argument, and save it """
+
+    filename = "results/" + website2domain(website) + ".png" if not test_name else "results/" + website2domain(website) + "_" + test_name + ".png"
 
     print("\nGenerating the screenshot ...")
     # Set webdriver options
@@ -50,7 +53,12 @@ def get_screenshot(website):
         ChromeDriverManager().install()), options=options)
 
     # Launch URL
-    driver.get(website)
+    print("IN HHERE")
+    file_local = True # DBG
+    if file_local:
+        driver.get("file:///Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/results/WPBeginner.com_sanitize_cleanhtml.html")
+    else:
+        driver.get(website)
 
     # Wait some time to allow popups to show
     driver.implicitly_wait(WAIT_SCREENSHOT)
@@ -69,8 +77,7 @@ def get_screenshot(website):
     driver.set_window_size(w, h)
 
     # Obtain screenshot of page within body tag
-    driver.find_element(By.TAG_NAME, "body").screenshot(
-        "results/" + website2domain(website) + ".png")
+    driver.find_element(By.TAG_NAME, "body").screenshot(filename)
 
     # Close web driver
     driver.close()
@@ -174,6 +181,7 @@ def init_args_parser():
         "--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
     parser.add_argument("--batch", type=int,
                         help="max number of websites processed", default=10)
+    parser.add_argument("--file_local", help="use the local html file for the screenshot instead of the url", default=False, type=bool)
 
     return parser
 
@@ -237,7 +245,7 @@ if __name__ == "__main__":
 
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
-            get_screenshot(website)
+            get_screenshot(website, file_local=args.file_local, test_name=args.test_name)
 
         batch += 1
         if batch >= BATCH_SIZE:
