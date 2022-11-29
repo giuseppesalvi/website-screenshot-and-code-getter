@@ -19,7 +19,7 @@ if (args.length != 3) {
             return excludedTags.includes(frame.tag)
         },
         transformTags: {
-          'img': sanitizeHtml.simpleTransform('img', {src: '../images/default_img.jpeg'})
+          'img': sanitizeHtml.simpleTransform('img', {src: '../images/default_img.jpeg', srcset: '../images/default_img.jpeg'})
         } 
         
     });
