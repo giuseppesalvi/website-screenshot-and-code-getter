@@ -16,7 +16,12 @@ if (args.length != 3) {
         allowedAttributes: false,
         enforceHtmlBoundary: true,
         exclusiveFilter: function(frame) {
-            return excludedTags.includes(frame.tag)}
+            return excludedTags.includes(frame.tag)
+        },
+        transformTags: {
+          'img': sanitizeHtml.simpleTransform('img', {src: '../images/default_img.jpeg'})
+        } 
+        
     });
     writeFile("results/" + args[2] + "_sanitize.html", cleanHtml, (err) => {
       if (err) throw err;
