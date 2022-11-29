@@ -11,7 +11,7 @@ from selenium.common.exceptions import NoSuchElementException, ElementNotInterac
 from PIL import Image
 from utils import *
 from os import path
-
+import subprocess
 
 WAIT_SCREENSHOT = 1
 
@@ -165,6 +165,17 @@ def get_log(domain, test_name):
               (domain, width, height, float(width)/height), file=f)
 
 
+def sanitize(domain, test_name):
+    # Run command for sanitizing the code
+    subprocess.run("node sanitize_html.js " + domain, shell=True, check=True)
+    # note: output -> <domain>_sanitize.html change js accordingly
+
+    # Run command for cleaning the white spaces and formatting the html file
+    subprocess.run("clean-html results/" + domain+ "_sanitize.html --in-place", shell=True, check=True)
+
+    # For Screenshot: python3 main.py --website WPBeginner.com --test_name sanitize_cleanhtml5 --task screenshot --file_local True
+    return
+
 def init_args_parser():
     """ Initialize args parser with arguments """
 
@@ -176,7 +187,7 @@ def init_args_parser():
     parser.add_argument("--just_new", action='store_true',
                         help="process only the websites not already present")
     parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log",
-                        default="all", choices=["all", "screenshot", "code", "stats", "log"])
+                        default="all", choices=["all", "screenshot", "code", "stats", "log", "sanitize"])
     parser.add_argument(
         "--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
     parser.add_argument("--batch", type=int,
@@ -231,10 +242,23 @@ if __name__ == "__main__":
         # Get code of the website and calculate statistics
         if args.task in ["all", "code"]:
             get_code(website)
-            get_log(website2domain(website))
+            #get_log(website2domain(website), args.test_name)
+
+        # Sanitize Html code
+        if args.task in ["all", "sanitize"]:
+            sanitize(website2domain(website), test_name=args.test_name)
+
+
+        # Get website screenshot
+        if args.task in ["all", "screenshot"]:
+            get_screenshot(website, file_local=args.file_local,
+                           test_name=args.test_name)
+            # DBG:Get both the non sanitized and the sanitized version for now
+            get_screenshot(website, file_local=True,
+                           test_name="sanitize")
 
         # Get code of the website and calculate statistics
-        if args.task == "log":
+        if args.task in ["all", "log"]:
             # Usually used for debug, just getting the log for a specific test
             get_log(website2domain(website), args.test_name)
 
@@ -244,13 +268,8 @@ if __name__ == "__main__":
             sort_websites_by_image_aspect_ratio(
                 "results/summary/images_sizes.log")
 
-        # Get website screenshot
-        if args.task in ["all", "screenshot"]:
-            get_screenshot(website, file_local=args.file_local,
-                           test_name=args.test_name)
 
         batch += 1
         if batch >= BATCH_SIZE:
             break
-
         print("\n")
