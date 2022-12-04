@@ -5,8 +5,8 @@ console.log("Sanitizing Html Code");
 
 const default_img = "../images/default_img.jpeg";
 const args = process.argv;
-if (args.length != 3) {
-  console.log("Usage: node sanitize_html <website_url>");
+if (args.length != 4) {
+  console.log("Usage: node sanitize_html <website_url> <test_name>");
 } else {
   const filepath = "results/" + args[2] + ".html";
   const excludedTags = ["script", "meta", "noscript", "svg", "path"];
@@ -24,9 +24,11 @@ if (args.length != 3) {
           src: default_img,
           srcset: default_img,
         }),
+        "ol": "ul",
+        "h2": "h1",
       },
     });
-    writeFile("results/" + args[2] + "_sanitize.html", cleanHtml, (err) => {
+    writeFile("results/" + args[2] + "_" + args[3] +".html", cleanHtml, (err) => {
       if (err) throw err;
     });
   });

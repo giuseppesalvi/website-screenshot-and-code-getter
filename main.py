@@ -195,12 +195,13 @@ def get_log(domain, test_name):
 
 def sanitize(domain, test_name):
     # Run command for sanitizing the code
-    subprocess.run("node sanitize_html.js " + domain, shell=True, check=True)
+    if not test_name:
+        test_name = "sanitize" # As default output will have sanitize suffix
+    subprocess.run("node sanitize_html.js " + domain + " " + test_name, shell=True, check=True)
     # note: output -> <domain>_sanitize.html change js accordingly
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html results/" + domain +
-                   "_sanitize.html --in-place", shell=True, check=True)
+    subprocess.run("clean-html results/" + domain + "_" + test_name + ".html --in-place", shell=True, check=True)
 
     # For Screenshot: python3 main.py --website WPBeginner.com --test_name sanitize_cleanhtml5 --task screenshot --file_local True
     return
