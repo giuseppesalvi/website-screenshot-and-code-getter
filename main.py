@@ -111,20 +111,39 @@ class MyHTMLParser(HTMLParser):
     """ Parse HTML code to compute statistics """
 
     def __init__(self):
-        self.count = defaultdict(int)
+        self.tags= defaultdict(int)
+        self.attributes = defaultdict(list) 
         super().__init__()
 
     def handle_starttag(self, tag, attrs):
-        self.count[tag] += 1
+        """ Used to handle start tags such as <div ... >"""
+        self.handle_tag(tag, attrs)
 
     def handle_startendtag(self, tag, attrs):
-        self.count[tag] += 1
+        """ Used to handle self closing tags such as <img ... />, similar to handle_starttag""" 
+        self.handle_tag(tag, attrs)
+
+    def handle_tag(self, tag, attrs):
+        """ Used as common implementation for both start tags and self closing start tag"""
+        self.tags[tag] += 1
+        for attr in attrs:
+            attr_name = attr[0]
+            if attr_name not in ["title", "alt"]:
+                attr_values = attr[1].split(" ")
+            else:
+                attr_values = [attr[1]]
+            for v in attr_values:
+                if v and v not in self.attributes[attr_name]:
+                    self.attributes[attr_name].append(v)
+
+
+
 
 
 def get_log(domain, test_name):
     """ Save logging info for website"""
 
-    print("\nCounting the number of nodes ...")
+    print("\nCounting the number of nodes and attributes ...")
     suffix = "_" + test_name if test_name else ""
     filename = "results/" + domain
 
@@ -135,8 +154,10 @@ def get_log(domain, test_name):
         parser.feed(html)
 
     # Extract some statistics
-    n_nodes = sum(parser.count.values())
-    n_elements = (len(parser.count))
+    n_nodes = sum(parser.tags.values())
+    n_different_tags= (len(parser.tags))
+    n_different_attributes = (len(parser.attributes))
+    n_different_classes = len(parser.attributes["class"])
 
     print("\nNumber of nodes: ", n_nodes, "\n")
 
@@ -148,9 +169,14 @@ def get_log(domain, test_name):
     # Save info in the log file
     with open(filename + suffix + ".log", "w") as f:
         print("Number of nodes: ", n_nodes, file=f)
-        print("Number of different elements: ", n_elements, file=f)
+        print("Number of different tags: ", n_different_tags, file=f)
         print("Divided per element: ", file=f)
-        pprint(parser.count, f)
+        pprint(parser.tags, f)
+        print("Number of different attributes: ", n_different_attributes, file=f)
+        print("Number of different classes: ", n_different_classes, file=f)
+        print("Attributes: ", file=f)
+        pprint(parser.attributes, f)
+
         print("Image dimensions: %dx%d" % (width, height), file=f)
     # pprint(parser.count)
     print("Image dimensions: %dx%d" % (width, height))
