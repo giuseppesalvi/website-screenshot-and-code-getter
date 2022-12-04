@@ -158,7 +158,6 @@ def get_log(domain, test_name):
     n_different_attributes = (len(parser.attributes))
     n_different_classes = len(parser.attributes["class"])
 
-    print("\nNumber of nodes: ", n_nodes, "\n")
 
     # Get image dimensions
     img = Image.open(filename + ".png")
@@ -178,7 +177,10 @@ def get_log(domain, test_name):
         pprint(parser.attributes, f)
 
         print("Image dimensions: %dx%d" % (width, height), file=f)
-    # pprint(parser.count)
+
+
+    # Print on stdout
+    print("\nNumber of nodes: ", n_nodes, "\n")
     print("Image dimensions: %dx%d" % (width, height))
 
     # Save number of nodes for the given website in the summary file
