@@ -25,7 +25,6 @@ if (args.length != 4) {
           srcset: default_img,
         }),
         "ol": "ul",
-        "h2": "h1",
       },
     });
     writeFile("results/" + args[2] + "_" + args[3] +".html", cleanHtml, (err) => {

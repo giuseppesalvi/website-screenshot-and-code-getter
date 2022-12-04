@@ -1,4 +1,5 @@
 /results/*.html
+/results/*.css
 /results/*.png
 /results/*.log
 .DS_Store

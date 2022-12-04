@@ -13,6 +13,7 @@ from utils import *
 from os import path
 import subprocess
 import re
+import requests
 
 WAIT_SCREENSHOT = 1
 
@@ -139,8 +140,8 @@ class MyHTMLParser(HTMLParser):
                     self.attributes[attr_name].append(cleaned_v)
 
 
-def get_log(domain, test_name):
-    """ Save logging info for website"""
+def get_log_and_css(domain, test_name):
+    """ Save logging info for website, download related css file(s)"""
 
     print("\nCounting the number of nodes and attributes ...")
     suffix = "_" + test_name if test_name else ""
@@ -157,7 +158,7 @@ def get_log(domain, test_name):
     n_different_tags = (len(parser.tags))
     n_different_attributes = (len(parser.attributes))
     n_different_classes = len(parser.attributes["class"])
-
+    css_urls = filter(lambda url: url.endswith(".css"), parser.attributes["href"])
 
     # Get image dimensions
     img = Image.open(filename + ".png")
@@ -178,7 +179,6 @@ def get_log(domain, test_name):
 
         print("Image dimensions: %dx%d" % (width, height), file=f)
 
-
     # Print on stdout
     print("\nNumber of nodes: ", n_nodes, "\n")
     print("Image dimensions: %dx%d" % (width, height))
@@ -192,18 +192,26 @@ def get_log(domain, test_name):
         print("%s %dx%d %f" %
               (domain, width, height, float(width)/height), file=f)
 
+    # Download CSS files
+    for i, url in enumerate(css_urls):
+        with open(filename + suffix + "_" + str(i) + ".css", "wb") as f:
+            response = requests.get(url)
+            f.write(response.content)
+
+
+    
+
 
 def sanitize(domain, test_name):
     # Run command for sanitizing the code
     if not test_name:
-        test_name = "sanitize" # As default output will have sanitize suffix
-    subprocess.run("node sanitize_html.js " + domain + " " + test_name, shell=True, check=True)
-    # note: output -> <domain>_sanitize.html change js accordingly
+        test_name = "sanitize"  # As default output will have sanitize suffix
+    subprocess.run("node sanitize_html.js " + domain +
+                   " " + test_name, shell=True, check=True)
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html results/" + domain + "_" + test_name + ".html --in-place", shell=True, check=True)
-
-    # For Screenshot: python3 main.py --website WPBeginner.com --test_name sanitize_cleanhtml5 --task screenshot --file_local True
+    subprocess.run("clean-html results/" + domain + "_" +
+                   test_name + ".html --in-place", shell=True, check=True)
     return
 
 
@@ -270,10 +278,9 @@ if __name__ == "__main__":
             print("Already present\n")
             continue
 
-        # Get code of the website and calculate statistics
+        # Get code of the website
         if args.task in ["all", "code"]:
             get_code(website)
-            #get_log(website2domain(website), args.test_name)
 
         # Sanitize Html code
         if args.task in ["all", "sanitize"]:
@@ -283,14 +290,14 @@ if __name__ == "__main__":
         if args.task in ["all", "screenshot"]:
             get_screenshot(website, file_local=args.file_local,
                            test_name=args.test_name)
-            # DBG:Get both the non sanitized and the sanitized version for now
+            # DBG: Get both the non sanitized and the sanitized version screenshot
             get_screenshot(website, file_local=True,
                            test_name="sanitize")
 
-        # Get code of the website and calculate statistics
+        # Get code log and calculate statistics, save css files
         if args.task in ["all", "log"]:
-            # Usually used for debug, just getting the log for a specific test
-            get_log(website2domain(website), args.test_name)
+            get_log_and_css(website2domain(website), args.test_name)
+
 
         # Sort and save statistics
         if args.task in ["all", "stats"]:
