@@ -12,6 +12,7 @@ from PIL import Image
 from utils import *
 from os import path
 import subprocess
+import re
 
 WAIT_SCREENSHOT = 1
 
@@ -111,8 +112,8 @@ class MyHTMLParser(HTMLParser):
     """ Parse HTML code to compute statistics """
 
     def __init__(self):
-        self.tags= defaultdict(int)
-        self.attributes = defaultdict(list) 
+        self.tags = defaultdict(int)
+        self.attributes = defaultdict(list)
         super().__init__()
 
     def handle_starttag(self, tag, attrs):
@@ -120,7 +121,7 @@ class MyHTMLParser(HTMLParser):
         self.handle_tag(tag, attrs)
 
     def handle_startendtag(self, tag, attrs):
-        """ Used to handle self closing tags such as <img ... />, similar to handle_starttag""" 
+        """ Used to handle self closing tags such as <img ... />, similar to handle_starttag"""
         self.handle_tag(tag, attrs)
 
     def handle_tag(self, tag, attrs):
@@ -133,11 +134,9 @@ class MyHTMLParser(HTMLParser):
             else:
                 attr_values = [attr[1]]
             for v in attr_values:
-                if v and v not in self.attributes[attr_name]:
-                    self.attributes[attr_name].append(v)
-
-
-
+                cleaned_v = re.sub("\n", "", re.sub(" +", " ", v))
+                if cleaned_v and cleaned_v not in self.attributes[attr_name]:
+                    self.attributes[attr_name].append(cleaned_v)
 
 
 def get_log(domain, test_name):
@@ -155,7 +154,7 @@ def get_log(domain, test_name):
 
     # Extract some statistics
     n_nodes = sum(parser.tags.values())
-    n_different_tags= (len(parser.tags))
+    n_different_tags = (len(parser.tags))
     n_different_attributes = (len(parser.attributes))
     n_different_classes = len(parser.attributes["class"])
 
@@ -172,7 +171,8 @@ def get_log(domain, test_name):
         print("Number of different tags: ", n_different_tags, file=f)
         print("Divided per element: ", file=f)
         pprint(parser.tags, f)
-        print("Number of different attributes: ", n_different_attributes, file=f)
+        print("Number of different attributes: ",
+              n_different_attributes, file=f)
         print("Number of different classes: ", n_different_classes, file=f)
         print("Attributes: ", file=f)
         pprint(parser.attributes, f)
@@ -197,10 +197,12 @@ def sanitize(domain, test_name):
     # note: output -> <domain>_sanitize.html change js accordingly
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html results/" + domain+ "_sanitize.html --in-place", shell=True, check=True)
+    subprocess.run("clean-html results/" + domain +
+                   "_sanitize.html --in-place", shell=True, check=True)
 
     # For Screenshot: python3 main.py --website WPBeginner.com --test_name sanitize_cleanhtml5 --task screenshot --file_local True
     return
+
 
 def init_args_parser():
     """ Initialize args parser with arguments """
@@ -274,7 +276,6 @@ if __name__ == "__main__":
         if args.task in ["all", "sanitize"]:
             sanitize(website2domain(website), test_name=args.test_name)
 
-
         # Get website screenshot
         if args.task in ["all", "screenshot"]:
             get_screenshot(website, file_local=args.file_local,
@@ -293,7 +294,6 @@ if __name__ == "__main__":
             sort_websites_by_nodes("results/summary/nodes.log")
             sort_websites_by_image_aspect_ratio(
                 "results/summary/images_sizes.log")
-
 
         batch += 1
         if batch >= BATCH_SIZE:
