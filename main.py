@@ -14,6 +14,7 @@ from os import path
 import subprocess
 import re
 import requests
+import tinycss
 
 WAIT_SCREENSHOT = 1
 
@@ -194,9 +195,44 @@ def get_log_and_css(domain, test_name):
 
     # Download CSS files
     for i, url in enumerate(css_urls):
-        with open(filename + suffix + "_" + str(i) + ".css", "wb") as f:
+        with open(filename + suffix + "_" + str(i) + ".css", "w") as f:
             response = requests.get(url)
-            f.write(response.content)
+            #f.write(response.content)
+
+            css_parser = tinycss.make_parser('page3')
+            css_parsed = css_parser.parse_stylesheet_bytes(response.content)
+            for element in css_parsed.rules:
+                for token in element.selector:
+                    if not token.is_container:
+                        print(token._as_css, end="", file=f)
+                    else:
+                        print(token._css_start, end="", file=f)
+                        for c in token.content:
+                            print(c._as_css, end="", file=f)
+                        print(token._css_end, end="", file=f)
+
+
+                print("{", file=f)
+                for declaration in element.declarations:
+                    print("\t", declaration.name, end=": ", file=f)
+                    for token in declaration.value:
+                        if token.type != "FUNCTION":
+                            print(token._as_css, end="", file=f)
+                        else:
+                            print(token._css_start, end="", file=f)
+                            for c in token.content:
+                                if c.type != "FUNCTION":
+                                    print(c._as_css, end="", file=f)
+                                else:
+                                    print(c._css_start, end="", file=f)
+                                    for d in c.content:
+                                        print(d._as_css, end="", file=f)
+                                    print(c._css_end, end="", file=f)
+                            print(token._css_end, end="", file=f)
+
+                    print(";", file=f)
+                print("}\n", file=f)
+
 
 
     
