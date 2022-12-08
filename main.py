@@ -229,6 +229,12 @@ def get_log_and_css(domain, test_name):
                                         print(d._as_css, end="", file=f)
                                     print(c._css_end, end="", file=f)
                             print(token._css_end, end="", file=f)
+                    if declaration.priority:
+                        if declaration.priority == "important":
+                            print("!important", end="", file=f)
+                        else:
+                            print(declaration, end="", file=f)
+
 
                     print(";", file=f)
                 print("}\n", file=f)
