@@ -158,7 +158,7 @@ def get_log_and_css(domain, test_name):
     n_nodes = sum(parser.tags.values())
     n_different_tags = (len(parser.tags))
     n_different_attributes = (len(parser.attributes))
-    n_different_classes = len(parser.attributes["class"])
+    different_classes = parser.attributes["class"]
     css_urls = filter(lambda url: url.endswith(".css"), parser.attributes["href"])
 
     # Get image dimensions
@@ -174,7 +174,7 @@ def get_log_and_css(domain, test_name):
         pprint(parser.tags, f)
         print("Number of different attributes: ",
               n_different_attributes, file=f)
-        print("Number of different classes: ", n_different_classes, file=f)
+        print("Number of different classes: ", len(different_classes), file=f)
         print("Attributes: ", file=f)
         pprint(parser.attributes, f)
 
@@ -202,42 +202,61 @@ def get_log_and_css(domain, test_name):
             css_parser = tinycss.make_parser('page3')
             css_parsed = css_parser.parse_stylesheet_bytes(response.content)
             for element in css_parsed.rules:
+                tmp = ""
+                last_token = None
+                empty = True
                 for token in element.selector:
                     if not token.is_container:
-                        print(token._as_css, end="", file=f)
+                        # print(token._as_css, end="", file=f)
+                        if token._as_css in [" ", ",", "{"]:
+                            if last_token in different_classes:
+                                if not empty:
+                                    tmp = ", " + tmp
+                                print(tmp, end=" ", file=f)
+                                empty = False
+                            tmp = ""
+                            last_token = None
+                        else:
+                            last_token = token._as_css
+                            tmp += last_token 
                     else:
-                        print(token._css_start, end="", file=f)
+                        #print(token._css_start, end="", file=f)
+                        #for c in token.content:
+                        #    print(c._as_css, end="", file=f)
+                        #print(token._css_end, end="", file=f)
+                        tmp += token._css_start
                         for c in token.content:
-                            print(c._as_css, end="", file=f)
-                        print(token._css_end, end="", file=f)
+                            tmp += c._as_css
+                        tmp += token._css_end
 
 
-                print("{", file=f)
-                for declaration in element.declarations:
-                    print("\t", declaration.name, end=": ", file=f)
-                    for token in declaration.value:
-                        if token.type != "FUNCTION":
-                            print(token._as_css, end="", file=f)
-                        else:
-                            print(token._css_start, end="", file=f)
-                            for c in token.content:
-                                if c.type != "FUNCTION":
-                                    print(c._as_css, end="", file=f)
-                                else:
-                                    print(c._css_start, end="", file=f)
-                                    for d in c.content:
-                                        print(d._as_css, end="", file=f)
-                                    print(c._css_end, end="", file=f)
-                            print(token._css_end, end="", file=f)
-                    if declaration.priority:
-                        if declaration.priority == "important":
-                            print("!important", end="", file=f)
-                        else:
-                            print(declaration, end="", file=f)
+                if not empty:
+                    print("{", file=f)
+                    for declaration in element.declarations:
+                        print("\t", declaration.name, end=": ", file=f)
+                        for token in declaration.value:
+                            if token.type != "FUNCTION":
+                                print(token._as_css, end="", file=f)
+                            else:
+                                print(token._css_start, end="", file=f)
+                                for c in token.content:
+                                    if c.type != "FUNCTION":
+                                        print(c._as_css, end="", file=f)
+                                    else:
+                                        print(c._css_start, end="", file=f)
+                                        for d in c.content:
+                                            print(d._as_css, end="", file=f)
+                                        print(c._css_end, end="", file=f)
+                                print(token._css_end, end="", file=f)
+                        if declaration.priority:
+                            if declaration.priority == "important":
+                                print("!important", end="", file=f)
+                            else:
+                                print(declaration, end="", file=f)
 
 
-                    print(";", file=f)
-                print("}\n", file=f)
+                        print(";", file=f)
+                    print("}\n", file=f)
 
 
 
