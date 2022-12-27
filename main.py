@@ -204,30 +204,44 @@ def get_log_and_css(domain, test_name):
             for element in css_parsed.rules:
                 tmp = ""
                 last_token = None
-                empty = True
+                empty = False # True 
                 for token in element.selector:
                     if not token.is_container:
-                        # print(token._as_css, end="", file=f)
-                        if token._as_css in [" ", ",", "{"]:
-                            if last_token in different_classes:
-                                if not empty:
-                                    tmp = ", " + tmp
-                                print(tmp, end=" ", file=f)
-                                empty = False
-                            tmp = ""
-                            last_token = None
-                        else:
-                            last_token = token._as_css
-                            tmp += last_token 
+                        if token._as_css == "body":
+                            print("here")
+                        print(token._as_css, end="", file=f)
                     else:
-                        #print(token._css_start, end="", file=f)
-                        #for c in token.content:
-                        #    print(c._as_css, end="", file=f)
-                        #print(token._css_end, end="", file=f)
-                        tmp += token._css_start
+                        print(token._css_start, end="", file=f)
                         for c in token.content:
-                            tmp += c._as_css
-                        tmp += token._css_end
+                            print(c._as_css, end="", file=f)
+                        print(token._css_end, end="", file=f)
+                if token.as_css in ["{","}"]:
+                    print("", file=f)
+
+#                for token in element.selector:
+                    #if not token.is_container:
+                        ## print(token._as_css, end="", file=f)
+                        #if token._as_css in [" ", ",", "{"]:
+                            ##if last_token in different_classes:
+                            #if True:
+                                #if not empty:
+                                    #tmp = ", " + tmp
+                                #print(tmp, end=" ", file=f)
+                                #empty = False
+                            #tmp = ""
+                            #last_token = None
+                        #else:
+                            #last_token = token._as_css
+                            #tmp += last_token 
+                    #else:
+                        ##print(token._css_start, end="", file=f)
+                        ##for c in token.content:
+                        ##    print(c._as_css, end="", file=f)
+                        ##print(token._css_end, end="", file=f)
+                        #tmp += token._css_start
+                        #for c in token.content:
+                            #tmp += c._as_css
+                        #tmp += token._css_end
 
 
                 if not empty:
