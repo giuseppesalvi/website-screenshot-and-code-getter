@@ -199,6 +199,8 @@ def get_log_and_css(domain, test_name):
             response = requests.get(url)
             #f.write(response.content)
 
+            css_classes = {}
+            css_properties = {}
             css_parser = tinycss.make_parser('page3')
             css_parsed = css_parser.parse_stylesheet_bytes(response.content)
             for element in css_parsed.rules:
@@ -207,8 +209,12 @@ def get_log_and_css(domain, test_name):
                 empty = False # True 
                 for token in element.selector:
                     if not token.is_container:
-                        if token._as_css == "body":
-                            print("here")
+                        if token._as_css in css_classes:
+                            css_classes[token._as_css] += 1
+                        else:
+                            css_classes[token._as_css] = 1
+                        #if token._as_css == "body":
+                        #    print("here")
                         print(token._as_css, end="", file=f)
                     else:
                         print(token._css_start, end="", file=f)
@@ -248,6 +254,12 @@ def get_log_and_css(domain, test_name):
                     print("{", file=f)
                     for declaration in element.declarations:
                         print("\t", declaration.name, end=": ", file=f)
+
+                        if declaration.name in css_properties:
+                            css_properties[declaration.name] += 1
+                        else:
+                            css_properties[declaration.name] = 1
+
                         for token in declaration.value:
                             if token.type != "FUNCTION":
                                 print(token._as_css, end="", file=f)
@@ -273,9 +285,16 @@ def get_log_and_css(domain, test_name):
                     print("}\n", file=f)
 
 
-
+        # Print number of css classes TODO write in log file
+        print("\nCSS classes: ")
+        pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+        
     
-
+        # Print number of css propertiers TODO write in log file
+        print("\nCSS properties: ")
+        pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+        
+    
 
 def sanitize(domain, test_name):
     # Run command for sanitizing the code
