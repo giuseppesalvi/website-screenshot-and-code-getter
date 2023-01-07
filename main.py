@@ -14,7 +14,7 @@ from os import path
 import subprocess
 import re
 import requests
-import tinycss
+import tinycss2
 
 WAIT_SCREENSHOT = 1
 
@@ -201,88 +201,113 @@ def get_log_and_css(domain, test_name):
 
             css_classes = {}
             css_properties = {}
-            css_parser = tinycss.make_parser('page3')
-            css_parsed = css_parser.parse_stylesheet_bytes(response.content)
-            for element in css_parsed.rules:
-                tmp = ""
-                last_token = None
-                empty = False # True 
-                for token in element.selector:
-                    if not token.is_container:
-                        if token._as_css in css_classes:
-                            css_classes[token._as_css] += 1
-                        else:
-                            css_classes[token._as_css] = 1
-                        #if token._as_css == "body":
-                        #    print("here")
-                        print(token._as_css, end="", file=f)
-                    else:
-                        print(token._css_start, end="", file=f)
-                        for c in token.content:
-                            print(c._as_css, end="", file=f)
-                        print(token._css_end, end="", file=f)
-                if token.as_css in ["{","}"]:
-                    print("", file=f)
-
-#                for token in element.selector:
-                    #if not token.is_container:
-                        ## print(token._as_css, end="", file=f)
-                        #if token._as_css in [" ", ",", "{"]:
-                            ##if last_token in different_classes:
-                            #if True:
-                                #if not empty:
-                                    #tmp = ", " + tmp
-                                #print(tmp, end=" ", file=f)
-                                #empty = False
-                            #tmp = ""
-                            #last_token = None
-                        #else:
-                            #last_token = token._as_css
-                            #tmp += last_token 
-                    #else:
-                        ##print(token._css_start, end="", file=f)
-                        ##for c in token.content:
-                        ##    print(c._as_css, end="", file=f)
-                        ##print(token._css_end, end="", file=f)
-                        #tmp += token._css_start
-                        #for c in token.content:
-                            #tmp += c._as_css
-                        #tmp += token._css_end
 
 
-                if not empty:
-                    print("{", file=f)
-                    for declaration in element.declarations:
-                        print("\t", declaration.name, end=": ", file=f)
+            # Parse the stylesheet
+            rules, encoding = tinycss2.parse_stylesheet_bytes(response.content, skip_whitespace=True)
 
-                        if declaration.name in css_properties:
-                            css_properties[declaration.name] += 1
-                        else:
-                            css_properties[declaration.name] = 1
+            for rule in rules:  
+                #tinycss2.parse_declaration_list(rule.content)
+                type = rule.type # ex: "qualified-rule"
+                prelude = rule.prelude 
+                content = rule.content
 
-                        for token in declaration.value:
-                            if token.type != "FUNCTION":
-                                print(token._as_css, end="", file=f)
-                            else:
-                                print(token._css_start, end="", file=f)
-                                for c in token.content:
-                                    if c.type != "FUNCTION":
-                                        print(c._as_css, end="", file=f)
-                                    else:
-                                        print(c._css_start, end="", file=f)
-                                        for d in c.content:
-                                            print(d._as_css, end="", file=f)
-                                        print(c._css_end, end="", file=f)
-                                print(token._css_end, end="", file=f)
-                        if declaration.priority:
-                            if declaration.priority == "important":
-                                print("!important", end="", file=f)
-                            else:
-                                print(declaration, end="", file=f)
+                for token in prelude:
+                    pass
+
+                for token in content:
+                    pass
+                
 
 
-                        print(";", file=f)
-                    print("}\n", file=f)
+            # css_parser = tinycss2.parse_stylesheet('page3')
+            # rules = tinycss2.parse_stylesheet_bytes(response.content)
+            # for rule in rules:
+                # tmp = ""
+                # last_token = None
+                # empty = False # True 
+
+                # if rule.at_keyword:
+                    # at_rule = tinycss2.css21.parse_at_rule(rule)
+                # else:
+                    # for token in rule.selector:
+                        # if not token.is_container:
+                            # if token._as_css in css_classes:
+                                # css_classes[token._as_css] += 1
+                            # else:
+                                # css_classes[token._as_css] = 1
+                            # #if token._as_css == "body":
+                            # #    print("here")
+                            # print(token._as_css, end="", file=f)
+                        # else:
+                            # print(token._css_start, end="", file=f)
+                            # for c in token.content:
+                                # print(c._as_css, end="", file=f)
+                            # print(token._css_end, end="", file=f)
+                    # if token.as_css in ["{","}"]:
+                        # print("", file=f)
+
+
+                    # # TODO: add this to remove rules not in the list
+    # #                for token in rule.selector:
+                        # #if not token.is_container:
+                            # ## print(token._as_css, end="", file=f)
+                            # #if token._as_css in [" ", ",", "{"]:
+                                # ##if last_token in different_classes:
+                                # #if True:
+                                    # #if not empty:
+                                        # #tmp = ", " + tmp
+                                    # #print(tmp, end=" ", file=f)
+                                    # #empty = False
+                                # #tmp = ""
+                                # #last_token = None
+                            # #else:
+                                # #last_token = token._as_css
+                                # #tmp += last_token 
+                        # #else:
+                            # ##print(token._css_start, end="", file=f)
+                            # ##for c in token.content:
+                            # ##    print(c._as_css, end="", file=f)
+                            # ##print(token._css_end, end="", file=f)
+                            # #tmp += token._css_start
+                            # #for c in token.content:
+                                # #tmp += c._as_css
+                            # #tmp += token._css_end
+
+
+                    # if not empty:
+                        # print("{", file=f)
+                        # for declaration in rule.declarations:
+                            # print("\t", declaration.name, end=": ", file=f)
+
+                            # if declaration.name in css_properties:
+                                # css_properties[declaration.name] += 1
+                            # else:
+                                # css_properties[declaration.name] = 1
+
+                            # for token in declaration.value:
+                                # if token.type != "FUNCTION":
+                                    # print(token._as_css, end="", file=f)
+                                # else:
+                                    # print(token._css_start, end="", file=f)
+                                    # for c in token.content:
+                                        # if c.type != "FUNCTION":
+                                            # print(c._as_css, end="", file=f)
+                                        # else:
+                                            # print(c._css_start, end="", file=f)
+                                            # for d in c.content:
+                                                # print(d._as_css, end="", file=f)
+                                            # print(c._css_end, end="", file=f)
+                                    # print(token._css_end, end="", file=f)
+                            # if declaration.priority:
+                                # if declaration.priority == "important":
+                                    # print("!important", end="", file=f)
+                                # else:
+                                    # print(declaration, end="", file=f)
+
+
+                            # print(";", file=f)
+                        # print("}\n", file=f)
 
 
         # Print number of css classes TODO write in log file
