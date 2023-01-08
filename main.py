@@ -15,8 +15,10 @@ import subprocess
 import re
 import requests
 import tinycss2
+import sys
 
 WAIT_SCREENSHOT = 1
+CSS_INDENTATION = "    "
 
 
 def accept_cookies(driver):
@@ -204,20 +206,25 @@ def get_log_and_css(domain, test_name):
 
 
             # Parse the stylesheet
-            rules, encoding = tinycss2.parse_stylesheet_bytes(response.content, skip_whitespace=True)
+            rules, encoding = tinycss2.parse_stylesheet_bytes(response.content, skip_comments=True, skip_whitespace=True)
 
             for rule in rules:  
                 #tinycss2.parse_declaration_list(rule.content)
                 type = rule.type # ex: "qualified-rule"
-                prelude = rule.prelude 
-                content = rule.content
 
-                for token in prelude:
-                    pass
+                # qualified-rule: <prelude> '{' <content> '}'
+                # at-rule:        @<at-keyword> <prelude> '{' <content> '}'
+                #                 @<at-rule> <prelude> ';'
 
-                for token in content:
+                if type == "qualified-rule":
+                    process_qualified_rule(rule, file=f)
+                elif type=="at-rule":
+                    process_at_rule(rule, file=f)
                     pass
-                
+                else:
+                    print(type, file=f) 
+                    break
+               
 
 
             # css_parser = tinycss2.parse_stylesheet('page3')
@@ -319,7 +326,83 @@ def get_log_and_css(domain, test_name):
         print("\nCSS properties: ")
         pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
         
-    
+def process_prelude(prelude, indentation="", file=sys.stdout):
+    buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
+    for token in prelude:
+        if token.type == "ident":
+            #if token.serialize() not in different_classes:
+            #    buffer = ""
+            #else:
+            #    buffer += token.serialize()
+            buffer += token.serialize()
+
+            ## Check if ident is in the list of classes
+        else:
+            #buffer += output
+            if token.serialize() == "," :
+                print(indentation + buffer+ token.serialize(), end=" ", file=file)
+                buffer = ""
+            else:
+                buffer += token.serialize()
+
+    if buffer:  # if buffer is not empty
+        print(indentation + buffer, end=" ", file=file)
+        buffer = ""
+
+def process_content(content, indentation="", file=sys.stdout):
+    for idx, token in enumerate(content):
+        if idx == 0:
+            if token.serialize() == " ":
+                print(indentation, "{\n" + CSS_INDENTATION + indentation, end="", file=file)
+            else:
+                print(indentation, "{\n" + CSS_INDENTATION + indentation + token.serialize(), end="", file=file)
+
+        elif idx == len(content) - 1:
+            if token.serialize != ";":
+                print(token.serialize(), end=";\n" + indentation + "}\n\n", file=file)
+            else:
+                print(token.serialize(), end="\n" + indentation + "}\n\n", file=file)
+
+        elif token.serialize() == ";":
+            print(token.serialize(), end="\n" + CSS_INDENTATION + indentation, file=file)
+        elif token.serialize() == ":":
+            print(token.serialize(), end=" ", file=file)
+        else:
+            print(token.serialize(), end="", file=file)
+
+
+def process_qualified_rule(rule, file=sys.stdout):
+    prelude = rule.prelude
+    content = rule.content
+
+    process_prelude(prelude, file=file)
+    if content:
+        process_content(content, file=file)
+
+def process_at_rule(rule, file=sys.stdout):
+    prelude = rule.prelude 
+    content = rule.content
+
+    at_keyword = "@" + rule.at_keyword
+    at_keyword.replace(" ", "")
+    print(at_keyword, end="", file=file)
+    process_prelude(prelude, file=file)
+
+    if content:
+        print("{", file=file)
+
+        qualified_rule_prelude = []
+        for node in content:
+            if node.type != "{} block":
+                qualified_rule_prelude.append(node)
+            else:
+                process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION, file=file)
+                process_content(node.content, indentation=CSS_INDENTATION, file=file)
+                qualified_rule_prelude = []
+        print("}\n", file=file)
+    else:
+        print(";", file=file)
+
 
 def sanitize(domain, test_name):
     # Run command for sanitizing the code
