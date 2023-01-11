@@ -413,12 +413,14 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
         print("{", file=file)
 
         # Check for nested at_rule
+        # NOTE: move this in process content_at_rule, instead of content[0] need to check for every node
         if content[0].type == 'at-keyword':
             nested_rule = SimpleNamespace()
             nested_rule.at_keyword = content[0].value
             nested_rule.prelude = [content[1], content[2]]
-            nested_rule.content = content[3:]
+            nested_rule.content = content[3].content
             process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
+            process_content_at_rule(content[4:], indentation=indentation, file=file)
         else:
             process_content_at_rule(content, indentation=indentation, file=file)
 
