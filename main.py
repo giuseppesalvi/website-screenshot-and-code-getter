@@ -382,9 +382,17 @@ def process_qualified_rule(rule, indentation="", file=sys.stdout):
 
 def process_content_at_rule(content, indentation="", file=sys.stdout):
     qualified_rule_prelude = [] 
-    for node in content:
-        if node.type != "{} block":
+    for idx, node in enumerate(content):
+        if node.type == 'at-keyword':
+            nested_rule = SimpleNamespace()
+            nested_rule.at_keyword = content[idx].value
+            nested_rule.prelude = [content[idx+1], content[idx+2]]
+            nested_rule.content = content[idx+3].content
+            process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
+            idx+=4
+        elif node.type != "{} block":
             qualified_rule_prelude.append(node)
+            idx+=1
         else:
             if len(qualified_rule_prelude) == 0:
                 #process_content_at_rule(node.content, indentation=CSS_INDENTATION+indentation, file=file)
@@ -395,6 +403,7 @@ def process_content_at_rule(content, indentation="", file=sys.stdout):
                 process_prelude(qualified_rule_prelude, indentation=indentation+CSS_INDENTATION, file=file)
                 process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
                 qualified_rule_prelude = [] 
+            idx+=1
     
 
 def process_at_rule(rule, indentation="", file=sys.stdout):
@@ -414,15 +423,16 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
 
         # Check for nested at_rule
         # NOTE: move this in process content_at_rule, instead of content[0] need to check for every node
-        if content[0].type == 'at-keyword':
-            nested_rule = SimpleNamespace()
-            nested_rule.at_keyword = content[0].value
-            nested_rule.prelude = [content[1], content[2]]
-            nested_rule.content = content[3].content
-            process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
-            process_content_at_rule(content[4:], indentation=indentation, file=file)
-        else:
-            process_content_at_rule(content, indentation=indentation, file=file)
+        #if content[0].type == 'at-keyword':
+            #nested_rule = SimpleNamespace()
+            #nested_rule.at_keyword = content[0].value
+            #nested_rule.prelude = [content[1], content[2]]
+            #nested_rule.content = content[3].content
+            #process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
+            #process_content_at_rule(content[4:], indentation=indentation, file=file)
+        #else:
+            #process_content_at_rule(content, indentation=indentation, file=file)
+        process_content_at_rule(content, indentation=indentation, file=file)
 
         print(indentation+ "}\n", file=file)
     else:
