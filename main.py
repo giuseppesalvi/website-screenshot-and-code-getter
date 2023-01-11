@@ -353,9 +353,9 @@ def process_content(content, indentation="", file=sys.stdout):
         printable = token.serialize()
         if idx == 0:
             if printable == " ":
-                print(indentation, "{\n" + CSS_INDENTATION + indentation, end="", file=file)
+                print("{\n" + CSS_INDENTATION + indentation, end="", file=file)
             else:
-                print(indentation, "{\n" + CSS_INDENTATION + indentation + printable, end="", file=file)
+                print("{\n" + CSS_INDENTATION + indentation + printable, end="", file=file)
 
         elif idx == len(content) - 1:
             if token.serialize != ";":
