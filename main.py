@@ -376,9 +376,9 @@ def process_qualified_rule(rule, indentation="", file=sys.stdout):
     prelude = rule.prelude
     content = rule.content
 
-    process_prelude(prelude, file=file)
+    process_prelude(prelude, indentation=indentation, file=file)
     if content:
-        process_content(content, file=file)
+        process_content(content, indentation=indentation, file=file)
 
 def process_content_at_rule(content, indentation="", file=sys.stdout):
     qualified_rule_prelude = [] 
@@ -387,10 +387,13 @@ def process_content_at_rule(content, indentation="", file=sys.stdout):
             qualified_rule_prelude.append(node)
         else:
             if len(qualified_rule_prelude) == 0:
-                process_content_at_rule(node.content, file=file)
+                #process_content_at_rule(node.content, indentation=CSS_INDENTATION+indentation, file=file)
+                process_content_at_rule(node.content, indentation=indentation, file=file)
             else:
-                process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION, file=file)
-                process_content(node.content, indentation=CSS_INDENTATION, file=file)
+                #process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION+indentation, file=file)
+                #process_content(node.content, indentation=CSS_INDENTATION+indentation, file=file)
+                process_prelude(qualified_rule_prelude, indentation=indentation+CSS_INDENTATION, file=file)
+                process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
                 qualified_rule_prelude = [] 
     
 
@@ -402,7 +405,7 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
     at_keyword.replace(" ", "")
     #if at_keyword == "@media" and  "min-width:1024" in "".join([tmp.serialize() for tmp in prelude]):
         #print("Here we are")
-    print(at_keyword, end="", file=file)
+    print(indentation+at_keyword, end="", file=file)
 
     process_prelude(prelude, file=file)
 
@@ -417,9 +420,9 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
             nested_rule.content = content[3:]
             process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
         else:
-            process_content_at_rule(content, file=file)
+            process_content_at_rule(content, indentation=indentation, file=file)
 
-        print("}\n", file=file)
+        print(indentation+ "}\n", file=file)
     else:
         print(";", file=file)
 
