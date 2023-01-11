@@ -330,6 +330,7 @@ def get_log_and_css(domain, test_name):
 def process_prelude(prelude, indentation="", file=sys.stdout):
     # Print prelude
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
+    print(indentation, end="", file=file)
     for token in prelude:
         printable = token.serialize() 
         if token.type == "ident":
@@ -339,13 +340,13 @@ def process_prelude(prelude, indentation="", file=sys.stdout):
         else:
             #buffer += output
             if printable == "," :
-                print(indentation + buffer+ token.serialize(), end=" ", file=file)
+                print(buffer + printable, end=" ", file=file)
                 buffer = ""
             else:
                 buffer += printable
 
     if buffer:  # if buffer is not empty
-        print(indentation + buffer, end=" ", file=file)
+        print(buffer, end=" ", file=file)
         buffer = ""
 
 def process_content(content, indentation="", file=sys.stdout):
