@@ -382,17 +382,20 @@ def process_qualified_rule(rule, indentation="", file=sys.stdout):
 
 def process_content_at_rule(content, indentation="", file=sys.stdout):
     qualified_rule_prelude = [] 
+    skip = 0
     for idx, node in enumerate(content):
+        if skip > 0:
+            skip -= 1 
+            continue
         if node.type == 'at-keyword':
             nested_rule = SimpleNamespace()
             nested_rule.at_keyword = content[idx].value
             nested_rule.prelude = [content[idx+1], content[idx+2]]
             nested_rule.content = content[idx+3].content
             process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
-            idx+=4
+            skip = 3
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)
-            idx+=1
         else:
             if len(qualified_rule_prelude) == 0:
                 #process_content_at_rule(node.content, indentation=CSS_INDENTATION+indentation, file=file)
@@ -403,7 +406,6 @@ def process_content_at_rule(content, indentation="", file=sys.stdout):
                 process_prelude(qualified_rule_prelude, indentation=indentation+CSS_INDENTATION, file=file)
                 process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
                 qualified_rule_prelude = [] 
-            idx+=1
     
 
 def process_at_rule(rule, indentation="", file=sys.stdout):
