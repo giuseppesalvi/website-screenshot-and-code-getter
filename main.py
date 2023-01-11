@@ -371,7 +371,7 @@ def process_content(content, indentation="", file=sys.stdout):
             print(printable, end="", file=file)
 
 
-def process_qualified_rule(rule, file=sys.stdout):
+def process_qualified_rule(rule, indentation="", file=sys.stdout):
     prelude = rule.prelude
     content = rule.content
 
@@ -379,7 +379,21 @@ def process_qualified_rule(rule, file=sys.stdout):
     if content:
         process_content(content, file=file)
 
-def process_at_rule(rule, file=sys.stdout):
+def process_content_at_rule(content, indentation="", file=sys.stdout):
+    qualified_rule_prelude = [] 
+    for node in content:
+        if node.type != "{} block":
+            qualified_rule_prelude.append(node)
+        else:
+            if len(qualified_rule_prelude) == 0:
+                process_content_at_rule(node.content, file=file)
+            else:
+                process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION, file=file)
+                process_content(node.content, indentation=CSS_INDENTATION, file=file)
+                qualified_rule_prelude = [] 
+    
+
+def process_at_rule(rule, indentation="", file=sys.stdout):
     prelude = rule.prelude 
     content = rule.content
 
@@ -394,24 +408,15 @@ def process_at_rule(rule, file=sys.stdout):
     if content:
         print("{", file=file)
 
-        qualified_rule_prelude = []
         # Check for nested at_rule
         if content[0].type == 'at-keyword':
             nested_rule = SimpleNamespace()
             nested_rule.at_keyword = content[0].value
             nested_rule.prelude = [content[1], content[2]]
             nested_rule.content = content[3:]
-
-
-            process_at_rule(nested_rule, file=sys.stdout)
+            process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
         else:
-            for node in content:
-                if node.type != "{} block":
-                    qualified_rule_prelude.append(node)
-                else:
-                    process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION, file=file)
-                    process_content(node.content, indentation=CSS_INDENTATION, file=file)
-                    qualified_rule_prelude = []
+            process_content_at_rule(content, file=file)
 
         print("}\n", file=file)
     else:
