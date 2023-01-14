@@ -21,6 +21,7 @@ from types import SimpleNamespace
 WAIT_SCREENSHOT = 1
 CSS_INDENTATION = "    "
 
+skipped = set() 
 
 def accept_cookies(driver):
     """ Click to dismiss Cookies popup """
@@ -158,11 +159,13 @@ def get_log_and_css(domain, test_name):
         parser.feed(html)
 
     # Extract some statistics
+    different_tags = list(parser.tags.keys())
     n_nodes = sum(parser.tags.values())
-    n_different_tags = (len(parser.tags))
+    n_different_tags = len(different_tags)
     n_different_attributes = (len(parser.attributes))
     different_classes = parser.attributes["class"]
     css_urls = filter(lambda url: url.endswith(".css"), parser.attributes["href"])
+
 
     # Get image dimensions
     img = Image.open(filename + ".png")
@@ -216,15 +219,25 @@ def get_log_and_css(domain, test_name):
                 # qualified-rule: <prelude> '{' <content> '}'
                 # at-rule:        @<at-keyword> <prelude> '{' <content> '}'
                 #                 @<at-rule> <prelude> ';'
-
-                if type == "qualified-rule":
-                    process_qualified_rule(rule, file=f)
-                elif type=="at-rule":
-                    process_at_rule(rule, file=f)
-                    pass
+                DBG = False 
+                if not DBG:
+                    if type == "qualified-rule":
+                        process_qualified_rule(rule, different_tags=different_tags, different_classes=different_classes, file=f)
+                    elif type=="at-rule":
+                        process_at_rule(rule, different_tags=different_tags, different_classes=different_classes, file=f)
+                        pass
+                    else:
+                        print(type, file=f) 
+                        break
                 else:
-                    print(type, file=f) 
-                    break
+                    if type == "qualified-rule":
+                        process_qualified_rule(rule, different_tags=different_tags, different_classes=different_classes, file=sys.stdout)
+                    elif type=="at-rule":
+                        process_at_rule(rule, different_tags=different_tags, different_classes=different_classes, file=sys.stdout)
+                        pass
+                    else:
+                        print(type, file=sys.stdout) 
+                        break
 
         # Print number of css classes TODO write in log file
         print("\nCSS classes: ")
@@ -234,30 +247,52 @@ def get_log_and_css(domain, test_name):
         # Print number of css propertiers TODO write in log file
         print("\nCSS properties: ")
         pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+
+        # skipped classes
+        print("skipped")
+        pprint(skipped)
         
-def process_prelude(prelude, indentation="", file=sys.stdout):
+def process_prelude(prelude, different_tags, different_classes, indentation="", file=sys.stdout):
     # Print prelude
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
     print(indentation, end="", file=file)
     skip = False
+    empty = True
+    buffer_comma = "" 
     for token in prelude:
         printable = token.serialize() 
         if token.type == "ident":
-            buffer += printable 
-
             ## Check if ident is in the list of classes
+            if printable not in different_classes and printable not in different_tags:
+                buffer = ""
+                skip = True 
+                skipped.add(printable)
+            else:
+                buffer += printable 
+
         else:
             #buffer += output
             if printable == "," :
-                print(buffer + printable, end=" ", file=file)
-                buffer = ""
+                if not skip:
+                    print(buffer_comma + buffer, end=" ", file=file)
+                    empty = False
+                    buffer = ""
+                    buffer_comma = ","
+                else:
+                    skip = False
             else:
-                if printable not in 
-                buffer += printable
+                if not skip:
+                    buffer += printable
+                else:
+                    buffer = ""
 
     if buffer:  # if buffer is not empty
-        print(buffer, end=" ", file=file)
-        buffer = ""
+        if not skip:
+            print(buffer_comma + buffer, end=" ", file=file)
+            empty = False
+            buffer = ""
+
+    return empty
 
 def process_content(content, indentation="", file=sys.stdout):
     for idx, token in enumerate(content):
@@ -282,15 +317,15 @@ def process_content(content, indentation="", file=sys.stdout):
             print(printable, end="", file=file)
 
 
-def process_qualified_rule(rule, indentation="", file=sys.stdout):
+def process_qualified_rule(rule, different_tags, different_classes, indentation="", file=sys.stdout):
     prelude = rule.prelude
     content = rule.content
 
-    process_prelude(prelude, indentation=indentation, file=file)
-    if content:
+    empty_prelude = process_prelude(prelude, different_tags, different_classes, indentation=indentation, file=file)
+    if not empty_prelude and content:
         process_content(content, indentation=indentation, file=file)
 
-def process_content_at_rule(content, indentation="", file=sys.stdout):
+def process_content_at_rule(content, different_tags, different_classes, indentation="", file=sys.stdout):
     qualified_rule_prelude = [] 
     skip = 0
     for idx, node in enumerate(content):
@@ -302,20 +337,21 @@ def process_content_at_rule(content, indentation="", file=sys.stdout):
             nested_rule.at_keyword = content[idx].value
             nested_rule.prelude = [content[idx+1], content[idx+2]]
             nested_rule.content = content[idx+3].content
-            process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
+            process_at_rule(nested_rule, different_tags, different_classes, indentation=indentation+CSS_INDENTATION, file=file)
             skip = 3
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)
         else:
             if len(qualified_rule_prelude) == 0:
-                process_content_at_rule(node.content, indentation=indentation, file=file)
+                process_content_at_rule(node.content, different_tags, different_classes, indentation=indentation, file=file)
             else:
-                process_prelude(qualified_rule_prelude, indentation=indentation+CSS_INDENTATION, file=file)
-                process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
+                empty_prelude = process_prelude(qualified_rule_prelude, different_tags, different_classes, indentation=indentation+CSS_INDENTATION, file=file)
+                if not empty_prelude:
+                    process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
                 qualified_rule_prelude = [] 
     
 
-def process_at_rule(rule, indentation="", file=sys.stdout):
+def process_at_rule(rule, different_tags, different_classes, indentation="", file=sys.stdout):
     prelude = rule.prelude 
     content = rule.content
 
@@ -323,11 +359,11 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
     at_keyword.replace(" ", "")
     print(indentation+at_keyword, end="", file=file)
 
-    process_prelude(prelude, file=file)
+    empty_prelude = process_prelude(prelude, different_tags, different_classes, file=file)
 
-    if content:
+    if not empty_prelude and content:
         print("{", file=file)
-        process_content_at_rule(content, indentation=indentation, file=file)
+        process_content_at_rule(content, different_tags, different_classes, indentation=indentation, file=file)
         print(indentation+ "}\n", file=file)
     else:
         print(";", file=file)
