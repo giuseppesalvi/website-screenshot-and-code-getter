@@ -225,98 +225,6 @@ def get_log_and_css(domain, test_name):
                 else:
                     print(type, file=f) 
                     break
-               
-
-
-            # css_parser = tinycss2.parse_stylesheet('page3')
-            # rules = tinycss2.parse_stylesheet_bytes(response.content)
-            # for rule in rules:
-                # tmp = ""
-                # last_token = None
-                # empty = False # True 
-
-                # if rule.at_keyword:
-                    # at_rule = tinycss2.css21.parse_at_rule(rule)
-                # else:
-                    # for token in rule.selector:
-                        # if not token.is_container:
-                            # if token._as_css in css_classes:
-                                # css_classes[token._as_css] += 1
-                            # else:
-                                # css_classes[token._as_css] = 1
-                            # #if token._as_css == "body":
-                            # #    print("here")
-                            # print(token._as_css, end="", file=f)
-                        # else:
-                            # print(token._css_start, end="", file=f)
-                            # for c in token.content:
-                                # print(c._as_css, end="", file=f)
-                            # print(token._css_end, end="", file=f)
-                    # if token.as_css in ["{","}"]:
-                        # print("", file=f)
-
-
-                    # # TODO: add this to remove rules not in the list
-    # #                for token in rule.selector:
-                        # #if not token.is_container:
-                            # ## print(token._as_css, end="", file=f)
-                            # #if token._as_css in [" ", ",", "{"]:
-                                # ##if last_token in different_classes:
-                                # #if True:
-                                    # #if not empty:
-                                        # #tmp = ", " + tmp
-                                    # #print(tmp, end=" ", file=f)
-                                    # #empty = False
-                                # #tmp = ""
-                                # #last_token = None
-                            # #else:
-                                # #last_token = token._as_css
-                                # #tmp += last_token 
-                        # #else:
-                            # ##print(token._css_start, end="", file=f)
-                            # ##for c in token.content:
-                            # ##    print(c._as_css, end="", file=f)
-                            # ##print(token._css_end, end="", file=f)
-                            # #tmp += token._css_start
-                            # #for c in token.content:
-                                # #tmp += c._as_css
-                            # #tmp += token._css_end
-
-
-                    # if not empty:
-                        # print("{", file=f)
-                        # for declaration in rule.declarations:
-                            # print("\t", declaration.name, end=": ", file=f)
-
-                            # if declaration.name in css_properties:
-                                # css_properties[declaration.name] += 1
-                            # else:
-                                # css_properties[declaration.name] = 1
-
-                            # for token in declaration.value:
-                                # if token.type != "FUNCTION":
-                                    # print(token._as_css, end="", file=f)
-                                # else:
-                                    # print(token._css_start, end="", file=f)
-                                    # for c in token.content:
-                                        # if c.type != "FUNCTION":
-                                            # print(c._as_css, end="", file=f)
-                                        # else:
-                                            # print(c._css_start, end="", file=f)
-                                            # for d in c.content:
-                                                # print(d._as_css, end="", file=f)
-                                            # print(c._css_end, end="", file=f)
-                                    # print(token._css_end, end="", file=f)
-                            # if declaration.priority:
-                                # if declaration.priority == "important":
-                                    # print("!important", end="", file=f)
-                                # else:
-                                    # print(declaration, end="", file=f)
-
-
-                            # print(";", file=f)
-                        # print("}\n", file=f)
-
 
         # Print number of css classes TODO write in log file
         print("\nCSS classes: ")
@@ -331,6 +239,7 @@ def process_prelude(prelude, indentation="", file=sys.stdout):
     # Print prelude
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
     print(indentation, end="", file=file)
+    skip = False
     for token in prelude:
         printable = token.serialize() 
         if token.type == "ident":
@@ -343,6 +252,7 @@ def process_prelude(prelude, indentation="", file=sys.stdout):
                 print(buffer + printable, end=" ", file=file)
                 buffer = ""
             else:
+                if printable not in 
                 buffer += printable
 
     if buffer:  # if buffer is not empty
@@ -398,11 +308,8 @@ def process_content_at_rule(content, indentation="", file=sys.stdout):
             qualified_rule_prelude.append(node)
         else:
             if len(qualified_rule_prelude) == 0:
-                #process_content_at_rule(node.content, indentation=CSS_INDENTATION+indentation, file=file)
                 process_content_at_rule(node.content, indentation=indentation, file=file)
             else:
-                #process_prelude(qualified_rule_prelude, indentation=CSS_INDENTATION+indentation, file=file)
-                #process_content(node.content, indentation=CSS_INDENTATION+indentation, file=file)
                 process_prelude(qualified_rule_prelude, indentation=indentation+CSS_INDENTATION, file=file)
                 process_content(node.content, indentation=indentation+CSS_INDENTATION, file=file)
                 qualified_rule_prelude = [] 
@@ -414,28 +321,13 @@ def process_at_rule(rule, indentation="", file=sys.stdout):
 
     at_keyword = "@" + rule.at_keyword
     at_keyword.replace(" ", "")
-    #if at_keyword == "@media" and  "min-width:1024" in "".join([tmp.serialize() for tmp in prelude]):
-        #print("Here we are")
     print(indentation+at_keyword, end="", file=file)
 
     process_prelude(prelude, file=file)
 
     if content:
         print("{", file=file)
-
-        # Check for nested at_rule
-        # NOTE: move this in process content_at_rule, instead of content[0] need to check for every node
-        #if content[0].type == 'at-keyword':
-            #nested_rule = SimpleNamespace()
-            #nested_rule.at_keyword = content[0].value
-            #nested_rule.prelude = [content[1], content[2]]
-            #nested_rule.content = content[3].content
-            #process_at_rule(nested_rule, indentation=indentation+CSS_INDENTATION, file=file)
-            #process_content_at_rule(content[4:], indentation=indentation, file=file)
-        #else:
-            #process_content_at_rule(content, indentation=indentation, file=file)
         process_content_at_rule(content, indentation=indentation, file=file)
-
         print(indentation+ "}\n", file=file)
     else:
         print(";", file=file)
