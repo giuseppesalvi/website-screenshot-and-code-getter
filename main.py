@@ -170,16 +170,25 @@ def get_log_and_css(domain, test_name):
 
             allowed_tags = different_tags
             allowed_classes = different_classes
-            css_classes, css_properties = parse_css(response.content, allowed_tags, allowed_classes, file=f)
+            css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, allowed_tags, allowed_classes, file=f)
             
 
             # Print number of css classes TODO write in log file
             print("\nCSS classes: ")
             pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
 
-            # Print number of css propertiers TODO write in log file
+            # Print number of css properties TODO write in log file
             print("\nCSS properties: ")
             pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+
+            # Print number of css classes skipped TODO write in log file
+            print("\nCSS classes skipped: ")
+            pprint(css_classes_skipped)
+
+            # Print number of css properties skipped TODO write in log file
+            print("\nCSS properties skipped: ")
+            pprint(css_properties_skipped)
+
 
 
 

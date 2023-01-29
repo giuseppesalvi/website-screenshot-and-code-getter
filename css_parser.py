@@ -8,8 +8,10 @@ CSS_INDENTATION = "    "
 css_classes_skipped = set()
 css_classes = {}
 
-css_properties = {}
 css_forbidden_properties = ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position"]
+#"font-weight" ,"font-family" ,"color" ,"opacity","word-wrap","hyphens","overflow-wrap","text-indent","text-overflow","white-space","word-break","border-radius","border-style","border-color","border-width"
+css_properties = {}
+css_properties_skipped = set()
 
 def parse_css(css, allowed_tags, allowed_classes, file):
     # Parse the stylesheet
@@ -30,7 +32,7 @@ def parse_css(css, allowed_tags, allowed_classes, file):
             print(type, file=file)
             break
 
-    return css_classes, css_classes_skipped, css_properties 
+    return css_classes, css_properties, css_classes_skipped, css_properties_skipped
 
 
 def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
