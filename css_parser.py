@@ -4,13 +4,16 @@ from types import SimpleNamespace
 from pprint import pprint
 
 CSS_INDENTATION = "    "
-skipped = set()
 
+css_classes_skipped = set()
+css_classes = {}
+
+css_properties = {}
+css_forbidden_properties = ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position"]
 
 def parse_css(css, allowed_tags, allowed_classes, file):
     # Parse the stylesheet
-    rules, encoding = tinycss2.parse_stylesheet_bytes(
-        css, skip_comments=True, skip_whitespace=True)
+    rules, encoding = tinycss2.parse_stylesheet_bytes(css, skip_comments=True, skip_whitespace=True)
     for rule in rules:
         # tinycss2.parse_declaration_list(rule.content)
         type = rule.type  # ex: "qualified-rule"
@@ -18,21 +21,16 @@ def parse_css(css, allowed_tags, allowed_classes, file):
         # at-rule:        @<at-keyword> <prelude> '{' <content> '}'
         #                 @<at-rule> <prelude> ';'
         output_file = file 
-        #output_file = sys.stdout 
         # output_file = sys.stdout # DBG
         if type == "qualified-rule":
-            res = process_qualified_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes)
-            print(res, end="", file=output_file)
+            print(process_qualified_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes), end="", file=output_file)
         elif type == "at-rule":
-            res = process_at_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes)
-            print(res, end="", file=output_file)
+            print(process_at_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes), end="", file=output_file)
         else:
             print(type, file=file)
             break
 
-    # skipped classes
-    print("skipped")
-    pprint(skipped)
+    return css_classes, css_classes_skipped, css_properties 
 
 
 def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
@@ -66,16 +64,13 @@ def process_at_rule(rule, allowed_tags, allowed_classes, indentation=""):
                 buffer += "{\n"
                 buffer += buffer_content_at
                 buffer += indentation + "}\n\n"
-            else:
-                print("skipped at rule")
         else:
             buffer += indentation + at_keyword
             buffer += prelude_buffer
             buffer += ";\n\n"
     return buffer
 
-def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
-    # Print prelude
+def process_prelude(prelude, allowed_tags, allowed_classes, indentation="", filter_classes=True):
     result_buffer = ""
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
 
@@ -84,19 +79,22 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
     skip = False
     buffer_comma = ""
 
-    # TEST: filter classes or not
-    filter_classes = True
-
     for token in prelude:
         printable = token.serialize()
         if token.type == "ident":
-            # Check if ident is in the list of classes
+            # Check if ident is in the list of allowed classes and tags
             if filter_classes and printable not in allowed_classes and printable not in allowed_tags:
                 buffer = ""
                 skip = True
-                skipped.add(printable)
+                css_classes_skipped.add(printable)
             else:
                 buffer += printable
+
+                # add ident to css_classes
+                if printable not in css_classes:
+                    css_classes[printable] = 1
+                else:
+                    css_classes[printable] += 1
 
         else:
             if printable == ",":
@@ -112,7 +110,7 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
                 else:
                     buffer = ""
 
-    if buffer:  # if buffer is not empty
+    if buffer: 
         if not skip:
             result_buffer += buffer_comma + buffer + " "
             buffer = ""
@@ -122,6 +120,7 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
 
 def process_content(content, indentation=""):
     result_buffer=""
+    is_property = True 
     for idx, token in enumerate(content):
         printable = token.serialize()
         if idx == 0:
@@ -129,6 +128,11 @@ def process_content(content, indentation=""):
                 result_buffer += "{\n" + CSS_INDENTATION + indentation
             else:
                 result_buffer += "{\n" + CSS_INDENTATION + indentation + printable
+                if printable not in css_properties:
+                    css_properties[printable] = 1
+                else:
+                    css_properties[printable] += 1
+                is_property = False
 
         elif idx == len(content) - 1:
             if token.serialize != ";":
@@ -138,10 +142,19 @@ def process_content(content, indentation=""):
 
         elif token.serialize() == ";":
             result_buffer += printable + "\n" + CSS_INDENTATION + indentation
+            is_property = True
         elif token.serialize() == ":":
             result_buffer += printable + " "
         else:
             result_buffer += printable
+            if is_property:
+                if printable not in css_properties:
+                    css_properties[printable] = 1
+                else:
+                    css_properties[printable] += 1
+
+
+            is_property = False
     return result_buffer
 
 

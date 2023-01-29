@@ -1,6 +1,4 @@
 from genericpath import isfile
-from html.parser import HTMLParser
-from collections import defaultdict
 from pprint import pprint
 import argparse
 from selenium import webdriver
@@ -12,13 +10,11 @@ from PIL import Image
 from utils import *
 from os import path
 import subprocess
-import re
 import requests
 from css_parser import parse_css
+from html_parser import MyHTMLParser
 
 WAIT_SCREENSHOT = 1
-
-
 
 def accept_cookies(driver):
     """ Click to dismiss Cookies popup """
@@ -111,37 +107,6 @@ def get_code(website):
     print("Code obtained!\n")
 
 
-class MyHTMLParser(HTMLParser):
-    """ Parse HTML code to compute statistics """
-
-    def __init__(self):
-        self.tags = defaultdict(int)
-        self.attributes = defaultdict(list)
-        super().__init__()
-
-    def handle_starttag(self, tag, attrs):
-        """ Used to handle start tags such as <div ... >"""
-        self.handle_tag(tag, attrs)
-
-    def handle_startendtag(self, tag, attrs):
-        """ Used to handle self closing tags such as <img ... />, similar to handle_starttag"""
-        self.handle_tag(tag, attrs)
-
-    def handle_tag(self, tag, attrs):
-        """ Used as common implementation for both start tags and self closing start tag"""
-        self.tags[tag] += 1
-        for attr in attrs:
-            attr_name = attr[0]
-            if attr_name not in ["title", "alt"]:
-                attr_values = attr[1].split(" ")
-            else:
-                attr_values = [attr[1]]
-            for v in attr_values:
-                cleaned_v = re.sub("\n", "", re.sub(" +", " ", v))
-                if cleaned_v and cleaned_v not in self.attributes[attr_name]:
-                    self.attributes[attr_name].append(cleaned_v)
-
-
 def get_log_and_css(domain, test_name):
     """ Save logging info for website, download related css file(s)"""
 
@@ -202,21 +167,19 @@ def get_log_and_css(domain, test_name):
             response = requests.get(url)
             # f.write(response.content)
 
-            css_classes = {}
-            css_properties = {}
 
             allowed_tags = different_tags
             allowed_classes = different_classes
-            parse_css(response.content, allowed_tags, allowed_classes, file=f)
+            css_classes, css_properties = parse_css(response.content, allowed_tags, allowed_classes, file=f)
             
 
-        # Print number of css classes TODO write in log file
-        #print("\nCSS classes: ")
-        #pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+            # Print number of css classes TODO write in log file
+            print("\nCSS classes: ")
+            pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
 
-        # Print number of css propertiers TODO write in log file
-        #print("\nCSS properties: ")
-        #pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
+            # Print number of css propertiers TODO write in log file
+            print("\nCSS properties: ")
+            pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
 
 
 
