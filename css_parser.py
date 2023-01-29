@@ -41,7 +41,7 @@ def process_qualified_rule(rule, different_tags, different_classes, indentation=
     content = rule.content
 
     prelude_buffer = process_prelude(prelude, different_tags, different_classes, indentation=indentation)
-    if prelude_buffer != "" and  not prelude_buffer.isspace() and content:
+    if prelude_buffer and not prelude_buffer.isspace() and content:
         buffer += prelude_buffer
         content_buffer = process_content(content, indentation=indentation)
         buffer += content_buffer
@@ -53,9 +53,9 @@ def process_at_rule(rule, different_tags, different_classes, indentation=""):
     prelude = rule.prelude
     content = rule.content
 
-    prelude_buffer = process_prelude(prelude, different_tags, different_classes, indentation=indentation) # CHECK intentation, it was not present
+    prelude_buffer = process_prelude(prelude, different_tags, different_classes)
 
-    if prelude_buffer != "" and not prelude_buffer.isspace():
+    if prelude_buffer and not prelude_buffer.isspace():
         at_keyword = "@" + rule.at_keyword
         at_keyword.replace(" ", "")
         if content:
@@ -169,7 +169,7 @@ def process_content_at_rule(content, different_tags, different_classes, indentat
                     buffer += process_content_at_rule(node.content, different_tags, different_classes, indentation=indentation)
             else:
                 prelude_buffer = process_prelude(qualified_rule_prelude, different_tags, different_classes, indentation=indentation+CSS_INDENTATION)
-                if prelude_buffer != "" and not prelude_buffer.isspace():
+                if prelude_buffer and not prelude_buffer.isspace():
                     buffer += prelude_buffer
                     buffer_content = process_content(node.content, indentation=indentation+CSS_INDENTATION)
                     buffer += buffer_content
