@@ -126,25 +126,8 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation="", filt
 def process_content(content, indentation=""):
     result_buffer=""
     is_property = True 
-    for idx, token in enumerate(content):
+    for token in content:
         printable = token.serialize()
-#        if idx == 0:
-#            if printable == " ":
-#                result_buffer += "{\n" + CSS_INDENTATION + indentation
-#            else:
-#                result_buffer += "{\n" + CSS_INDENTATION + indentation + printable
-#                if printable not in css_properties:
-#                    css_properties[printable] = 1
-#                else:
-#                    css_properties[printable] += 1
-#                is_property = False
-#
-#        elif idx == len(content) - 1:
-#            if token.serialize != ";":
-#                result_buffer += printable + ";\n" + indentation + "}\n\n"
-#            else:
-#                result_buffer += printable + "\n" + indentation + "}\n\n"
-#
         if token.serialize() == ";":
             result_buffer += printable + "\n" + CSS_INDENTATION + indentation
             is_property = True
@@ -157,7 +140,6 @@ def process_content(content, indentation=""):
                     css_properties[printable] = 1
                 else:
                     css_properties[printable] += 1
-
 
             is_property = False
     return result_buffer
