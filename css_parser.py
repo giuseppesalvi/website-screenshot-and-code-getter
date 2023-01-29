@@ -42,9 +42,12 @@ def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
 
     prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes, indentation=indentation)
     if prelude_buffer and not prelude_buffer.isspace() and content:
-        buffer += prelude_buffer
         content_buffer = process_content(content, indentation=indentation)
-        buffer += content_buffer
+        if content_buffer != "" and not content_buffer.isspace():
+            buffer += prelude_buffer
+            buffer += "{\n" + CSS_INDENTATION + indentation
+            buffer += content_buffer
+            buffer += "\n" + indentation + "}\n\n"
     return buffer
 
 
@@ -125,24 +128,24 @@ def process_content(content, indentation=""):
     is_property = True 
     for idx, token in enumerate(content):
         printable = token.serialize()
-        if idx == 0:
-            if printable == " ":
-                result_buffer += "{\n" + CSS_INDENTATION + indentation
-            else:
-                result_buffer += "{\n" + CSS_INDENTATION + indentation + printable
-                if printable not in css_properties:
-                    css_properties[printable] = 1
-                else:
-                    css_properties[printable] += 1
-                is_property = False
-
-        elif idx == len(content) - 1:
-            if token.serialize != ";":
-                result_buffer += printable + ";\n" + indentation + "}\n\n"
-            else:
-                result_buffer += printable + "\n" + indentation + "}\n\n"
-
-        elif token.serialize() == ";":
+#        if idx == 0:
+#            if printable == " ":
+#                result_buffer += "{\n" + CSS_INDENTATION + indentation
+#            else:
+#                result_buffer += "{\n" + CSS_INDENTATION + indentation + printable
+#                if printable not in css_properties:
+#                    css_properties[printable] = 1
+#                else:
+#                    css_properties[printable] += 1
+#                is_property = False
+#
+#        elif idx == len(content) - 1:
+#            if token.serialize != ";":
+#                result_buffer += printable + ";\n" + indentation + "}\n\n"
+#            else:
+#                result_buffer += printable + "\n" + indentation + "}\n\n"
+#
+        if token.serialize() == ";":
             result_buffer += printable + "\n" + CSS_INDENTATION + indentation
             is_property = True
         elif token.serialize() == ":":
@@ -187,7 +190,11 @@ def process_content_at_rule(content, allowed_tags, allowed_classes, indentation=
                 if prelude_buffer and not prelude_buffer.isspace():
                     buffer += prelude_buffer
                     buffer_content = process_content(node.content, indentation=indentation+CSS_INDENTATION)
-                    buffer += buffer_content
+                    if buffer_content != "" and not buffer_content.isspace():
+                        buffer += prelude_buffer
+                        buffer += "{\n" + CSS_INDENTATION + indentation 
+                        buffer +=  CSS_INDENTATION + buffer_content 
+                        buffer += "\n" + CSS_INDENTATION + indentation + "}\n\n"
                     skipped_prelude = False 
                 else:
                     skipped_prelude = True
