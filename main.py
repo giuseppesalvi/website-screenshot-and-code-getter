@@ -14,14 +14,10 @@ from os import path
 import subprocess
 import re
 import requests
-import tinycss2
-import sys
-from types import SimpleNamespace
+from css_parser import parse_css
 
 WAIT_SCREENSHOT = 1
-CSS_INDENTATION = "    "
 
-skipped = set()
 
 
 def accept_cookies(driver):
@@ -209,30 +205,8 @@ def get_log_and_css(domain, test_name):
             css_classes = {}
             css_properties = {}
 
-            # Parse the stylesheet
-            rules, encoding = tinycss2.parse_stylesheet_bytes(
-                response.content, skip_comments=True, skip_whitespace=True)
-
-            for rule in rules:
-                # tinycss2.parse_declaration_list(rule.content)
-                type = rule.type  # ex: "qualified-rule"
-
-                # qualified-rule: <prelude> '{' <content> '}'
-                # at-rule:        @<at-keyword> <prelude> '{' <content> '}'
-                #                 @<at-rule> <prelude> ';'
-
-                output_file = f
-                # output_file = sys.stdout # DBG
-                if type == "qualified-rule":
-                    process_qualified_rule(
-                        rule, different_tags=different_tags, different_classes=different_classes, file=f)
-                elif type == "at-rule":
-                    process_at_rule(rule, different_tags=different_tags,
-                                    different_classes=different_classes, file=f)
-                    pass
-                else:
-                    print(type, file=f)
-                    break
+            parse_css(response.content, different_tags, different_classes, file=f)
+            
 
         # Print number of css classes TODO write in log file
         #print("\nCSS classes: ")
@@ -242,139 +216,6 @@ def get_log_and_css(domain, test_name):
         #print("\nCSS properties: ")
         #pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
 
-        # skipped classes
-        print("skipped")
-        pprint(skipped)
-
-
-def process_qualified_rule(rule, different_tags, different_classes, indentation="", file=sys.stdout):
-    prelude = rule.prelude
-    content = rule.content
-
-    empty_prelude = process_prelude(
-        prelude, different_tags, different_classes, indentation=indentation, file=file)
-    if not empty_prelude and content:
-        process_content(content, indentation=indentation, file=file)
-
-
-def process_at_rule(rule, different_tags, different_classes, indentation="", file=sys.stdout):
-    prelude = rule.prelude
-    content = rule.content
-
-    at_keyword = "@" + rule.at_keyword
-    at_keyword.replace(" ", "")
-    print(indentation+at_keyword, end="", file=file)
-
-    empty_prelude = process_prelude(
-        prelude, different_tags, different_classes, file=file)
-
-    if not empty_prelude and content:
-        print("{", file=file)
-        process_content_at_rule(
-            content, different_tags, different_classes, indentation=indentation, file=file)
-        print(indentation + "}\n", file=file)
-    else:
-        print(";", file=file)
-
-
-def process_content_at_rule(content, different_tags, different_classes, indentation="", file=sys.stdout):
-    qualified_rule_prelude = []
-    skip = 0
-    for idx, node in enumerate(content):
-        if skip > 0:
-            skip -= 1
-            continue
-        if node.type == 'at-keyword':
-            nested_rule = SimpleNamespace()
-            nested_rule.at_keyword = content[idx].value
-            nested_rule.prelude = [content[idx+1], content[idx+2]]
-            nested_rule.content = content[idx+3].content
-            process_at_rule(nested_rule, different_tags, different_classes,
-                            indentation=indentation+CSS_INDENTATION, file=file)
-            skip = 3
-        elif node.type != "{} block":
-            qualified_rule_prelude.append(node)
-        else:
-            if len(qualified_rule_prelude) == 0:
-                process_content_at_rule(
-                    node.content, different_tags, different_classes, indentation=indentation, file=file)
-            else:
-                empty_prelude = process_prelude(
-                    qualified_rule_prelude, different_tags, different_classes, indentation=indentation+CSS_INDENTATION, file=file)
-                if not empty_prelude:
-                    process_content(
-                        node.content, indentation=indentation+CSS_INDENTATION, file=file)
-                qualified_rule_prelude = []
-
-
-def process_prelude(prelude, different_tags, different_classes, indentation="", file=sys.stdout):
-    # Print prelude
-    buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
-    print(indentation, end="", file=file)
-    skip = False
-    empty = True
-    buffer_comma = ""
-
-    filter_classes = False
-
-    for token in prelude:
-        printable = token.serialize()
-        if token.type == "ident":
-            # Check if ident is in the list of classes
-            if filter_classes and printable not in different_classes and printable not in different_tags:
-                buffer = ""
-                skip = True
-                skipped.add(printable)
-            else:
-                buffer += printable
-
-        else:
-            #buffer += output
-            if printable == ",":
-                if not skip:
-                    print(buffer_comma + buffer, end=" ", file=file)
-                    empty = False
-                    buffer = ""
-                    buffer_comma = ","
-                else:
-                    skip = False
-            else:
-                if not skip:
-                    buffer += printable
-                else:
-                    buffer = ""
-
-    if buffer:  # if buffer is not empty
-        if not skip:
-            print(buffer_comma + buffer, end=" ", file=file)
-            empty = False
-            buffer = ""
-
-    return empty
-
-
-def process_content(content, indentation="", file=sys.stdout):
-    for idx, token in enumerate(content):
-        printable = token.serialize()
-        if idx == 0:
-            if printable == " ":
-                print("{\n" + CSS_INDENTATION + indentation, end="", file=file)
-            else:
-                print("{\n" + CSS_INDENTATION + indentation +
-                      printable, end="", file=file)
-
-        elif idx == len(content) - 1:
-            if token.serialize != ";":
-                print(printable, end=";\n" + indentation + "}\n\n", file=file)
-            else:
-                print(printable, end="\n" + indentation + "}\n\n", file=file)
-
-        elif token.serialize() == ";":
-            print(printable, end="\n" + CSS_INDENTATION + indentation, file=file)
-        elif token.serialize() == ":":
-            print(printable, end=" ", file=file)
-        else:
-            print(printable, end="", file=file)
 
 
 def sanitize(domain, test_name):
