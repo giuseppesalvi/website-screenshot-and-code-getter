@@ -1,9 +1,9 @@
 import tinycss2
-import sys
 from types import SimpleNamespace
-from pprint import pprint
 
 CSS_INDENTATION = "    "
+SKIP_CSS_CLASSES = True
+SKIP_CSS_PROPERTIES = True 
 
 css_classes_skipped = set()
 css_classes = {}
@@ -43,7 +43,7 @@ def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
     prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes, indentation=indentation)
     if prelude_buffer and not prelude_buffer.isspace() and content:
         content_buffer = process_content(content, indentation=indentation)
-        if content_buffer != "" and not content_buffer.isspace():
+        if content_buffer and not content_buffer.isspace():
             buffer += prelude_buffer
             buffer += "{\n" + CSS_INDENTATION + indentation
             buffer += content_buffer
@@ -75,7 +75,7 @@ def process_at_rule(rule, allowed_tags, allowed_classes, indentation=""):
             buffer += ";\n\n"
     return buffer
 
-def process_prelude(prelude, allowed_tags, allowed_classes, indentation="", filter_classes=True):
+def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
     result_buffer = ""
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
 
@@ -88,7 +88,7 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation="", filt
         printable = token.serialize()
         if token.type == "ident":
             # Check if ident is in the list of allowed classes and tags
-            if filter_classes and printable not in allowed_classes and printable not in allowed_tags:
+            if SKIP_CSS_CLASSES and printable not in allowed_classes and printable not in allowed_tags:
                 buffer = ""
                 skip = True
                 css_classes_skipped.add(printable)
@@ -126,20 +126,29 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation="", filt
 def process_content(content, indentation=""):
     result_buffer=""
     is_property = True 
+    skip = False
     for token in content:
         printable = token.serialize()
         if token.serialize() == ";":
-            result_buffer += printable + "\n" + CSS_INDENTATION + indentation
+            if not skip:
+                result_buffer += printable + "\n" + CSS_INDENTATION + indentation
             is_property = True
+            skip = False
         elif token.serialize() == ":":
-            result_buffer += printable + " "
+            if not skip:
+                result_buffer += printable + " "
         else:
-            result_buffer += printable
-            if is_property:
-                if printable not in css_properties:
-                    css_properties[printable] = 1
-                else:
-                    css_properties[printable] += 1
+            if SKIP_CSS_PROPERTIES and printable in css_forbidden_properties:
+                skip = True
+                css_properties_skipped.add(printable)
+            else: 
+                if not skip:
+                    result_buffer += printable
+                    if is_property:
+                        if printable not in css_properties:
+                            css_properties[printable] = 1
+                        else:
+                            css_properties[printable] += 1
 
             is_property = False
     return result_buffer
@@ -170,9 +179,8 @@ def process_content_at_rule(content, allowed_tags, allowed_classes, indentation=
             else:
                 prelude_buffer = process_prelude(qualified_rule_prelude, allowed_tags, allowed_classes, indentation=indentation+CSS_INDENTATION)
                 if prelude_buffer and not prelude_buffer.isspace():
-                    buffer += prelude_buffer
                     buffer_content = process_content(node.content, indentation=indentation+CSS_INDENTATION)
-                    if buffer_content != "" and not buffer_content.isspace():
+                    if buffer_content and not buffer_content.isspace():
                         buffer += prelude_buffer
                         buffer += "{\n" + CSS_INDENTATION + indentation 
                         buffer +=  CSS_INDENTATION + buffer_content 
