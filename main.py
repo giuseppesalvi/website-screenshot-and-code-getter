@@ -205,7 +205,9 @@ def get_log_and_css(domain, test_name):
             css_classes = {}
             css_properties = {}
 
-            parse_css(response.content, different_tags, different_classes, file=f)
+            allowed_tags = different_tags
+            allowed_classes = different_classes
+            parse_css(response.content, allowed_tags, allowed_classes, file=f)
             
 
         # Print number of css classes TODO write in log file

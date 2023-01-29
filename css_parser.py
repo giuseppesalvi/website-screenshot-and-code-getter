@@ -7,7 +7,7 @@ CSS_INDENTATION = "    "
 skipped = set()
 
 
-def parse_css(css, different_tags, different_classes, file):
+def parse_css(css, allowed_tags, allowed_classes, file):
     # Parse the stylesheet
     rules, encoding = tinycss2.parse_stylesheet_bytes(
         css, skip_comments=True, skip_whitespace=True)
@@ -21,10 +21,10 @@ def parse_css(css, different_tags, different_classes, file):
         #output_file = sys.stdout 
         # output_file = sys.stdout # DBG
         if type == "qualified-rule":
-            res = process_qualified_rule(rule, different_tags=different_tags, different_classes=different_classes)
+            res = process_qualified_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes)
             print(res, end="", file=output_file)
         elif type == "at-rule":
-            res = process_at_rule(rule, different_tags=different_tags, different_classes=different_classes)
+            res = process_at_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes)
             print(res, end="", file=output_file)
         else:
             print(type, file=file)
@@ -35,12 +35,12 @@ def parse_css(css, different_tags, different_classes, file):
     pprint(skipped)
 
 
-def process_qualified_rule(rule, different_tags, different_classes, indentation=""):
+def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
     buffer = ""
     prelude = rule.prelude
     content = rule.content
 
-    prelude_buffer = process_prelude(prelude, different_tags, different_classes, indentation=indentation)
+    prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes, indentation=indentation)
     if prelude_buffer and not prelude_buffer.isspace() and content:
         buffer += prelude_buffer
         content_buffer = process_content(content, indentation=indentation)
@@ -48,18 +48,18 @@ def process_qualified_rule(rule, different_tags, different_classes, indentation=
     return buffer
 
 
-def process_at_rule(rule, different_tags, different_classes, indentation=""):
+def process_at_rule(rule, allowed_tags, allowed_classes, indentation=""):
     buffer = ""
     prelude = rule.prelude
     content = rule.content
 
-    prelude_buffer = process_prelude(prelude, different_tags, different_classes)
+    prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes)
 
     if prelude_buffer and not prelude_buffer.isspace():
         at_keyword = "@" + rule.at_keyword
         at_keyword.replace(" ", "")
         if content:
-            buffer_content_at = process_content_at_rule(content, different_tags, different_classes, indentation=indentation)
+            buffer_content_at = process_content_at_rule(content, allowed_tags, allowed_classes, indentation=indentation)
             if buffer_content_at:
                 buffer += indentation + at_keyword
                 buffer += prelude_buffer
@@ -74,7 +74,7 @@ def process_at_rule(rule, different_tags, different_classes, indentation=""):
             buffer += ";\n\n"
     return buffer
 
-def process_prelude(prelude, different_tags, different_classes, indentation=""):
+def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
     # Print prelude
     result_buffer = ""
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
@@ -91,7 +91,7 @@ def process_prelude(prelude, different_tags, different_classes, indentation=""):
         printable = token.serialize()
         if token.type == "ident":
             # Check if ident is in the list of classes
-            if filter_classes and printable not in different_classes and printable not in different_tags:
+            if filter_classes and printable not in allowed_classes and printable not in allowed_tags:
                 buffer = ""
                 skip = True
                 skipped.add(printable)
@@ -145,7 +145,7 @@ def process_content(content, indentation=""):
     return result_buffer
 
 
-def process_content_at_rule(content, different_tags, different_classes, indentation=""):
+def process_content_at_rule(content, allowed_tags, allowed_classes, indentation=""):
     buffer = ""
     qualified_rule_prelude = []
     skip = 0
@@ -159,16 +159,16 @@ def process_content_at_rule(content, different_tags, different_classes, indentat
             nested_rule.at_keyword = content[idx].value
             nested_rule.prelude = [content[idx+1], content[idx+2]]
             nested_rule.content = content[idx+3].content
-            buffer += process_at_rule(nested_rule, different_tags, different_classes,indentation=indentation+CSS_INDENTATION)
+            buffer += process_at_rule(nested_rule, allowed_tags, allowed_classes,indentation=indentation+CSS_INDENTATION)
             skip = 3
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)
         else:
             if len(qualified_rule_prelude) == 0:
                 if not skipped_prelude:
-                    buffer += process_content_at_rule(node.content, different_tags, different_classes, indentation=indentation)
+                    buffer += process_content_at_rule(node.content, allowed_tags, allowed_classes, indentation=indentation)
             else:
-                prelude_buffer = process_prelude(qualified_rule_prelude, different_tags, different_classes, indentation=indentation+CSS_INDENTATION)
+                prelude_buffer = process_prelude(qualified_rule_prelude, allowed_tags, allowed_classes, indentation=indentation+CSS_INDENTATION)
                 if prelude_buffer and not prelude_buffer.isspace():
                     buffer += prelude_buffer
                     buffer_content = process_content(node.content, indentation=indentation+CSS_INDENTATION)
