@@ -13,6 +13,7 @@ import subprocess
 import requests
 from css_parser import parse_css
 from html_parser import MyHTMLParser
+import re
 
 WAIT_SCREENSHOT = 1
 
@@ -126,8 +127,8 @@ def get_log_and_css(domain, test_name):
     n_different_tags = len(different_tags)
     n_different_attributes = (len(parser.attributes))
     different_classes = parser.attributes["class"]
-    css_urls = filter(lambda url: url.endswith(
-        ".css"), parser.attributes["href"])
+    css_urls = filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"])
+
 
     # Get image dimensions
     img = Image.open(filename + ".png")

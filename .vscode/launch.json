@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--website", "WPBeginner.com", "--test_name", "sanitize_cleanhtml5", "--task", "log"]
+            "args": ["--website", "WPBeginner.com" , "--test_name", "sanitize_cleanhtml5", "--task", "log"]
         }
     ]
 }
