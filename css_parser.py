@@ -5,8 +5,6 @@ CSS_INDENTATION = "    "
 SKIP_CSS_CLASSES = True
 SKIP_CSS_PROPERTIES = True 
 
-css_classes_skipped = set()
-css_classes = {}
 
 css_forbidden_properties_1= ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position", "hyphens", "border-radius","border-style","border-color","border-width"]
 #LIST 1 css_forbidden_properties = ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position"]
@@ -19,6 +17,8 @@ css_dynamic_properties = [ "transition", "transition-delay", "transition-duratio
 
 css_forbidden_properties =css_forbidden_properties_1 + css_my_forbidden_properties + css_mozilla_properties + css_ie_properties + css_dynamic_properties
 
+css_classes_skipped = set()
+css_classes = {}
 css_properties = {}
 css_properties_skipped = set()
 
