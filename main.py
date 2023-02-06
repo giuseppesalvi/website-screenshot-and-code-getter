@@ -88,15 +88,14 @@ def get_screenshot(website_dict, file_local, suffix=""):
 def get_code(website_dict):
     """ Get HTML code of Website URL passed as argument, and save it """
 
-    website_dict, parser = get_html(website_dict)
+    parser = get_html(website_dict)
 
     website_dict["html_tags"] = list(parser.tags.keys())
     website_dict["html_classes"] = parser.attributes["class"]
     website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
 
-    website_dict = get_css(website_dict)
+    get_css(website_dict)
 
-    return website_dict
 
 def get_html(website_dict):
     print("\nGenerating HTML code ...")
@@ -121,9 +120,10 @@ def get_html(website_dict):
     parser = MyHTMLParser()
     parser.feed(html)
 
-    return website_dict, parser
+    return parser
 
 def get_css(website_dict):
+    print("\nGenerating CSS code ...")
     # Download CSS files
     website_dict["css_classes"] = [] 
     website_dict["css_properties"] = [] 
@@ -140,6 +140,7 @@ def get_css(website_dict):
             website_dict["css_properties_skipped"].append(css_properties_skipped)
             
 
+    print("CSS code obtained!\n")
             # Print number of css classes TODO write in log file
             #print("\nCSS classes: ")
             #pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
@@ -155,67 +156,6 @@ def get_css(website_dict):
             # Print number of css properties skipped TODO write in log file
             #print("\nCSS properties skipped: ")
             #pprint(css_properties_skipped)
-    return website_dict
-
-
-
-def get_log_and_css(website_dict):
-#    """ Save logging info for website, download related css file(s)"""
-
-    #print("\nCounting the number of nodes and attributes ...")
-    #with open(website_dict["filename"] + website_dict["suffix"] + ".html", "r") as f:
-        ## Read html code and pass it to parser
-        #html = f.read()
-        #parser = MyHTMLParser()
-        #parser.feed(html)
-
-    ## Extract html statistics
-    #n_html_nodes = sum(parser.tags.values())
-    #n_different_html_tags = len(website_dict["html_tags"])
-    #n_different_html_classes = len(website_dict["html_classes"])
-    #n_different_html_attributes = (len(parser.attributes))
-
-    ## Get image dimensions
-    #img = Image.open(filename + ".png")
-    #height = img.height
-    #width = img.width
-
-    #website_dict["n_html_nodes"] = n_html_nodes
-    #website_dict["n_different_html_tags"] = n_different_html_tags
-    #website_dict["n_different_html_classes"] = n_different_html_classes
-    #website_dict["n_different_html_attributes"] = n_different_html_attributes
-    #website_dict["screenshot_height"] = height 
-    #website_dict["screenshot_width"] = width
-
-    # Save info in the log file
-    #with open(filename + suffix + ".log", "w") as f:
-        #print("Number of nodes: ", n_nodes, file=f)
-        #print("Number of different tags: ", n_different_tags, file=f)
-        #print("Divided per element: ", file=f)
-        #pprint(parser.tags, f)
-        #print("Number of different attributes: ", n_different_attributes, file=f)
-        #print("Number of different classes: ", len(different_classes), file=f)
-        #print("Attributes: ", file=f)
-        #pprint(parser.attributes, f)
-
-        #print("Image dimensions: %dx%d" % (width, height), file=f)
-
-    ## Print on stdout
-    #print("\nNumber of nodes: ", n_nodes, "\n")
-    #print("Image dimensions: %dx%d" % (width, height))
-
-    ## Save number of nodes for the given website in the summary file
-    #with open("results/summary/nodes.log", "a") as f:
-        #print(domain + suffix + " " + str(n_nodes), file=f)
-
-    ## Save image dimension for the given website in the summary file
-    #with open("results/summary/images_sizes.log", "a") as f:
-        #print("%s %dx%d %f" %
-              #(domain, width, height, float(width)/height), file=f)
-
-    return
-
-
 
 
 def sanitize(domain, test_name):

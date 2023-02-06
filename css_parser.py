@@ -17,12 +17,14 @@ css_dynamic_properties = [ "transition", "transition-delay", "transition-duratio
 
 css_forbidden_properties =css_forbidden_properties_1 + css_my_forbidden_properties + css_mozilla_properties + css_ie_properties + css_dynamic_properties
 
-css_classes_skipped = set()
-css_classes = {}
-css_properties = {}
-css_properties_skipped = set()
-
 def parse_css(css, allowed_tags, allowed_classes, file):
+    css_dict = {}
+    css_dict["allowed_tags"] = allowed_tags
+    css_dict["allowed_classes"] = allowed_classes
+    css_dict["css_classes"] = {}
+    css_dict["css_classes_skipped"] = {} 
+    css_dict["css_properties"] = {}
+    css_dict["css_properties_skipped"] = {}
     # Parse the stylesheet
     rules, encoding = tinycss2.parse_stylesheet_bytes(css, skip_comments=True, skip_whitespace=True)
     for rule in rules:
@@ -34,24 +36,24 @@ def parse_css(css, allowed_tags, allowed_classes, file):
         output_file = file 
         # output_file = sys.stdout # DBG
         if type == "qualified-rule":
-            print(process_qualified_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes), end="", file=output_file)
+            print(process_qualified_rule(rule, css_dict), end="", file=output_file)
         elif type == "at-rule":
-            print(process_at_rule(rule, allowed_tags=allowed_tags, allowed_classes=allowed_classes), end="", file=output_file)
+            print(process_at_rule(rule, css_dict), end="", file=output_file)
         else:
             print(type, file=file)
             break
 
-    return css_classes, css_properties, css_classes_skipped, css_properties_skipped
+    return css_dict["css_classes"], css_dict["css_properties"], css_dict["css_classes_skipped"], css_dict["css_properties_skipped"]
 
 
-def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
+def process_qualified_rule(rule, css_dict, indentation=""):
     buffer = ""
     prelude = rule.prelude
     content = rule.content
 
-    prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes, indentation=indentation)
+    prelude_buffer = process_prelude(prelude, css_dict, indentation=indentation)
     if prelude_buffer and not prelude_buffer.isspace() and content:
-        content_buffer = process_content(content, indentation=indentation)
+        content_buffer = process_content(content, css_dict, indentation=indentation)
         if content_buffer and not content_buffer.isspace():
             buffer += prelude_buffer
             buffer += "{\n" + CSS_INDENTATION + indentation
@@ -60,18 +62,18 @@ def process_qualified_rule(rule, allowed_tags, allowed_classes, indentation=""):
     return buffer
 
 
-def process_at_rule(rule, allowed_tags, allowed_classes, indentation=""):
+def process_at_rule(rule, css_dict, indentation=""):
     buffer = ""
     prelude = rule.prelude
     content = rule.content
 
-    prelude_buffer = process_prelude(prelude, allowed_tags, allowed_classes)
+    prelude_buffer = process_prelude(prelude, css_dict)
 
     if prelude_buffer and not prelude_buffer.isspace():
         at_keyword = "@" + rule.at_keyword
         at_keyword.replace(" ", "")
         if content:
-            buffer_content_at = process_content_at_rule(content, allowed_tags, allowed_classes, indentation=indentation)
+            buffer_content_at = process_content_at_rule(content, css_dict, indentation=indentation)
             if buffer_content_at:
                 buffer += indentation + at_keyword
                 buffer += prelude_buffer
@@ -84,7 +86,7 @@ def process_at_rule(rule, allowed_tags, allowed_classes, indentation=""):
             buffer += ";\n\n"
     return buffer
 
-def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
+def process_prelude(prelude, css_dict, indentation=""):
     result_buffer = ""
     buffer = ""  # Keep ident and whitespace to see if the next literal must be kept
 
@@ -97,18 +99,21 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
         printable = token.serialize()
         if token.type == "ident":
             # Check if ident is in the list of allowed classes and tags
-            if SKIP_CSS_CLASSES and printable not in allowed_classes and printable not in allowed_tags:
+            if SKIP_CSS_CLASSES and printable not in css_dict["allowed_classes"] and printable not in css_dict["allowed_tags"]:
                 buffer = ""
                 skip = True
-                css_classes_skipped.add(printable)
+                if printable not in css_dict["css_classes_skipped"]:
+                    css_dict["css_classes_skipped"][printable] = 1
+                else:
+                    css_dict["css_classes_skipped"][printable] += 1
             else:
                 buffer += printable
 
                 # add ident to css_classes
-                if printable not in css_classes:
-                    css_classes[printable] = 1
+                if printable not in css_dict["css_classes"]:
+                    css_dict["css_classes"][printable] = 1
                 else:
-                    css_classes[printable] += 1
+                    css_dict["css_classes"][printable] += 1
 
         else:
             if printable == ",":
@@ -132,7 +137,7 @@ def process_prelude(prelude, allowed_tags, allowed_classes, indentation=""):
     return result_buffer
 
 
-def process_content(content, indentation=""):
+def process_content(content, css_dict, indentation=""):
     result_buffer=""
     is_property = True 
     skip = False
@@ -149,21 +154,24 @@ def process_content(content, indentation=""):
         else:
             if SKIP_CSS_PROPERTIES and printable in css_forbidden_properties:
                 skip = True
-                css_properties_skipped.add(printable)
+                if printable not in css_dict["css_properties_skipped"]:
+                    css_dict["css_properties_skipped"][printable] = 1
+                else:
+                    css_dict["css_properties_skipped"][printable] += 1
             else: 
                 if not skip:
                     result_buffer += printable
                     if is_property:
-                        if printable not in css_properties:
-                            css_properties[printable] = 1
+                        if printable not in css_dict["css_properties"]:
+                            css_dict["css_properties"][printable] = 1
                         else:
-                            css_properties[printable] += 1
+                            css_dict["css_properties"][printable] += 1
 
             is_property = False
     return result_buffer
 
 
-def process_content_at_rule(content, allowed_tags, allowed_classes, indentation=""):
+def process_content_at_rule(content, css_dict, indentation=""):
     buffer = ""
     qualified_rule_prelude = []
     skip = 0
@@ -177,18 +185,18 @@ def process_content_at_rule(content, allowed_tags, allowed_classes, indentation=
             nested_rule.at_keyword = content[idx].value
             nested_rule.prelude = [content[idx+1], content[idx+2]]
             nested_rule.content = content[idx+3].content
-            buffer += process_at_rule(nested_rule, allowed_tags, allowed_classes,indentation=indentation+CSS_INDENTATION)
+            buffer += process_at_rule(nested_rule, css_dict,indentation=indentation+CSS_INDENTATION)
             skip = 3
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)
         else:
             if len(qualified_rule_prelude) == 0:
                 if not skipped_prelude:
-                    buffer += process_content_at_rule(node.content, allowed_tags, allowed_classes, indentation=indentation)
+                    buffer += process_content_at_rule(node.content, css_dict, indentation=indentation)
             else:
-                prelude_buffer = process_prelude(qualified_rule_prelude, allowed_tags, allowed_classes, indentation=indentation+CSS_INDENTATION)
+                prelude_buffer = process_prelude(qualified_rule_prelude, css_dict, indentation=indentation+CSS_INDENTATION)
                 if prelude_buffer and not prelude_buffer.isspace():
-                    buffer_content = process_content(node.content, indentation=indentation+CSS_INDENTATION)
+                    buffer_content = process_content(node.content, css_dict, indentation=indentation+CSS_INDENTATION)
                     if buffer_content and not buffer_content.isspace():
                         buffer += prelude_buffer
                         buffer += "{\n" + CSS_INDENTATION + indentation 
