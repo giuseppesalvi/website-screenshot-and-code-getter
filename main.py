@@ -36,6 +36,13 @@ def accept_cookies(driver):
             pass
         except ElementNotInteractableException:
             pass
+        except Exception as e:
+            # Print and try to go on anyway
+            print("Exception raised inside accept_cookies by", website_url)
+            print(e, end="\n\n") 
+            with open("errors.txt", "a") as f:
+                print("Exception raised inside accept_cookies by", website_url, file=f)
+                print(e, end="\n\n", file=f)
 
 
 def get_screenshot(website_dict, file_local, suffix=""):
