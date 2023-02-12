@@ -2,6 +2,7 @@ from html.parser import HTMLParser
 from collections import defaultdict
 import re
 
+
 class MyHTMLParser(HTMLParser):
     """ Parse HTML code to compute statistics """
 
@@ -24,10 +25,15 @@ class MyHTMLParser(HTMLParser):
         for attr in attrs:
             attr_name = attr[0]
             if attr_name not in ["title", "alt"]:
-                attr_values = attr[1].split(" ")
+                if not attr[1]:
+                    continue
+                else:
+                    attr_values = attr[1].split(" ")
             else:
                 attr_values = [attr[1]]
             for v in attr_values:
+                if not v:
+                    continue
                 cleaned_v = re.sub("\n", "", re.sub(" +", " ", v))
                 if cleaned_v and cleaned_v not in self.attributes[attr_name]:
                     self.attributes[attr_name].append(cleaned_v)

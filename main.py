@@ -14,6 +14,7 @@ from css_parser import parse_css
 from html_parser import MyHTMLParser
 import re
 from pprint import pprint
+from stats import print_stats
 
 WAIT_SCREENSHOT = 1
 
@@ -39,10 +40,6 @@ def accept_cookies(driver):
 
 def get_screenshot(website_dict, file_local, suffix=""):
     """ Get Screenshot of website URL passed as argument, and save it """
-
-    #filename = "results/" + \
-        #website_dict["domain"] if not test_name else "results/" + \
-        #website_dict["domain"]+ "_" + test_name
 
     print("\nGenerating the screenshot ...")
     # Set webdriver options
@@ -85,16 +82,16 @@ def get_screenshot(website_dict, file_local, suffix=""):
     print("Screenshot obtained!\n")
 
 
-def get_code(website_dict):
-    """ Get HTML code of Website URL passed as argument, and save it """
+#def get_code(website_dict):
+    #""" Get HTML code of Website URL passed as argument, and save it """
 
-    parser = get_html(website_dict)
+    #parser = get_html(website_dict)
 
-    website_dict["html_tags"] = list(parser.tags.keys())
-    website_dict["html_classes"] = parser.attributes["class"]
-    website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
+    #website_dict["html_tags"] = list(parser.tags.keys())
+    #website_dict["html_classes"] = parser.attributes["class"]
+    #website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
 
-    get_css(website_dict)
+    #get_css(website_dict)
 
 
 def get_html(website_dict):
@@ -120,7 +117,13 @@ def get_html(website_dict):
     parser = MyHTMLParser()
     parser.feed(html)
 
-    return parser
+    # Save website info in the dictionary
+    website_dict["n_html_nodes"] = sum(parser.tags.values())
+    website_dict["html_tags"] = list(parser.tags.keys())
+    website_dict["html_classes"] = parser.attributes["class"]
+    website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
+
+    return 
 
 def get_css(website_dict):
     print("\nGenerating CSS code ...")
@@ -141,33 +144,43 @@ def get_css(website_dict):
             
 
     print("CSS code obtained!\n")
-            # Print number of css classes TODO write in log file
-            #print("\nCSS classes: ")
-            #pprint(dict(sorted(css_classes.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
-
-            # Print number of css properties TODO write in log file
-            #print("\nCSS properties: ")
-            #pprint(dict(sorted(css_properties.items(), reverse=True, key=lambda item: item[1])), sort_dicts=False)
-
-            # Print number of css classes skipped TODO write in log file
-            #print("\nCSS classes skipped: ")
-            #pprint(css_classes_skipped)
-
-            # Print number of css properties skipped TODO write in log file
-            #print("\nCSS properties skipped: ")
-            #pprint(css_properties_skipped)
 
 
 def sanitize(domain, test_name):
+    print("Sanitizing Html Code")
+
     # Run command for sanitizing the code
     if not test_name:
         test_name = "sanitize"  # As default output will have sanitize suffix
-    subprocess.run("node sanitize_html.js " + domain +
-                   " " + test_name, shell=True, check=True)
+    #subprocess.run("node sanitize_html.js " + domain +
+                   #" " + test_name, shell=True, check=True)
+    result = subprocess.run(
+        "node sanitize_html.js " + domain + " " + test_name,
+        shell=True,
+        check=True,
+        stdout=subprocess.PIPE,
+    )
+    html = result.stdout.decode("utf-8")
 
     # Run command for cleaning the white spaces and formatting the html file
     subprocess.run("clean-html results/" + domain + "_" +
                    test_name + ".html --in-place", shell=True, check=True)
+
+
+    # Update website info in the dictionary
+    parser = MyHTMLParser()
+    parser.feed(html)
+
+    website_dict["n_html_nodes_before_sanitizing"] = website_dict["n_html_nodes"] 
+    website_dict["html_tags_before_sanitizing"] = website_dict["html_tags"]
+    website_dict["html_classes_before_sanitizing"] = website_dict["html_classes"] 
+    website_dict["css_urls_before_sanitizing"] = website_dict["css_urls"]
+    
+    website_dict["n_html_nodes"] = sum(parser.tags.values())
+    website_dict["html_tags"] = list(parser.tags.keys())
+    website_dict["html_classes"] = parser.attributes["class"]
+    website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
+
     return
 
 
@@ -246,10 +259,12 @@ if __name__ == "__main__":
 
         # Get code of the website
         if args.task in ["all", "code"]:
-            get_code(website_dict)
+            get_html(website_dict)
+            sanitize(website_dict["domain"], test_name=args.test_name)
+            get_css(website_dict)
 
         # Sanitize Html code
-        if args.task in ["all", "sanitize"]:
+        if args.task in ["sanitize"]:
             sanitize(website_dict["domain"], test_name=args.test_name)
 
         # Get website screenshot
@@ -259,15 +274,10 @@ if __name__ == "__main__":
             # TODO: FIX THIS
             get_screenshot(website_dict, file_local=True, suffix="_sanitize")
 
-        # Get code log and calculate statistics, save css files
-        #if args.task in ["all", "log"]:
-            #get_log_and_css(website_dict)
-
         # Sort and save statistics
         if args.task in ["all", "stats"]:
-            #sort_websites_by_nodes("results/summary/nodes.log")
-            #sort_websites_by_image_aspect_ratio("results/summary/images_sizes.log")
-            pprint(website_dict)
+            #pprint(website_dict)
+            print_stats(website_dict)
 
         batch += 1
         if batch >= BATCH_SIZE:

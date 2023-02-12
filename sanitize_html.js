@@ -1,7 +1,7 @@
 import sanitizeHtml from "sanitize-html";
-import { fstat, readFile, writeFile } from "fs";
+import { readFile, writeFile } from "fs";
 
-console.log("Sanitizing Html Code");
+//console.log("Sanitizing Html Code");
 
 const default_img = "../images/default_img.jpeg";
 const args = process.argv;
@@ -30,5 +30,6 @@ if (args.length != 4) {
     writeFile("results/" + args[2] + "_" + args[3] +".html", cleanHtml, (err) => {
       if (err) throw err;
     });
+    console.log(cleanHtml);
   });
 }

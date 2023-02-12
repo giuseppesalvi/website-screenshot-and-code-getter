@@ -4,6 +4,9 @@ import re
 from PIL import Image
 import requests
 from css_parser import parse_css
+import json
+from genericpath import isfile
+import os
 
 def get_statistics(domain, test_name):
     """ Save statistics for the website"""
@@ -88,5 +91,59 @@ def get_statistics(domain, test_name):
             pprint(css_properties_skipped)
 
 
-def print_statistics():
+def print_stats(website_dict):
+
+    # screenshot
+
+    # Get screenshot dimensions
+    img = Image.open(website_dict["filename"]+ ".png")
+    height = img.height
+    width = img.width
+    website_dict["screenshot_dimensions "] = [width, height] 
+
+
+    # add to the dictionary the size of all the lists
+    sizes = {}
+    for key, value in website_dict.items():
+        if isinstance(value, list):
+            sizes[key] = sum_of_dict_sizes(value)
+    website_dict["sizes"] = sizes
+
+    # add to the dictionary the number of lines of the html and css file
+    number_of_lines = {}
+    with open(website_dict["filename"] + ".html", "r") as file:
+        number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
+    for i, _ in enumerate(website_dict["css_urls"]):
+        with open(website_dict["filename"] + "_" + str(i) +  ".css", "r") as file:
+            number_of_lines[website_dict["filename"] + "_" + str(i) + ".css"] = len(file.readlines())
+    if isfile(website_dict["filename"] + "_sanitize"+ ".html"):
+        with open(website_dict["filename"] + "_sanitize"+ ".html", "r") as file:
+            number_of_lines[website_dict["filename"] + "_sanitize"+ ".html"] = len(file.readlines())
+    website_dict["number_of_lines"] = number_of_lines 
+
+
+    # Write stats in json file
+    with open(website_dict["filename"]+ website_dict["suffix"] + ".json", "w") as f:
+        json.dump(website_dict, f, sort_keys=True, indent=2)
+
+    return
+
+
+def sum_of_dict_sizes(lst):
+    size = 0
+    for element in lst:
+        if isinstance(element, dict):
+            size += len(element)
+        else:
+            return len(lst)
+    return size
+
+
+def stats_summary():
+    for filename in os.listdir("results/"):
+        if filename.endswith(".json"):
+            with open("results/" + filename) as f:
+                content = json.load(f)
+                #json.
+
     return
