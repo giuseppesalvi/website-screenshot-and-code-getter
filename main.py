@@ -134,7 +134,11 @@ def get_css(website_dict):
     website_dict["css_properties_skipped"] = [] 
     for i, url in enumerate(website_dict["css_urls"]):
         with open(filename + suffix + "_" + str(i) + ".css", "w") as f:
-            response = requests.get(url)
+            try: 
+                response = requests.get(url)
+            except Exception as e:
+                # internal url
+                response = requests.get(website_dict["website_url"] + url)
 
             css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f)
             website_dict["css_classes"].append(css_classes)
@@ -182,6 +186,22 @@ def sanitize(domain, test_name):
     website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
 
     return
+
+def replace_css_urls(website_dict):
+    # Replace all css_urls inside html file with local css filenames
+    with open(filename + "_sanitize.html") as f:
+        content = f.read()
+
+    replace_dict = {url: filename + "_" + str(index) + ".css" for index, url in enumerate(website_dict["css_urls"])}
+    # Compile a regular expression pattern for each css url in the dictionary
+    patterns = [re.compile(re.escape(url)) for url in replace_dict.keys()]
+    
+    # Replace all the matches with their corresponding values
+    for pattern in patterns:
+        content = re.sub(pattern, replace_dict[pattern.pattern], content)
+        
+    with open(filename + "_sanitize.html", 'w') as f:
+        f.write(content)
 
 
 def init_args_parser():
@@ -234,52 +254,61 @@ if __name__ == "__main__":
     # Process each website in the list
     for i, website_url in enumerate(website_list):
 
-        domain = website2domain(website_url)
-        filename = "results/" + domain
-        suffix = "_" + args.test_name if args.test_name else ""
+        try:
+            domain = website2domain(website_url)
+            filename = "results/" + domain
+            suffix = "_" + args.test_name if args.test_name else ""
 
-        website_dict = {}
-        website_dict["website_url"] = website_url
-        website_dict["domain"] = website2domain(website_url)
-        website_dict["filename"] = filename
-        website_dict["suffix"] = suffix
+            website_dict = {}
+            website_dict["website_url"] = website_url
+            website_dict["domain"] = website2domain(website_url)
+            website_dict["filename"] = filename
+            website_dict["suffix"] = suffix
 
 
-        # For DBG: lines that start with space or # are discarded
-        if website_url.startswith(" ") or website_url.startswith("#"):
-            continue
+            # For DBG: lines that start with space or # are discarded
+            if website_url.startswith(" ") or website_url.startswith("#"):
+                continue
 
-        if args.task != "stats":
-            print("[%d/%d] %s" %(i + 1, len(website_list), domain))
+            if args.task != "stats":
+                print("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
-        # If just_new option, process only new websites
-        if args.just_new and ((args.task in ["all", "code"] and isfile(filename + ".html")) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
-            print("Already present\n")
-            continue
+            # If just_new option, process only new websites
+            if args.just_new and ((args.task in ["all", "code"] and isfile(filename + ".html")) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
+                print("Already present\n")
+                continue
 
-        # Get code of the website
-        if args.task in ["all", "code"]:
-            get_html(website_dict)
-            sanitize(website_dict["domain"], test_name=args.test_name)
-            get_css(website_dict)
+            # Get code of the website
+            if args.task in ["all", "code"]:
+                get_html(website_dict)
+                sanitize(website_dict["domain"], test_name=args.test_name)
+                get_css(website_dict)
+                replace_css_urls(website_dict)
 
-        # Sanitize Html code
-        if args.task in ["sanitize"]:
-            sanitize(website_dict["domain"], test_name=args.test_name)
+            # Sanitize Html code
+            if args.task in ["sanitize"]:
+                sanitize(website_dict["domain"], test_name=args.test_name)
 
-        # Get website screenshot
-        if args.task in ["all", "screenshot"]:
-            get_screenshot(website_dict, file_local=args.file_local)
-            # DBG: Get both the non sanitized and the sanitized version screenshot
-            # TODO: FIX THIS
-            get_screenshot(website_dict, file_local=True, suffix="_sanitize")
+            # Get website screenshot
+            if args.task in ["all", "screenshot"]:
+                get_screenshot(website_dict, file_local=args.file_local)
+                # DBG: Get both the non sanitized and the sanitized version screenshot
+                # TODO: FIX THIS
+                get_screenshot(website_dict, file_local=True, suffix="_sanitize")
 
-        # Sort and save statistics
-        if args.task in ["all", "stats"]:
-            #pprint(website_dict)
-            print_stats(website_dict)
+            # Sort and save statistics
+            if args.task in ["all", "stats"]:
+                #pprint(website_dict)
+                print_stats(website_dict)
 
-        batch += 1
-        if batch >= BATCH_SIZE:
-            break
-        print("\n")
+            batch += 1
+            if batch >= BATCH_SIZE:
+                break
+            print("\n")
+        except Exception as e:
+            print("Exception raised by", website_url)
+            print(str(e), end="\n\n")
+            with open("errors.txt", "w") as f:
+                print("Exception raised by", website_url, file=f)
+                print(str(e), end="\n\n", file=f)
+
