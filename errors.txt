@@ -1,3 +1,1 @@
-Exception raised by https://www.AdamEnfroy.com
-'https://www\\.adamenfroy\\.com/wp\\-content/cache/min/1/wp\\-content/themes/AdamEnfroy/assets/css/style\\.min\\.css\\?ver=1670018603'
 

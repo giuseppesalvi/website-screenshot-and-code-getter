@@ -22,7 +22,7 @@ def accept_cookies(driver):
     """ Click to dismiss Cookies popup """
 
     list_strings = ["I Accept", "Accept",
-                    "Accetta", "Ok", "Agree", "Accept All", "Accept Cookies", "Accept All Cookies", "No", "No, Thanks"]
+                    "Accetta", "Accetta tutti", "Ok", "Agree", "Accept All", "Accept Cookies", "Accept All Cookies", "No", "No, Thanks"]
     lowercase = [str.lower() for str in list_strings]
     uppercase = [str.upper() for str in list_strings]
     capitalized = [str.capitalize() for str in list_strings]
@@ -189,18 +189,17 @@ def sanitize(domain, test_name):
 
 def replace_css_urls(website_dict):
     # Replace all css_urls inside html file with local css filenames
-    with open(filename + "_sanitize.html") as f:
+    with open(website_dict["filename"] + "_sanitize.html") as f:
         content = f.read()
 
-    replace_dict = {url: filename + "_" + str(index) + ".css" for index, url in enumerate(website_dict["css_urls"])}
-    # Compile a regular expression pattern for each css url in the dictionary
-    patterns = [re.compile(re.escape(url)) for url in replace_dict.keys()]
+    replace_dict = {url: website_dict["domain"] + "_" + str(index) + ".css" for index, url in enumerate(website_dict["css_urls"])}
     
     # Replace all the matches with their corresponding values
-    for pattern in patterns:
-        content = re.sub(pattern, replace_dict[pattern.pattern], content)
-        
-    with open(filename + "_sanitize.html", 'w') as f:
+    for key, value in replace_dict.items():
+        content = content.replace(key, value)
+
+
+    with open(website_dict["filename"] + "_sanitize.html", 'w') as f:
         f.write(content)
 
 
@@ -307,8 +306,8 @@ if __name__ == "__main__":
             print("\n")
         except Exception as e:
             print("Exception raised by", website_url)
-            print(str(e), end="\n\n")
-            with open("errors.txt", "w") as f:
+            print(e, end="\n\n")
+            with open("errors.txt", "a") as f:
                 print("Exception raised by", website_url, file=f)
-                print(str(e), end="\n\n", file=f)
+                print(e, end="\n\n", file=f)
 
