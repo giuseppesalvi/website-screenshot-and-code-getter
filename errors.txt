@@ -84,3 +84,12 @@ Exception raised by https://www.CupofJo.com
 Exception raised by https://www.WPBeginner.com
 [Errno 2] No such file or directory: 'results/WPBeginner.com_0.css'
 
+Exception raised by https://www.WPBeginner.com
+'builtin_function_or_method' object is not iterable
+
+Exception raised by https://www.WPBeginner.com
+'builtin_function_or_method' object is not iterable
+
+Exception raised by https://www.YogaJournal.com
+'builtin_function_or_method' object is not iterable
+

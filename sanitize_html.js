@@ -19,13 +19,13 @@ if (args.length != 3) {
       exclusiveFilter: function (frame) {
         return excludedTags.includes(frame.tag);
       },
-      transformTags: {
-        img: sanitizeHtml.simpleTransform("img", {
-          src: default_img,
-          srcset: default_img,
-        }),
-        "ol": "ul",
-      },
+      //transformTags: {
+        //img: sanitizeHtml.simpleTransform("img", {
+          //src: default_img,
+          //srcset: default_img,
+        //}),
+        //"ol": "ul",
+      //},
     });
     writeFile("results/" + args[2] + ".html", cleanHtml, (err) => {
       if (err) throw err;

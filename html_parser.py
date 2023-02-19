@@ -22,6 +22,8 @@ class MyHTMLParser(HTMLParser):
     def handle_tag(self, tag, attrs):
         """ Used as common implementation for both start tags and self closing start tag"""
         self.tags[tag] += 1
+        if tag == "img":
+            print("here")
         for attr in attrs:
             attr_name = attr[0]
             if attr_name not in ["title", "alt"]:

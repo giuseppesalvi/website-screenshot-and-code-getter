@@ -120,14 +120,22 @@ def get_html(website_dict):
 
     return 
 
+def add_dictionary(to_dict, from_dict):
+    """ Add values from one dictionary to another"""
+    for key in from_dict.keys():
+        if key not in to_dict:
+            to_dict[key] = from_dict[key]
+        else:
+            to_dict[key] += from_dict[key]
+    
 def get_css(website_dict, sanitize=True):
     print("\nGenerating CSS code ...")
     sanitize_suffix = "_raw" if not sanitize else ""
+    website_dict["css_classes" + sanitize_suffix] = {} 
+    website_dict["css_properties" + sanitize_suffix] = {} 
+    website_dict["css_classes_skipped" + sanitize_suffix] = {}
+    website_dict["css_properties_skipped" + sanitize_suffix] = {} 
     # Download CSS files
-    website_dict["css_classes" + sanitize_suffix] = [] 
-    website_dict["css_properties" + sanitize_suffix] = [] 
-    website_dict["css_classes_skipped" + sanitize_suffix] = [] 
-    website_dict["css_properties_skipped" + sanitize_suffix] = [] 
     for i, url in enumerate(website_dict["css_urls"]):
         with open(filename + suffix + (sanitize_suffix if not sanitize else "") + ".css", "a") as f:
             try: 
@@ -137,10 +145,10 @@ def get_css(website_dict, sanitize=True):
                 response = requests.get(website_dict["website_url"] + url)
 
             css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
-            website_dict["css_classes" + sanitize_suffix].append(css_classes)
-            website_dict["css_properties" + sanitize_suffix].append(css_properties)
-            website_dict["css_classes_skipped" + sanitize_suffix].append(css_classes_skipped)
-            website_dict["css_properties_skipped" + sanitize_suffix].append(css_properties_skipped)
+            add_dictionary(website_dict["css_classes" + sanitize_suffix], css_classes)
+            add_dictionary(website_dict["css_properties" + sanitize_suffix], css_properties)
+            add_dictionary(website_dict["css_classes_skipped" + sanitize_suffix], css_classes_skipped)
+            add_dictionary(website_dict["css_properties_skipped" + sanitize_suffix], css_properties_skipped)
             
 
     print("CSS code obtained!\n")

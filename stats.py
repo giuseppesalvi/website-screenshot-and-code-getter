@@ -29,12 +29,13 @@ def print_stats(website_dict):
 
     # add to the dictionary the number of lines of the html and css file
     number_of_lines = {}
-    with open(website_dict["filename"] + ".html", "r") as file:
-        number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
     with open(website_dict["filename"] + ".css", "r") as file:
         number_of_lines[website_dict["filename"] + ".css"] = len(file.readlines())
-    with open(website_dict["filename"] + "_raw.css", "r") as file:
-        number_of_lines[website_dict["filename"] + ".css"] = len(file.readlines())
+    if isfile(website_dict["filename"] + "_raw.css"):
+        with open(website_dict["filename"] + "_raw.css", "r") as file:
+            number_of_lines[website_dict["filename"] + "_raw.css"] = len(file.readlines())
+    with open(website_dict["filename"] + ".html", "r") as file:
+        number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
     if isfile(website_dict["filename"] + ".html"):
         with open(website_dict["filename"] + "_raw"+ ".html", "r") as file:
             number_of_lines[website_dict["filename"] + "_raw"+ ".html"] = len(file.readlines())
@@ -118,11 +119,13 @@ def stats_summary():
                 # Number of lines
                 for key, value in content["number_of_lines"].items():
                     if key.endswith("raw.html"):
-                        summary["n_html_lines_raw"].append(value)
+                        summary["n_lines_html_raw"].append(value)
                     elif key.endswith(".html"):
-                        summary["n_html_lines"].append(value)
+                        summary["n_lines_html"].append(value)
+                    elif key.endswith("raw.css"):
+                        summary["n_lines_css_raw"].append(value)
                     elif key.endswith(".css"):
-                        summary["n_css_lines"].append(value)
+                        summary["n_lines_css"].append(value)
                 
 
                 # Screenshot photo dimensions
@@ -182,9 +185,10 @@ def stats_summary():
     summary["avg_n_html_nodes_raw"] = mean(summary["n_html_nodes_raw"])
 
     # Number of lines
-    summary["avg_n_html_lines"] = mean(summary["n_html_lines"])
-    summary["avg_n_html_lines_raw"] = mean(summary["n_html_lines_raw"])
-    summary["avg_n_css_lines"] = mean(summary["n_css_lines"])
+    summary["avg_n_lines_html"] = mean(summary["n_lines_html"])
+    summary["avg_n_lines_html_raw"] = mean(summary["n_lines_raw_html"])
+    summary["avg_n_lines_css"] = mean(summary["n_lines_css"])
+    summary["avg_n_lines_css_raw"] = mean(summary["n_lines_css_raw"])
 
     summary["n_websites"] = len(summary["n_html_nodes"])
 
