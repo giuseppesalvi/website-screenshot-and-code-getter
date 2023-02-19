@@ -5,10 +5,10 @@ import { readFile, writeFile } from "fs";
 
 const default_img = "../images/default_img.jpeg";
 const args = process.argv;
-if (args.length != 4) {
-  console.log("Usage: node sanitize_html <website_url> <test_name>");
+if (args.length != 3) {
+  console.log("Usage: node sanitize_html <website_url>");
 } else {
-  const filepath = "results/" + args[2] + ".html";
+  const filepath = "results/" + args[2] + "_raw.html";
   const excludedTags = ["script", "meta", "noscript", "svg", "path"];
   readFile(filepath, (err, dirtyHtml) => {
     if (err) throw err;
@@ -27,7 +27,7 @@ if (args.length != 4) {
         "ol": "ul",
       },
     });
-    writeFile("results/" + args[2] + "_" + args[3] +".html", cleanHtml, (err) => {
+    writeFile("results/" + args[2] + ".html", cleanHtml, (err) => {
       if (err) throw err;
     });
     console.log(cleanHtml);

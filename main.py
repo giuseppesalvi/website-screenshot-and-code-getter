@@ -89,18 +89,6 @@ def get_screenshot(website_dict, file_local, suffix=""):
     print("Screenshot obtained!\n")
 
 
-#def get_code(website_dict):
-    #""" Get HTML code of Website URL passed as argument, and save it """
-
-    #parser = get_html(website_dict)
-
-    #website_dict["html_tags"] = list(parser.tags.keys())
-    #website_dict["html_classes"] = parser.attributes["class"]
-    #website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
-
-    #get_css(website_dict)
-
-
 def get_html(website_dict):
     print("\nGenerating HTML code ...")
 
@@ -114,7 +102,7 @@ def get_html(website_dict):
     html = driver.page_source
 
     # Write html source code to file
-    with open(website_dict["filename"]+ website_dict["suffix"] + ".html", "w") as f:
+    with open(website_dict["filename"]+ website_dict["suffix"] + "_raw.html", "w") as f:
         f.write(html)
 
     # Close web driver
@@ -125,33 +113,34 @@ def get_html(website_dict):
     parser.feed(html)
 
     # Save website info in the dictionary
-    website_dict["n_html_nodes"] = sum(parser.tags.values())
-    website_dict["html_tags"] = list(parser.tags.keys())
-    website_dict["html_classes"] = parser.attributes["class"]
-    website_dict["css_urls"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
+    website_dict["n_html_nodes_raw"] = sum(parser.tags.values())
+    website_dict["html_tags_raw"] = list(parser.tags.keys())
+    website_dict["html_classes_raw"] = parser.attributes["class"]
+    website_dict["css_urls_raw"] = list(filter(lambda url: bool(re.search(r"\.css(\?.*)?$", url)), parser.attributes["href"]))
 
     return 
 
-def get_css(website_dict):
+def get_css(website_dict, sanitize=True):
     print("\nGenerating CSS code ...")
+    sanitize_suffix = "_raw" if not sanitize else ""
     # Download CSS files
-    website_dict["css_classes"] = [] 
-    website_dict["css_properties"] = [] 
-    website_dict["css_classes_skipped"] = [] 
-    website_dict["css_properties_skipped"] = [] 
+    website_dict["css_classes" + sanitize_suffix] = [] 
+    website_dict["css_properties" + sanitize_suffix] = [] 
+    website_dict["css_classes_skipped" + sanitize_suffix] = [] 
+    website_dict["css_properties_skipped" + sanitize_suffix] = [] 
     for i, url in enumerate(website_dict["css_urls"]):
-        with open(filename + suffix + ".css", "a") as f:
+        with open(filename + suffix + (sanitize_suffix if not sanitize else "") + ".css", "a") as f:
             try: 
                 response = requests.get(url)
             except Exception as e:
                 # internal url
                 response = requests.get(website_dict["website_url"] + url)
 
-            css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f)
-            website_dict["css_classes"].append(css_classes)
-            website_dict["css_properties"].append(css_properties)
-            website_dict["css_classes_skipped"].append(css_classes_skipped)
-            website_dict["css_properties_skipped"].append(css_properties_skipped)
+            css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
+            website_dict["css_classes" + sanitize_suffix].append(css_classes)
+            website_dict["css_properties" + sanitize_suffix].append(css_properties)
+            website_dict["css_classes_skipped" + sanitize_suffix].append(css_classes_skipped)
+            website_dict["css_properties_skipped" + sanitize_suffix].append(css_properties_skipped)
             
 
     print("CSS code obtained!\n")
@@ -161,12 +150,8 @@ def sanitize(domain, test_name):
     print("Sanitizing Html Code")
 
     # Run command for sanitizing the code
-    if not test_name:
-        test_name = "sanitize"  # As default output will have sanitize suffix
-    #subprocess.run("node sanitize_html.js " + domain +
-                   #" " + test_name, shell=True, check=True)
     result = subprocess.run(
-        "node sanitize_html.js " + domain + " " + test_name,
+        "node sanitize_html.js " + domain,
         shell=True,
         check=True,
         stdout=subprocess.PIPE,
@@ -174,19 +159,13 @@ def sanitize(domain, test_name):
     html = result.stdout.decode("utf-8")
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html results/" + domain + "_" +
-                   test_name + ".html --in-place", shell=True, check=True)
+    subprocess.run("clean-html results/" + domain + ".html --in-place", shell=True, check=True)
 
 
     # Update website info in the dictionary
     parser = MyHTMLParser()
     parser.feed(html)
 
-    website_dict["n_html_nodes_before_sanitizing"] = website_dict["n_html_nodes"] 
-    website_dict["html_tags_before_sanitizing"] = website_dict["html_tags"]
-    website_dict["html_classes_before_sanitizing"] = website_dict["html_classes"] 
-    website_dict["css_urls_before_sanitizing"] = website_dict["css_urls"]
-    
     website_dict["n_html_nodes"] = sum(parser.tags.values())
     website_dict["html_tags"] = list(parser.tags.keys())
     website_dict["html_classes"] = parser.attributes["class"]
@@ -196,7 +175,7 @@ def sanitize(domain, test_name):
 
 def replace_css_urls(website_dict):
     # Replace all css_urls inside html file with local css filename
-    with open(website_dict["filename"] + "_sanitize.html") as f:
+    with open(website_dict["filename"] + ".html") as f:
         content = f.read()
 
     replace_dict = {url: website_dict["domain"] + ".css" for index, url in enumerate(website_dict["css_urls"])}
@@ -206,7 +185,7 @@ def replace_css_urls(website_dict):
         content = content.replace(key, value)
 
 
-    with open(website_dict["filename"] + "_sanitize.html", 'w') as f:
+    with open(website_dict["filename"] + ".html", 'w') as f:
         f.write(content)
 
 
@@ -289,6 +268,8 @@ if __name__ == "__main__":
                 get_html(website_dict)
                 sanitize(website_dict["domain"], test_name=args.test_name)
                 get_css(website_dict)
+                # DBG: Get both the non sanitized and the sanitized version screenshot
+                get_css(website_dict, sanitize=False)
                 replace_css_urls(website_dict)
 
             # Sanitize Html code
@@ -297,10 +278,10 @@ if __name__ == "__main__":
 
             # Get website screenshot
             if args.task in ["all", "screenshot"]:
-                get_screenshot(website_dict, file_local=args.file_local)
+                get_screenshot(website_dict, file_local=True)
                 # DBG: Get both the non sanitized and the sanitized version screenshot
                 # TODO: FIX THIS
-                get_screenshot(website_dict, file_local=True, suffix="_sanitize")
+                get_screenshot(website_dict, file_local=args.file_local, suffix="_raw")
 
             # Sort and save statistics
             if args.task in ["all", "stats"]:
