@@ -81,3 +81,6 @@ Exception raised by https://www.JagoInvestor.com
 Exception raised by https://www.CupofJo.com
 'WhitespaceToken' object has no attribute 'content'
 
+Exception raised by https://www.WPBeginner.com
+[Errno 2] No such file or directory: 'results/WPBeginner.com_0.css'
+

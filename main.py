@@ -140,7 +140,7 @@ def get_css(website_dict):
     website_dict["css_classes_skipped"] = [] 
     website_dict["css_properties_skipped"] = [] 
     for i, url in enumerate(website_dict["css_urls"]):
-        with open(filename + suffix + "_" + str(i) + ".css", "w") as f:
+        with open(filename + suffix + ".css", "a") as f:
             try: 
                 response = requests.get(url)
             except Exception as e:
@@ -195,11 +195,11 @@ def sanitize(domain, test_name):
     return
 
 def replace_css_urls(website_dict):
-    # Replace all css_urls inside html file with local css filenames
+    # Replace all css_urls inside html file with local css filename
     with open(website_dict["filename"] + "_sanitize.html") as f:
         content = f.read()
 
-    replace_dict = {url: website_dict["domain"] + "_" + str(index) + ".css" for index, url in enumerate(website_dict["css_urls"])}
+    replace_dict = {url: website_dict["domain"] + ".css" for index, url in enumerate(website_dict["css_urls"])}
     
     # Replace all the matches with their corresponding values
     for key, value in replace_dict.items():
