@@ -4,6 +4,7 @@ import { readFile, writeFile } from "fs";
 //console.log("Sanitizing Html Code");
 
 const default_img = "../images/default_img.jpeg";
+const default_svg = "../images/default_img.svg";
 const args = process.argv;
 if (args.length != 3) {
   console.log("Usage: node sanitize_html <website_url>");
@@ -19,13 +20,73 @@ if (args.length != 3) {
       exclusiveFilter: function (frame) {
         return excludedTags.includes(frame.tag);
       },
-      //transformTags: {
-        //img: sanitizeHtml.simpleTransform("img", {
-          //src: default_img,
-          //srcset: default_img,
-        //}),
-        //"ol": "ul",
-      //},
+      transformTags: {
+        img: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(svg)/g, '$1../images/default_img.svg');
+          }
+          return {
+            tagName: tagName,
+            attribs: attribs,
+          };
+        },
+        href: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(svg)/g, '$1../images/default_img.svg');
+          }
+          return {
+            tagName: tagName,
+            attribs: attribs,
+          };
+        },
+        ol: "ul",
+      },
+
+      // transformTags: {
+        // img: function (tagName, attribs) {
+          // //if (attribs["data-src"]) {
+            // //delete attribs["data-src"];
+          // //}
+          // //if (attribs["data-srcset"]) {
+            // //delete attribs["data-srcset"];
+          // //}
+          // //if (attribs["data-lazy-src"]) {
+            // //delete attribs["data-lazy-src"];
+          // //}
+          // //if (attribs["data-lazy-srcset"]) {
+            // //delete attribs["data-lazy-src"];
+          // //}
+          // //if (attribs["srcset"]) {
+            // //delete attribs["srcset"];
+          // //}
+          // //if (attribs["src"] && attribs.src.endsWith(".svg")) {
+            // //attribs.src = default_svg;
+          // //} else {
+            // //attribs.src = default_img;
+          // //}
+
+          // // TODO: understand when to use width/height/size/
+          // // reuse lazy-size in size or smthg
+          // // try also adding alt
+          // /*if (attribs["src"] && (!attribs["width"] && !attribs["height"] && !attribs["size"] && !attribs["sizes"])) {
+            // // Download the image and look its size, then add size
+            // const image = new Image();
+            // image.onload = function() {
+              // attribs.width= this.naturalWidth
+              // attribs.height= this.naturalHeight
+            // }
+            // image.src = attribs["src"]
+          // }
+          // */
+          // return {
+            // tagName: "img",
+            // attribs: attribs,
+          // };
+        // },
+        // ol: "ul",
+      // },
     });
     writeFile("results/" + args[2] + ".html", cleanHtml, (err) => {
       if (err) throw err;

@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--website", "https://www.polito.it" , "--task", "all"]
+            "args": ["--website", "https://www.WPBeginner.com" , "--task", "all"]
         }
     ]
 }
