@@ -22,27 +22,57 @@ if (args.length != 3) {
       },
       transformTags: {
         img: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
             attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(svg)/g, '$1../images/default_img.svg');
           }
           return {
-            tagName: tagName,
+            tagName: "img",
             attribs: attribs,
           };
         },
         href: function (tagName, attribs) {
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(svg)/g, '$1../images/default_img.svg');
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
           }
           return {
-            tagName: tagName,
+            tagName: "href",
+            attribs: attribs,
+          };
+        },
+        picture: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+          }
+          return {
+            tagName: "picture",
+            attribs: attribs,
+          };
+        },
+        a: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+          }
+          return {
+            tagName: "a",
+            attribs: attribs,
+          };
+        },
+        div: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+          }
+          return {
+            tagName: "div",
             attribs: attribs,
           };
         },
         ol: "ul",
       },
+      
 
       // transformTags: {
         // img: function (tagName, attribs) {

@@ -117,3 +117,33 @@ Command 'node sanitize_html.js repubblica.it' returned non-zero exit status 1.
 Exception raised by https://www.AdamEnfroy.com
 Command 'node sanitize_html.js AdamEnfroy.com' returned non-zero exit status 1.
 
+Exception raised by https://www.YogaJournal.com
+Command 'node sanitize_html.js YogaJournal.com' returned non-zero exit status 1.
+
+Exception raised by https://www.AdamEnfroy.com
+Command 'node sanitize_html.js AdamEnfroy.com' returned non-zero exit status 1.
+
+Exception raised by https://www.polito.it
+Command 'node sanitize_html.js polito.it' returned non-zero exit status 1.
+
+Exception raised by https://www.repubblica.it/
+Command 'node sanitize_html.js repubblica.it' returned non-zero exit status 1.
+
+Exception raised by https://www.YogaJournal.com
+Command 'node sanitize_html.js YogaJournal.com' returned non-zero exit status 1.
+
+Exception raised by https://www.AdamEnfroy.com
+Command 'node sanitize_html.js AdamEnfroy.com' returned non-zero exit status 1.
+
+Exception raised by https://www.YogaJournal.com
+Command 'node sanitize_html.js YogaJournal.com' returned non-zero exit status 1.
+
+Exception raised by https://www.AdamEnfroy.com
+Command 'node sanitize_html.js AdamEnfroy.com' returned non-zero exit status 1.
+
+Exception raised by https://www.YogaJournal.com
+Command 'node sanitize_html.js YogaJournal.com' returned non-zero exit status 1.
+
+Exception raised by https://www.AdamEnfroy.com
+Command 'node sanitize_html.js AdamEnfroy.com' returned non-zero exit status 1.
+
