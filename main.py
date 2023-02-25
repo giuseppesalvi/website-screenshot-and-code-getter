@@ -306,4 +306,5 @@ if __name__ == "__main__":
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website_url, file=f)
                 print(e, end="\n\n", file=f)
+            break # DEBUG
 

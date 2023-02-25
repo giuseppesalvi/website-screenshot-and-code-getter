@@ -1,1 +1,34 @@
+Exception raised by https://www.Copyblogger.com
+'WhitespaceToken' object has no attribute 'content'
+
+Exception raised by https://www.Copyblogger.com
+'WhitespaceToken' object has no attribute 'content'
+
+Exception raised by https://www.CupofJo.com
+Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001031cd1c0 chromedriver + 4248000
+1   chromedriver                        0x000000010314ddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102e02ec4 chromedriver + 274116
+3   chromedriver                        0x0000000102ddd5f4 chromedriver + 120308
+4   chromedriver                        0x0000000102e66f8c chromedriver + 683916
+5   chromedriver                        0x0000000102e79864 chromedriver + 759908
+6   chromedriver                        0x0000000102e31200 chromedriver + 463360
+7   chromedriver                        0x0000000102e32318 chromedriver + 467736
+8   chromedriver                        0x000000010319b060 chromedriver + 4042848
+9   chromedriver                        0x000000010319f8a4 chromedriver + 4061348
+10  chromedriver                        0x00000001031a73d0 chromedriver + 4092880
+11  chromedriver                        0x00000001031a06e4 chromedriver + 4064996
+12  chromedriver                        0x00000001031760fc chromedriver + 3891452
+13  chromedriver                        0x00000001031c0a64 chromedriver + 4196964
+14  chromedriver                        0x00000001031c0bb8 chromedriver + 4197304
+15  chromedriver                        0x00000001031d4650 chromedriver + 4277840
+16  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+17  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.Copyblogger.com
+'WhitespaceToken' object has no attribute 'content'
 

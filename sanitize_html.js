@@ -10,7 +10,7 @@ if (args.length != 3) {
   console.log("Usage: node sanitize_html <website_url>");
 } else {
   const filepath = "results/" + args[2] + "_raw.html";
-  const excludedTags = ["script", "meta", "noscript", "svg", "path"];
+  const excludedTags = ["script", "meta", "noscript", "svg", "path", "iframe"];
   readFile(filepath, (err, dirtyHtml) => {
     if (err) throw err;
     const cleanHtml = sanitizeHtml(dirtyHtml, {
@@ -39,7 +39,10 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "img",
@@ -47,8 +50,27 @@ if (args.length != 3) {
           };
         },
         href: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "href",
@@ -56,8 +78,27 @@ if (args.length != 3) {
           };
         },
         picture: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "picture",
@@ -65,8 +106,27 @@ if (args.length != 3) {
           };
         },
         a: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "a",
@@ -74,18 +134,56 @@ if (args.length != 3) {
           };
         },
         source: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "source",
             attribs: attribs,
           };
         },
-  
+
         link: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "link",
@@ -93,8 +191,27 @@ if (args.length != 3) {
           };
         },
         div: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+            attribs[key] = value.replace(
+              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
+              "$1../images/default_img.jpeg"
+            );
           }
           return {
             tagName: "div",
@@ -103,50 +220,49 @@ if (args.length != 3) {
         },
         ol: "ul",
       },
-      
 
       // transformTags: {
-        // img: function (tagName, attribs) {
-          // //if (attribs["data-src"]) {
-            // //delete attribs["data-src"];
-          // //}
-          // //if (attribs["data-srcset"]) {
-            // //delete attribs["data-srcset"];
-          // //}
-          // //if (attribs["data-lazy-src"]) {
-            // //delete attribs["data-lazy-src"];
-          // //}
-          // //if (attribs["data-lazy-srcset"]) {
-            // //delete attribs["data-lazy-src"];
-          // //}
-          // //if (attribs["srcset"]) {
-            // //delete attribs["srcset"];
-          // //}
-          // //if (attribs["src"] && attribs.src.endsWith(".svg")) {
-            // //attribs.src = default_svg;
-          // //} else {
-            // //attribs.src = default_img;
-          // //}
+      // img: function (tagName, attribs) {
+      // //if (attribs["data-src"]) {
+      // //delete attribs["data-src"];
+      // //}
+      // //if (attribs["data-srcset"]) {
+      // //delete attribs["data-srcset"];
+      // //}
+      // //if (attribs["data-lazy-src"]) {
+      // //delete attribs["data-lazy-src"];
+      // //}
+      // //if (attribs["data-lazy-srcset"]) {
+      // //delete attribs["data-lazy-src"];
+      // //}
+      // //if (attribs["srcset"]) {
+      // //delete attribs["srcset"];
+      // //}
+      // //if (attribs["src"] && attribs.src.endsWith(".svg")) {
+      // //attribs.src = default_svg;
+      // //} else {
+      // //attribs.src = default_img;
+      // //}
 
-          // // TODO: understand when to use width/height/size/
-          // // reuse lazy-size in size or smthg
-          // // try also adding alt
-          // /*if (attribs["src"] && (!attribs["width"] && !attribs["height"] && !attribs["size"] && !attribs["sizes"])) {
-            // // Download the image and look its size, then add size
-            // const image = new Image();
-            // image.onload = function() {
-              // attribs.width= this.naturalWidth
-              // attribs.height= this.naturalHeight
-            // }
-            // image.src = attribs["src"]
-          // }
-          // */
-          // return {
-            // tagName: "img",
-            // attribs: attribs,
-          // };
-        // },
-        // ol: "ul",
+      // // TODO: understand when to use width/height/size/
+      // // reuse lazy-size in size or smthg
+      // // try also adding alt
+      // /*if (attribs["src"] && (!attribs["width"] && !attribs["height"] && !attribs["size"] && !attribs["sizes"])) {
+      // // Download the image and look its size, then add size
+      // const image = new Image();
+      // image.onload = function() {
+      // attribs.width= this.naturalWidth
+      // attribs.height= this.naturalHeight
+      // }
+      // image.src = attribs["src"]
+      // }
+      // */
+      // return {
+      // tagName: "img",
+      // attribs: attribs,
+      // };
+      // },
+      // ol: "ul",
       // },
     });
     writeFile("results/" + args[2] + ".html", cleanHtml, (err) => {

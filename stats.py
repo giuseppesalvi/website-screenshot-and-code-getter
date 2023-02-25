@@ -29,14 +29,16 @@ def print_stats(website_dict):
 
     # add to the dictionary the number of lines of the html and css file
     number_of_lines = {}
-    with open(website_dict["filename"] + ".css", "r") as file:
-        number_of_lines[website_dict["filename"] + ".css"] = len(file.readlines())
+    if isfile(website_dict["filename"] + ".css"):
+        with open(website_dict["filename"] + ".css", "r") as file:
+            number_of_lines[website_dict["filename"] + ".css"] = len(file.readlines())
     if isfile(website_dict["filename"] + "_raw.css"):
         with open(website_dict["filename"] + "_raw.css", "r") as file:
             number_of_lines[website_dict["filename"] + "_raw.css"] = len(file.readlines())
-    with open(website_dict["filename"] + ".html", "r") as file:
-        number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
     if isfile(website_dict["filename"] + ".html"):
+        with open(website_dict["filename"] + ".html", "r") as file:
+            number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
+    if isfile(website_dict["filename"] + "_raw" + ".html"):
         with open(website_dict["filename"] + "_raw"+ ".html", "r") as file:
             number_of_lines[website_dict["filename"] + "_raw"+ ".html"] = len(file.readlines())
     website_dict["number_of_lines"] = number_of_lines 
