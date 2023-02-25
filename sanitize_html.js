@@ -26,6 +26,18 @@ if (args.length != 3) {
             attribs["src"] = attribs["data-src"];
             delete attribs["data-src"];
           }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["src"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["src"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
           for (const [key, value] of Object.entries(attribs)) {
             attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png)/g, '$1../images/default_img.jpeg');
           }
@@ -58,6 +70,25 @@ if (args.length != 3) {
           }
           return {
             tagName: "a",
+            attribs: attribs,
+          };
+        },
+        source: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+          }
+          return {
+            tagName: "source",
+            attribs: attribs,
+          };
+        },
+  
+        link: function (tagName, attribs) {
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value.replace(/(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g, '$1../images/default_img.jpeg');
+          }
+          return {
+            tagName: "link",
             attribs: attribs,
           };
         },
