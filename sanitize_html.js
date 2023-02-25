@@ -31,11 +31,11 @@ if (args.length != 3) {
             delete attribs["data-lazy-src"];
           }
           if (attribs["data-srcset"]) {
-            attribs["src"] = attribs["data-srcset"];
+            attribs["srcset"] = attribs["data-srcset"];
             delete attribs["data-srcset"];
           }
           if (attribs["data-lazy-srcset"]) {
-            attribs["src"] = attribs["data-lazy-srcset"];
+            attribs["srcset"] = attribs["data-lazy-srcset"];
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
