@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
+from selenium.webdriver.chrome.options import Options
 from PIL import Image
 from utils import *
 from os import path
@@ -15,7 +16,8 @@ from html_parser import MyHTMLParser
 import re
 from pprint import pprint
 from stats import print_stats
-
+import asyncio
+from pyppeteer import launch
 WAIT_SCREENSHOT = 1
 
 def accept_cookies(driver):
@@ -89,24 +91,49 @@ def get_screenshot(website_dict, file_local, suffix=""):
     print("Screenshot obtained!\n")
 
 
-def get_html(website_dict):
-    print("\nGenerating HTML code ...")
+async def get_rendered_html(url):
+    browser = await launch()
+    page = await browser.newPage()
+    await page.goto(url, {'waitUntil': 'networkidle0'})
+    rendered_html = await page.content()
+    await browser.close()
+    return rendered_html
 
+def get_html_pypeteer(url):
+    html = asyncio.get_event_loop().run_until_complete(get_rendered_html(url))
+    return html
+
+def get_html_selenium(url):
     # Start web driver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    options = Options()
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=Options())
 
     # Launch URL
     driver.get(website_dict["website_url"])
 
     # Get source code
     html = driver.page_source
+    # Try to address js
+    html = driver.execute_script('return document.documentElement.outerHTML')
+
+    # Close web driver
+    driver.close()
+    return html
+
+
+def get_html(website_dict):
+    print("\nGenerating HTML code ...")
+
+    url = website_dict["website_url"]
+
+    #html = get_html_pypeteer(url)
+    html = get_html_selenium(url)
 
     # Write html source code to file
     with open(website_dict["filename"]+ website_dict["suffix"] + "_raw.html", "w") as f:
         f.write(html)
 
-    # Close web driver
-    driver.close()
     print("HTML code obtained!\n")
 
     parser = MyHTMLParser()
