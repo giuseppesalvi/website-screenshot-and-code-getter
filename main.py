@@ -99,7 +99,7 @@ async def get_rendered_html(url):
     await browser.close()
     return rendered_html
 
-def get_html_pypeteer(url):
+def get_html_pyppeteer(url):
     html = asyncio.get_event_loop().run_until_complete(get_rendered_html(url))
     return html
 
@@ -127,7 +127,7 @@ def get_html(website_dict):
 
     url = website_dict["website_url"]
 
-    #html = get_html_pypeteer(url)
+    #html = get_html_pyppeteer(url)
     html = get_html_selenium(url)
 
     # Write html source code to file
