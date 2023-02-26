@@ -38,3 +38,225 @@ Exception raised by https://www.CupofJo.com
 Exception raised by https://www.Copyblogger.com
 'NoneType' object is not iterable
 
+Exception raised by https://www.senato.ithome
+Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x000000010317d1c0 chromedriver + 4248000
+1   chromedriver                        0x00000001030fddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102db2ec4 chromedriver + 274116
+3   chromedriver                        0x0000000102dab6dc chromedriver + 243420
+4   chromedriver                        0x0000000102d9dc74 chromedriver + 187508
+5   chromedriver                        0x0000000102d9f34c chromedriver + 193356
+6   chromedriver                        0x0000000102d9dfb4 chromedriver + 188340
+7   chromedriver                        0x0000000102d9ce68 chromedriver + 183912
+8   chromedriver                        0x0000000102d9cd10 chromedriver + 183568
+9   chromedriver                        0x0000000102d9b990 chromedriver + 178576
+10  chromedriver                        0x0000000102d9bcc8 chromedriver + 179400
+11  chromedriver                        0x0000000102db4efc chromedriver + 282364
+12  chromedriver                        0x0000000102e2a5f0 chromedriver + 763376
+13  chromedriver                        0x0000000102e2a054 chromedriver + 761940
+14  chromedriver                        0x0000000102de1200 chromedriver + 463360
+15  chromedriver                        0x0000000102de2318 chromedriver + 467736
+16  chromedriver                        0x000000010314b060 chromedriver + 4042848
+17  chromedriver                        0x000000010314f8a4 chromedriver + 4061348
+18  chromedriver                        0x00000001031573d0 chromedriver + 4092880
+19  chromedriver                        0x00000001031506e4 chromedriver + 4064996
+20  chromedriver                        0x00000001031260fc chromedriver + 3891452
+21  chromedriver                        0x0000000103170a64 chromedriver + 4196964
+22  chromedriver                        0x0000000103170bb8 chromedriver + 4197304
+23  chromedriver                        0x0000000103184650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.senato.ithome
+Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x0000000100cb51c0 chromedriver + 4248000
+1   chromedriver                        0x0000000100c35dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001008eaec4 chromedriver + 274116
+3   chromedriver                        0x00000001008e36dc chromedriver + 243420
+4   chromedriver                        0x00000001008d5c74 chromedriver + 187508
+5   chromedriver                        0x00000001008d734c chromedriver + 193356
+6   chromedriver                        0x00000001008d5fb4 chromedriver + 188340
+7   chromedriver                        0x00000001008d4e68 chromedriver + 183912
+8   chromedriver                        0x00000001008d4d10 chromedriver + 183568
+9   chromedriver                        0x00000001008d3990 chromedriver + 178576
+10  chromedriver                        0x00000001008d3cc8 chromedriver + 179400
+11  chromedriver                        0x00000001008ecefc chromedriver + 282364
+12  chromedriver                        0x00000001009625f0 chromedriver + 763376
+13  chromedriver                        0x0000000100962054 chromedriver + 761940
+14  chromedriver                        0x0000000100919200 chromedriver + 463360
+15  chromedriver                        0x000000010091a318 chromedriver + 467736
+16  chromedriver                        0x0000000100c83060 chromedriver + 4042848
+17  chromedriver                        0x0000000100c878a4 chromedriver + 4061348
+18  chromedriver                        0x0000000100c8f3d0 chromedriver + 4092880
+19  chromedriver                        0x0000000100c886e4 chromedriver + 4064996
+20  chromedriver                        0x0000000100c5e0fc chromedriver + 3891452
+21  chromedriver                        0x0000000100ca8a64 chromedriver + 4196964
+22  chromedriver                        0x0000000100ca8bb8 chromedriver + 4197304
+23  chromedriver                        0x0000000100cbc650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.SearchEngineJournal.com
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001031fd1c0 chromedriver + 4248000
+1   chromedriver                        0x000000010317ddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102e32ec4 chromedriver + 274116
+3   chromedriver                        0x0000000102e1d9e8 chromedriver + 186856
+4   chromedriver                        0x0000000102e1bb44 chromedriver + 179012
+5   chromedriver                        0x0000000102e1bdfc chromedriver + 179708
+6   chromedriver                        0x0000000102e3acc8 chromedriver + 306376
+7   chromedriver                        0x0000000102e6b988 chromedriver + 506248
+8   chromedriver                        0x0000000102e62bbc chromedriver + 469948
+9   chromedriver                        0x0000000102eaa054 chromedriver + 761940
+10  chromedriver                        0x0000000102e61200 chromedriver + 463360
+11  chromedriver                        0x0000000102e62318 chromedriver + 467736
+12  chromedriver                        0x00000001031cb060 chromedriver + 4042848
+13  chromedriver                        0x00000001031cf8a4 chromedriver + 4061348
+14  chromedriver                        0x00000001031d73d0 chromedriver + 4092880
+15  chromedriver                        0x00000001031d06e4 chromedriver + 4064996
+16  chromedriver                        0x00000001031a60fc chromedriver + 3891452
+17  chromedriver                        0x00000001031f0a64 chromedriver + 4196964
+18  chromedriver                        0x00000001031f0bb8 chromedriver + 4197304
+19  chromedriver                        0x0000000103204650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised inside accept_cookies by https://www.SmartPassiveIncome.com
+Message: element click intercepted: Element is not clickable at point (85, 13251)
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001032251c0 chromedriver + 4248000
+1   chromedriver                        0x00000001031a5dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102e5aec4 chromedriver + 274116
+3   chromedriver                        0x0000000102e9e530 chromedriver + 550192
+4   chromedriver                        0x0000000102e9bf28 chromedriver + 540456
+5   chromedriver                        0x0000000102e996c4 chromedriver + 530116
+6   chromedriver                        0x0000000102e985b8 chromedriver + 525752
+7   chromedriver                        0x0000000102e8b3e0 chromedriver + 472032
+8   chromedriver                        0x0000000102e8abbc chromedriver + 469948
+9   chromedriver                        0x0000000102ed2054 chromedriver + 761940
+10  chromedriver                        0x0000000102e89200 chromedriver + 463360
+11  chromedriver                        0x0000000102e8a318 chromedriver + 467736
+12  chromedriver                        0x00000001031f3060 chromedriver + 4042848
+13  chromedriver                        0x00000001031f78a4 chromedriver + 4061348
+14  chromedriver                        0x00000001031ff3d0 chromedriver + 4092880
+15  chromedriver                        0x00000001031f86e4 chromedriver + 4064996
+16  chromedriver                        0x00000001031ce0fc chromedriver + 3891452
+17  chromedriver                        0x0000000103218a64 chromedriver + 4196964
+18  chromedriver                        0x0000000103218bb8 chromedriver + 4197304
+19  chromedriver                        0x000000010322c650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.SproutSocial.com
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x0000000102b391c0 chromedriver + 4248000
+1   chromedriver                        0x0000000102ab9dc0 chromedriver + 3726784
+2   chromedriver                        0x000000010276eec4 chromedriver + 274116
+3   chromedriver                        0x00000001027599e8 chromedriver + 186856
+4   chromedriver                        0x0000000102757b44 chromedriver + 179012
+5   chromedriver                        0x0000000102757dfc chromedriver + 179708
+6   chromedriver                        0x0000000102776cc8 chromedriver + 306376
+7   chromedriver                        0x00000001027a7988 chromedriver + 506248
+8   chromedriver                        0x000000010279ebbc chromedriver + 469948
+9   chromedriver                        0x00000001027e6054 chromedriver + 761940
+10  chromedriver                        0x000000010279d200 chromedriver + 463360
+11  chromedriver                        0x000000010279e318 chromedriver + 467736
+12  chromedriver                        0x0000000102b07060 chromedriver + 4042848
+13  chromedriver                        0x0000000102b0b8a4 chromedriver + 4061348
+14  chromedriver                        0x0000000102b133d0 chromedriver + 4092880
+15  chromedriver                        0x0000000102b0c6e4 chromedriver + 4064996
+16  chromedriver                        0x0000000102ae20fc chromedriver + 3891452
+17  chromedriver                        0x0000000102b2ca64 chromedriver + 4196964
+18  chromedriver                        0x0000000102b2cbb8 chromedriver + 4197304
+19  chromedriver                        0x0000000102b40650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.SproutSocial.com
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001033351c0 chromedriver + 4248000
+1   chromedriver                        0x00000001032b5dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102f6aec4 chromedriver + 274116
+3   chromedriver                        0x0000000102f559e8 chromedriver + 186856
+4   chromedriver                        0x0000000102f53b44 chromedriver + 179012
+5   chromedriver                        0x0000000102f53dfc chromedriver + 179708
+6   chromedriver                        0x0000000102f72cc8 chromedriver + 306376
+7   chromedriver                        0x0000000102fa3988 chromedriver + 506248
+8   chromedriver                        0x0000000102f9abbc chromedriver + 469948
+9   chromedriver                        0x0000000102fe2054 chromedriver + 761940
+10  chromedriver                        0x0000000102f99200 chromedriver + 463360
+11  chromedriver                        0x0000000102f9a318 chromedriver + 467736
+12  chromedriver                        0x0000000103303060 chromedriver + 4042848
+13  chromedriver                        0x00000001033078a4 chromedriver + 4061348
+14  chromedriver                        0x000000010330f3d0 chromedriver + 4092880
+15  chromedriver                        0x00000001033086e4 chromedriver + 4064996
+16  chromedriver                        0x00000001032de0fc chromedriver + 3891452
+17  chromedriver                        0x0000000103328a64 chromedriver + 4196964
+18  chromedriver                        0x0000000103328bb8 chromedriver + 4197304
+19  chromedriver                        0x000000010333c650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised inside accept_cookies by https://www.Unbounce.com/blog
+Message: element click intercepted: Element is not clickable at point (1152, 1136)
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x0000000100a2d1c0 chromedriver + 4248000
+1   chromedriver                        0x00000001009addc0 chromedriver + 3726784
+2   chromedriver                        0x0000000100662ec4 chromedriver + 274116
+3   chromedriver                        0x00000001006a6530 chromedriver + 550192
+4   chromedriver                        0x00000001006a3f28 chromedriver + 540456
+5   chromedriver                        0x00000001006a16c4 chromedriver + 530116
+6   chromedriver                        0x00000001006a05b8 chromedriver + 525752
+7   chromedriver                        0x00000001006933e0 chromedriver + 472032
+8   chromedriver                        0x0000000100692bbc chromedriver + 469948
+9   chromedriver                        0x00000001006da054 chromedriver + 761940
+10  chromedriver                        0x0000000100691200 chromedriver + 463360
+11  chromedriver                        0x0000000100692318 chromedriver + 467736
+12  chromedriver                        0x00000001009fb060 chromedriver + 4042848
+13  chromedriver                        0x00000001009ff8a4 chromedriver + 4061348
+14  chromedriver                        0x0000000100a073d0 chromedriver + 4092880
+15  chromedriver                        0x0000000100a006e4 chromedriver + 4064996
+16  chromedriver                        0x00000001009d60fc chromedriver + 3891452
+17  chromedriver                        0x0000000100a20a64 chromedriver + 4196964
+18  chromedriver                        0x0000000100a20bb8 chromedriver + 4197304
+19  chromedriver                        0x0000000100a34650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.Backlinko.com
+name 'options' is not defined
+
+Exception raised by https://www.Backlinko.com
+name 'driver' is not defined
+
+Exception raised by http://www.abfrl.com/
+HTTPSConnectionPool(host='www.abfrl.com', port=443): Max retries exceeded with url: /https:/www.abfrl.com/css/website-css/bootstrap.min.css (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+
+Exception raised by https://www.abfrl.com/
+HTTPSConnectionPool(host='www.abfrl.com', port=443): Max retries exceeded with url: /https://www.abfrl.com/css/website-css/bootstrap.min.css (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+
+Exception raised by https://www.abfrl.com/
+HTTPSConnectionPool(host='www.abfrl.com', port=443): Max retries exceeded with url: /https://www.abfrl.com/css/website-css/bootstrap.min.css (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+
+Exception raised by https://www.micromaxinfo.com/
+HTTPSConnectionPool(host='www.micromaxinfo.com', port=443): Max retries exceeded with url: /https://micromaxinfo.com/pub/static/version1675179651/_cache/merged/b2641959183f7806e0965159611a2f3a.min.css (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+

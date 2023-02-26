@@ -39,10 +39,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "img",
@@ -67,10 +69,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "href",
@@ -95,10 +99,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "picture",
@@ -123,10 +129,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "a",
@@ -151,10 +159,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "source",
@@ -180,10 +190,12 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "link",
@@ -208,10 +220,42 @@ if (args.length != 3) {
             delete attribs["data-lazy-srcset"];
           }
           for (const [key, value] of Object.entries(attribs)) {
-            attribs[key] = value.replace(
-              /(\s|^)[^ ]+\.(jpeg|jpg|png|svg)/g,
-              "$1../images/default_img.jpeg"
-            );
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+          }
+          return {
+            tagName: "div",
+            attribs: attribs,
+          };
+        },
+        figure: function (tagName, attribs) {
+          if (attribs["data-src"]) {
+            attribs["src"] = attribs["data-src"];
+            delete attribs["data-src"];
+          }
+          if (attribs["data-lazy-src"]) {
+            attribs["src"] = attribs["data-lazy-src"];
+            delete attribs["data-lazy-src"];
+          }
+          if (attribs["data-srcset"]) {
+            attribs["srcset"] = attribs["data-srcset"];
+            delete attribs["data-srcset"];
+          }
+          if (attribs["data-lazy-srcset"]) {
+            attribs["srcset"] = attribs["data-lazy-srcset"];
+            delete attribs["data-lazy-srcset"];
+          }
+          for (const [key, value] of Object.entries(attribs)) {
+            attribs[key] = value
+              .replace(
+                /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
+                "$1../images/default_img.jpeg"
+              )
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
           }
           return {
             tagName: "div",
