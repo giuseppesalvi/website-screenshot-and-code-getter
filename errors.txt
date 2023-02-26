@@ -32,3 +32,9 @@ Stacktrace:
 Exception raised by https://www.Copyblogger.com
 'WhitespaceToken' object has no attribute 'content'
 
+Exception raised by https://www.CupofJo.com
+'WhitespaceToken' object has no attribute 'content'
+
+Exception raised by https://www.Copyblogger.com
+'NoneType' object is not iterable
+
