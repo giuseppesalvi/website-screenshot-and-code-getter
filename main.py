@@ -110,7 +110,7 @@ def get_html_selenium(url):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=Options())
 
     # Launch URL
-    driver.get(website_dict["website_url"])
+    driver.get(url)
 
     # Get source code
     html = driver.page_source
@@ -121,6 +121,66 @@ def get_html_selenium(url):
     driver.close()
     return html
 
+def check_website_framework(html, website_dict):
+    frameworks_found = []
+
+    # Check for React-specific code
+    if re.search(r'data-reactid=".*?"|React\.createElement|ReactDOM\.render', html):
+        print("Framework found: React")
+        frameworks_found.append('React')
+
+    # Check for Gatsby-specific code
+    if re.search(r'gatsby-', html) or re.search(r'___gatsby|GATSBY_.*_POST', html):
+        print("Framework found: Gatsby")
+        frameworks_found.append('Gatsby')
+
+    # Check for Next.js-specific code
+    if re.search(r'_app\.js|_document\.js|_error\.js|_documentSetup|_appContent', html) or re.search(r'__NEXT_DATA__', html):
+        print("Framework found: Next")
+        frameworks_found.append('Next.js')
+
+    # Check for Nuxt-specific code
+    if re.search(r'nuxt-', html) or re.search(r'__NUXT__|fetch__|nuxt\.js', html):
+        print("Framework found: Nuxt")
+        frameworks_found.append('Nuxt')
+
+    # Check for Vue-specific code
+    if re.search(r'vue-', html) or re.search(r'Vue(\.min)?\.js', html):
+        print("Framework found: Vue")
+        frameworks_found.append('Vue')
+
+    # Check for Angular-specific code
+    if re.search(r'ng-', html) and re.search(r'angular(\.min)?\.js', html):
+        print("Framework found: Angular")
+        frameworks_found.append('Angular')
+
+    # Check for Ember-specific code
+    if re.search(r'ember-', html) or re.search(r'ember(\.min)?\.js', html):
+        print("Framework found: Ember")
+        frameworks_found.append('Ember')
+
+    # Check for Backbone-specific code
+    if re.search(r'backbone-', html) or re.search(r'backbone(\.min)?\.js', html):
+        print("Framework found: Backbone")
+        frameworks_found.append('Backbone')
+
+    # Check for Rocket Lazy Load script
+    if re.search(r'rocketLazyLoadScript', html):
+        print("Framework found: Rocket Lazy Load (WordPress)")
+        frameworks_found.append('Rocket Lazy Load')
+
+    # Check for WordPress scripts that impact appearance/functionality when JS is disabled
+    if re.search(r'wp-block-[^"]*?"|wp-embed|has-js|no-js|js-focus-visible|wp-menu-arrow', html):
+        print("Framework found: WordPress")
+        frameworks_found.append('WordPress')
+
+    if frameworks_found:
+        website_dict["frameworks"] = True
+    else:
+        website_dict["frameworks"] = False
+    website_dict["frameworks_list"] = frameworks_found
+    return
+
 
 def get_html(website_dict):
     print("\nGenerating HTML code ...")
@@ -129,6 +189,9 @@ def get_html(website_dict):
 
     #html = get_html_pyppeteer(url)
     html = get_html_selenium(url)
+
+    # Check for web frameworks
+    check_website_framework(html, website_dict)
 
     # Write html source code to file
     with open(website_dict["filename"]+ website_dict["suffix"] + "_raw.html", "w") as f:
