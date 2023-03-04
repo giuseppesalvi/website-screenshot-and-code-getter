@@ -8,3 +8,6 @@ node_modules
 errors.txt
 .*
 /__pycache__
+results.zip
+.gitignore
+.gitignore

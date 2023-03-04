@@ -260,3 +260,321 @@ HTTPSConnectionPool(host='www.abfrl.com', port=443): Max retries exceeded with u
 Exception raised by https://www.micromaxinfo.com/
 HTTPSConnectionPool(host='www.micromaxinfo.com', port=443): Max retries exceeded with url: /https://micromaxinfo.com/pub/static/version1675179651/_cache/merged/b2641959183f7806e0965159611a2f3a.min.css (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
 
+Exception raised by https://www.netguru.co/
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot take screenshot with 0 height."}
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001033c51c0 chromedriver + 4248000
+1   chromedriver                        0x0000000103345dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102ffaec4 chromedriver + 274116
+3   chromedriver                        0x0000000102fe59e8 chromedriver + 186856
+4   chromedriver                        0x0000000102fe3b44 chromedriver + 179012
+5   chromedriver                        0x0000000102fe3dfc chromedriver + 179708
+6   chromedriver                        0x0000000103002cc8 chromedriver + 306376
+7   chromedriver                        0x0000000103033988 chromedriver + 506248
+8   chromedriver                        0x000000010302abbc chromedriver + 469948
+9   chromedriver                        0x0000000103072054 chromedriver + 761940
+10  chromedriver                        0x0000000103029200 chromedriver + 463360
+11  chromedriver                        0x000000010302a318 chromedriver + 467736
+12  chromedriver                        0x0000000103393060 chromedriver + 4042848
+13  chromedriver                        0x00000001033978a4 chromedriver + 4061348
+14  chromedriver                        0x000000010339f3d0 chromedriver + 4092880
+15  chromedriver                        0x00000001033986e4 chromedriver + 4064996
+16  chromedriver                        0x000000010336e0fc chromedriver + 3891452
+17  chromedriver                        0x00000001033b8a64 chromedriver + 4196964
+18  chromedriver                        0x00000001033b8bb8 chromedriver + 4197304
+19  chromedriver                        0x00000001033cc650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://resto-elephant.com/
+Message: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x0000000102bd11c0 chromedriver + 4248000
+1   chromedriver                        0x0000000102b51dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102806ec4 chromedriver + 274116
+3   chromedriver                        0x00000001027ff6dc chromedriver + 243420
+4   chromedriver                        0x00000001027f1c74 chromedriver + 187508
+5   chromedriver                        0x00000001027f334c chromedriver + 193356
+6   chromedriver                        0x00000001027f1fb4 chromedriver + 188340
+7   chromedriver                        0x00000001027f0e68 chromedriver + 183912
+8   chromedriver                        0x00000001027f0d10 chromedriver + 183568
+9   chromedriver                        0x00000001027ef990 chromedriver + 178576
+10  chromedriver                        0x00000001027efcc8 chromedriver + 179400
+11  chromedriver                        0x0000000102808efc chromedriver + 282364
+12  chromedriver                        0x000000010287e5f0 chromedriver + 763376
+13  chromedriver                        0x000000010287e054 chromedriver + 761940
+14  chromedriver                        0x0000000102835200 chromedriver + 463360
+15  chromedriver                        0x0000000102836318 chromedriver + 467736
+16  chromedriver                        0x0000000102b9f060 chromedriver + 4042848
+17  chromedriver                        0x0000000102ba38a4 chromedriver + 4061348
+18  chromedriver                        0x0000000102bab3d0 chromedriver + 4092880
+19  chromedriver                        0x0000000102ba46e4 chromedriver + 4064996
+20  chromedriver                        0x0000000102b7a0fc chromedriver + 3891452
+21  chromedriver                        0x0000000102bc4a64 chromedriver + 4196964
+22  chromedriver                        0x0000000102bc4bb8 chromedriver + 4197304
+23  chromedriver                        0x0000000102bd8650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://resto-elephant.com/
+Message: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001009c11c0 chromedriver + 4248000
+1   chromedriver                        0x0000000100941dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001005f6ec4 chromedriver + 274116
+3   chromedriver                        0x00000001005ef6dc chromedriver + 243420
+4   chromedriver                        0x00000001005e1c74 chromedriver + 187508
+5   chromedriver                        0x00000001005e334c chromedriver + 193356
+6   chromedriver                        0x00000001005e1fb4 chromedriver + 188340
+7   chromedriver                        0x00000001005e0e68 chromedriver + 183912
+8   chromedriver                        0x00000001005e0d10 chromedriver + 183568
+9   chromedriver                        0x00000001005df990 chromedriver + 178576
+10  chromedriver                        0x00000001005dfcc8 chromedriver + 179400
+11  chromedriver                        0x00000001005f8efc chromedriver + 282364
+12  chromedriver                        0x000000010066e5f0 chromedriver + 763376
+13  chromedriver                        0x000000010066e054 chromedriver + 761940
+14  chromedriver                        0x0000000100625200 chromedriver + 463360
+15  chromedriver                        0x0000000100626318 chromedriver + 467736
+16  chromedriver                        0x000000010098f060 chromedriver + 4042848
+17  chromedriver                        0x00000001009938a4 chromedriver + 4061348
+18  chromedriver                        0x000000010099b3d0 chromedriver + 4092880
+19  chromedriver                        0x00000001009946e4 chromedriver + 4064996
+20  chromedriver                        0x000000010096a0fc chromedriver + 3891452
+21  chromedriver                        0x00000001009b4a64 chromedriver + 4196964
+22  chromedriver                        0x00000001009b4bb8 chromedriver + 4197304
+23  chromedriver                        0x00000001009c8650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://resto-elephant.com/
+Message: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001044791c0 chromedriver + 4248000
+1   chromedriver                        0x00000001043f9dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040aeec4 chromedriver + 274116
+3   chromedriver                        0x00000001040a76dc chromedriver + 243420
+4   chromedriver                        0x0000000104099c74 chromedriver + 187508
+5   chromedriver                        0x000000010409b34c chromedriver + 193356
+6   chromedriver                        0x0000000104099fb4 chromedriver + 188340
+7   chromedriver                        0x0000000104098e68 chromedriver + 183912
+8   chromedriver                        0x0000000104098d10 chromedriver + 183568
+9   chromedriver                        0x0000000104097990 chromedriver + 178576
+10  chromedriver                        0x0000000104097cc8 chromedriver + 179400
+11  chromedriver                        0x00000001040b0efc chromedriver + 282364
+12  chromedriver                        0x00000001041265f0 chromedriver + 763376
+13  chromedriver                        0x0000000104126054 chromedriver + 761940
+14  chromedriver                        0x00000001040dd200 chromedriver + 463360
+15  chromedriver                        0x00000001040de318 chromedriver + 467736
+16  chromedriver                        0x0000000104447060 chromedriver + 4042848
+17  chromedriver                        0x000000010444b8a4 chromedriver + 4061348
+18  chromedriver                        0x00000001044533d0 chromedriver + 4092880
+19  chromedriver                        0x000000010444c6e4 chromedriver + 4064996
+20  chromedriver                        0x00000001044220fc chromedriver + 3891452
+21  chromedriver                        0x000000010446ca64 chromedriver + 4196964
+22  chromedriver                        0x000000010446cbb8 chromedriver + 4197304
+23  chromedriver                        0x0000000104480650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised inside accept_cookies by https://apigee.com/api-management/#/homepage
+Message: element click intercepted: Element is not clickable at point (533, 1078)
+  (Session info: headless chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x0000000102dbd1c0 chromedriver + 4248000
+1   chromedriver                        0x0000000102d3ddc0 chromedriver + 3726784
+2   chromedriver                        0x00000001029f2ec4 chromedriver + 274116
+3   chromedriver                        0x0000000102a36530 chromedriver + 550192
+4   chromedriver                        0x0000000102a33f28 chromedriver + 540456
+5   chromedriver                        0x0000000102a316c4 chromedriver + 530116
+6   chromedriver                        0x0000000102a305b8 chromedriver + 525752
+7   chromedriver                        0x0000000102a233e0 chromedriver + 472032
+8   chromedriver                        0x0000000102a22bbc chromedriver + 469948
+9   chromedriver                        0x0000000102a6a054 chromedriver + 761940
+10  chromedriver                        0x0000000102a21200 chromedriver + 463360
+11  chromedriver                        0x0000000102a22318 chromedriver + 467736
+12  chromedriver                        0x0000000102d8b060 chromedriver + 4042848
+13  chromedriver                        0x0000000102d8f8a4 chromedriver + 4061348
+14  chromedriver                        0x0000000102d973d0 chromedriver + 4092880
+15  chromedriver                        0x0000000102d906e4 chromedriver + 4064996
+16  chromedriver                        0x0000000102d660fc chromedriver + 3891452
+17  chromedriver                        0x0000000102db0a64 chromedriver + 4196964
+18  chromedriver                        0x0000000102db0bb8 chromedriver + 4197304
+19  chromedriver                        0x0000000102dc4650 chromedriver + 4277840
+20  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+21  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.timeblend.com/
+Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001004651c0 chromedriver + 4248000
+1   chromedriver                        0x00000001003e5dc0 chromedriver + 3726784
+2   chromedriver                        0x000000010009aec4 chromedriver + 274116
+3   chromedriver                        0x00000001000936dc chromedriver + 243420
+4   chromedriver                        0x0000000100085c74 chromedriver + 187508
+5   chromedriver                        0x000000010008734c chromedriver + 193356
+6   chromedriver                        0x0000000100085fb4 chromedriver + 188340
+7   chromedriver                        0x0000000100084e68 chromedriver + 183912
+8   chromedriver                        0x0000000100084d10 chromedriver + 183568
+9   chromedriver                        0x0000000100083990 chromedriver + 178576
+10  chromedriver                        0x0000000100083cc8 chromedriver + 179400
+11  chromedriver                        0x000000010009cefc chromedriver + 282364
+12  chromedriver                        0x00000001001125f0 chromedriver + 763376
+13  chromedriver                        0x0000000100112054 chromedriver + 761940
+14  chromedriver                        0x00000001000c9200 chromedriver + 463360
+15  chromedriver                        0x00000001000ca318 chromedriver + 467736
+16  chromedriver                        0x0000000100433060 chromedriver + 4042848
+17  chromedriver                        0x00000001004378a4 chromedriver + 4061348
+18  chromedriver                        0x000000010043f3d0 chromedriver + 4092880
+19  chromedriver                        0x00000001004386e4 chromedriver + 4064996
+20  chromedriver                        0x000000010040e0fc chromedriver + 3891452
+21  chromedriver                        0x0000000100458a64 chromedriver + 4196964
+22  chromedriver                        0x0000000100458bb8 chromedriver + 4197304
+23  chromedriver                        0x000000010046c650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.montere.it/?lang=en
+list index out of range
+
+Exception raised by https://www.blastprocessor.co.uk/
+Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001011991c0 chromedriver + 4248000
+1   chromedriver                        0x0000000101119dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000100dceec4 chromedriver + 274116
+3   chromedriver                        0x0000000100dc76dc chromedriver + 243420
+4   chromedriver                        0x0000000100db9c74 chromedriver + 187508
+5   chromedriver                        0x0000000100dbb34c chromedriver + 193356
+6   chromedriver                        0x0000000100db9fb4 chromedriver + 188340
+7   chromedriver                        0x0000000100db8e68 chromedriver + 183912
+8   chromedriver                        0x0000000100db8d10 chromedriver + 183568
+9   chromedriver                        0x0000000100db7990 chromedriver + 178576
+10  chromedriver                        0x0000000100db7cc8 chromedriver + 179400
+11  chromedriver                        0x0000000100dd0efc chromedriver + 282364
+12  chromedriver                        0x0000000100e465f0 chromedriver + 763376
+13  chromedriver                        0x0000000100e46054 chromedriver + 761940
+14  chromedriver                        0x0000000100dfd200 chromedriver + 463360
+15  chromedriver                        0x0000000100dfe318 chromedriver + 467736
+16  chromedriver                        0x0000000101167060 chromedriver + 4042848
+17  chromedriver                        0x000000010116b8a4 chromedriver + 4061348
+18  chromedriver                        0x00000001011733d0 chromedriver + 4092880
+19  chromedriver                        0x000000010116c6e4 chromedriver + 4064996
+20  chromedriver                        0x00000001011420fc chromedriver + 3891452
+21  chromedriver                        0x000000010118ca64 chromedriver + 4196964
+22  chromedriver                        0x000000010118cbb8 chromedriver + 4197304
+23  chromedriver                        0x00000001011a0650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://www.blastprocessor.co.uk/
+Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001046411c0 chromedriver + 4248000
+1   chromedriver                        0x00000001045c1dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000104276ec4 chromedriver + 274116
+3   chromedriver                        0x000000010426f6dc chromedriver + 243420
+4   chromedriver                        0x0000000104261c74 chromedriver + 187508
+5   chromedriver                        0x000000010426334c chromedriver + 193356
+6   chromedriver                        0x0000000104261fb4 chromedriver + 188340
+7   chromedriver                        0x0000000104260e68 chromedriver + 183912
+8   chromedriver                        0x0000000104260d10 chromedriver + 183568
+9   chromedriver                        0x000000010425f990 chromedriver + 178576
+10  chromedriver                        0x000000010425fcc8 chromedriver + 179400
+11  chromedriver                        0x0000000104278efc chromedriver + 282364
+12  chromedriver                        0x00000001042ee5f0 chromedriver + 763376
+13  chromedriver                        0x00000001042ee054 chromedriver + 761940
+14  chromedriver                        0x00000001042a5200 chromedriver + 463360
+15  chromedriver                        0x00000001042a6318 chromedriver + 467736
+16  chromedriver                        0x000000010460f060 chromedriver + 4042848
+17  chromedriver                        0x00000001046138a4 chromedriver + 4061348
+18  chromedriver                        0x000000010461b3d0 chromedriver + 4092880
+19  chromedriver                        0x00000001046146e4 chromedriver + 4064996
+20  chromedriver                        0x00000001045ea0fc chromedriver + 3891452
+21  chromedriver                        0x0000000104634a64 chromedriver + 4196964
+22  chromedriver                        0x0000000104634bb8 chromedriver + 4197304
+23  chromedriver                        0x0000000104648650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://roxannekoranda.com/
+Message: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001024f91c0 chromedriver + 4248000
+1   chromedriver                        0x0000000102479dc0 chromedriver + 3726784
+2   chromedriver                        0x000000010212eec4 chromedriver + 274116
+3   chromedriver                        0x00000001021276dc chromedriver + 243420
+4   chromedriver                        0x0000000102119c74 chromedriver + 187508
+5   chromedriver                        0x000000010211b34c chromedriver + 193356
+6   chromedriver                        0x0000000102119fb4 chromedriver + 188340
+7   chromedriver                        0x0000000102118e68 chromedriver + 183912
+8   chromedriver                        0x0000000102118d10 chromedriver + 183568
+9   chromedriver                        0x0000000102117990 chromedriver + 178576
+10  chromedriver                        0x0000000102117cc8 chromedriver + 179400
+11  chromedriver                        0x0000000102130efc chromedriver + 282364
+12  chromedriver                        0x00000001021a65f0 chromedriver + 763376
+13  chromedriver                        0x00000001021a6054 chromedriver + 761940
+14  chromedriver                        0x000000010215d200 chromedriver + 463360
+15  chromedriver                        0x000000010215e318 chromedriver + 467736
+16  chromedriver                        0x00000001024c7060 chromedriver + 4042848
+17  chromedriver                        0x00000001024cb8a4 chromedriver + 4061348
+18  chromedriver                        0x00000001024d33d0 chromedriver + 4092880
+19  chromedriver                        0x00000001024cc6e4 chromedriver + 4064996
+20  chromedriver                        0x00000001024a20fc chromedriver + 3891452
+21  chromedriver                        0x00000001024eca64 chromedriver + 4196964
+22  chromedriver                        0x00000001024ecbb8 chromedriver + 4197304
+23  chromedriver                        0x0000000102500650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://roxannekoranda.com/
+Message: unknown error: net::ERR_SSL_PROTOCOL_ERROR
+  (Session info: chrome=110.0.5481.100)
+Stacktrace:
+0   chromedriver                        0x00000001008f51c0 chromedriver + 4248000
+1   chromedriver                        0x0000000100875dc0 chromedriver + 3726784
+2   chromedriver                        0x000000010052aec4 chromedriver + 274116
+3   chromedriver                        0x00000001005236dc chromedriver + 243420
+4   chromedriver                        0x0000000100515c74 chromedriver + 187508
+5   chromedriver                        0x000000010051734c chromedriver + 193356
+6   chromedriver                        0x0000000100515fb4 chromedriver + 188340
+7   chromedriver                        0x0000000100514e68 chromedriver + 183912
+8   chromedriver                        0x0000000100514d10 chromedriver + 183568
+9   chromedriver                        0x0000000100513990 chromedriver + 178576
+10  chromedriver                        0x0000000100513cc8 chromedriver + 179400
+11  chromedriver                        0x000000010052cefc chromedriver + 282364
+12  chromedriver                        0x00000001005a25f0 chromedriver + 763376
+13  chromedriver                        0x00000001005a2054 chromedriver + 761940
+14  chromedriver                        0x0000000100559200 chromedriver + 463360
+15  chromedriver                        0x000000010055a318 chromedriver + 467736
+16  chromedriver                        0x00000001008c3060 chromedriver + 4042848
+17  chromedriver                        0x00000001008c78a4 chromedriver + 4061348
+18  chromedriver                        0x00000001008cf3d0 chromedriver + 4092880
+19  chromedriver                        0x00000001008c86e4 chromedriver + 4064996
+20  chromedriver                        0x000000010089e0fc chromedriver + 3891452
+21  chromedriver                        0x00000001008e8a64 chromedriver + 4196964
+22  chromedriver                        0x00000001008e8bb8 chromedriver + 4197304
+23  chromedriver                        0x00000001008fc650 chromedriver + 4277840
+24  libsystem_pthread.dylib             0x000000018b8ec26c _pthread_start + 148
+25  libsystem_pthread.dylib             0x000000018b8e708c thread_start + 8
+
+
+Exception raised by https://pearanalytics.com/
+list index out of range
+

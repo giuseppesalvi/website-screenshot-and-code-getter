@@ -125,6 +125,7 @@ def check_website_framework(html, website_dict):
     frameworks_found = []
 
     # Check for React-specific code
+    #if re.search(r'data-reactroot|data-reactid|React\.createElement|ReactDOM\.render', html):
     if re.search(r'data-reactid=".*?"|React\.createElement|ReactDOM\.render', html):
         print("Framework found: React")
         frameworks_found.append('React')
@@ -144,40 +145,42 @@ def check_website_framework(html, website_dict):
         print("Framework found: Nuxt")
         frameworks_found.append('Nuxt')
 
-    # Check for Vue-specific code
-    if re.search(r'vue-', html) or re.search(r'Vue(\.min)?\.js', html):
-        print("Framework found: Vue")
-        frameworks_found.append('Vue')
-
-    # Check for Angular-specific code
-    if re.search(r'ng-', html) and re.search(r'angular(\.min)?\.js', html):
-        print("Framework found: Angular")
-        frameworks_found.append('Angular')
-
-    # Check for Ember-specific code
-    if re.search(r'ember-', html) or re.search(r'ember(\.min)?\.js', html):
-        print("Framework found: Ember")
-        frameworks_found.append('Ember')
-
     # Check for Backbone-specific code
     if re.search(r'backbone-', html) or re.search(r'backbone(\.min)?\.js', html):
         print("Framework found: Backbone")
         frameworks_found.append('Backbone')
 
+    # From experiments: Angular, Vue and Ember don't create problems
+    # Check for Vue-specific code
+    # if re.search(r'vue-', html) or re.search(r'Vue(\.min)?\.js', html):
+        print("Framework found: Vue")
+        frameworks_found.append('Vue')
+
+    # Check for Angular-specific code
+    #if re.search(r'ng-', html) and re.search(r'angular(\.min)?\.js', html):
+        print("Framework found: Angular")
+        frameworks_found.append('Angular')
+
+    # Check for Ember-specific code
+    #if re.search(r'ember-', html) or re.search(r'ember(\.min)?\.js', html):
+        print("Framework found: Ember")
+        frameworks_found.append('Ember')
+
+
     # Check for Rocket Lazy Load script
-    if re.search(r'rocketLazyLoadScript', html):
-        print("Framework found: Rocket Lazy Load (WordPress)")
-        frameworks_found.append('Rocket Lazy Load')
+    #if re.search(r'rocketLazyLoadScript|rocketlazyloadscript|', html):
+        #print("Framework found: Rocket Lazy Load (WordPress)")
+        #frameworks_found.append('Rocket Lazy Load')
 
     # Check for WordPress scripts that impact appearance/functionality when JS is disabled
-    if re.search(r'wp-block-[^"]*?"|wp-embed|has-js|no-js|js-focus-visible|wp-menu-arrow', html):
-        print("Framework found: WordPress")
-        frameworks_found.append('WordPress')
+    #if re.search(r'wp-block-[^"]*?"|wp-embed|has-js|no-js|js-focus-visible|wp-menu-arrow', html):
+        #print("Framework found: WordPress")
+        #frameworks_found.append('WordPress')
 
-    if frameworks_found:
-        website_dict["frameworks"] = True
+    if any(item in frameworks_found for item in ["React", "Gatsby", "Next", "Nuxt", "Backbone"]):
+        website_dict["framework_problematic"] = True
     else:
-        website_dict["frameworks"] = False
+        website_dict["framework_problematic"] = False
     website_dict["frameworks_list"] = frameworks_found
     return
 
@@ -357,7 +360,7 @@ if __name__ == "__main__":
                 print("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
             # If just_new option, process only new websites
-            if args.just_new and ((args.task in ["all", "code"] and isfile(filename + ".html")) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
+            if args.just_new and ((args.task in ["all", "code"] and (isfile(filename + "_raw.html") or isfile(filename + ".html"))) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
                 print("Already present\n")
                 continue
 
@@ -379,7 +382,7 @@ if __name__ == "__main__":
                 get_screenshot(website_dict, file_local=True)
                 # DBG: Get both the non sanitized and the sanitized version screenshot
                 # TODO: FIX THIS
-                get_screenshot(website_dict, file_local=args.file_local, suffix="_raw")
+                #get_screenshot(website_dict, file_local=args.file_local, suffix="_raw")
 
             # Sort and save statistics
             if args.task in ["all", "stats"]:
