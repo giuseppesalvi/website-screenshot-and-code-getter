@@ -1,9 +1,4 @@
-from html_parser import MyHTMLParser
-from pprint import pprint
-import re
 from PIL import Image
-import requests
-from css_parser import parse_css
 import json
 from genericpath import isfile
 import os
