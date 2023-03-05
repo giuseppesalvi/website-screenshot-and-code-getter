@@ -17,6 +17,7 @@ import re
 from stats import print_stats
 import asyncio
 from pyppeteer import launch
+import logging
 WAIT_SCREENSHOT = 1
 COLAB = True 
 
@@ -42,6 +43,9 @@ def accept_cookies(driver):
             # Print and try to go on anyway
             print("Exception raised inside accept_cookies by", website_url)
             print(e, end="\n\n") 
+            logging.warning("Exception raised inside accept_cookies by", website_url)
+            logging.warning(e) 
+            logging.warning("\n\n") 
             with open("errors.txt", "a") as f:
                 print("Exception raised inside accept_cookies by", website_url, file=f)
                 print(e, end="\n\n", file=f)
@@ -51,6 +55,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
     """ Get Screenshot of website URL passed as argument, and save it """
 
     print("\nGenerating the screenshot ...")
+    logging.info("\nGenerating the screenshot ...")
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -95,6 +100,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
     # Close web driver
     driver.close()
     print("Screenshot obtained!\n")
+    logging.info("Screenshot obtained!\n")
 
 
 async def get_rendered_html(url):
@@ -145,42 +151,51 @@ def check_website_framework(html, website_dict):
     #if re.search(r'data-reactroot|data-reactid|React\.createElement|ReactDOM\.render', html):
     if re.search(r'data-reactid=".*?"|React\.createElement|ReactDOM\.render', html):
         print("Framework found: React")
+        logging.info("Framework found: React")
         frameworks_found.append('React')
 
     # Check for Gatsby-specific code
     if re.search(r'gatsby-', html) or re.search(r'___gatsby|GATSBY_.*_POST', html):
         print("Framework found: Gatsby")
+        logging.info("Framework found: Gatsby")
+        ("Framework found: Gatsby")
         frameworks_found.append('Gatsby')
 
     # Check for Next.js-specific code
     if re.search(r'_app\.js|_document\.js|_error\.js|_documentSetup|_appContent', html) or re.search(r'__NEXT_DATA__', html):
         print("Framework found: Next")
+        logging.info("Framework found: Next")
         frameworks_found.append('Next.js')
 
     # Check for Nuxt-specific code
     if re.search(r'nuxt-', html) or re.search(r'__NUXT__|fetch__|nuxt\.js', html):
         print("Framework found: Nuxt")
+        logging.info("Framework found: Nuxt")
         frameworks_found.append('Nuxt')
 
     # Check for Backbone-specific code
     if re.search(r'backbone-', html) or re.search(r'backbone(\.min)?\.js', html):
         print("Framework found: Backbone")
+        logging.info("Framework found: Backbone")
         frameworks_found.append('Backbone')
 
     # From experiments: Angular, Vue and Ember don't create problems
     # Check for Vue-specific code
-    # if re.search(r'vue-', html) or re.search(r'Vue(\.min)?\.js', html):
+    if re.search(r'vue-', html) or re.search(r'Vue(\.min)?\.js', html):
         print("Framework found: Vue")
+        logging.info("Framework found: Vue")
         frameworks_found.append('Vue')
 
     # Check for Angular-specific code
-    #if re.search(r'ng-', html) and re.search(r'angular(\.min)?\.js', html):
+    if re.search(r'ng-', html) and re.search(r'angular(\.min)?\.js', html):
         print("Framework found: Angular")
+        logging.info("Framework found: Angular")
         frameworks_found.append('Angular')
 
     # Check for Ember-specific code
-    #if re.search(r'ember-', html) or re.search(r'ember(\.min)?\.js', html):
+    if re.search(r'ember-', html) or re.search(r'ember(\.min)?\.js', html):
         print("Framework found: Ember")
+        logging.info("Framework found: Ember")
         frameworks_found.append('Ember')
 
 
@@ -204,6 +219,7 @@ def check_website_framework(html, website_dict):
 
 def get_html(website_dict):
     print("\nGenerating HTML code ...")
+    logging.info("\nGenerating HTML code ...")
 
     url = website_dict["website_url"]
 
@@ -218,6 +234,7 @@ def get_html(website_dict):
         f.write(html)
 
     print("HTML code obtained!\n")
+    logging.info("HTML code obtained!\n")
 
     parser = MyHTMLParser()
     parser.feed(html)
@@ -240,6 +257,7 @@ def add_dictionary(to_dict, from_dict):
     
 def get_css(website_dict, sanitize=True):
     print("\nGenerating CSS code ...")
+    logging.info("\nGenerating CSS code ...")
     sanitize_suffix = "_raw" if not sanitize else ""
     website_dict["css_classes" + sanitize_suffix] = {} 
     website_dict["css_properties" + sanitize_suffix] = {} 
@@ -266,6 +284,7 @@ def get_css(website_dict, sanitize=True):
 
 def sanitize(domain, test_name):
     print("Sanitizing Html Code")
+    logging.info("Sanitizing Html Code")
 
     # Run command for sanitizing the code
     result = subprocess.run(
@@ -330,6 +349,8 @@ def init_args_parser():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='logs/test1.log', level=logging.INFO)
+
     website_list = []
 
     # Initialize args parser
@@ -375,10 +396,12 @@ if __name__ == "__main__":
 
             if args.task != "stats":
                 print("[%d/%d] %s" %(i + 1, len(website_list), domain))
+                logging.info("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
             # If just_new option, process only new websites
             if args.just_new and ((args.task in ["all", "code"] and (isfile(filename + "_raw.html") or isfile(filename + ".html"))) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
                 print("Already present\n")
+                logging.info("Already present\n")
                 continue
 
             # Get code of the website
@@ -410,9 +433,13 @@ if __name__ == "__main__":
             if batch >= BATCH_SIZE:
                 break
             print("\n")
+            logging.info("\n")
         except Exception as e:
             print("Exception raised by", website_url)
+            logging.warning("Exception raised by", website_url)
             print(e, end="\n\n")
+            logging.warning(e)
+            logging.warning("\n\n")
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website_url, file=f)
                 print(e, end="\n\n", file=f)
