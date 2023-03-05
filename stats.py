@@ -20,6 +20,16 @@ def print_stats(website_dict):
     for key, value in website_dict.items():
         if isinstance(value, list):
             sizes[key] = sum_of_dict_sizes(value)
+    # add the size of css classes and properties dictionaries
+    sizes["css_classes"] =  len(website_dict["css_classes"].keys())
+    sizes["css_classes_raw"] =  len(website_dict["css_classes_raw"].keys())
+    sizes["css_classes_skipped"] =  len(website_dict["css_classes_skipped"].keys())
+    sizes["css_classes_skipped_raw"] =  len(website_dict["css_classes_skipped_raw"].keys())
+    sizes["css_properties"] =  len(website_dict["css_properties"].keys())
+    sizes["css_properties_raw"] =  len(website_dict["css_properties_raw"].keys())
+    sizes["css_properties_skipped"] =  len(website_dict["css_properties_skipped"].keys())
+    sizes["css_properties_skipped_raw"] =  len(website_dict["css_properties_skipped_raw"].keys())
+    
     website_dict["sizes"] = sizes
 
     # add to the dictionary the number of lines of the html and css file
@@ -80,9 +90,10 @@ def stats_summary():
     summary["n_html_nodes_raw"] = []
 
     # Number of lines
-    summary["n_html_lines"] = []
-    summary["n_html_lines_raw"] = []
-    summary["n_css_lines"] = [] 
+    summary["n_lines_html"] = []
+    summary["n_lines_html_raw"] = []
+    summary["n_lines_css"] = [] 
+    summary["n_lines_css_raw"] = [] 
 
     # Screenshot photo dimensions
     summary["screenshot_width"] = []
@@ -151,9 +162,10 @@ def stats_summary():
     summary["n_html_nodes_raw"].sort()
 
     # Number of lines
-    summary["n_html_lines"].sort()
-    summary["n_html_lines_raw"].sort()
-    summary["n_css_lines"].sort()
+    summary["n_lines_html"].sort()
+    summary["n_lines_html_raw"].sort()
+    summary["n_lines_css"].sort()
+    summary["n_lines_css_raw"].sort()
 
     # Screenshot photo dimensions
     summary["screenshot_width"].sort()
@@ -183,7 +195,7 @@ def stats_summary():
 
     # Number of lines
     summary["avg_n_lines_html"] = mean(summary["n_lines_html"])
-    summary["avg_n_lines_html_raw"] = mean(summary["n_lines_raw_html"])
+    summary["avg_n_lines_html_raw"] = mean(summary["n_lines_html_raw"])
     summary["avg_n_lines_css"] = mean(summary["n_lines_css"])
     summary["avg_n_lines_css_raw"] = mean(summary["n_lines_css_raw"])
 
