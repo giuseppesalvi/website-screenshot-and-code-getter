@@ -11,3 +11,5 @@ errors.txt
 results.zip
 .gitignore
 .gitignore
+.DS_Store
+.gitignore
