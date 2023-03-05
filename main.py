@@ -18,6 +18,9 @@ from stats import print_stats
 import asyncio
 from pyppeteer import launch
 import logging
+import datetime
+
+
 WAIT_SCREENSHOT = 1
 COLAB = True 
 
@@ -45,7 +48,6 @@ def accept_cookies(driver):
             print(e, end="\n\n") 
             logging.warning("Exception raised inside accept_cookies by", website_url)
             logging.warning(e) 
-            logging.warning("\n\n") 
             with open("errors.txt", "a") as f:
                 print("Exception raised inside accept_cookies by", website_url, file=f)
                 print(e, end="\n\n", file=f)
@@ -55,7 +57,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
     """ Get Screenshot of website URL passed as argument, and save it """
 
     print("\nGenerating the screenshot ...")
-    logging.info("\nGenerating the screenshot ...")
+    logging.info("Generating the screenshot ...")
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
@@ -219,7 +221,7 @@ def check_website_framework(html, website_dict):
 
 def get_html(website_dict):
     print("\nGenerating HTML code ...")
-    logging.info("\nGenerating HTML code ...")
+    logging.info("Generating HTML code ...")
 
     url = website_dict["website_url"]
 
@@ -257,7 +259,7 @@ def add_dictionary(to_dict, from_dict):
     
 def get_css(website_dict, sanitize=True):
     print("\nGenerating CSS code ...")
-    logging.info("\nGenerating CSS code ...")
+    logging.info("Generating CSS code ...")
     sanitize_suffix = "_raw" if not sanitize else ""
     website_dict["css_classes" + sanitize_suffix] = {} 
     website_dict["css_properties" + sanitize_suffix] = {} 
@@ -351,6 +353,11 @@ def init_args_parser():
 if __name__ == "__main__":
     logging.basicConfig(filename='logs/test1.log', level=logging.INFO)
 
+    # Log start date and time
+    start = datetime.datetime.now()
+    logging.info("Start date and time: {}".format(start.strftime("%Y-%m-%d %H:%M:%S")))
+
+
     website_list = []
 
     # Initialize args parser
@@ -401,7 +408,7 @@ if __name__ == "__main__":
             # If just_new option, process only new websites
             if args.just_new and ((args.task in ["all", "code"] and (isfile(filename + "_raw.html") or isfile(filename + ".html"))) or args.task in ["stats", "log"] and isfile(filename + ".log") or args.task == "screenshot" and isfile(filename + ".png")):
                 print("Already present\n")
-                logging.info("Already present\n")
+                logging.info("Already present")
                 continue
 
             # Get code of the website
@@ -433,15 +440,17 @@ if __name__ == "__main__":
             if batch >= BATCH_SIZE:
                 break
             print("\n")
-            logging.info("\n")
         except Exception as e:
             print("Exception raised by", website_url)
-            logging.warning("Exception raised by", website_url)
             print(e, end="\n\n")
-            logging.warning(e)
-            logging.warning("\n\n")
+            logging.warning("Exception raised by", website_url)
+            logging.exception(e)
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website_url, file=f)
                 print(e, end="\n\n", file=f)
             break # DEBUG
 
+    # Log end date and time elapsed time from start
+    end = datetime.datetime.now()
+    elapsed_time = (end - start).seconds
+    logging.info("End date and time: {}, elapsed time  : {:02d}:{:02d}:{:02d}".format(end.strftime("%Y-%m-%d %H:%M:%S"), elapsed_time//3600, (elapsed_time%3600)//60, elapsed_time%60))
