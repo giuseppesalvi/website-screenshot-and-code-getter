@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "sanitize-html": "^2.7.3",
-    "yargs": "^17.6.2"
+    "yargs": "^17.6.2",
+    "clean-html": "^1.5.0"
   },
   "type" : "module"
 }
