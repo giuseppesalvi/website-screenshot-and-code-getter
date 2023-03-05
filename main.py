@@ -14,11 +14,11 @@ import requests
 from css_parser import parse_css
 from html_parser import MyHTMLParser
 import re
-from pprint import pprint
 from stats import print_stats
 import asyncio
 from pyppeteer import launch
 WAIT_SCREENSHOT = 1
+COLAB = True 
 
 def accept_cookies(driver):
     """ Click to dismiss Cookies popup """
@@ -54,12 +54,18 @@ def get_screenshot(website_dict, file_local, suffix=""):
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
+    if COLAB:
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+
     # Set window size
     options.add_argument("--window-size=1280,1024")
 
     # Start web browser
-    driver = webdriver.Chrome(service=Service(
-        ChromeDriverManager().install()), options=options)
+    if COLAB:
+        driver = webdriver.Chrome('chromedriver', chrome_options=options)
+    else:
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     # Launch URL
     if file_local:
@@ -104,10 +110,21 @@ def get_html_pyppeteer(url):
     return html
 
 def get_html_selenium(url):
-    # Start web driver
-    options = Options()
-    options.add_argument('--headless')
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=Options())
+    # Set webdriver options
+    options = webdriver.ChromeOptions()
+    options.headless = True
+    if COLAB:
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+
+    # Set window size
+    options.add_argument("--window-size=1280,1024")
+
+    # Start web browser
+    if COLAB:
+        driver = webdriver.Chrome('chromedriver', chrome_options=options)
+    else:
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     # Launch URL
     driver.get(url)
@@ -399,5 +416,5 @@ if __name__ == "__main__":
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website_url, file=f)
                 print(e, end="\n\n", file=f)
-            #break # DEBUG
+            break # DEBUG
 
