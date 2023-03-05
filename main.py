@@ -63,7 +63,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
 
     # Start web browser
     if COLAB:
-        driver = webdriver.Chrome('chromedriver', chrome_options=options)
+        driver = webdriver.Chrome('chromedriver', options=options)
     else:
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
@@ -122,7 +122,7 @@ def get_html_selenium(url):
 
     # Start web browser
     if COLAB:
-        driver = webdriver.Chrome('chromedriver', chrome_options=options)
+        driver = webdriver.Chrome('chromedriver', options=options)
     else:
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
