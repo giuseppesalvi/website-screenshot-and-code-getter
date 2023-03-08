@@ -174,30 +174,30 @@ def stats_summary():
 
     # Sizes
     # Do averages
-    summary["avg_css_classes"] = mean(summary["css_classes"])
-    summary["avg_css_classes_skipped"] = mean(summary["css_classes_skipped"])
-    summary["avg_css_properties"] = mean(summary["css_properties"])
-    summary["avg_css_properties_skipped"] = mean(summary["css_properties_skipped"])
-    summary["avg_css_classes_raw"] = mean(summary["css_classes_raw"])
-    summary["avg_css_classes_skipped_raw"] = mean(summary["css_classes_skipped_raw"])
-    summary["avg_css_properties_raw"] = mean(summary["css_properties_raw"])
-    summary["avg_css_properties_skipped_raw"] = mean(summary["css_properties_skipped_raw"])
-    summary["avg_css_urls"] = mean(summary["css_urls"])
-    summary["avg_css_urls_raw"] = mean(summary["css_urls_raw"])
-    summary["avg_html_classes"] = mean(summary["html_classes"])
-    summary["avg_html_classes_raw"] = mean(summary["html_classes_raw"])
-    summary["avg_html_tags"] = mean(summary["html_tags"])
-    summary["avg_html_tags_raw"] = mean(summary["html_tags_raw"])
+    summary["avg_css_classes"] = round(mean(summary["css_classes"]), 2)
+    summary["avg_css_classes_skipped"] = round(mean(summary["css_classes_skipped"]), 2)
+    summary["avg_css_properties"] = round(mean(summary["css_properties"]), 2)
+    summary["avg_css_properties_skipped"] = round(mean(summary["css_properties_skipped"]), 2)
+    summary["avg_css_classes_raw"] = round(mean(summary["css_classes_raw"]), 2)
+    summary["avg_css_classes_skipped_raw"] = round(mean(summary["css_classes_skipped_raw"]), 2)
+    summary["avg_css_properties_raw"] = round(mean(summary["css_properties_raw"]), 2)
+    summary["avg_css_properties_skipped_raw"] = round(mean(summary["css_properties_skipped_raw"]), 2)
+    summary["avg_css_urls"] = round(mean(summary["css_urls"]), 2)
+    summary["avg_css_urls_raw"] = round(mean(summary["css_urls_raw"]), 2)
+    summary["avg_html_classes"] = round(mean(summary["html_classes"]), 2)
+    summary["avg_html_classes_raw"] = round(mean(summary["html_classes_raw"]), 2)
+    summary["avg_html_tags"] = round(mean(summary["html_tags"]), 2)
+    summary["avg_html_tags_raw"] = round(mean(summary["html_tags_raw"]), 2)
 
     # Number of html nodes
-    summary["avg_n_html_nodes"] = mean(summary["n_html_nodes"])
-    summary["avg_n_html_nodes_raw"] = mean(summary["n_html_nodes_raw"])
+    summary["avg_n_html_nodes"] = round(mean(summary["n_html_nodes"]), 2)
+    summary["avg_n_html_nodes_raw"] = round(mean(summary["n_html_nodes_raw"]), 2)
 
     # Number of lines
-    summary["avg_n_lines_html"] = mean(summary["n_lines_html"])
-    summary["avg_n_lines_html_raw"] = mean(summary["n_lines_html_raw"])
-    summary["avg_n_lines_css"] = mean(summary["n_lines_css"])
-    summary["avg_n_lines_css_raw"] = mean(summary["n_lines_css_raw"])
+    summary["avg_n_lines_html"] = round(mean(summary["n_lines_html"]), 2)
+    summary["avg_n_lines_html_raw"] = round(mean(summary["n_lines_html_raw"]), 2)
+    summary["avg_n_lines_css"] = round(mean(summary["n_lines_css"]), 2)
+    summary["avg_n_lines_css_raw"] = round(mean(summary["n_lines_css_raw"]), 2)
 
     summary["n_websites"] = len(summary["n_html_nodes"])
 
