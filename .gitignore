@@ -9,7 +9,6 @@ errors.txt
 .*
 /__pycache__
 results.zip
-.gitignore
-.gitignore
-.DS_Store
-.gitignore
+logs/test1.log
+__pycache__/stats.cpython-39.pyc
+/logs/*
