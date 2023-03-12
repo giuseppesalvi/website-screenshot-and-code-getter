@@ -112,7 +112,8 @@ def stats_summary(results_folder):
                 content = json.load(f)
 
                 # If website is excluded, add it to the excluded list and skip it
-                if content["excluded"]:
+                #if content["excluded"]:
+                if len(content["css_classes"]) == 0:
                     excluded.append(content["domain"])
                     continue
                 else:
@@ -231,5 +232,5 @@ def stats_summary(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites"
+    results_folder = "results_websites_majestic_million"
     stats_summary(results_folder)

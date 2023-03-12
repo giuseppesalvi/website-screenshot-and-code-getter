@@ -468,7 +468,7 @@ if __name__ == "__main__":
                 print("Exception raised by", website, file=f)
                 print(e, end="\n\n", file=f)
             with open("errors_" + RESULTS_FOLDER + ".txt", "a") as f:
-                print(website2domain(website), file=f)
+                print(website, file=f)
             #break # DEBUG
 
     # Log end date and time elapsed time from start
