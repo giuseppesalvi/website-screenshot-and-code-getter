@@ -26,7 +26,7 @@ RESULTS_FOLDER = "results/"
 WAIT_SCREENSHOT = 1
 COLAB = False 
 
-def accept_cookies(driver):
+def accept_cookies(driver, website_url):
     """ Click to dismiss Cookies popup """
 
     list_strings = ["I Accept", "Accept",
@@ -48,7 +48,7 @@ def accept_cookies(driver):
             # Print and try to go on anyway
             print("Exception raised inside accept_cookies by", website_url)
             print(e, end="\n\n") 
-            logging.warning("Exception raised inside accept_cookies by", website_url)
+            logging.warning("Exception raised inside accept_cookies by " + website_url)
             logging.warning(e) 
             with open("errors.txt", "a") as f:
                 print("Exception raised inside accept_cookies by", website_url, file=f)
@@ -86,7 +86,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
     driver.implicitly_wait(WAIT_SCREENSHOT)
 
     # Accept Cookies to hide popup
-    accept_cookies(driver)
+    accept_cookies(driver, website_dict["website_url"])
 
     # Get window size
     #s = driver.get_window_size()
@@ -462,13 +462,13 @@ if __name__ == "__main__":
         except Exception as e:
             print("Exception raised by", website)
             print(e, end="\n\n")
-            logging.warning("Exception raised by", website)
+            logging.warning("Exception raised by " + website)
             logging.exception(e)
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website, file=f)
                 print(e, end="\n\n", file=f)
             with open("errors_" + RESULTS_FOLDER + ".txt", "a") as f:
-                print(website)
+                print(website2domain(website), file=f)
             #break # DEBUG
 
     # Log end date and time elapsed time from start

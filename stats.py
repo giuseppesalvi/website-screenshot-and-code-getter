@@ -113,10 +113,10 @@ def stats_summary(results_folder):
 
                 # If website is excluded, add it to the excluded list and skip it
                 if content["excluded"]:
-                    excluded.append(content["website_url"])
+                    excluded.append(content["domain"])
                     continue
                 else:
-                    included.append(content["website_url"])
+                    included.append(content["domain"])
                 
                 # Sizes
                 summary["css_classes"].append(content["sizes"]["css_classes"])
@@ -231,5 +231,5 @@ def stats_summary(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites_majestic_million"
+    results_folder = "results_websites"
     stats_summary(results_folder)
