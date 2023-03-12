@@ -47,8 +47,7 @@ def parse_css(css, allowed_tags, allowed_classes, file, sanitize):
 def process_qualified_rule(rule, css_dict, sanitize, indentation=""):
     buffer = ""
     prelude = rule.prelude
-    #content = rule.content TODO
-    content = get_content(rule) 
+    content = rule.content
 
     prelude_buffer = process_prelude(prelude, css_dict, sanitize, indentation=indentation)
     if prelude_buffer and not prelude_buffer.isspace() and content:
@@ -64,8 +63,7 @@ def process_qualified_rule(rule, css_dict, sanitize, indentation=""):
 def process_at_rule(rule, css_dict, sanitize, indentation=""):
     buffer = ""
     prelude = rule.prelude
-    #content = rule.content TODO
-    content = get_content(rule) 
+    content = rule.content
 
     prelude_buffer = process_prelude(prelude, css_dict, sanitize)
 
@@ -141,37 +139,34 @@ def process_content(content, css_dict, sanitize, indentation=""):
     result_buffer=""
     is_property = True 
     skip = False
-    if content is None:
-        return result_buffer
-    else:
-        for token in content:
-            printable = token.serialize()
-            if token.serialize() == ";":
+    for token in content:
+        printable = token.serialize()
+        if token.serialize() == ";":
+            if not skip:
+                result_buffer += printable + "\n" + CSS_INDENTATION + indentation
+            is_property = True
+            skip = False
+        elif token.serialize() == ":":
+            if not skip:
+                result_buffer += printable + " "
+        else:
+            if sanitize and printable in css_forbidden_properties:
+                skip = True
+                if printable not in css_dict["css_properties_skipped"]:
+                    css_dict["css_properties_skipped"][printable] = 1
+                else:
+                    css_dict["css_properties_skipped"][printable] += 1
+            else: 
                 if not skip:
-                    result_buffer += printable + "\n" + CSS_INDENTATION + indentation
-                is_property = True
-                skip = False
-            elif token.serialize() == ":":
-                if not skip:
-                    result_buffer += printable + " "
-            else:
-                if sanitize and printable in css_forbidden_properties:
-                    skip = True
-                    if printable not in css_dict["css_properties_skipped"]:
-                        css_dict["css_properties_skipped"][printable] = 1
-                    else:
-                        css_dict["css_properties_skipped"][printable] += 1
-                else: 
-                    if not skip:
-                        result_buffer += printable
-                        if is_property:
-                            if printable not in css_dict["css_properties"]:
-                                css_dict["css_properties"][printable] = 1
-                            else:
-                                css_dict["css_properties"][printable] += 1
+                    result_buffer += printable
+                    if is_property:
+                        if printable not in css_dict["css_properties"]:
+                            css_dict["css_properties"][printable] = 1
+                        else:
+                            css_dict["css_properties"][printable] += 1
 
-                is_property = False
-        return result_buffer
+            is_property = False
+    return result_buffer
 
 
 def process_content_at_rule(content, css_dict, sanitize, indentation=""):
@@ -179,59 +174,34 @@ def process_content_at_rule(content, css_dict, sanitize, indentation=""):
     qualified_rule_prelude = []
     skip = 0
     skipped_prelude = True 
-    if content is None:
-        return buffer
-    else:
-        for idx, node in enumerate(content):
-            if skip > 0:
-                skip -= 1
-                continue
-            if node.type == 'at-keyword':
-                nested_rule = SimpleNamespace()
-                nested_rule.at_keyword = content[idx].value
-                # check if idx + 1, idx + 2, idx + 3 are present
-                if idx + 3 <= len(content) - 1:
-                    nested_rule.prelude = [content[idx+1], content[idx+2]]
-                    nested_rule.content = get_content(content[idx+3]) 
-                elif idx + 2 <= len(content) - 1:
-                    nested_rule.prelude = [content[idx+1], content[idx+2]]
-                    nested_rule.content = None 
-                elif idx + 1 <= len(content) - 1:
-                    nested_rule.prelude = [content[idx+1]]
-                    nested_rule.content = None 
-                else:
-                    nested_rule.prelude = None 
-                    nested_rule.content = None 
-
-
-                buffer += process_at_rule(nested_rule, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-                skip = 3
-            elif node.type != "{} block":
-                qualified_rule_prelude.append(node)
+    for idx, node in enumerate(content):
+        if skip > 0:
+            skip -= 1
+            continue
+        if node.type == 'at-keyword':
+            nested_rule = SimpleNamespace()
+            nested_rule.at_keyword = content[idx].value
+            nested_rule.prelude = [content[idx+1], content[idx+2]]
+            nested_rule.content = content[idx+3].content
+            buffer += process_at_rule(nested_rule, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
+            skip = 3
+        elif node.type != "{} block":
+            qualified_rule_prelude.append(node)
+        else:
+            if len(qualified_rule_prelude) == 0:
+                if not skipped_prelude:
+                    buffer += process_content_at_rule(node.content, css_dict, sanitize, indentation=indentation)
             else:
-                if len(qualified_rule_prelude) == 0:
-                    if not skipped_prelude:
-                        #buffer += process_content_at_rule(node.content, css_dict, sanitize, indentation=indentation)
-                        buffer += process_content_at_rule(get_content(node.content), css_dict, sanitize, indentation=indentation)
+                prelude_buffer = process_prelude(qualified_rule_prelude, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
+                if prelude_buffer and not prelude_buffer.isspace():
+                    buffer_content = process_content(node.content, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
+                    if buffer_content and not buffer_content.isspace():
+                        buffer += prelude_buffer
+                        buffer += "{\n" + CSS_INDENTATION + indentation 
+                        buffer +=  CSS_INDENTATION + buffer_content 
+                        buffer += "\n" + CSS_INDENTATION + indentation + "}\n\n"
+                    skipped_prelude = False 
                 else:
-                    prelude_buffer = process_prelude(qualified_rule_prelude, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-                    if prelude_buffer and not prelude_buffer.isspace():
-                        #buffer_content = process_content(node.content, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-                        buffer_content = process_content(get_content(node.content), css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-                        if buffer_content and not buffer_content.isspace():
-                            buffer += prelude_buffer
-                            buffer += "{\n" + CSS_INDENTATION + indentation 
-                            buffer +=  CSS_INDENTATION + buffer_content 
-                            buffer += "\n" + CSS_INDENTATION + indentation + "}\n\n"
-                        skipped_prelude = False 
-                    else:
-                        skipped_prelude = True
-                    qualified_rule_prelude = []
-        return buffer
-
-def get_content(element):
-    try:
-        content = element.content
-    except Exception as e:
-        content = None
-    return content
+                    skipped_prelude = True
+                qualified_rule_prelude = []
+    return buffer

@@ -7,8 +7,11 @@
 node_modules
 errors.txt
 .*
-/__pycache__
 results.zip
-logs/test1.log
-__pycache__/stats.cpython-39.pyc
-/logs/*
+*.log
+results_websites
+results_websites_majestic_million
+results_websites_majestic_million_blog
+errors_*
+excluded_*
+included_*

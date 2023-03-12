@@ -5016,3 +5016,57 @@ INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.
 INFO:root:Screenshot obtained!
 
 INFO:root:End date and time: 2023-03-12 18:45:23, elapsed time  : 00:00:47
+INFO:root:Start date and time: 2023-03-12 20:22:09
+INFO:root:[1/1] WPBeginner.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-12 20:22:55, elapsed time  : 00:00:46
+INFO:root:Start date and time: 2023-03-12 20:23:33
+INFO:root:[1/1] WPBeginner.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-12 20:24:19, elapsed time  : 00:00:46
+INFO:root:Start date and time: 2023-03-12 20:25:33
+INFO:root:[1/1] WPBeginner.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-12 20:26:19, elapsed time  : 00:00:45
