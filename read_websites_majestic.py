@@ -8,4 +8,4 @@ if __name__ == "__main__":
     domains = df["Domain"].values
     with open(output_filename, "w") as f:
         for domain in domains:
-            print(domain, file=f)
+            print("https://" + domain + "/", file=f)

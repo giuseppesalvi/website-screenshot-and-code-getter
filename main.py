@@ -9,6 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from PIL import Image
 from utils import *
 from os import path
+from os import makedirs
 import subprocess
 import requests
 from css_parser import parse_css
@@ -21,8 +22,9 @@ import logging
 import datetime
 
 
+RESULTS_FOLDER = "results/"
 WAIT_SCREENSHOT = 1
-COLAB = True 
+COLAB = False 
 
 def accept_cookies(driver):
     """ Click to dismiss Cookies popup """
@@ -135,6 +137,7 @@ def get_html_selenium(url):
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     # Launch URL
+    driver.get
     driver.get(url)
 
     # Get source code
@@ -290,7 +293,7 @@ def sanitize(domain, test_name):
 
     # Run command for sanitizing the code
     result = subprocess.run(
-        "node sanitize_html.js " + domain,
+        "node sanitize_html.js " + domain + " " + RESULTS_FOLDER,
         shell=True,
         check=True,
         stdout=subprocess.PIPE,
@@ -298,7 +301,7 @@ def sanitize(domain, test_name):
     html = result.stdout.decode("utf-8")
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html results/" + domain + ".html --in-place", shell=True, check=True)
+    subprocess.run("clean-html " + RESULTS_FOLDER + "/" + domain + ".html --in-place", shell=True, check=True)
 
 
     # Update website info in the dictionary
@@ -379,26 +382,36 @@ if __name__ == "__main__":
         else:
             website_list.append("")
 
+    # make results folder if not present
+    results_folder = "results_" + args.website_list.split(".txt")[0]
+    if not path.exists(results_folder):
+        makedirs(results_folder)
+    RESULTS_FOLDER = results_folder 
+
+
     BATCH_SIZE = args.batch
     batch = 0
 
     # Process each website in the list
-    for i, website_url in enumerate(website_list):
+    for i, website in enumerate(website_list):
 
         try:
-            domain = website2domain(website_url)
-            filename = "results/" + domain
+            domain = website2domain(website)
+            website_url = get_website_url(domain) 
+
+
+            filename = results_folder + "/" + domain
             suffix = "_" + args.test_name if args.test_name else ""
 
             website_dict = {}
             website_dict["website_url"] = website_url
-            website_dict["domain"] = website2domain(website_url)
+            website_dict["domain"] = domain 
             website_dict["filename"] = filename
             website_dict["suffix"] = suffix
 
 
             # For DBG: lines that start with space or # are discarded
-            if website_url.startswith(" ") or website_url.startswith("#"):
+            if website.startswith(" ") or website.startswith("#"):
                 continue
 
             if args.task != "stats":
@@ -441,12 +454,12 @@ if __name__ == "__main__":
                 break
             print("\n")
         except Exception as e:
-            print("Exception raised by", website_url)
+            print("Exception raised by", website)
             print(e, end="\n\n")
-            logging.warning("Exception raised by", website_url)
+            logging.warning("Exception raised by", website)
             logging.exception(e)
             with open("errors.txt", "a") as f:
-                print("Exception raised by", website_url, file=f)
+                print("Exception raised by", website, file=f)
                 print(e, end="\n\n", file=f)
             break # DEBUG
 

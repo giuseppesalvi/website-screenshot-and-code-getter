@@ -1,12 +1,26 @@
+import requests
+
 def website2domain(website):
-    """ Return domain of the given website URL """
+    """ Return domain of the given website"""
 
     if "//www." in website:
         domain = website.split("//www.")[-1].split("/")[0]
-    else:
+    elif "//" in website:
         domain = website.split("//")[-1].split("/")[0]
+    else:
+        domain = website.split("/")[0]
     return domain
 
+
+def get_website_url(domain):
+    try:
+        response = requests.get(f"https://{domain}", timeout=5)
+        url = response.url
+        return url
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
+        return None
+        
 
 def sort_websites_by_nodes(filepath):
     """ Sort website names in log file by ascending number of nodes """

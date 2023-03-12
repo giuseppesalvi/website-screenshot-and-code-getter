@@ -66,7 +66,7 @@ def sum_of_dict_sizes(lst):
     return size
 
 
-def stats_summary():
+def stats_summary(results_folder):
     summary = {}
 
     # Sizes
@@ -99,9 +99,9 @@ def stats_summary():
     summary["screenshot_width"] = []
     summary["screenshot_height"] = []
 
-    for filename in os.listdir("results/"):
+    for filename in os.listdir(results_folder + "/"):
         if filename.endswith(".json"):
-            with open("results/" + filename) as f:
+            with open(results_folder + "/" + filename) as f:
                 content = json.load(f)
 
                 # Sizes
@@ -207,4 +207,5 @@ def stats_summary():
     return
 
 if __name__ == "__main__":
-    stats_summary()
+    results_folder = "results_websites"
+    stats_summary(results_folder)
