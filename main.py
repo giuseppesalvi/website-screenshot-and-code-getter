@@ -216,6 +216,7 @@ def check_website_framework(html, website_dict):
 
     if any(item in frameworks_found for item in ["React", "Gatsby", "Next", "Nuxt", "Backbone"]):
         website_dict["framework_problematic"] = True
+        website_dict["excluded"] = True 
     else:
         website_dict["framework_problematic"] = False
     website_dict["frameworks_list"] = frameworks_found
@@ -269,6 +270,10 @@ def get_css(website_dict, sanitize=True):
     website_dict["css_classes_skipped" + sanitize_suffix] = {}
     website_dict["css_properties_skipped" + sanitize_suffix] = {} 
     # Download CSS files
+    if not website_dict["css_urls"]:
+        print("no CSS files found!\n")
+        website_dict["excluded"] = True
+
     for i, url in enumerate(website_dict["css_urls"]):
         with open(filename + suffix + (sanitize_suffix if not sanitize else "") + ".css", "a") as f:
             try: 
@@ -354,7 +359,7 @@ def init_args_parser():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='logs/test1.log', level=logging.INFO)
+    logging.basicConfig(filename='logs/websites.log', level=logging.INFO)
 
     # Log start date and time
     start = datetime.datetime.now()
@@ -408,6 +413,7 @@ if __name__ == "__main__":
             website_dict["domain"] = domain 
             website_dict["filename"] = filename
             website_dict["suffix"] = suffix
+            website_dict["excluded"] = False 
 
 
             # For DBG: lines that start with space or # are discarded
@@ -461,7 +467,9 @@ if __name__ == "__main__":
             with open("errors.txt", "a") as f:
                 print("Exception raised by", website, file=f)
                 print(e, end="\n\n", file=f)
-            break # DEBUG
+            with open("errors_" + RESULTS_FOLDER + ".txt", "a") as f:
+                print(website)
+            #break # DEBUG
 
     # Log end date and time elapsed time from start
     end = datetime.datetime.now()

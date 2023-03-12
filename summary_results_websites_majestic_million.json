@@ -1,0 +1,177 @@
+{
+  "avg_css_classes": 159,
+  "avg_css_classes_raw": 5542.8,
+  "avg_css_classes_skipped": 5186,
+  "avg_css_classes_skipped_raw": 0,
+  "avg_css_properties": 123.2,
+  "avg_css_properties_raw": 243.4,
+  "avg_css_properties_skipped": 13,
+  "avg_css_properties_skipped_raw": 0,
+  "avg_css_urls": 6.6,
+  "avg_css_urls_raw": 6.6,
+  "avg_html_classes": 215.8,
+  "avg_html_classes_raw": 217.4,
+  "avg_html_tags": 24.4,
+  "avg_html_tags_raw": 33,
+  "avg_n_html_nodes": 683.2,
+  "avg_n_html_nodes_raw": 804.4,
+  "avg_n_lines_css": 1749.8,
+  "avg_n_lines_css_raw": 25491.4,
+  "avg_n_lines_html": 925,
+  "avg_n_lines_html_raw": 1007.6,
+  "css_classes": [
+    30,
+    115,
+    157,
+    190,
+    303
+  ],
+  "css_classes_raw": [
+    274,
+    1433,
+    1640,
+    11164,
+    13203
+  ],
+  "css_classes_skipped": [
+    244,
+    1000,
+    1518,
+    10460,
+    12708
+  ],
+  "css_classes_skipped_raw": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "css_properties": [
+    0,
+    60,
+    129,
+    171,
+    256
+  ],
+  "css_properties_raw": [
+    11,
+    218,
+    267,
+    319,
+    402
+  ],
+  "css_properties_skipped": [
+    0,
+    11,
+    13,
+    16,
+    25
+  ],
+  "css_properties_skipped_raw": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "css_urls": [
+    1,
+    6,
+    6,
+    9,
+    11
+  ],
+  "css_urls_raw": [
+    1,
+    6,
+    6,
+    9,
+    11
+  ],
+  "html_classes": [
+    158,
+    159,
+    235,
+    237,
+    290
+  ],
+  "html_classes_raw": [
+    159,
+    159,
+    237,
+    241,
+    291
+  ],
+  "html_tags": [
+    18,
+    25,
+    26,
+    26,
+    27
+  ],
+  "html_tags_raw": [
+    21,
+    32,
+    33,
+    35,
+    44
+  ],
+  "n_html_nodes": [
+    367,
+    444,
+    571,
+    689,
+    1345
+  ],
+  "n_html_nodes_raw": [
+    430,
+    565,
+    734,
+    769,
+    1524
+  ],
+  "n_lines_css": [
+    5,
+    1073,
+    1537,
+    1811,
+    4323
+  ],
+  "n_lines_css_raw": [
+    237,
+    16077,
+    19584,
+    42414,
+    49145
+  ],
+  "n_lines_html": [
+    493,
+    652,
+    688,
+    756,
+    2036
+  ],
+  "n_lines_html_raw": [
+    35,
+    83,
+    874,
+    1068,
+    2978
+  ],
+  "n_websites": 5,
+  "screenshot_height": [
+    3684,
+    4535,
+    5124,
+    5311,
+    9295
+  ],
+  "screenshot_width": [
+    1264,
+    1272,
+    1280,
+    1280,
+    1399
+  ]
+}

@@ -99,11 +99,25 @@ def stats_summary(results_folder):
     summary["screenshot_width"] = []
     summary["screenshot_height"] = []
 
+
+    # List of excluded websites
+    excluded = []
+
+    # List of included websites
+    included = []
+
     for filename in os.listdir(results_folder + "/"):
         if filename.endswith(".json"):
             with open(results_folder + "/" + filename) as f:
                 content = json.load(f)
 
+                # If website is excluded, add it to the excluded list and skip it
+                if content["excluded"]:
+                    excluded.append(content["website_url"])
+                    continue
+                else:
+                    included.append(content["website_url"])
+                
                 # Sizes
                 summary["css_classes"].append(content["sizes"]["css_classes"])
                 summary["css_classes_skipped"].append(content["sizes"]["css_classes_skipped"])
@@ -202,10 +216,20 @@ def stats_summary(results_folder):
     summary["n_websites"] = len(summary["n_html_nodes"])
 
     # Write summary in json file
-    with open("summary.json", "w") as f:
+    with open("summary_" + results_folder + ".json", "w") as f:
         json.dump(summary, f, sort_keys=True, indent=2)
+    
+    # Write list of included websites
+    with open("included_" + results_folder + ".txt", "w") as f:
+        for website in included:
+            print(website, file=f)
+
+    # Write list of excluded websites
+    with open("excluded_" + results_folder + ".txt", "w") as f:
+        for website in excluded:
+            print(website, file=f)
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites"
+    results_folder = "results_websites_majestic_million"
     stats_summary(results_folder)
