@@ -5070,3 +5070,97 @@ INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.
 INFO:root:Screenshot obtained!
 
 INFO:root:End date and time: 2023-03-12 20:26:19, elapsed time  : 00:00:45
+INFO:root:Start date and time: 2023-03-12 20:33:54
+INFO:root:[1/1] WPBeginner.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-12 20:34:42, elapsed time  : 00:00:47
+INFO:root:Start date and time: 2023-03-12 20:35:51
+INFO:root:[1/100] home.blog
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+WARNING:root:Exception raised by home.blog
+ERROR:root:list index out of range
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 442, in <module>
+    get_css(website_dict, sanitize=False)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 285, in get_css
+    css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 39, in parse_css
+    print(process_at_rule(rule, css_dict, sanitize), end="", file=output_file)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 74, in process_at_rule
+    buffer_content_at = process_content_at_rule(content, css_dict, sanitize, indentation=indentation)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 184, in process_content_at_rule
+    nested_rule.prelude = [content[idx+1], content[idx+2]]
+IndexError: list index out of range
+INFO:root:[2/100] github.blog
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+WARNING:root:Exception raised by github.blog
+ERROR:root:list index out of range
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    get_css(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 285, in get_css
+    css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 39, in parse_css
+    print(process_at_rule(rule, css_dict, sanitize), end="", file=output_file)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 74, in process_at_rule
+    buffer_content_at = process_content_at_rule(content, css_dict, sanitize, indentation=indentation)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 185, in process_content_at_rule
+    nested_rule.content = content[idx+3].content
+IndexError: list index out of range
+INFO:root:[3/100] micro.blog
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+WARNING:root:Exception raised by micro.blog
+ERROR:root:'WhitespaceToken' object has no attribute 'content'
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    get_css(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 285, in get_css
+    css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 39, in parse_css
+    print(process_at_rule(rule, css_dict, sanitize), end="", file=output_file)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 74, in process_at_rule
+    buffer_content_at = process_content_at_rule(content, css_dict, sanitize, indentation=indentation)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 185, in process_content_at_rule
+    nested_rule.content = content[idx+3].content
+AttributeError: 'WhitespaceToken' object has no attribute 'content'
+INFO:root:[4/100] tim.blog
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 110.0.5481
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.5481/chromedriver] found in cache

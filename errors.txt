@@ -176,3 +176,12 @@ list index out of range
 Exception raised by montere.it
 [Errno 2] No such file or directory: 'results/montere.it_raw.html'
 
+Exception raised by home.blog
+list index out of range
+
+Exception raised by github.blog
+list index out of range
+
+Exception raised by micro.blog
+'WhitespaceToken' object has no attribute 'content'
+
