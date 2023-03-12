@@ -185,3 +185,12 @@ list index out of range
 Exception raised by micro.blog
 'WhitespaceToken' object has no attribute 'content'
 
+Exception raised by home.blog
+list index out of range
+
+Exception raised by wpbeginner.com
+'list' object has no attribute 'serialize'
+
+Exception raised by wpbeginner.com
+'WhitespaceToken' object is not iterable
+

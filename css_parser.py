@@ -181,10 +181,22 @@ def process_content_at_rule(content, css_dict, sanitize, indentation=""):
         if node.type == 'at-keyword':
             nested_rule = SimpleNamespace()
             nested_rule.at_keyword = content[idx].value
-            nested_rule.prelude = [content[idx+1], content[idx+2]]
-            nested_rule.content = content[idx+3].content
+
+            # nested_rule.prelude = [content[idx+1], content[idx+2]]
+            # nested_rule.content = content[idx+3].content
+
+            #nested_rule.prelude = get_nested_prelude(content, idx)
+            #nested_rule.content = get_nested_content(content, idx)
+
+            nested_rule.prelude, nested_rule.content, skipped = get_nested_prelude_content(content, idx)
+            # prelude
+            # content
+
+            # if CurlyBracketBlock -> get content, else previous is prelude
+
             buffer += process_at_rule(nested_rule, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-            skip = 3
+            #skip = 3
+            skip = skipped
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)
         else:
@@ -205,3 +217,41 @@ def process_content_at_rule(content, css_dict, sanitize, indentation=""):
                     skipped_prelude = True
                 qualified_rule_prelude = []
     return buffer
+
+def get_nested_prelude(content, idx):
+    try :
+        prelude = [content[idx+1], content[idx+2]]
+    except Exception as e:
+        prelude = None
+
+    return prelude
+
+def get_nested_content(content, idx):
+    try :
+        content = [content[idx+3].content]
+    except Exception as e:
+        content = None
+
+    return content
+
+def get_nested_prelude_content(rule, idx):
+    prelude = []
+    content = None
+    skipped = 0
+
+    stop = False
+
+    while not stop:
+        skipped += 1
+        if rule[idx + skipped].type == "{} block":
+            stop = True
+            content = rule[idx + skipped].content
+        else:
+            try:
+                for element in rule[idx+skipped]:
+                    prelude.append(element)
+            except Exception as e:
+                prelude.append(rule[idx+skipped])
+
+
+    return prelude, content, skipped
