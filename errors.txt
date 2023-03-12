@@ -1,143 +1,178 @@
-Exception raised inside accept_cookies by https://www.SmartPassiveIncome.com
-Message: element click intercepted: Element is not clickable at point (85, 13208)
-  (Session info: headless chrome=110.0.5481.177)
-Stacktrace:
-0   chromedriver                        0x000000010527d1c0 chromedriver + 4248000
-1   chromedriver                        0x00000001051fddc0 chromedriver + 3726784
-2   chromedriver                        0x0000000104eb2ec4 chromedriver + 274116
-3   chromedriver                        0x0000000104ef6530 chromedriver + 550192
-4   chromedriver                        0x0000000104ef3f28 chromedriver + 540456
-5   chromedriver                        0x0000000104ef16c4 chromedriver + 530116
-6   chromedriver                        0x0000000104ef05b8 chromedriver + 525752
-7   chromedriver                        0x0000000104ee33e0 chromedriver + 472032
-8   chromedriver                        0x0000000104ee2bbc chromedriver + 469948
-9   chromedriver                        0x0000000104f2a054 chromedriver + 761940
-10  chromedriver                        0x0000000104ee1200 chromedriver + 463360
-11  chromedriver                        0x0000000104ee2318 chromedriver + 467736
-12  chromedriver                        0x000000010524b060 chromedriver + 4042848
-13  chromedriver                        0x000000010524f8a4 chromedriver + 4061348
-14  chromedriver                        0x00000001052573d0 chromedriver + 4092880
-15  chromedriver                        0x00000001052506e4 chromedriver + 4064996
-16  chromedriver                        0x00000001052260fc chromedriver + 3891452
-17  chromedriver                        0x0000000105270a64 chromedriver + 4196964
-18  chromedriver                        0x0000000105270bb8 chromedriver + 4197304
-19  chromedriver                        0x0000000105284650 chromedriver + 4277840
-20  libsystem_pthread.dylib             0x0000000198afc26c _pthread_start + 148
-21  libsystem_pthread.dylib             0x0000000198af708c thread_start + 8
-
-
-Exception raised by https://www.SproutSocial.com
+Exception raised by youtube.com
 Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
   (Session info: headless chrome=110.0.5481.177)
-Stacktrace:
-0   chromedriver                        0x00000001052811c0 chromedriver + 4248000
-1   chromedriver                        0x0000000105201dc0 chromedriver + 3726784
-2   chromedriver                        0x0000000104eb6ec4 chromedriver + 274116
-3   chromedriver                        0x0000000104ea19e8 chromedriver + 186856
-4   chromedriver                        0x0000000104e9fb44 chromedriver + 179012
-5   chromedriver                        0x0000000104e9fdfc chromedriver + 179708
-6   chromedriver                        0x0000000104ebecc8 chromedriver + 306376
-7   chromedriver                        0x0000000104eef988 chromedriver + 506248
-8   chromedriver                        0x0000000104ee6bbc chromedriver + 469948
-9   chromedriver                        0x0000000104f2e054 chromedriver + 761940
-10  chromedriver                        0x0000000104ee5200 chromedriver + 463360
-11  chromedriver                        0x0000000104ee6318 chromedriver + 467736
-12  chromedriver                        0x000000010524f060 chromedriver + 4042848
-13  chromedriver                        0x00000001052538a4 chromedriver + 4061348
-14  chromedriver                        0x000000010525b3d0 chromedriver + 4092880
-15  chromedriver                        0x00000001052546e4 chromedriver + 4064996
-16  chromedriver                        0x000000010522a0fc chromedriver + 3891452
-17  chromedriver                        0x0000000105274a64 chromedriver + 4196964
-18  chromedriver                        0x0000000105274bb8 chromedriver + 4197304
-19  chromedriver                        0x0000000105288650 chromedriver + 4277840
-20  libsystem_pthread.dylib             0x0000000198afc26c _pthread_start + 148
-21  libsystem_pthread.dylib             0x0000000198af708c thread_start + 8
 
-
-Exception raised inside accept_cookies by https://www.Unbounce.com/blog
-Message: element click intercepted: Element is not clickable at point (1152, 1135)
+Exception raised by youtu.be
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
   (Session info: headless chrome=110.0.5481.177)
-Stacktrace:
-0   chromedriver                        0x00000001048351c0 chromedriver + 4248000
-1   chromedriver                        0x00000001047b5dc0 chromedriver + 3726784
-2   chromedriver                        0x000000010446aec4 chromedriver + 274116
-3   chromedriver                        0x00000001044ae530 chromedriver + 550192
-4   chromedriver                        0x00000001044abf28 chromedriver + 540456
-5   chromedriver                        0x00000001044a96c4 chromedriver + 530116
-6   chromedriver                        0x00000001044a85b8 chromedriver + 525752
-7   chromedriver                        0x000000010449b3e0 chromedriver + 472032
-8   chromedriver                        0x000000010449abbc chromedriver + 469948
-9   chromedriver                        0x00000001044e2054 chromedriver + 761940
-10  chromedriver                        0x0000000104499200 chromedriver + 463360
-11  chromedriver                        0x000000010449a318 chromedriver + 467736
-12  chromedriver                        0x0000000104803060 chromedriver + 4042848
-13  chromedriver                        0x00000001048078a4 chromedriver + 4061348
-14  chromedriver                        0x000000010480f3d0 chromedriver + 4092880
-15  chromedriver                        0x00000001048086e4 chromedriver + 4064996
-16  chromedriver                        0x00000001047de0fc chromedriver + 3891452
-17  chromedriver                        0x0000000104828a64 chromedriver + 4196964
-18  chromedriver                        0x0000000104828bb8 chromedriver + 4197304
-19  chromedriver                        0x000000010483c650 chromedriver + 4277840
-20  libsystem_pthread.dylib             0x0000000198afc26c _pthread_start + 148
-21  libsystem_pthread.dylib             0x0000000198af708c thread_start + 8
 
-
-Exception raised inside accept_cookies by https://apigee.com/api-management/#/homepage
-Message: element click intercepted: Element is not clickable at point (533, 1078)
-  (Session info: headless chrome=110.0.5481.177)
-Stacktrace:
-0   chromedriver                        0x00000001007491c0 chromedriver + 4248000
-1   chromedriver                        0x00000001006c9dc0 chromedriver + 3726784
-2   chromedriver                        0x000000010037eec4 chromedriver + 274116
-3   chromedriver                        0x00000001003c2530 chromedriver + 550192
-4   chromedriver                        0x00000001003bff28 chromedriver + 540456
-5   chromedriver                        0x00000001003bd6c4 chromedriver + 530116
-6   chromedriver                        0x00000001003bc5b8 chromedriver + 525752
-7   chromedriver                        0x00000001003af3e0 chromedriver + 472032
-8   chromedriver                        0x00000001003aebbc chromedriver + 469948
-9   chromedriver                        0x00000001003f6054 chromedriver + 761940
-10  chromedriver                        0x00000001003ad200 chromedriver + 463360
-11  chromedriver                        0x00000001003ae318 chromedriver + 467736
-12  chromedriver                        0x0000000100717060 chromedriver + 4042848
-13  chromedriver                        0x000000010071b8a4 chromedriver + 4061348
-14  chromedriver                        0x00000001007233d0 chromedriver + 4092880
-15  chromedriver                        0x000000010071c6e4 chromedriver + 4064996
-16  chromedriver                        0x00000001006f20fc chromedriver + 3891452
-17  chromedriver                        0x000000010073ca64 chromedriver + 4196964
-18  chromedriver                        0x000000010073cbb8 chromedriver + 4197304
-19  chromedriver                        0x0000000100750650 chromedriver + 4277840
-20  libsystem_pthread.dylib             0x0000000198afc26c _pthread_start + 148
-21  libsystem_pthread.dylib             0x0000000198af708c thread_start + 8
-
-
-Exception raised by https://www.montere.it/?lang=en
+Exception raised by github.com
 list index out of range
 
-Exception raised by https://pearanalytics.com/
+Exception raised by mozilla.org
+list index out of range
+
+Exception raised by macromedia.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by europa.eu
+list index out of range
+
+Exception raised by amazonaws.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by soundcloud.com
+list index out of range
+
+Exception raised by miit.gov.cn
+Message: invalid argument: 'url' must be a string
+
+Exception raised by ec.europa.eu
+list index out of range
+
+Exception raised by macromedia.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by amazonaws.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by miit.gov.cn
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by creativecommons.org
+list index out of range
+
+Exception raised by wixsite.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by issuu.com
 Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
   (Session info: headless chrome=110.0.5481.177)
-Stacktrace:
-0   chromedriver                        0x000000010091d1c0 chromedriver + 4248000
-1   chromedriver                        0x000000010089ddc0 chromedriver + 3726784
-2   chromedriver                        0x0000000100552ec4 chromedriver + 274116
-3   chromedriver                        0x000000010053d9e8 chromedriver + 186856
-4   chromedriver                        0x000000010053bb44 chromedriver + 179012
-5   chromedriver                        0x000000010053bdfc chromedriver + 179708
-6   chromedriver                        0x000000010055acc8 chromedriver + 306376
-7   chromedriver                        0x000000010058b988 chromedriver + 506248
-8   chromedriver                        0x0000000100582bbc chromedriver + 469948
-9   chromedriver                        0x00000001005ca054 chromedriver + 761940
-10  chromedriver                        0x0000000100581200 chromedriver + 463360
-11  chromedriver                        0x0000000100582318 chromedriver + 467736
-12  chromedriver                        0x00000001008eb060 chromedriver + 4042848
-13  chromedriver                        0x00000001008ef8a4 chromedriver + 4061348
-14  chromedriver                        0x00000001008f73d0 chromedriver + 4092880
-15  chromedriver                        0x00000001008f06e4 chromedriver + 4064996
-16  chromedriver                        0x00000001008c60fc chromedriver + 3891452
-17  chromedriver                        0x0000000100910a64 chromedriver + 4196964
-18  chromedriver                        0x0000000100910bb8 chromedriver + 4197304
-19  chromedriver                        0x0000000100924650 chromedriver + 4277840
-20  libsystem_pthread.dylib             0x0000000198afc26c _pthread_start + 148
-21  libsystem_pthread.dylib             0x0000000198af708c thread_start + 8
 
+Exception raised by washingtonpost.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+Exception raised by youtube-nocookie.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+
+// blog
+Exception raised by home.blog
+list index out of range
+
+Exception raised by github.blog
+list index out of range
+
+Exception raised by livedoor.blog
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001031d51c0 chromedriver + 4248000
+1   chromedriver                        0x0000000103155dc0 chromedriver + 3726784
+2   chromedriver                        0x0000000102e0aec4 chromedriver + 274116
+3   chromedriver                        0x0000000102e82674 chromedriver + 763508
+4   chromedriver                        0x0000000102e82054 chromedriver + 761940
+5   chromedriver                        0x0000000102e39200 chromedriver + 463360
+6   chromedriver                        0x0000000102e3a318 chromedriver + 467736
+7   chromedriver                        0x00000001031a3060 chromedriver + 4042848
+8   chromedriver                        0x00000001031a78a4 chromedriver + 4061348
+9   chromedriver                        0x00000001031af3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001031a86e4 chromedriver + 4064996
+11  chromedriver                        0x000000010317e0fc chromedriver + 3891452
+12  chromedriver                        0x00000001031c8a64 chromedriver + 4196964
+13  chromedriver                        0x00000001031c8bb8 chromedriver + 4197304
+14  chromedriver                        0x00000001031dc650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000019777026c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000019776b08c thread_start + 8
+
+
+Exception raised by art.blog
+list index out of range
+
+Exception raised by sport.blog
+list index out of range
+
+Exception raised by video.blog
+list index out of range
+
+Exception raised by travel.blog
+list index out of range
+
+Exception raised by game.blog
+list index out of range
+
+Exception raised by business.blog
+list index out of range
+
+Exception raised by news.blog
+list index out of range
+
+Exception raised by food.blog
+list index out of range
+
+Exception raised by rcmq.blog
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x0000000100d4d1c0 chromedriver + 4248000
+1   chromedriver                        0x0000000100ccddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000100982ec4 chromedriver + 274116
+3   chromedriver                        0x00000001009fa674 chromedriver + 763508
+4   chromedriver                        0x00000001009fa054 chromedriver + 761940
+5   chromedriver                        0x00000001009b1200 chromedriver + 463360
+6   chromedriver                        0x00000001009b2318 chromedriver + 467736
+7   chromedriver                        0x0000000100d1b060 chromedriver + 4042848
+8   chromedriver                        0x0000000100d1f8a4 chromedriver + 4061348
+9   chromedriver                        0x0000000100d273d0 chromedriver + 4092880
+10  chromedriver                        0x0000000100d206e4 chromedriver + 4064996
+11  chromedriver                        0x0000000100cf60fc chromedriver + 3891452
+12  chromedriver                        0x0000000100d40a64 chromedriver + 4196964
+13  chromedriver                        0x0000000100d40bb8 chromedriver + 4197304
+14  chromedriver                        0x0000000100d54650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000019777026c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000019776b08c thread_start + 8
+
+
+Exception raised by health.blog
+list index out of range
+
+Exception raised by tech.blog
+list index out of range
+
+Exception raised by yaro.blog
+list index out of range
+
+Exception raised by law.blog
+list index out of range
+
+Exception raised by car.blog
+list index out of range
+
+Exception raised by fashion.blog
+list index out of range
+
+Exception raised by dkb.blog
+list index out of range
+
+Exception raised by family.blog
+list index out of range
+
+Exception raised by school.blog
+list index out of range
+
+Exception raised by music.blog
+list index out of range
+
+Exception raised by finance.blog
+list index out of range
+
+Exception raised by montere.it
+[Errno 2] No such file or directory: 'results/montere.it_raw.html'
 

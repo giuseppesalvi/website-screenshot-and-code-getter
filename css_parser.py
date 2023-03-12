@@ -189,9 +189,21 @@ def process_content_at_rule(content, css_dict, sanitize, indentation=""):
             if node.type == 'at-keyword':
                 nested_rule = SimpleNamespace()
                 nested_rule.at_keyword = content[idx].value
-                nested_rule.prelude = [content[idx+1], content[idx+2]]
-                #nested_rule.content = content[idx+3].content
-                nested_rule.content = get_content(content[idx+3]) 
+                # check if idx + 1, idx + 2, idx + 3 are present
+                if idx + 3 <= len(content) - 1:
+                    nested_rule.prelude = [content[idx+1], content[idx+2]]
+                    nested_rule.content = get_content(content[idx+3]) 
+                elif idx + 2 <= len(content) - 1:
+                    nested_rule.prelude = [content[idx+1], content[idx+2]]
+                    nested_rule.content = None 
+                elif idx + 1 <= len(content) - 1:
+                    nested_rule.prelude = [content[idx+1]]
+                    nested_rule.content = None 
+                else:
+                    nested_rule.prelude = None 
+                    nested_rule.content = None 
+
+
                 buffer += process_at_rule(nested_rule, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
                 skip = 3
             elif node.type != "{} block":

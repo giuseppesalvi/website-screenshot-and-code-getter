@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["--website", "https://www.Ahrefs.com/blog" , "--task", "all"]
+            "args": ["--website", "WPBeginner.com" , "--task", "all"]
         }
     ]
 }

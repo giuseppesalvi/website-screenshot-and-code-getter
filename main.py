@@ -388,11 +388,14 @@ if __name__ == "__main__":
             website_list.append("")
 
     # make results folder if not present
-    results_folder = "results_" + args.website_list.split(".txt")[0]
-    if not path.exists(results_folder):
-        makedirs(results_folder)
-    RESULTS_FOLDER = results_folder 
+    if args.website_list:
+        results_folder = "results_" + args.website_list.split(".txt")[0]
+        if not path.exists(results_folder):
+            makedirs(results_folder)
+    else:
+        results_folder = "results_websites"
 
+    RESULTS_FOLDER = results_folder 
 
     BATCH_SIZE = args.batch
     batch = 0
