@@ -232,5 +232,5 @@ def stats_summary(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites_majestic_million"
+    results_folder = "results_websites_majestic_million_blog"
     stats_summary(results_folder)
