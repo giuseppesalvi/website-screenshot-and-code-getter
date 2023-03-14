@@ -15,3 +15,4 @@ errors_*
 excluded_*
 included_*
 *.pyc
+classifier/dataset
