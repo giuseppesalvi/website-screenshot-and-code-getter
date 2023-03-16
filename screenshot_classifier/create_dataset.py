@@ -48,7 +48,6 @@ def create_train_test(train_pct, train_dir, test_dir):
             
             # Calculate the number of images to use for each set
             num_train = int(num_images * train_pct)
-            num_test = num_images - num_train
             
             # Create the destination directories for each set
             os.makedirs(os.path.join(train_dir, subdir), exist_ok=True)
