@@ -84,6 +84,6 @@ if __name__ == "__main__":
     #test_pct = 0.15
     #create_train_val_test(train_pct, val_pct, test_pct, train_dir, val_dir, test_dir)
 
-    train_pct = 0.8
+    train_pct = 0.75
     create_train_test(train_pct, train_dir, test_dir)
    
