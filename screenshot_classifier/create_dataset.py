@@ -61,7 +61,7 @@ def create_train_test(train_pct, train_dir, test_dir):
                 shutil.copy(src_file, dst_file)
                 
             # Copy images into the test set
-            for i in range(num_test, num_images):
+            for i in range(num_train, num_images):
                 src_file = os.path.join(subdir_path, os.listdir(subdir_path)[i])
                 dst_file = os.path.join(test_dir, subdir, os.listdir(subdir_path)[i])
                 shutil.copy(src_file, dst_file)
