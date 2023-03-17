@@ -9187,3 +9187,1624 @@ INFO:root:[13/100] businessinsider.com
 INFO:root:Already present
 INFO:root:[14/100] gnu.org
 INFO:root:Already present
+INFO:root:Start date and time: 2023-03-17 19:13:29
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:Start date and time: 2023-03-17 19:20:56
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102e0ad3c chromedriver + 4222268
+1   chromedriver                        0x0000000102d918e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102a47da4 chromedriver + 277924
+3   chromedriver                        0x0000000102abbc2c chromedriver + 752684
+4   chromedriver                        0x0000000102abb618 chromedriver + 751128
+5   chromedriver                        0x0000000102a758f0 chromedriver + 465136
+6   chromedriver                        0x0000000102a76974 chromedriver + 469364
+7   chromedriver                        0x0000000102ddb788 chromedriver + 4028296
+8   chromedriver                        0x0000000102ddfc1c chromedriver + 4045852
+9   chromedriver                        0x0000000102de5c98 chromedriver + 4070552
+10  chromedriver                        0x0000000102de08d8 chromedriver + 4049112
+11  chromedriver                        0x0000000102db7d84 chromedriver + 3882372
+12  chromedriver                        0x0000000102dfe720 chromedriver + 4171552
+13  chromedriver                        0x0000000102dfe878 chromedriver + 4171896
+14  chromedriver                        0x0000000102e12014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102e0ad3c chromedriver + 4222268
+1   chromedriver                        0x0000000102d918e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102a47da4 chromedriver + 277924
+3   chromedriver                        0x0000000102abbc2c chromedriver + 752684
+4   chromedriver                        0x0000000102abb618 chromedriver + 751128
+5   chromedriver                        0x0000000102a758f0 chromedriver + 465136
+6   chromedriver                        0x0000000102a76974 chromedriver + 469364
+7   chromedriver                        0x0000000102ddb788 chromedriver + 4028296
+8   chromedriver                        0x0000000102ddfc1c chromedriver + 4045852
+9   chromedriver                        0x0000000102de5c98 chromedriver + 4070552
+10  chromedriver                        0x0000000102de08d8 chromedriver + 4049112
+11  chromedriver                        0x0000000102db7d84 chromedriver + 3882372
+12  chromedriver                        0x0000000102dfe720 chromedriver + 4171552
+13  chromedriver                        0x0000000102dfe878 chromedriver + 4171896
+14  chromedriver                        0x0000000102e12014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Ember
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Start date and time: 2023-03-17 19:36:26
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102ac6d3c chromedriver + 4222268
+1   chromedriver                        0x0000000102a4d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102703da4 chromedriver + 277924
+3   chromedriver                        0x0000000102777c2c chromedriver + 752684
+4   chromedriver                        0x0000000102777618 chromedriver + 751128
+5   chromedriver                        0x00000001027318f0 chromedriver + 465136
+6   chromedriver                        0x0000000102732974 chromedriver + 469364
+7   chromedriver                        0x0000000102a97788 chromedriver + 4028296
+8   chromedriver                        0x0000000102a9bc1c chromedriver + 4045852
+9   chromedriver                        0x0000000102aa1c98 chromedriver + 4070552
+10  chromedriver                        0x0000000102a9c8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000102a73d84 chromedriver + 3882372
+12  chromedriver                        0x0000000102aba720 chromedriver + 4171552
+13  chromedriver                        0x0000000102aba878 chromedriver + 4171896
+14  chromedriver                        0x0000000102ace014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 450, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102ac6d3c chromedriver + 4222268
+1   chromedriver                        0x0000000102a4d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102703da4 chromedriver + 277924
+3   chromedriver                        0x0000000102777c2c chromedriver + 752684
+4   chromedriver                        0x0000000102777618 chromedriver + 751128
+5   chromedriver                        0x00000001027318f0 chromedriver + 465136
+6   chromedriver                        0x0000000102732974 chromedriver + 469364
+7   chromedriver                        0x0000000102a97788 chromedriver + 4028296
+8   chromedriver                        0x0000000102a9bc1c chromedriver + 4045852
+9   chromedriver                        0x0000000102aa1c98 chromedriver + 4070552
+10  chromedriver                        0x0000000102a9c8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000102a73d84 chromedriver + 3882372
+12  chromedriver                        0x0000000102aba720 chromedriver + 4171552
+13  chromedriver                        0x0000000102aba878 chromedriver + 4171896
+14  chromedriver                        0x0000000102ace014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Already present
+INFO:root:[28/100] go.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by go.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001046d2d3c chromedriver + 4222268
+1   chromedriver                        0x00000001046598e8 chromedriver + 3725544
+2   chromedriver                        0x000000010430fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104383c2c chromedriver + 752684
+4   chromedriver                        0x0000000104383618 chromedriver + 751128
+5   chromedriver                        0x000000010433d8f0 chromedriver + 465136
+6   chromedriver                        0x000000010433e974 chromedriver + 469364
+7   chromedriver                        0x00000001046a3788 chromedriver + 4028296
+8   chromedriver                        0x00000001046a7c1c chromedriver + 4045852
+9   chromedriver                        0x00000001046adc98 chromedriver + 4070552
+10  chromedriver                        0x00000001046a88d8 chromedriver + 4049112
+11  chromedriver                        0x000000010467fd84 chromedriver + 3882372
+12  chromedriver                        0x00000001046c6720 chromedriver + 4171552
+13  chromedriver                        0x00000001046c6878 chromedriver + 4171896
+14  chromedriver                        0x00000001046da014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 450, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001046d2d3c chromedriver + 4222268
+1   chromedriver                        0x00000001046598e8 chromedriver + 3725544
+2   chromedriver                        0x000000010430fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104383c2c chromedriver + 752684
+4   chromedriver                        0x0000000104383618 chromedriver + 751128
+5   chromedriver                        0x000000010433d8f0 chromedriver + 465136
+6   chromedriver                        0x000000010433e974 chromedriver + 469364
+7   chromedriver                        0x00000001046a3788 chromedriver + 4028296
+8   chromedriver                        0x00000001046a7c1c chromedriver + 4045852
+9   chromedriver                        0x00000001046adc98 chromedriver + 4070552
+10  chromedriver                        0x00000001046a88d8 chromedriver + 4049112
+11  chromedriver                        0x000000010467fd84 chromedriver + 3882372
+12  chromedriver                        0x00000001046c6720 chromedriver + 4171552
+13  chromedriver                        0x00000001046c6878 chromedriver + 4171896
+14  chromedriver                        0x00000001046da014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[29/100] cpanel.net
+INFO:root:Already present
+INFO:root:[30/100] time.com
+INFO:root:Already present
+INFO:root:[31/100] shopify.com
+INFO:root:Already present
+INFO:root:[32/100] www.gov.uk
+INFO:root:Already present
+INFO:root:[33/100] dailymail.co.uk
+INFO:root:Already present
+INFO:root:[34/100] eventbrite.com
+INFO:root:Already present
+INFO:root:[35/100] g.page
+INFO:root:Already present
+INFO:root:[36/100] usatoday.com
+INFO:root:Already present
+INFO:root:[37/100] telegraph.co.uk
+INFO:root:Already present
+INFO:root:[38/100] mp.weixin.qq.com
+INFO:root:Already present
+INFO:root:[39/100] cnet.com
+INFO:root:Already present
+INFO:root:[40/100] npr.org
+INFO:root:Already present
+INFO:root:Start date and time: 2023-03-17 19:39:27
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104ef2d3c chromedriver + 4222268
+1   chromedriver                        0x0000000104e798e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104b2fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104ba3c2c chromedriver + 752684
+4   chromedriver                        0x0000000104ba3618 chromedriver + 751128
+5   chromedriver                        0x0000000104b5d8f0 chromedriver + 465136
+6   chromedriver                        0x0000000104b5e974 chromedriver + 469364
+7   chromedriver                        0x0000000104ec3788 chromedriver + 4028296
+8   chromedriver                        0x0000000104ec7c1c chromedriver + 4045852
+9   chromedriver                        0x0000000104ecdc98 chromedriver + 4070552
+10  chromedriver                        0x0000000104ec88d8 chromedriver + 4049112
+11  chromedriver                        0x0000000104e9fd84 chromedriver + 3882372
+12  chromedriver                        0x0000000104ee6720 chromedriver + 4171552
+13  chromedriver                        0x0000000104ee6878 chromedriver + 4171896
+14  chromedriver                        0x0000000104efa014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 437, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104ef2d3c chromedriver + 4222268
+1   chromedriver                        0x0000000104e798e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104b2fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104ba3c2c chromedriver + 752684
+4   chromedriver                        0x0000000104ba3618 chromedriver + 751128
+5   chromedriver                        0x0000000104b5d8f0 chromedriver + 465136
+6   chromedriver                        0x0000000104b5e974 chromedriver + 469364
+7   chromedriver                        0x0000000104ec3788 chromedriver + 4028296
+8   chromedriver                        0x0000000104ec7c1c chromedriver + 4045852
+9   chromedriver                        0x0000000104ecdc98 chromedriver + 4070552
+10  chromedriver                        0x0000000104ec88d8 chromedriver + 4049112
+11  chromedriver                        0x0000000104e9fd84 chromedriver + 3882372
+12  chromedriver                        0x0000000104ee6720 chromedriver + 4171552
+13  chromedriver                        0x0000000104ee6878 chromedriver + 4171896
+14  chromedriver                        0x0000000104efa014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:Start date and time: 2023-03-17 19:41:33
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100b46d3c chromedriver + 4222268
+1   chromedriver                        0x0000000100acd8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000100783da4 chromedriver + 277924
+3   chromedriver                        0x00000001007f7c2c chromedriver + 752684
+4   chromedriver                        0x00000001007f7618 chromedriver + 751128
+5   chromedriver                        0x00000001007b18f0 chromedriver + 465136
+6   chromedriver                        0x00000001007b2974 chromedriver + 469364
+7   chromedriver                        0x0000000100b17788 chromedriver + 4028296
+8   chromedriver                        0x0000000100b1bc1c chromedriver + 4045852
+9   chromedriver                        0x0000000100b21c98 chromedriver + 4070552
+10  chromedriver                        0x0000000100b1c8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000100af3d84 chromedriver + 3882372
+12  chromedriver                        0x0000000100b3a720 chromedriver + 4171552
+13  chromedriver                        0x0000000100b3a878 chromedriver + 4171896
+14  chromedriver                        0x0000000100b4e014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 437, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100b46d3c chromedriver + 4222268
+1   chromedriver                        0x0000000100acd8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000100783da4 chromedriver + 277924
+3   chromedriver                        0x00000001007f7c2c chromedriver + 752684
+4   chromedriver                        0x00000001007f7618 chromedriver + 751128
+5   chromedriver                        0x00000001007b18f0 chromedriver + 465136
+6   chromedriver                        0x00000001007b2974 chromedriver + 469364
+7   chromedriver                        0x0000000100b17788 chromedriver + 4028296
+8   chromedriver                        0x0000000100b1bc1c chromedriver + 4045852
+9   chromedriver                        0x0000000100b21c98 chromedriver + 4070552
+10  chromedriver                        0x0000000100b1c8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000100af3d84 chromedriver + 3882372
+12  chromedriver                        0x0000000100b3a720 chromedriver + 4171552
+13  chromedriver                        0x0000000100b3a878 chromedriver + 4171896
+14  chromedriver                        0x0000000100b4e014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:Start date and time: 2023-03-17 19:42:37
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:Start date and time: 2023-03-17 19:44:12
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[1/1] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 19:45:12, elapsed time  : 00:00:59
+INFO:root:Start date and time: 2023-03-17 19:46:42
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 19:47:40, elapsed time  : 00:00:58
+INFO:root:Start date and time: 2023-03-17 19:48:04
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Already present
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Already present
+INFO:root:[28/100] go.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by go.com
+ERROR:root:Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000103026d3c chromedriver + 4222268
+1   chromedriver                        0x0000000102fad8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102c63da4 chromedriver + 277924
+3   chromedriver                        0x0000000102c5c754 chromedriver + 247636
+4   chromedriver                        0x0000000102c4f4cc chromedriver + 193740
+5   chromedriver                        0x0000000102c50b1c chromedriver + 199452
+6   chromedriver                        0x0000000102c4f7e0 chromedriver + 194528
+7   chromedriver                        0x0000000102c4e71c chromedriver + 190236
+8   chromedriver                        0x0000000102c4e5d8 chromedriver + 189912
+9   chromedriver                        0x0000000102c4d278 chromedriver + 184952
+10  chromedriver                        0x0000000102c4d5b0 chromedriver + 185776
+11  chromedriver                        0x0000000102c65d48 chromedriver + 286024
+12  chromedriver                        0x0000000102cd7ba8 chromedriver + 752552
+13  chromedriver                        0x0000000102cd7618 chromedriver + 751128
+14  chromedriver                        0x0000000102c918f0 chromedriver + 465136
+15  chromedriver                        0x0000000102c92974 chromedriver + 469364
+16  chromedriver                        0x0000000102ff7788 chromedriver + 4028296
+17  chromedriver                        0x0000000102ffbc1c chromedriver + 4045852
+18  chromedriver                        0x0000000103001c98 chromedriver + 4070552
+19  chromedriver                        0x0000000102ffc8d8 chromedriver + 4049112
+20  chromedriver                        0x0000000102fd3d84 chromedriver + 3882372
+21  chromedriver                        0x000000010301a720 chromedriver + 4171552
+22  chromedriver                        0x000000010301a878 chromedriver + 4171896
+23  chromedriver                        0x000000010302e014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    if args.task in ["all", "code"]:
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000103026d3c chromedriver + 4222268
+1   chromedriver                        0x0000000102fad8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102c63da4 chromedriver + 277924
+3   chromedriver                        0x0000000102c5c754 chromedriver + 247636
+4   chromedriver                        0x0000000102c4f4cc chromedriver + 193740
+5   chromedriver                        0x0000000102c50b1c chromedriver + 199452
+6   chromedriver                        0x0000000102c4f7e0 chromedriver + 194528
+7   chromedriver                        0x0000000102c4e71c chromedriver + 190236
+8   chromedriver                        0x0000000102c4e5d8 chromedriver + 189912
+9   chromedriver                        0x0000000102c4d278 chromedriver + 184952
+10  chromedriver                        0x0000000102c4d5b0 chromedriver + 185776
+11  chromedriver                        0x0000000102c65d48 chromedriver + 286024
+12  chromedriver                        0x0000000102cd7ba8 chromedriver + 752552
+13  chromedriver                        0x0000000102cd7618 chromedriver + 751128
+14  chromedriver                        0x0000000102c918f0 chromedriver + 465136
+15  chromedriver                        0x0000000102c92974 chromedriver + 469364
+16  chromedriver                        0x0000000102ff7788 chromedriver + 4028296
+17  chromedriver                        0x0000000102ffbc1c chromedriver + 4045852
+18  chromedriver                        0x0000000103001c98 chromedriver + 4070552
+19  chromedriver                        0x0000000102ffc8d8 chromedriver + 4049112
+20  chromedriver                        0x0000000102fd3d84 chromedriver + 3882372
+21  chromedriver                        0x000000010301a720 chromedriver + 4171552
+22  chromedriver                        0x000000010301a878 chromedriver + 4171896
+23  chromedriver                        0x000000010302e014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[29/100] cpanel.net
+INFO:root:Already present
+INFO:root:[30/100] time.com
+INFO:root:Already present
+INFO:root:[31/100] shopify.com
+INFO:root:Already present
+INFO:root:[32/100] www.gov.uk
+INFO:root:Already present
+INFO:root:[33/100] dailymail.co.uk
+INFO:root:Already present
+INFO:root:[34/100] eventbrite.com
+INFO:root:Already present
+INFO:root:[35/100] g.page
+INFO:root:Already present
+INFO:root:[36/100] usatoday.com
+INFO:root:Already present
+INFO:root:[37/100] telegraph.co.uk
+INFO:root:Already present
+INFO:root:[38/100] mp.weixin.qq.com
+INFO:root:Already present
+INFO:root:[39/100] cnet.com
+INFO:root:Already present
+INFO:root:[40/100] npr.org
+INFO:root:Already present
+INFO:root:[41/100] ted.com
+INFO:root:Already present
+INFO:root:[42/100] cloudfront.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by cloudfront.net
+ERROR:root:Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102dbad3c chromedriver + 4222268
+1   chromedriver                        0x0000000102d418e8 chromedriver + 3725544
+2   chromedriver                        0x00000001029f7da4 chromedriver + 277924
+3   chromedriver                        0x00000001029f0754 chromedriver + 247636
+4   chromedriver                        0x00000001029e34cc chromedriver + 193740
+5   chromedriver                        0x00000001029e4b1c chromedriver + 199452
+6   chromedriver                        0x00000001029e37e0 chromedriver + 194528
+7   chromedriver                        0x00000001029e271c chromedriver + 190236
+8   chromedriver                        0x00000001029e25d8 chromedriver + 189912
+9   chromedriver                        0x00000001029e1278 chromedriver + 184952
+10  chromedriver                        0x00000001029e15b0 chromedriver + 185776
+11  chromedriver                        0x00000001029f9d48 chromedriver + 286024
+12  chromedriver                        0x0000000102a6bba8 chromedriver + 752552
+13  chromedriver                        0x0000000102a6b618 chromedriver + 751128
+14  chromedriver                        0x0000000102a258f0 chromedriver + 465136
+15  chromedriver                        0x0000000102a26974 chromedriver + 469364
+16  chromedriver                        0x0000000102d8b788 chromedriver + 4028296
+17  chromedriver                        0x0000000102d8fc1c chromedriver + 4045852
+18  chromedriver                        0x0000000102d95c98 chromedriver + 4070552
+19  chromedriver                        0x0000000102d908d8 chromedriver + 4049112
+20  chromedriver                        0x0000000102d67d84 chromedriver + 3882372
+21  chromedriver                        0x0000000102dae720 chromedriver + 4171552
+22  chromedriver                        0x0000000102dae878 chromedriver + 4171896
+23  chromedriver                        0x0000000102dc2014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    logging.info("[%d/%d] %s" %(i + 1, len(website_list), domain))
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000102dbad3c chromedriver + 4222268
+1   chromedriver                        0x0000000102d418e8 chromedriver + 3725544
+2   chromedriver                        0x00000001029f7da4 chromedriver + 277924
+3   chromedriver                        0x00000001029f0754 chromedriver + 247636
+4   chromedriver                        0x00000001029e34cc chromedriver + 193740
+5   chromedriver                        0x00000001029e4b1c chromedriver + 199452
+6   chromedriver                        0x00000001029e37e0 chromedriver + 194528
+7   chromedriver                        0x00000001029e271c chromedriver + 190236
+8   chromedriver                        0x00000001029e25d8 chromedriver + 189912
+9   chromedriver                        0x00000001029e1278 chromedriver + 184952
+10  chromedriver                        0x00000001029e15b0 chromedriver + 185776
+11  chromedriver                        0x00000001029f9d48 chromedriver + 286024
+12  chromedriver                        0x0000000102a6bba8 chromedriver + 752552
+13  chromedriver                        0x0000000102a6b618 chromedriver + 751128
+14  chromedriver                        0x0000000102a258f0 chromedriver + 465136
+15  chromedriver                        0x0000000102a26974 chromedriver + 469364
+16  chromedriver                        0x0000000102d8b788 chromedriver + 4028296
+17  chromedriver                        0x0000000102d8fc1c chromedriver + 4045852
+18  chromedriver                        0x0000000102d95c98 chromedriver + 4070552
+19  chromedriver                        0x0000000102d908d8 chromedriver + 4049112
+20  chromedriver                        0x0000000102d67d84 chromedriver + 3882372
+21  chromedriver                        0x0000000102dae720 chromedriver + 4171552
+22  chromedriver                        0x0000000102dae878 chromedriver + 4171896
+23  chromedriver                        0x0000000102dc2014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[43/100] wired.com
+INFO:root:Already present
+INFO:root:[44/100] beian.gov.cn
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by beian.gov.cn
+ERROR:root:Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104ad2d3c chromedriver + 4222268
+1   chromedriver                        0x0000000104a598e8 chromedriver + 3725544
+2   chromedriver                        0x000000010470fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104708754 chromedriver + 247636
+4   chromedriver                        0x00000001046fb4cc chromedriver + 193740
+5   chromedriver                        0x00000001046fcb1c chromedriver + 199452
+6   chromedriver                        0x00000001046fb7e0 chromedriver + 194528
+7   chromedriver                        0x00000001046fa71c chromedriver + 190236
+8   chromedriver                        0x00000001046fa5d8 chromedriver + 189912
+9   chromedriver                        0x00000001046f9278 chromedriver + 184952
+10  chromedriver                        0x00000001046f95b0 chromedriver + 185776
+11  chromedriver                        0x0000000104711d48 chromedriver + 286024
+12  chromedriver                        0x0000000104783ba8 chromedriver + 752552
+13  chromedriver                        0x0000000104783618 chromedriver + 751128
+14  chromedriver                        0x000000010473d8f0 chromedriver + 465136
+15  chromedriver                        0x000000010473e974 chromedriver + 469364
+16  chromedriver                        0x0000000104aa3788 chromedriver + 4028296
+17  chromedriver                        0x0000000104aa7c1c chromedriver + 4045852
+18  chromedriver                        0x0000000104aadc98 chromedriver + 4070552
+19  chromedriver                        0x0000000104aa88d8 chromedriver + 4049112
+20  chromedriver                        0x0000000104a7fd84 chromedriver + 3882372
+21  chromedriver                        0x0000000104ac6720 chromedriver + 4171552
+22  chromedriver                        0x0000000104ac6878 chromedriver + 4171896
+23  chromedriver                        0x0000000104ada014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    logging.info("[%d/%d] %s" %(i + 1, len(website_list), domain))
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104ad2d3c chromedriver + 4222268
+1   chromedriver                        0x0000000104a598e8 chromedriver + 3725544
+2   chromedriver                        0x000000010470fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104708754 chromedriver + 247636
+4   chromedriver                        0x00000001046fb4cc chromedriver + 193740
+5   chromedriver                        0x00000001046fcb1c chromedriver + 199452
+6   chromedriver                        0x00000001046fb7e0 chromedriver + 194528
+7   chromedriver                        0x00000001046fa71c chromedriver + 190236
+8   chromedriver                        0x00000001046fa5d8 chromedriver + 189912
+9   chromedriver                        0x00000001046f9278 chromedriver + 184952
+10  chromedriver                        0x00000001046f95b0 chromedriver + 185776
+11  chromedriver                        0x0000000104711d48 chromedriver + 286024
+12  chromedriver                        0x0000000104783ba8 chromedriver + 752552
+13  chromedriver                        0x0000000104783618 chromedriver + 751128
+14  chromedriver                        0x000000010473d8f0 chromedriver + 465136
+15  chromedriver                        0x000000010473e974 chromedriver + 469364
+16  chromedriver                        0x0000000104aa3788 chromedriver + 4028296
+17  chromedriver                        0x0000000104aa7c1c chromedriver + 4045852
+18  chromedriver                        0x0000000104aadc98 chromedriver + 4070552
+19  chromedriver                        0x0000000104aa88d8 chromedriver + 4049112
+20  chromedriver                        0x0000000104a7fd84 chromedriver + 3882372
+21  chromedriver                        0x0000000104ac6720 chromedriver + 4171552
+22  chromedriver                        0x0000000104ac6878 chromedriver + 4171896
+23  chromedriver                        0x0000000104ada014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[45/100] blogger.com
+INFO:root:Already present
+INFO:root:[46/100] amzn.to
+INFO:root:Already present
+INFO:root:[47/100] statista.com
+INFO:root:Already present
+INFO:root:[48/100] ebay.com
+INFO:root:Already present
+INFO:root:[49/100] surveymonkey.com
+INFO:root:Already present
+INFO:root:[50/100] addtoany.com
+INFO:root:Already present
+INFO:root:[51/100] unsplash.com
+INFO:root:Already present
+INFO:root:[52/100] hp.com
+INFO:root:Already present
+INFO:root:[53/100] mysql.com
+INFO:root:Already present
+INFO:root:[54/100] bp.blogspot.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by bp.blogspot.com
+ERROR:root:Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001046f6d3c chromedriver + 4222268
+1   chromedriver                        0x000000010467d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104333da4 chromedriver + 277924
+3   chromedriver                        0x000000010432c754 chromedriver + 247636
+4   chromedriver                        0x000000010431f4cc chromedriver + 193740
+5   chromedriver                        0x0000000104320b1c chromedriver + 199452
+6   chromedriver                        0x000000010431f7e0 chromedriver + 194528
+7   chromedriver                        0x000000010431e71c chromedriver + 190236
+8   chromedriver                        0x000000010431e5d8 chromedriver + 189912
+9   chromedriver                        0x000000010431d278 chromedriver + 184952
+10  chromedriver                        0x000000010431d5b0 chromedriver + 185776
+11  chromedriver                        0x0000000104335d48 chromedriver + 286024
+12  chromedriver                        0x00000001043a7ba8 chromedriver + 752552
+13  chromedriver                        0x00000001043a7618 chromedriver + 751128
+14  chromedriver                        0x00000001043618f0 chromedriver + 465136
+15  chromedriver                        0x0000000104362974 chromedriver + 469364
+16  chromedriver                        0x00000001046c7788 chromedriver + 4028296
+17  chromedriver                        0x00000001046cbc1c chromedriver + 4045852
+18  chromedriver                        0x00000001046d1c98 chromedriver + 4070552
+19  chromedriver                        0x00000001046cc8d8 chromedriver + 4049112
+20  chromedriver                        0x00000001046a3d84 chromedriver + 3882372
+21  chromedriver                        0x00000001046ea720 chromedriver + 4171552
+22  chromedriver                        0x00000001046ea878 chromedriver + 4171896
+23  chromedriver                        0x00000001046fe014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 440, in <module>
+    print("[%d/%d] %s" %(i + 1, len(website_list), domain))
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001046f6d3c chromedriver + 4222268
+1   chromedriver                        0x000000010467d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104333da4 chromedriver + 277924
+3   chromedriver                        0x000000010432c754 chromedriver + 247636
+4   chromedriver                        0x000000010431f4cc chromedriver + 193740
+5   chromedriver                        0x0000000104320b1c chromedriver + 199452
+6   chromedriver                        0x000000010431f7e0 chromedriver + 194528
+7   chromedriver                        0x000000010431e71c chromedriver + 190236
+8   chromedriver                        0x000000010431e5d8 chromedriver + 189912
+9   chromedriver                        0x000000010431d278 chromedriver + 184952
+10  chromedriver                        0x000000010431d5b0 chromedriver + 185776
+11  chromedriver                        0x0000000104335d48 chromedriver + 286024
+12  chromedriver                        0x00000001043a7ba8 chromedriver + 752552
+13  chromedriver                        0x00000001043a7618 chromedriver + 751128
+14  chromedriver                        0x00000001043618f0 chromedriver + 465136
+15  chromedriver                        0x0000000104362974 chromedriver + 469364
+16  chromedriver                        0x00000001046c7788 chromedriver + 4028296
+17  chromedriver                        0x00000001046cbc1c chromedriver + 4045852
+18  chromedriver                        0x00000001046d1c98 chromedriver + 4070552
+19  chromedriver                        0x00000001046cc8d8 chromedriver + 4049112
+20  chromedriver                        0x00000001046a3d84 chromedriver + 3882372
+21  chromedriver                        0x00000001046ea720 chromedriver + 4171552
+22  chromedriver                        0x00000001046ea878 chromedriver + 4171896
+23  chromedriver                        0x00000001046fe014 chromedriver + 4251668
+24  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+25  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[55/100] googleusercontent.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 19:53:21, elapsed time  : 00:05:16
+INFO:root:Start date and time: 2023-03-17 19:54:30
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+ERROR:root:HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+INFO:root:[20/100] list-manage.com
+INFO:root:Already present
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Already present
+ERROR:root:HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106b34280>, 'Connection to go.com timed out. (connect timeout=5)'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106b34280>, 'Connection to go.com timed out. (connect timeout=5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x106b34280>, 'Connection to go.com timed out. (connect timeout=5)'))
+INFO:root:[28/100] go.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Start date and time: 2023-03-17 19:55:19
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+WARNING:root:Exception raised by list-manage.com in get_website_url, using default url
+ERROR:root:HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+INFO:root:[20/100] list-manage.com
+INFO:root:Already present
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Already present
+WARNING:root:Exception raised by go.com in get_website_url, using default url
+ERROR:root:HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1050fe640>, 'Connection to go.com timed out. (connect timeout=5)'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1050fe640>, 'Connection to go.com timed out. (connect timeout=5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1050fe640>, 'Connection to go.com timed out. (connect timeout=5)'))
+INFO:root:[28/100] go.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Start date and time: 2023-03-17 19:57:58
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
+INFO:root:[15/100] stanford.edu
+INFO:root:Already present
+INFO:root:[16/100] researchgate.net
+INFO:root:Already present
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Already present
+INFO:root:[18/100] ibm.com
+INFO:root:Already present
+INFO:root:[19/100] springer.com
+INFO:root:Already present
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='list-manage.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError("hostname 'list-manage.com' doesn't match either of '*.mailchimp.com', 'mailchimp.com'")))
+INFO:root:[21/100] code.google.com
+INFO:root:Already present
+INFO:root:[22/100] wp.com
+INFO:root:Already present
+INFO:root:[23/100] wix.com
+INFO:root:Already present
+INFO:root:[24/100] slideshare.net
+INFO:root:Already present
+INFO:root:[25/100] outlook.com
+INFO:root:Already present
+INFO:root:[26/100] nasa.gov
+INFO:root:Already present
+INFO:root:[27/100] cnbc.com
+INFO:root:Already present
+WARNING:root:Exception raised by go.com
+ERROR:root:HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x102b8db20>, 'Connection to go.com timed out. (connect timeout=5)'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x102b8db20>, 'Connection to go.com timed out. (connect timeout=5)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='go.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x102b8db20>, 'Connection to go.com timed out. (connect timeout=5)'))
+INFO:root:[29/100] cpanel.net
+INFO:root:Already present
+INFO:root:[30/100] time.com
+INFO:root:Already present
+INFO:root:[31/100] shopify.com
+INFO:root:Already present
+INFO:root:[32/100] www.gov.uk
+INFO:root:Already present
+INFO:root:[33/100] dailymail.co.uk
+INFO:root:Already present
+INFO:root:[34/100] eventbrite.com
+INFO:root:Already present
+INFO:root:[35/100] g.page
+INFO:root:Already present
+INFO:root:[36/100] usatoday.com
+INFO:root:Already present
+INFO:root:[37/100] telegraph.co.uk
+INFO:root:Already present
+INFO:root:[38/100] mp.weixin.qq.com
+INFO:root:Already present
+INFO:root:[39/100] cnet.com
+INFO:root:Already present
+INFO:root:[40/100] npr.org
+INFO:root:Already present
+INFO:root:[41/100] ted.com
+INFO:root:Already present
+WARNING:root:Exception raised by cloudfront.net
+ERROR:root:HTTPSConnectionPool(host='cloudfront.net', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e760>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='cloudfront.net', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e760>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cloudfront.net', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e760>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+INFO:root:[43/100] wired.com
+INFO:root:Already present
+WARNING:root:Exception raised by beian.gov.cn
+ERROR:root:HTTPSConnectionPool(host='beian.gov.cn', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='beian.gov.cn', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='beian.gov.cn', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x10284e910>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+INFO:root:[45/100] blogger.com
+INFO:root:Already present
+INFO:root:[46/100] amzn.to
+INFO:root:Already present
+INFO:root:[47/100] statista.com
+INFO:root:Already present
+INFO:root:[48/100] ebay.com
+INFO:root:Already present
+INFO:root:[49/100] surveymonkey.com
+INFO:root:Already present
+INFO:root:[50/100] addtoany.com
+INFO:root:Already present
+INFO:root:[51/100] unsplash.com
+INFO:root:Already present
+INFO:root:[52/100] hp.com
+INFO:root:Already present
+INFO:root:[53/100] mysql.com
+INFO:root:Already present
+WARNING:root:Exception raised by bp.blogspot.com
+ERROR:root:HTTPSConnectionPool(host='bp.blogspot.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef2b0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='bp.blogspot.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef2b0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='bp.blogspot.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef2b0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+WARNING:root:Exception raised by googleusercontent.com
+ERROR:root:HTTPSConnectionPool(host='googleusercontent.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef5e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='googleusercontent.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef5e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='googleusercontent.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1028ef5e0>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))
+INFO:root:[56/100] i0.wp.com
+INFO:root:Already present
+INFO:root:[57/100] loc.gov
+INFO:root:Already present
+INFO:root:[58/100] webmd.com
+INFO:root:Already present
+INFO:root:[59/100] berkeley.edu
+INFO:root:Already present
+INFO:root:[60/100] etsy.com
+INFO:root:Already present
+WARNING:root:Exception raised by myspace.com
+ERROR:root:HTTPSConnectionPool(host='myspace.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/opt/homebrew/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='myspace.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 409, in <module>
+    website_url = get_website_url(domain)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/utils.py", line 16, in get_website_url
+    response = requests.get(f"https://{domain}", timeout=5)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/requests/adapters.py", line 514, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='myspace.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')))
+INFO:root:[62/100] commons.wikimedia.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 19:59:31, elapsed time  : 00:01:33

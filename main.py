@@ -22,7 +22,7 @@ import logging
 import datetime
 
 
-RESULTS_FOLDER = "results/"
+RESULTS_FOLDER = "experiments/results_websites/"
 WAIT_SCREENSHOT = 1
 COLAB = False 
 
@@ -359,7 +359,7 @@ def init_args_parser():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='logs/websites.log', level=logging.INFO)
+    logging.basicConfig(filename='experiments/logs/websites.log', level=logging.INFO)
 
     # Log start date and time
     start = datetime.datetime.now()
@@ -389,11 +389,11 @@ if __name__ == "__main__":
 
     # make results folder if not present
     if args.website_list:
-        results_folder = "results_" + args.website_list.split(".txt")[0]
+        results_folder = "results/results_" + args.website_list.split(".txt")[0]
         if not path.exists(results_folder):
             makedirs(results_folder)
     else:
-        results_folder = "results_websites"
+        results_folder = "results/results_websites"
 
     RESULTS_FOLDER = results_folder 
 
@@ -405,9 +405,17 @@ if __name__ == "__main__":
 
         try:
             domain = website2domain(website)
+            #try:
             website_url = get_website_url(domain) 
+            #except Exception as e:  
+                # Using default one
+                #website_url = "https://www." + domain
 
-
+                #print("Exception raised by ", website, " in get_website_url, using default url")
+                #print(e, end="\n\n")
+                #logging.warning("Exception raised by " + website +  " in get_website_url, using default url")
+                #logging.exception(e)
+            
             filename = results_folder + "/" + domain
             suffix = "_" + args.test_name if args.test_name else ""
 
@@ -463,14 +471,14 @@ if __name__ == "__main__":
                 break
             print("\n")
         except Exception as e:
-            print("Exception raised by", website)
+            print("Exception raised by ", website)
             print(e, end="\n\n")
             logging.warning("Exception raised by " + website)
             logging.exception(e)
-            with open("errors.txt", "a") as f:
-                print("Exception raised by", website, file=f)
+            with open("results/errors.txt", "a") as f:
+                print("Exception raised by ", website, file=f)
                 print(e, end="\n\n", file=f)
-            with open("errors_" + RESULTS_FOLDER + ".txt", "a") as f:
+            with open("results/errors_" + RESULTS_FOLDER + ".txt", "a") as f:
                 print(website, file=f)
             #break # DEBUG
 

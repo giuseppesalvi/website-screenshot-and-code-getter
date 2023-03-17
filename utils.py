@@ -13,13 +13,8 @@ def website2domain(website):
 
 
 def get_website_url(domain):
-    try:
-        response = requests.get(f"https://{domain}", timeout=5)
-        url = response.url
-        return url
-    except requests.exceptions.RequestException as e:
-        print(f"Error: {e}")
-        return None
+    response = requests.get(f"https://{domain}", timeout=5)
+    return response.url
         
 
 def sort_websites_by_nodes(filepath):

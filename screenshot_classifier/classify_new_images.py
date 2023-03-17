@@ -30,30 +30,27 @@ def classify_image(model, image_path) :
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
 
-    predictions = model.predict(img_array)
-    score = tf.nn.softmax(predictions[0])
-
-    print(
-        "This image most likely belongs to {} with a {:.2f} percent confidence."
-        .format(model.class_names[np.argmax(score)], 100 * np.max(score))
-    )
+    prediction = model.predict(img_array)[0][0]
+    predicted_class = "bad_images" if prediction < 0.5 else "good_images"
+    print(image_path, " : ", prediction, predicted_class)
+    with open("predictions_" + predicted_class + ".txt", "a") as f:
+      print(image_path, f)
     return 
 
 def classify_new_images(images_names, folder):
     # Load the saved model
-    model = load_model("resnet50.h5")
+    model = load_model("screenshot_classifier/resnet50.h5")
 
     # Read images to process
     with open(images_names, "r") as f:
         for image_name in f:
-            classify_image(model, folder + "/" + image_name.strip())
+            classify_image(model, folder + "/" + image_name.strip() + ".png")
 
     return
 
 if __name__ == "__main__":
-    experiment ="websites_majestic_million_2"
-    base_name = "results_" + experiment
-    folder = "../" + base_name 
-    images_names = "included" + base_name + ".txt" 
+    experiment ="websites_majestic_million2"
+    folder = "results_" + experiment
+    images_names = "included_" + folder + ".txt" 
     classify_new_images(images_names, folder)
 
