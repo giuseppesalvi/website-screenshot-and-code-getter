@@ -52,7 +52,7 @@ if __name__ == "__main__":
     results_folder = "results_websites_majestic_million2"
 
     # Initialize args parser
-    parser = argparse.ArgumentParser(description="find included and excluded websites", usage="python3 find_included_websites.py --results_folder {results_folder}")
+    parser = argparse.ArgumentParser(description="find good websites screenshots among the included ones", usage="python3 classify_new_images.py --results_folder {results_folder}")
     parser.add_argument("--results_folder", help="folder with websites json files")
 
     # Read args
