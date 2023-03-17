@@ -1,0 +1,1611 @@
+error
+@import url("https://p.typekit.net/p.css?s=1&k=zpy2xov&ht=tk&f=10954.13453.13454.13455.13458.13459.13460.13461.13441.13442.13447.13448.13449.13450&a=565005&app=typekit&e=css") ;
+
+.fab ,.fas {
+    display: inline-block;
+    font-variant: normal;
+    text-rendering: auto;
+    
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands"
+}
+
+.fas {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900
+}
+
+@charset "UTF-8" ;
+
+:where(.wp-block-button__link) {
+    text-decoration: none;
+    padding: calc(.667em + 2px) calc(1.333em + 2px)
+}
+
+:where(.wp-block-columns.has-background) {
+    padding: 1.25em 2.375em
+}
+
+:where(.wp-block-post-comments input[type=submit]) {
+    border: none
+}
+
+:where(.wp-block-file__button) {
+    padding: .5em 1em
+}
+
+ul {
+    box-sizing: border-box
+}
+
+:where(.wp-block-navigation.has-background .wp-block-navigation-item a:not(.wp-element-button)) ,:where(.wp-block-navigation.has-background .wp-block-navigation-submenu a:not(.wp-element-button)) ,:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button)) ,:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu a:not(.wp-element-button)) {
+    padding: .5em 1em
+}
+
+:where(p.has-text-color:not(.has-link-color)) a {
+    color: inherit
+}
+
+:where(.wp-block-search__button) {
+    border: 1px solid #ccc;
+    padding: .375em .625em
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+    padding: 4px;
+    border: 1px solid #949494
+}
+
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) :where(.wp-block-search__button) {
+    padding: .125em .5em
+}
+
+#end-resizable-editor-section {
+    display: none
+}
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal!important
+}
+
+html :where([style*=border-top-color]) {
+    border-top-style: solid
+}
+
+html :where([style*=border-right-color]) {
+    border-right-style: solid
+}
+
+html :where([style*=border-bottom-color]) {
+    border-bottom-style: solid
+}
+
+html :where([style*=border-left-color]) {
+    border-left-style: solid
+}
+
+html :where([style*=border-top-width]) {
+    border-top-style: solid
+}
+
+html :where([style*=border-right-width]) {
+    border-right-style: solid
+}
+
+html :where([style*=border-bottom-width]) {
+    border-bottom-style: solid
+}
+
+html :where([style*=border-left-width]) {
+    border-left-style: solid
+}
+
+html :where(img[class*=wp-image-]) {
+    height: auto;
+    max-width: 100%
+}
+
+@charset "UTF-8" ;
+
+@media (min-width:62rem) {
+    .visible--mobile-only {
+        display: none!important
+    }
+
+}
+
+@media (max-width:62rem) {
+    .visible--desktop-only {
+        display: none!important
+    }
+
+}
+
+.fonta {
+    font-family: Font Awesome\ 5 Pro,freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
+}
+
+.fonta-social {
+    font-family: Font Awesome\ 5 Brands
+}
+
+.fonta-social {
+    font-display: swap;
+    font-weight: 400;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    
+}
+
+p {
+    margin: 1em 0
+}
+
+.lap_lane {
+    background-color: #00a598
+}
+
+.button ,button {
+    cursor: pointer
+}
+
+.component.event {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-content: start;
+    align-content: start;
+    min-height: 250px;
+    min-height: 15.625rem;
+    color: #003262
+}
+
+.component.event .event-heading ,.component.event .event-more {
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-weight: 700;
+    
+}
+
+.component.event .event-heading a ,.component.event .event-more a {
+    color: #003262;
+    text-decoration: none
+}
+
+.component.event .event-more {
+    margin-top: 1rem;
+    font-size: 12px;
+    font-size: .75rem
+}
+
+.component.event .event-event {
+    display: grid;
+    grid-template-columns: 15% 75%;
+    grid-column-gap: 3%;
+    justify-items: start;
+    min-height: 3.15rem;
+    margin: 0 0 1em
+}
+
+.component.event .event-event .event-date {
+    width: 100%;
+    border-right: 1px solid #ddd
+}
+
+.component.event .event-event .event-date .event-month {
+    font-size: 16px;
+    font-size: 1rem;
+    text-align: center
+}
+
+.component.event .event-event .event-date .event-day {
+    font-weight: 400;
+    font-size: 39px;
+    font-size: 2.4375rem;
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    text-align: center
+}
+
+.component.event .event-event .event-title {
+    display: grid;
+    -webkit-align-content: center;
+    align-content: center;
+    width: 100%;
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-weight: 500;
+    font-size: 18px;
+    font-size: 1.125rem
+}
+
+.component.event .event-event .event-title a {
+    color: #003262;
+    text-decoration: none
+}
+
+.component.photo {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    text-align: left
+}
+
+.component.photo img {
+    border-bottom: 8px solid #c4820e;
+    display: block;
+    margin-bottom: .5rem
+}
+
+.component.photo .h3 ,.component.photo h3 {
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    margin: 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #003262
+}
+
+.component.photo p {
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    color: #000;
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin: 0 0 .625rem
+}
+
+.component.blog {
+    background-color: #c4820e;
+    color: #000;
+    padding: .625rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.component.blog .blog-title {
+    border-bottom: 1px solid;
+    width: 75%;
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 12px;
+    font-size: .75rem;
+    font-weight: 700;
+    padding-bottom: .625rem;
+    margin-bottom: .625rem
+}
+
+.component.blog .blog-title a {
+    color: inherit;
+    text-decoration: none
+}
+
+.component.blog .blog-item {
+    padding: 1.25rem;
+    color: #fff;
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    font-size: 26px;
+    font-size: 1.625rem;
+    font-weight: 700;
+    
+}
+
+.component.blog .blog-item a {
+    color: #fff;
+    text-decoration: none
+}
+
+.component.blog .blog-item span.item-creator {
+    display: block;
+    color: #000;
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 17px;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    margin-top: .625rem
+}
+
+.component.twitter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: .625rem
+}
+
+.component.twitter ,.component.twitter .twitter-icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.component.twitter .twitter-icon {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    font-weight: 400;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    background-color: #1279bb;
+    color: #fff;
+    font-size: 25px;
+    font-size: 1.5625rem;
+    width: 40px;
+    width: 2.5rem;
+    height: 40px;
+    height: 2.5rem;
+    
+}
+
+.component.twitter .twitter-handle a {
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-weight: 700;
+    font-size: 12px;
+    font-size: .75rem;
+    color: #003262;
+    text-decoration: none;
+    
+}
+
+.component.twitter .twitter-item .twitter-content {
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    font-size: 20px;
+    font-size: 1.25rem
+}
+
+.component.twitter .twitter-item .twitter-content a {
+    color: #003262
+}
+
+.component.twitter .twitter-item .twitter-time {
+    font-size: 14px;
+    font-size: .875rem;
+    text-align: center;
+    color: #555
+}
+
+.alert-bar {
+    display: grid;
+    color: #333
+}
+
+.alert-bar.Low {
+    font-weight: 500;
+    background-color: #fdb515
+}
+
+.alert-bar.Low a {
+    color: #003262
+}
+
+.alert-bar .content-container .caption {
+    text-align: left;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.alert-bar .content-container .caption .alert-bar-text {
+    padding: .625rem 0
+}
+
+.alert-bar .content-container .caption h2 {
+    color: inherit
+}
+
+.alert-bar .content-container .caption a.alert-more-link ,.alert-bar .content-container .caption h2 ,.alert-bar .content-container .caption p.alert-message {
+    display: inline;
+    font-weight: inherit;
+    margin: 0;
+    font-size: 18.66px;
+    font-size: 1.16625rem
+}
+
+.alert-bar .content-container .caption a.alert-more-link ,.alert-bar .content-container .caption h2 ,.alert-bar .content-container .caption p.alert-message {
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-weight: inherit
+}
+
+.alert-bar .content-container .caption p.alert-message a {
+    color: #fff
+}
+
+.alert-bar .content-container .caption button {
+    border: none;
+    background-color: rgba(0,0,0,0);
+    font-size: 100%;
+    color: inherit;
+    font-weight: 700;
+    padding: 0;
+    min-width: 44px;
+    min-width: 2.75rem;
+    min-height: 44px;
+    min-height: 2.75rem
+}
+
+div.main-grid ,main.main-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px
+}
+
+@media (max-width:62rem) {
+    div.main-grid ,main.main-grid {
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(6,auto)
+    }
+
+}
+
+@media (max-width:48rem) {
+    div.main-grid ,main.main-grid {
+        grid-template-columns: repeat(1,100%);
+        grid-template-rows: repeat(12,auto)
+    }
+
+}
+
+body main#content {
+    background: url(../../img/tessellation-bg-03.png) no-repeat 100% 100% #f8f8f8;
+    padding: 1.875rem 0
+}
+
+body.home main#content {
+    grid-template-columns: repeat(3,30%);
+    grid-template-rows: auto;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem
+}
+
+@media (max-width:62rem) {
+    body.home main#content {
+        grid-template-columns: repeat(2,48%)
+    }
+
+}
+
+@media (max-width:48rem) {
+    body.home main#content {
+        grid-template-columns: repeat(1,100%)
+    }
+
+}
+
+.wrap-link {
+    text-decoration: none
+}
+
+html body {
+    margin: 0;
+    background-color: #f8f8f8;
+    height: 100vh;
+    display: grid;
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 18px;
+    font-size: 1.125rem;
+    color: #333;
+    
+}
+
+html body a.skip-link {
+    height: 1px;
+    height: .0625rem;
+    width: 1px;
+    width: .0625rem;
+    margin: -.0625rem;
+    position: absolute;
+    overflow: hidden;
+    color: #fff;
+    display: block;
+    background-color: #003262
+}
+
+html body a {
+    text-decoration: underline;
+    color: #003262;
+    background: none;
+    border: none
+}
+
+html body .h1 ,html body .h2 ,html body .h3 ,html body h1 ,html body h2 ,html body h3 {
+    color: #003262;
+    
+}
+
+html body .h1 ,html body .h2 ,html body .h3 ,html body h1 ,html body h2 ,html body h3 {
+    margin-top: 1.25rem;
+    margin-bottom: .625rem
+}
+
+html body .h1 ,html body h1 {
+    font-size: 36px;
+    font-size: 2.25rem
+}
+
+html body .h1 ,html body .h2 ,html body h1 ,html body h2 {
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif
+}
+
+html body .h2 ,html body h2 {
+    font-size: 30px;
+    font-size: 1.875rem
+}
+
+html body .h3 ,html body h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif
+}
+
+html body hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    width: 70%;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+html body img {
+    width: 100%
+}
+
+html body .screen-reader {
+    display: block!important;
+    left: -9999rem!important;
+    position: absolute!important
+}
+
+html body .sr-only {
+    position: absolute;
+    width: 1px;
+    width: .0625rem;
+    height: 1px;
+    height: .0625rem;
+    margin: -.0625rem;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0
+}
+
+html body .content-container {
+    width: 95%;
+    max-width: 1170px;
+    max-width: 73.125rem;
+    margin: auto
+}
+
+@media (max-width:48rem) {
+    html body .content-container .content-container {
+        max-width: auto
+    }
+
+}
+
+@media (min-width:48rem) {
+    html body .content-container .content-container {
+        max-width: 48rem
+    }
+
+}
+
+@media (min-width:62rem) {
+    html body .content-container .content-container {
+        max-width: 60.625rem
+    }
+
+}
+
+@media (min-width:75rem) {
+    html body .content-container .content-container {
+        max-width: 73.125rem
+    }
+
+}
+
+#skyline {
+    display: none;
+    background: #003262;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    z-index: 1
+}
+
+#skyline .content-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+#skyline .left-toolbar ,#skyline .right-toolbar {
+    margin: 0
+}
+
+#skyline .left-toolbar>li a ,#skyline .right-toolbar>li a {
+    padding: .8rem .9rem;
+    box-sizing: border-box;
+    -webkit-transition: color .2s ease-in-out;
+    
+}
+
+#skyline .right-toolbar {
+    margin-left: auto
+}
+
+#skyline .navbar-form {
+    margin: 0 0 0 .5rem;
+    width: 150px;
+    width: 9.375rem
+}
+
+@media (min-width:48rem) {
+    #skyline {
+        display: block
+    }
+
+}
+
+@media (min-width:62rem) {
+    #skyline .navbar-form {
+        width: 200px;
+        width: 12.5rem
+    }
+
+}
+
+header {
+    width: 100%;
+    margin: 0
+}
+
+header .navbar-form {
+    justify-self: end;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    padding: 0;
+    font-size: 14px;
+    font-size: .875rem;
+    font-family: Open Sans,sans-serif;
+    
+}
+
+header .navbar-form ,header .navbar-form .form-group {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0
+}
+
+header .navbar-form .form-group ,header .navbar-form .form-group input {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1
+}
+
+header .navbar-form .form-group input {
+    background-color: #eee;
+    border: none;
+    width: 100%;
+    padding: .6em 1em;
+    font-size: 14px;
+    font-size: .875rem
+}
+
+header .navbar-form button {
+    display: none;
+    padding: .4375rem .5625rem;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 16px;
+    font-size: 1rem
+}
+
+@media (min-width:48rem) {
+    header .navbar-form .form-group input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0
+    }
+
+    header .navbar-form button {
+        display: block
+    }
+
+}
+
+header .left-toolbar ,header .right-toolbar {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+header .left-toolbar>li>a ,header .right-toolbar>li>a {
+    color: #003262;
+    text-decoration: none;
+    font-family: freight-sans-pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    display: block
+}
+
+@media (min-width:48rem) {
+    header .left-toolbar>li>a ,header .right-toolbar>li>a {
+        color: #fff;
+        font-size: inherit
+    }
+
+}
+
+@media (min-width:48rem) {
+    header .left-toolbar ,header .right-toolbar {
+        font-size: 13px;
+        font-size: .8125rem
+    }
+
+}
+
+header .left-toolbar {
+    margin-top: .2rem
+}
+
+@media (min-width:48rem) {
+    header .left-toolbar {
+        margin-top: 0
+    }
+
+}
+
+header .left-toolbar>li {
+    border-bottom: 1px solid #eee;
+    padding: 0
+}
+
+header .left-toolbar>li>a {
+    text-align: left;
+    padding: .2em .3em;
+    width: 100%
+}
+
+@media (min-width:48rem) {
+    header .left-toolbar {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        color: #fff
+    }
+
+    header .left-toolbar>li {
+        border-bottom: none;
+        padding: 0
+    }
+
+}
+
+header .right-toolbar {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    color: #fff;
+    margin-top: .2rem;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+header .right-toolbar ,header .right-toolbar>li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+header .right-toolbar>li {
+    padding: 0;
+    width: calc(50% - .5rem);
+    text-align: center;
+    margin: .25rem 0
+}
+
+header .right-toolbar>li>a {
+    color: #fff;
+    width: 100%;
+    font-size: 1.25rem;
+    background-color: #003262;
+    padding: .8125rem .3rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    
+}
+
+@media (min-width:48rem) {
+    header .right-toolbar {
+        margin-top: 0;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap
+    }
+
+    header .right-toolbar>li {
+        width: auto;
+        text-align: left;
+        margin: 0
+    }
+
+    header .right-toolbar>li>a {
+        background-color: rgba(0,0,0,0);
+        padding: 0;
+        margin: 0;
+        display: block;
+        font-size: inherit
+    }
+
+}
+
+header.Hero {
+    color: #003262
+}
+
+header.Hero.takeover {
+    color: #fff
+}
+
+header.Hero.takeover .navigation {
+    background: #fff;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%
+}
+
+@media (min-width:48rem) {
+    header.Hero.takeover .navigation {
+        background: none
+    }
+
+    header.Hero.takeover .navigation .mega-menu>li>a {
+        color: #fff
+    }
+
+}
+
+header.Hero.takeover .hero.homepage .content-container {
+    min-height: 20rem
+}
+
+@media (min-width:62rem) {
+    header.Hero.takeover .hero.homepage .content-container {
+        min-height: 38rem
+    }
+
+}
+
+@media (max-width:48rem) {
+    header.takeover {
+        display: block
+    }
+
+    content-containerheader.takeover>.content-container {
+        display: block;
+        height: auto
+    }
+
+}
+
+@media (max-width:48rem) {
+    header {
+        border-top: 4px solid #003262
+    }
+
+}
+
+header .mobile-header .navbar-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+header .mobile-header .navbar-header .title {
+    max-width: 8rem
+}
+
+header .mobile-header .navbar-header .menu {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    border: none;
+    background-color: rgba(0,0,0,0);
+    width: 45px;
+    width: 2.8125rem;
+    z-index: 99
+}
+
+header .mobile-header .navbar-header .menu .icon-bar {
+    background: #003262;
+    display: block;
+    width: 30px;
+    width: 1.875rem;
+    height: 2px;
+    height: .125rem;
+    margin: .1875rem 0
+}
+
+@media (min-width:48rem) {
+    header .mobile-header {
+        display: none
+    }
+
+}
+
+header .navigation .content-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    position: relative
+}
+
+header .navigation .title {
+    display: none;
+    -webkit-align-self: center;
+    align-self: center;
+    margin: 0;
+    max-width: 9rem;
+    padding: 0
+}
+
+header .navigation .title h1 {
+    margin: 0
+}
+
+header .navigation .title img {
+    display: block;
+    width: 100%;
+    margin-left: -.625rem
+}
+
+@media (min-width:48rem) {
+    header .navigation .title {
+        display: block
+    }
+
+}
+
+header .navigation #main-nav.menu {
+    -webkit-align-self: center;
+    align-self: center
+}
+
+@media (min-width:48rem) {
+    header .navigation #main-nav.menu .mobile-content {
+        display: none
+    }
+
+}
+
+@media (max-width:48rem) {
+    header .navigation #main-nav.menu {
+        width: 100%
+    }
+
+}
+
+@media (min-width:48rem) {
+    header .navigation {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        padding: 1.1rem 0
+    }
+
+}
+
+@media (min-width:62rem) {
+    header .navigation .title {
+        max-width: 13rem
+    }
+
+}
+
+@media (min-width:75rem) {
+    header .navigation .title {
+        max-width: 15rem
+    }
+
+}
+
+header .hero.homepage {
+    background-size: cover;
+    position: relative
+}
+
+header .hero.homepage a {
+    text-decoration: none
+}
+
+header .hero.homepage .content-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    min-height: 20rem
+}
+
+@media (min-width:48rem) {
+    header .hero.homepage .content-container {
+        min-height: 22rem
+    }
+
+}
+
+header .hero.homepage .content-container .caption {
+    width: 50%
+}
+
+@media (max-width:48rem) {
+    header .hero.homepage .content-container .caption {
+        width: 75%
+    }
+
+}
+
+header .hero.homepage .content-container .caption>h2 {
+    display: inline;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0 .625rem;
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    font-size: 54px;
+    font-size: 3.375rem;
+    font-weight: 400;
+    margin: 0 0 .125rem;
+    color: #fff
+}
+
+@media (max-width:62rem) {
+    header .hero.homepage .content-container .caption>h2 {
+        font-size: 44px;
+        font-size: 2.75rem
+    }
+
+}
+
+@media (max-width:48rem) {
+    header .hero.homepage .content-container .caption>h2 {
+        margin-bottom: .125rem;
+        display: inline;
+        position: relative;
+        font-size: 28px;
+        font-size: 1.75rem;
+        left: 14px;
+        left: .875rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        color: #fff
+    }
+
+}
+
+header .hero.homepage .content-container .caption p {
+    margin: 0;
+    font-size: 22px;
+    font-size: 1.375rem;
+    color: #fff
+}
+
+@media (max-width:48rem) {
+    header .hero.homepage .content-container .caption p {
+        font-size: 14px;
+        font-size: .875rem;
+        display: inline;
+        position: relative;
+        left: 14px;
+        left: .875rem
+    }
+
+}
+
+header .hero.homepage .content-container .caption p>span {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: .1875rem .625rem
+}
+
+.mega-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.mega-menu .icon {
+    font-size: .8rem;
+    margin: 0 0 0 .2rem;
+    position: relative;
+    top: -.1rem
+}
+
+.mega-menu a {
+    text-decoration: none;
+    color: #003262
+}
+
+.mega-menu__dropdown {
+    display: none;
+    box-sizing: border-box
+}
+
+.mega-menu__dropdown__desc ,.mega-menu__dropdown__image {
+    display: none
+}
+
+.mega-menu__dropdown__image img {
+    width: 100%;
+    height: auto
+}
+
+.mega-menu__dropdown__desc {
+    font-size: 16px;
+    font-size: 1rem;
+    font-family: freight-micro-pro,Georgia,Constantia,Lucida Bright,Lucidabright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",serif;
+    font-weight: 500;
+    color: #003262
+}
+
+.mega-menu__dropdown .sub-menu {
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 700;
+    padding: 0;
+    margin: 1em 0 0 2em;
+    list-style: none
+}
+
+.mega-menu__dropdown .sub-menu li {
+    margin: 0 0 .8em
+}
+
+.mega-menu>li>a {
+    display: block;
+    padding: .2em .3em;
+    border-bottom: 1px solid #ddd
+}
+
+@media (min-width:48rem) {
+    .mega-menu {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end
+    }
+
+    .mega-menu>li {
+        margin: 0 0 0 3rem
+    }
+
+    .mega-menu>li>a {
+        font-size: 14px;
+        font-size: .875rem;
+        color: inherit;
+        font-weight: 500;
+        -webkit-transition: all .5s;
+        text-decoration-thickness: 2px;
+        text-underline-offset: .3em;
+        padding: 0;
+        border: none
+    }
+
+    .mega-menu__dropdown {
+        position: absolute;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        padding: 1em;
+        z-index: 1
+    }
+
+    .mega-menu__dropdown .sub-menu {
+        -webkit-columns: 2;
+        column-count: 2;
+        margin: 0
+    }
+
+    .mega-menu__dropdown__desc ,.mega-menu__dropdown__image {
+        display: block;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 25%;
+        flex: 0 0 25%;
+        margin: 0 2rem 0 0
+    }
+
+    .mega-menu__dropdown__desc+.sub-menu ,.mega-menu__dropdown__image+.sub-menu {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 50%;
+        flex: 0 0 50%;
+        padding: 0 0 0 2rem;
+        border-left: 1px solid #ddd
+    }
+
+}
+
+@media (min-width:62rem) {
+    .mega-menu>li>a {
+        font-size: 18px;
+        font-size: 1.125rem
+    }
+
+}
+
+@media (min-width:75rem) {
+    .mega-menu>li>a {
+        font-size: 22px;
+        font-size: 1.375rem
+    }
+
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    background-color: #003262;
+    padding: 0 0 1em
+}
+
+@media (max-width:48rem) {
+    footer {
+        grid-template-rows: repeat(1,940px)
+    }
+
+}
+
+@media (min-width:48rem) {
+    footer .content-container {
+        display: grid;
+        grid-template-rows: repeat(16,20px);
+        grid-template-columns: 45% 42%;
+        grid-template-areas: "footer-logo footer-menu" "footer-copyright footer-copyright"
+    }
+
+}
+
+@media (min-width:62rem) {
+    footer .content-container {
+        grid-template-columns: 58% 42%
+    }
+
+}
+
+footer .content-container .footer-logo {
+    grid-area: "footer-logo";
+    grid-row: 2/13
+}
+
+footer .content-container .footer-logo img {
+    display: block;
+    margin: .625rem 0 1.25rem -.625rem;
+    max-width: 200px;
+    max-width: 12.5rem
+}
+
+footer .content-container .footer-logo ul.footer-social {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding-left: 0
+}
+
+footer .content-container .footer-logo ul.footer-social li a {
+    font-size: 21px;
+    font-size: 1.3125rem;
+    min-width: 44px;
+    min-width: 2.75rem;
+    min-height: 44px;
+    min-height: 2.75rem;
+    color: #ccc;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+footer .content-container .footer-menu {
+    grid-area: "footer-menu";
+    grid-row: 2/13
+}
+
+footer .content-container .footer-menu ul.footer-primary-menu {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+    justify-content: start;
+    list-style-type: none;
+    padding: 0;
+    margin: .625rem 0 0
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-primary-menu {
+        display: block
+    }
+
+}
+
+footer .content-container .footer-menu ul.footer-primary-menu li a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 13px;
+    font-size: .8125rem;
+    font-weight: 700;
+    padding: .3125rem .625rem;
+    
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-primary-menu li a {
+        font-weight: 700;
+        font-size: 18px;
+        font-size: 1.125rem;
+        padding: .625rem .4375rem
+    }
+
+}
+
+footer .content-container .footer-menu ul.footer-left-menu {
+    list-style: none;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+    justify-content: start
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-left-menu {
+        width: 100%
+    }
+
+}
+
+footer .content-container .footer-menu ul.footer-left-menu li a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-size: .9375rem;
+    font-weight: 700;
+    padding: .3125rem .625rem;
+    font-weight: 400
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-left-menu li a {
+        color: #ccc;
+        padding: .4375rem;
+        font-size: 15px;
+        font-size: .9375rem
+    }
+
+}
+
+footer .content-container .footer-menu ul.footer-right-menu {
+    list-style: none;
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+    justify-content: start
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-right-menu {
+        width: 100%
+    }
+
+}
+
+footer .content-container .footer-menu ul.footer-right-menu li a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    font-size: .9375rem;
+    font-weight: 700;
+    padding: .3125rem .625rem;
+    font-weight: 400
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu ul.footer-right-menu li a {
+        color: #ccc;
+        padding: .4375rem;
+        font-size: 15px;
+        font-size: .9375rem
+    }
+
+}
+
+footer .content-container .footer-menu .footer-secondary-menus {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-menu .footer-secondary-menus {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column
+    }
+
+}
+
+footer .content-container .footer-menu hr {
+    margin-top: .625rem;
+    margin-bottom: .625rem;
+    border: 0;
+    border-top: 1px solid hsla(0,0%,100%,.1);
+    width: auto
+}
+
+footer .content-container .footer-copyright {
+    grid-area: "footer-copyright";
+    grid-row: 15/16;
+    color: #ccc
+}
+
+@media (max-width:48rem) {
+    footer .content-container .footer-copyright {
+        grid-row: 92/93;
+        margin-left: 6px;
+        margin-top: 1em
+    }
+
+}
+
+footer .content-container .footer-copyright .textwidget p {
+    margin: 0;
+    color: inherit;
+    font-size: 12px;
+    font-size: .75rem;
+    
+}
+

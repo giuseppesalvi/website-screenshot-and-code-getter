@@ -1,0 +1,711 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+a {
+    background-color: initial
+}
+
+button ,input {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button ,input {
+    overflow: visible
+}
+
+[type=button] ,[type=reset] ,[type=submit] ,button {
+    -webkit-appearance: button
+}
+
+[type=checkbox] ,[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[hidden] {
+    display: none
+}
+
+#app ,body ,html {
+    height: 100%
+}
+
+body {
+    font-feature-settings: "ss04";
+    color: #111;
+    font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+
+* {
+    box-sizing: border-box
+}
+
+a {
+    -webkit-text-decoration-skip: ink;
+    color: #767676;
+    text-decoration-skip-ink: auto;
+    
+}
+
+p {
+    margin: 16px 0
+}
+
+img {
+    vertical-align: middle
+}
+
+button {
+    color: inherit;
+    cursor: pointer
+}
+
+.jpBZ0 {
+    background-color: initial;
+    border: none;
+    font-weight: inherit;
+    padding: 0;
+    text-align: inherit
+}
+
+.oh0KJ {
+    margin-block: 0
+}
+
+.ruKGA {
+    list-style: none;
+    padding-left: 0
+}
+
+.dvBHu {
+    font-size: inherit;
+    font-weight: inherit
+}
+
+.eziW_ {
+    color: inherit;
+    text-decoration: none
+}
+
+@media (min-width:768px) {
+    .PlcwJ {
+        width: 66.66667%
+    }
+
+}
+
+@media (min-width:768px) {
+    .U8eXG {
+        margin-inline: auto;
+        max-width: 1320px
+    }
+
+}
+
+.M5vdR {
+    padding-inline: var(--grid-container-inline-padding)
+}
+
+.xNKUO {
+    font-weight: 700
+}
+
+.j8AIa {
+    font-size: 28px;
+    margin-bottom: 16px
+}
+
+@media (min-width:768px) {
+    .j8AIa {
+        font-size: 46px;
+        
+    }
+
+}
+
+.o4ViM {
+    font-size: 15px
+}
+
+@media (min-width:768px) {
+    .o4ViM {
+        font-size: 18px
+    }
+
+}
+
+.XhUNI {
+    font-weight: 400
+}
+
+.KHq0c {
+    font-weight: 500
+}
+
+.Fu4vG {
+    font-weight: 700
+}
+
+.RZQOk {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.ejG8W {
+    display: flex
+}
+
+.p1cWU {
+    fill: currentColor;
+    border: 1px solid #0000;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap
+}
+
+button.p1cWU[disabled] {
+    background-color: #eee;
+    color: #767676;
+    cursor: not-allowed
+}
+
+.EzsBC {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 11px
+}
+
+.CwMIr {
+    background-color: #fff;
+    color: #767676
+}
+
+.CyIN2 {
+    fill: currentColor;
+    background-color: #ffffffe6;
+    border: 1px solid #0000;
+    color: #555
+}
+
+.cLLOA {
+    color: #767676
+}
+
+.zmDAx {
+    position: relative
+}
+
+.yPBw4 {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%
+}
+
+function() {
+    var c=document.createElement("script"),e=document.getElementsByTagName("script")[0];
+    c.async=!0,c.src=("https:"==document.location.protocol?"https://sb":"http://b")+".scorecardresearch.com/beacon.js",e.parentNode.insertBefore(c,e)
+}
+
+error
+html {
+    -webkit-text-size-adjust: 100%;
+    
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+a {
+    background-color: initial
+}
+
+button ,input {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button ,input {
+    overflow: visible
+}
+
+[type=button] ,[type=reset] ,[type=submit] ,button {
+    -webkit-appearance: button
+}
+
+[type=checkbox] ,[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[hidden] {
+    display: none
+}
+
+#app ,body ,html {
+    height: 100%
+}
+
+body {
+    font-feature-settings: "ss04";
+    color: #111;
+    font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+
+* {
+    box-sizing: border-box
+}
+
+a {
+    -webkit-text-decoration-skip: ink;
+    color: #767676;
+    text-decoration-skip-ink: auto;
+    
+}
+
+p {
+    margin: 16px 0
+}
+
+img {
+    vertical-align: middle
+}
+
+button {
+    color: inherit;
+    cursor: pointer
+}
+
+.jpBZ0 {
+    background-color: initial;
+    border: none;
+    font-weight: inherit;
+    padding: 0;
+    text-align: inherit
+}
+
+.oh0KJ {
+    margin-block: 0
+}
+
+.ruKGA {
+    list-style: none;
+    padding-left: 0
+}
+
+.dvBHu {
+    font-size: inherit;
+    font-weight: inherit
+}
+
+.eziW_ {
+    color: inherit;
+    text-decoration: none
+}
+
+@media (min-width:768px) {
+    .PlcwJ {
+        width: 66.66667%
+    }
+
+}
+
+@media (min-width:768px) {
+    .U8eXG {
+        margin-inline: auto;
+        max-width: 1320px
+    }
+
+}
+
+.M5vdR {
+    padding-inline: var(--grid-container-inline-padding)
+}
+
+.xNKUO {
+    font-weight: 700
+}
+
+.j8AIa {
+    font-size: 28px;
+    margin-bottom: 16px
+}
+
+@media (min-width:768px) {
+    .j8AIa {
+        font-size: 46px;
+        
+    }
+
+}
+
+.o4ViM {
+    font-size: 15px
+}
+
+@media (min-width:768px) {
+    .o4ViM {
+        font-size: 18px
+    }
+
+}
+
+.XhUNI {
+    font-weight: 400
+}
+
+.KHq0c {
+    font-weight: 500
+}
+
+.Fu4vG {
+    font-weight: 700
+}
+
+.RZQOk {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.ejG8W {
+    display: flex
+}
+
+.p1cWU {
+    fill: currentColor;
+    border: 1px solid #0000;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap
+}
+
+button.p1cWU[disabled] {
+    background-color: #eee;
+    color: #767676;
+    cursor: not-allowed
+}
+
+.EzsBC {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 11px
+}
+
+.CwMIr {
+    background-color: #fff;
+    color: #767676
+}
+
+.CyIN2 {
+    fill: currentColor;
+    background-color: #ffffffe6;
+    border: 1px solid #0000;
+    color: #555
+}
+
+.cLLOA {
+    color: #767676
+}
+
+.zmDAx {
+    position: relative
+}
+
+.yPBw4 {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%
+}
+
+function() {
+    var c=document.createElement("script"),e=document.getElementsByTagName("script")[0];
+    c.async=!0,c.src=("https:"==document.location.protocol?"https://sb":"http://b")+".scorecardresearch.com/beacon.js",e.parentNode.insertBefore(c,e)
+}
+
+error
+html {
+    -webkit-text-size-adjust: 100%;
+    
+}
+
+body {
+    margin: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+a {
+    background-color: initial
+}
+
+button ,input {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button ,input {
+    overflow: visible
+}
+
+[type=button] ,[type=reset] ,[type=submit] ,button {
+    -webkit-appearance: button
+}
+
+[type=checkbox] ,[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+[type=search] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px
+}
+
+[hidden] {
+    display: none
+}
+
+#app ,body ,html {
+    height: 100%
+}
+
+body {
+    font-feature-settings: "ss04";
+    color: #111;
+    font-family: -apple-system,BlinkMacSystemFont,San Francisco,Helvetica Neue,Helvetica,Ubuntu,Roboto,Noto,Segoe UI,Arial,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    
+}
+
+* {
+    box-sizing: border-box
+}
+
+a {
+    -webkit-text-decoration-skip: ink;
+    color: #767676;
+    text-decoration-skip-ink: auto;
+    
+}
+
+p {
+    margin: 16px 0
+}
+
+img {
+    vertical-align: middle
+}
+
+button {
+    color: inherit;
+    cursor: pointer
+}
+
+.jpBZ0 {
+    background-color: initial;
+    border: none;
+    font-weight: inherit;
+    padding: 0;
+    text-align: inherit
+}
+
+.oh0KJ {
+    margin-block: 0
+}
+
+.ruKGA {
+    list-style: none;
+    padding-left: 0
+}
+
+.dvBHu {
+    font-size: inherit;
+    font-weight: inherit
+}
+
+.eziW_ {
+    color: inherit;
+    text-decoration: none
+}
+
+@media (min-width:768px) {
+    .PlcwJ {
+        width: 66.66667%
+    }
+
+}
+
+@media (min-width:768px) {
+    .U8eXG {
+        margin-inline: auto;
+        max-width: 1320px
+    }
+
+}
+
+.M5vdR {
+    padding-inline: var(--grid-container-inline-padding)
+}
+
+.xNKUO {
+    font-weight: 700
+}
+
+.j8AIa {
+    font-size: 28px;
+    margin-bottom: 16px
+}
+
+@media (min-width:768px) {
+    .j8AIa {
+        font-size: 46px;
+        
+    }
+
+}
+
+.o4ViM {
+    font-size: 15px
+}
+
+@media (min-width:768px) {
+    .o4ViM {
+        font-size: 18px
+    }
+
+}
+
+.XhUNI {
+    font-weight: 400
+}
+
+.KHq0c {
+    font-weight: 500
+}
+
+.Fu4vG {
+    font-weight: 700
+}
+
+.RZQOk {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.ejG8W {
+    display: flex
+}
+
+.p1cWU {
+    fill: currentColor;
+    border: 1px solid #0000;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+    white-space: nowrap
+}
+
+button.p1cWU[disabled] {
+    background-color: #eee;
+    color: #767676;
+    cursor: not-allowed
+}
+
+.EzsBC {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 11px
+}
+
+.CwMIr {
+    background-color: #fff;
+    color: #767676
+}
+
+.CyIN2 {
+    fill: currentColor;
+    background-color: #ffffffe6;
+    border: 1px solid #0000;
+    color: #555
+}
+
+.cLLOA {
+    color: #767676
+}
+
+.zmDAx {
+    position: relative
+}
+
+.yPBw4 {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%
+}
+
+function() {
+    var c=document.createElement("script"),e=document.getElementsByTagName("script")[0];
+    c.async=!0,c.src=("https:"==document.location.protocol?"https://sb":"http://b")+".scorecardresearch.com/beacon.js",e.parentNode.insertBefore(c,e)
+}
+
+error

@@ -469,3 +469,256 @@ Stacktrace:
 16  libsystem_pthread.dylib             0x000000019776b08c thread_start + 8
 
 
+Exception raised by list-manage.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000105342d3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c98e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f7fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104ff3c2c chromedriver + 752684
+4   chromedriver                        0x0000000104ff3618 chromedriver + 751128
+5   chromedriver                        0x0000000104fad8f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fae974 chromedriver + 469364
+7   chromedriver                        0x0000000105313788 chromedriver + 4028296
+8   chromedriver                        0x0000000105317c1c chromedriver + 4045852
+9   chromedriver                        0x000000010531dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001053188d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052efd84 chromedriver + 3882372
+12  chromedriver                        0x0000000105336720 chromedriver + 4171552
+13  chromedriver                        0x0000000105336878 chromedriver + 4171896
+14  chromedriver                        0x000000010534a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by cnbc.com
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100d5ad3c chromedriver + 4222268
+1   chromedriver                        0x0000000100ce18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000100997da4 chromedriver + 277924
+3   chromedriver                        0x0000000100983240 chromedriver + 193088
+4   chromedriver                        0x000000010098142c chromedriver + 185388
+5   chromedriver                        0x00000001009816e4 chromedriver + 186084
+6   chromedriver                        0x000000010099fac8 chromedriver + 309960
+7   chromedriver                        0x00000001009cff70 chromedriver + 507760
+8   chromedriver                        0x00000001009c71b0 chromedriver + 471472
+9   chromedriver                        0x0000000100a0b618 chromedriver + 751128
+10  chromedriver                        0x00000001009c58f0 chromedriver + 465136
+11  chromedriver                        0x00000001009c6974 chromedriver + 469364
+12  chromedriver                        0x0000000100d2b788 chromedriver + 4028296
+13  chromedriver                        0x0000000100d2fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000100d35c98 chromedriver + 4070552
+15  chromedriver                        0x0000000100d308d8 chromedriver + 4049112
+16  chromedriver                        0x0000000100d07d84 chromedriver + 3882372
+17  chromedriver                        0x0000000100d4e720 chromedriver + 4171552
+18  chromedriver                        0x0000000100d4e878 chromedriver + 4171896
+19  chromedriver                        0x0000000100d62014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by go.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001009aed3c chromedriver + 4222268
+1   chromedriver                        0x00000001009358e8 chromedriver + 3725544
+2   chromedriver                        0x00000001005ebda4 chromedriver + 277924
+3   chromedriver                        0x000000010065fc2c chromedriver + 752684
+4   chromedriver                        0x000000010065f618 chromedriver + 751128
+5   chromedriver                        0x00000001006198f0 chromedriver + 465136
+6   chromedriver                        0x000000010061a974 chromedriver + 469364
+7   chromedriver                        0x000000010097f788 chromedriver + 4028296
+8   chromedriver                        0x0000000100983c1c chromedriver + 4045852
+9   chromedriver                        0x0000000100989c98 chromedriver + 4070552
+10  chromedriver                        0x00000001009848d8 chromedriver + 4049112
+11  chromedriver                        0x000000010095bd84 chromedriver + 3882372
+12  chromedriver                        0x00000001009a2720 chromedriver + 4171552
+13  chromedriver                        0x00000001009a2878 chromedriver + 4171896
+14  chromedriver                        0x00000001009b6014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by dailymail.co.uk
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010338ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001033118e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102fc7da4 chromedriver + 277924
+3   chromedriver                        0x0000000102fb3240 chromedriver + 193088
+4   chromedriver                        0x0000000102fb142c chromedriver + 185388
+5   chromedriver                        0x0000000102fb16e4 chromedriver + 186084
+6   chromedriver                        0x0000000102fcfac8 chromedriver + 309960
+7   chromedriver                        0x0000000102ffff70 chromedriver + 507760
+8   chromedriver                        0x0000000102ff71b0 chromedriver + 471472
+9   chromedriver                        0x000000010303b618 chromedriver + 751128
+10  chromedriver                        0x0000000102ff58f0 chromedriver + 465136
+11  chromedriver                        0x0000000102ff6974 chromedriver + 469364
+12  chromedriver                        0x000000010335b788 chromedriver + 4028296
+13  chromedriver                        0x000000010335fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000103365c98 chromedriver + 4070552
+15  chromedriver                        0x00000001033608d8 chromedriver + 4049112
+16  chromedriver                        0x0000000103337d84 chromedriver + 3882372
+17  chromedriver                        0x000000010337e720 chromedriver + 4171552
+18  chromedriver                        0x000000010337e878 chromedriver + 4171896
+19  chromedriver                        0x0000000103392014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by cloudfront.net
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010533ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f77da4 chromedriver + 277924
+3   chromedriver                        0x0000000104febc2c chromedriver + 752684
+4   chromedriver                        0x0000000104feb618 chromedriver + 751128
+5   chromedriver                        0x0000000104fa58f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fa6974 chromedriver + 469364
+7   chromedriver                        0x000000010530b788 chromedriver + 4028296
+8   chromedriver                        0x000000010530fc1c chromedriver + 4045852
+9   chromedriver                        0x0000000105315c98 chromedriver + 4070552
+10  chromedriver                        0x00000001053108d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052e7d84 chromedriver + 3882372
+12  chromedriver                        0x000000010532e720 chromedriver + 4171552
+13  chromedriver                        0x000000010532e878 chromedriver + 4171896
+14  chromedriver                        0x0000000105342014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by beian.gov.cn
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010463ed3c chromedriver + 4222268
+1   chromedriver                        0x00000001045c58e8 chromedriver + 3725544
+2   chromedriver                        0x000000010427bda4 chromedriver + 277924
+3   chromedriver                        0x00000001042efc2c chromedriver + 752684
+4   chromedriver                        0x00000001042ef618 chromedriver + 751128
+5   chromedriver                        0x00000001042a98f0 chromedriver + 465136
+6   chromedriver                        0x00000001042aa974 chromedriver + 469364
+7   chromedriver                        0x000000010460f788 chromedriver + 4028296
+8   chromedriver                        0x0000000104613c1c chromedriver + 4045852
+9   chromedriver                        0x0000000104619c98 chromedriver + 4070552
+10  chromedriver                        0x00000001046148d8 chromedriver + 4049112
+11  chromedriver                        0x00000001045ebd84 chromedriver + 3882372
+12  chromedriver                        0x0000000104632720 chromedriver + 4171552
+13  chromedriver                        0x0000000104632878 chromedriver + 4171896
+14  chromedriver                        0x0000000104646014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by statista.com
+'utf-8' codec can't encode characters in position 47-48: surrogates not allowed
+
+Exception raised inside accept_cookies by https://www.surveymonkey.com/
+Message: element click intercepted: Element is not clickable at point (186, 345492)
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104532d3c chromedriver + 4222268
+1   chromedriver                        0x00000001044b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010416fda4 chromedriver + 277924
+3   chromedriver                        0x00000001041b2a78 chromedriver + 551544
+4   chromedriver                        0x00000001041b04c0 chromedriver + 541888
+5   chromedriver                        0x00000001041adc80 chromedriver + 531584
+6   chromedriver                        0x00000001041acb78 chromedriver + 527224
+7   chromedriver                        0x000000010419f9cc chromedriver + 473548
+8   chromedriver                        0x000000010419f1b0 chromedriver + 471472
+9   chromedriver                        0x00000001041e3618 chromedriver + 751128
+10  chromedriver                        0x000000010419d8f0 chromedriver + 465136
+11  chromedriver                        0x000000010419e974 chromedriver + 469364
+12  chromedriver                        0x0000000104503788 chromedriver + 4028296
+13  chromedriver                        0x0000000104507c1c chromedriver + 4045852
+14  chromedriver                        0x000000010450dc98 chromedriver + 4070552
+15  chromedriver                        0x00000001045088d8 chromedriver + 4049112
+16  chromedriver                        0x00000001044dfd84 chromedriver + 3882372
+17  chromedriver                        0x0000000104526720 chromedriver + 4171552
+18  chromedriver                        0x0000000104526878 chromedriver + 4171896
+19  chromedriver                        0x000000010453a014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by surveymonkey.com
+Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104532d3c chromedriver + 4222268
+1   chromedriver                        0x00000001044b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010416fda4 chromedriver + 277924
+3   chromedriver                        0x000000010415b240 chromedriver + 193088
+4   chromedriver                        0x000000010415942c chromedriver + 185388
+5   chromedriver                        0x00000001041596e4 chromedriver + 186084
+6   chromedriver                        0x0000000104177ac8 chromedriver + 309960
+7   chromedriver                        0x00000001041a7f70 chromedriver + 507760
+8   chromedriver                        0x000000010419f1b0 chromedriver + 471472
+9   chromedriver                        0x00000001041e3618 chromedriver + 751128
+10  chromedriver                        0x000000010419d8f0 chromedriver + 465136
+11  chromedriver                        0x000000010419e974 chromedriver + 469364
+12  chromedriver                        0x0000000104503788 chromedriver + 4028296
+13  chromedriver                        0x0000000104507c1c chromedriver + 4045852
+14  chromedriver                        0x000000010450dc98 chromedriver + 4070552
+15  chromedriver                        0x00000001045088d8 chromedriver + 4049112
+16  chromedriver                        0x00000001044dfd84 chromedriver + 3882372
+17  chromedriver                        0x0000000104526720 chromedriver + 4171552
+18  chromedriver                        0x0000000104526878 chromedriver + 4171896
+19  chromedriver                        0x000000010453a014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by bp.blogspot.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001051e6d3c chromedriver + 4222268
+1   chromedriver                        0x000000010516d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104e23da4 chromedriver + 277924
+3   chromedriver                        0x0000000104e97c2c chromedriver + 752684
+4   chromedriver                        0x0000000104e97618 chromedriver + 751128
+5   chromedriver                        0x0000000104e518f0 chromedriver + 465136
+6   chromedriver                        0x0000000104e52974 chromedriver + 469364
+7   chromedriver                        0x00000001051b7788 chromedriver + 4028296
+8   chromedriver                        0x00000001051bbc1c chromedriver + 4045852
+9   chromedriver                        0x00000001051c1c98 chromedriver + 4070552
+10  chromedriver                        0x00000001051bc8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000105193d84 chromedriver + 3882372
+12  chromedriver                        0x00000001051da720 chromedriver + 4171552
+13  chromedriver                        0x00000001051da878 chromedriver + 4171896
+14  chromedriver                        0x00000001051ee014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+
+Exception raised by googleusercontent.com
+Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100832d3c chromedriver + 4222268
+1   chromedriver                        0x00000001007b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010046fda4 chromedriver + 277924
+3   chromedriver                        0x00000001004e3c2c chromedriver + 752684
+4   chromedriver                        0x00000001004e3618 chromedriver + 751128
+5   chromedriver                        0x000000010049d8f0 chromedriver + 465136
+6   chromedriver                        0x000000010049e974 chromedriver + 469364
+7   chromedriver                        0x0000000100803788 chromedriver + 4028296
+8   chromedriver                        0x0000000100807c1c chromedriver + 4045852
+9   chromedriver                        0x000000010080dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001008088d8 chromedriver + 4049112
+11  chromedriver                        0x00000001007dfd84 chromedriver + 3882372
+12  chromedriver                        0x0000000100826720 chromedriver + 4171552
+13  chromedriver                        0x0000000100826878 chromedriver + 4171896
+14  chromedriver                        0x000000010083a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+

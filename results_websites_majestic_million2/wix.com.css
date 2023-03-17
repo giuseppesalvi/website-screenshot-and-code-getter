@@ -1,0 +1,172 @@
+error
+error
+error
+error
+html.pro-gallery {
+    height: auto;
+    width: 100%
+}
+
+#gallery-loader {
+    position: fixed;
+    top: 50%
+}
+
+div.pro-gallery {
+    height: 100%;
+    width: 100%
+}
+
+div.pro-gallery ,div.pro-gallery .gallery-column {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    position: relative
+}
+
+div.pro-gallery .gallery-column {
+    float: left;
+    transform-style: preserve-3d
+}
+
+div.pro-gallery .gallery-item-container {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: none;
+    box-sizing: border-box;
+    color: inherit;
+    cursor: default;
+    display: inline-block;
+    font-family: HelveticaNeueW01-45Ligh,HelveticaNeueW02-45Ligh,HelveticaNeueW10-45Ligh,sans-serif;
+    font-size: 11px;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    scroll-snap-align: center;
+    text-decoration: none;
+    transform-style: preserve-3d;
+    vertical-align: top;
+    will-change: top,left,width,height
+}
+
+div.pro-gallery .gallery-item-container.visible {
+    transform: translateZ(0)
+}
+
+div.pro-gallery .gallery-item-container.clickable {
+    cursor: pointer
+}
+
+div.pro-gallery .gallery-item-container .gallery-item-wrapper {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+}
+
+div.pro-gallery .gallery-item-container .gallery-item-wrapper .gallery-item {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+div.pro-gallery .gallery-item-container .gallery-item-wrapper .gallery-item.gallery-item-preloaded {
+    background-size: cover
+}
+
+div.pro-gallery.one-row {
+    float: left;
+    white-space: nowrap
+}
+
+div.pro-gallery.one-row .gallery-column {
+    float: none;
+    white-space: nowrap;
+    width: 100%
+}
+
+div.pro-gallery.one-row.slider .gallery-column {
+    overflow-x: scroll
+}
+
+div.pro-gallery.one-row.slider .gallery-column.scroll-snap {
+    -ms-scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory
+}
+
+div.pro-gallery.one-row .gallery-horizontal-scroll-inner {
+    position: relative;
+    will-change: transform
+}
+
+div.pro-gallery .hide-scrollbars {
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none
+}
+
+div.pro-gallery .ltr {
+    direction: ltr
+}
+
+.gallery-item-container {
+    scroll-snap-align: none!important
+}
+
+.gallery-item-common-info.gallery-item-bottom-info {
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 24px;
+    padding-top: 0;
+    width: 100%
+}
+
+.gallery-item-common-info.gallery-item-bottom-info .info-element-text {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-bottom: 25px;
+    padding: 0
+}
+
+.gallery-item-common-info.gallery-item-bottom-info .info-element-text>div {
+    width: 100%
+}
+
+.gallery-item-common-info.gallery-item-bottom-info .info-element-text .info-element-title {
+    font-size: 21px;
+    white-space: normal
+}
+
+.gallery-item-common-info.gallery-item-bottom-info .info-element-text .info-element-title {
+    -webkit-box-orient: vertical;
+    color: #2b5672;
+    display: block;
+    font-family: HelveticaNeueW01-Thin,HelveticaNeueW02-Thin,HelveticaNeueW10-35Thin,sans-serif;
+    height: auto;
+    text-overflow: ellipsis;
+    
+}
+
+.gallery-slider div.pro-gallery .gallery-item-container .gallery-item-common-info .info-element-title {
+    white-space: normal
+}
+
+div.pro-gallery .gallery-item-container .gallery-item-common-info {
+    box-sizing: border-box;
+    cursor: pointer
+}
+
+div.pro-gallery .gallery-item-container .gallery-item-common-info .info-element-title {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+

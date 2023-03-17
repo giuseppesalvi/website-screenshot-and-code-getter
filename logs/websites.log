@@ -7683,3 +7683,1507 @@ INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/110.0.
 INFO:root:Screenshot obtained!
 
 INFO:root:End date and time: 2023-03-12 23:07:23, elapsed time  : 00:31:07
+INFO:root:Start date and time: 2023-03-17 10:49:24
+INFO:root:[1/100] harvard.edu
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:There is no [mac_arm64] chromedriver for browser 111.0.5563 in cache
+INFO:WDM:About to download new driver from https://chromedriver.storage.googleapis.com/111.0.5563.64/chromedriver_mac_arm64.zip
+INFO:WDM:Driver has been saved in cache [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563]
+INFO:root:Framework found: Ember
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 10:50:23, elapsed time  : 00:00:58
+INFO:root:Start date and time: 2023-03-17 10:50:38
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[3/100] mit.edu
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Vue
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[4/100] php.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[5/100] wikimedia.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[6/100] wsj.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[7/100] bing.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[8/100] weibo.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[9/100] wiley.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[10/100] nature.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[11/100] un.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[12/100] msn.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[13/100] businessinsider.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[14/100] gnu.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[15/100] stanford.edu
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[16/100] researchgate.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[17/100] wpa.qq.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[18/100] ibm.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[19/100] springer.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+WARNING:urllib3.connection:Certificate did not match expected hostname: list-manage.com. Certificate: {'subject': ((('countryName', 'US'),), (('stateOrProvinceName', 'Georgia'),), (('localityName', 'Atlanta'),), (('organizationName', 'The Rocket Science Group LLC'),), (('commonName', '*.mailchimp.com'),)), 'issuer': ((('countryName', 'US'),), (('organizationName', 'DigiCert Inc'),), (('organizationalUnitName', 'www.digicert.com'),), (('commonName', 'Thawte RSA CA 2018'),)), 'version': 3, 'serialNumber': '022866C86BA398C17AC042749CFB121A', 'notBefore': 'Oct  6 00:00:00 2022 GMT', 'notAfter': 'Nov  6 23:59:59 2023 GMT', 'subjectAltName': (('DNS', '*.mailchimp.com'), ('DNS', 'mailchimp.com')), 'OCSP': ('http://status.thawte.com',), 'caIssuers': ('http://cacerts.thawte.com/ThawteRSACA2018.crt',), 'crlDistributionPoints': ('http://cdp.thawte.com/ThawteRSACA2018.crl',)}
+INFO:root:[20/100] list-manage.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by list-manage.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000105342d3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c98e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f7fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104ff3c2c chromedriver + 752684
+4   chromedriver                        0x0000000104ff3618 chromedriver + 751128
+5   chromedriver                        0x0000000104fad8f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fae974 chromedriver + 469364
+7   chromedriver                        0x0000000105313788 chromedriver + 4028296
+8   chromedriver                        0x0000000105317c1c chromedriver + 4045852
+9   chromedriver                        0x000000010531dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001053188d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052efd84 chromedriver + 3882372
+12  chromedriver                        0x0000000105336720 chromedriver + 4171552
+13  chromedriver                        0x0000000105336878 chromedriver + 4171896
+14  chromedriver                        0x000000010534a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000105342d3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c98e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f7fda4 chromedriver + 277924
+3   chromedriver                        0x0000000104ff3c2c chromedriver + 752684
+4   chromedriver                        0x0000000104ff3618 chromedriver + 751128
+5   chromedriver                        0x0000000104fad8f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fae974 chromedriver + 469364
+7   chromedriver                        0x0000000105313788 chromedriver + 4028296
+8   chromedriver                        0x0000000105317c1c chromedriver + 4045852
+9   chromedriver                        0x000000010531dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001053188d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052efd84 chromedriver + 3882372
+12  chromedriver                        0x0000000105336720 chromedriver + 4171552
+13  chromedriver                        0x0000000105336878 chromedriver + 4171896
+14  chromedriver                        0x000000010534a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[21/100] code.google.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[22/100] wp.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[23/100] wix.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[24/100] slideshare.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[25/100] outlook.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[26/100] nasa.gov
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Ember
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[27/100] cnbc.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Ember
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by cnbc.com
+ERROR:root:Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100d5ad3c chromedriver + 4222268
+1   chromedriver                        0x0000000100ce18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000100997da4 chromedriver + 277924
+3   chromedriver                        0x0000000100983240 chromedriver + 193088
+4   chromedriver                        0x000000010098142c chromedriver + 185388
+5   chromedriver                        0x00000001009816e4 chromedriver + 186084
+6   chromedriver                        0x000000010099fac8 chromedriver + 309960
+7   chromedriver                        0x00000001009cff70 chromedriver + 507760
+8   chromedriver                        0x00000001009c71b0 chromedriver + 471472
+9   chromedriver                        0x0000000100a0b618 chromedriver + 751128
+10  chromedriver                        0x00000001009c58f0 chromedriver + 465136
+11  chromedriver                        0x00000001009c6974 chromedriver + 469364
+12  chromedriver                        0x0000000100d2b788 chromedriver + 4028296
+13  chromedriver                        0x0000000100d2fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000100d35c98 chromedriver + 4070552
+15  chromedriver                        0x0000000100d308d8 chromedriver + 4049112
+16  chromedriver                        0x0000000100d07d84 chromedriver + 3882372
+17  chromedriver                        0x0000000100d4e720 chromedriver + 4171552
+18  chromedriver                        0x0000000100d4e878 chromedriver + 4171896
+19  chromedriver                        0x0000000100d62014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 451, in <module>
+    get_screenshot(website_dict, file_local=True)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 102, in get_screenshot
+    driver.find_element(By.TAG_NAME, "body").screenshot(website_dict["filename"] + website_dict["suffix"] + suffix + ".png")
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 362, in screenshot
+    png = self.screenshot_as_png
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 340, in screenshot_as_png
+    return b64decode(self.screenshot_as_base64.encode("ascii"))
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 328, in screenshot_as_base64
+    return self._execute(Command.ELEMENT_SCREENSHOT)["value"]
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 410, in _execute
+    return self._parent.execute(command, params)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100d5ad3c chromedriver + 4222268
+1   chromedriver                        0x0000000100ce18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000100997da4 chromedriver + 277924
+3   chromedriver                        0x0000000100983240 chromedriver + 193088
+4   chromedriver                        0x000000010098142c chromedriver + 185388
+5   chromedriver                        0x00000001009816e4 chromedriver + 186084
+6   chromedriver                        0x000000010099fac8 chromedriver + 309960
+7   chromedriver                        0x00000001009cff70 chromedriver + 507760
+8   chromedriver                        0x00000001009c71b0 chromedriver + 471472
+9   chromedriver                        0x0000000100a0b618 chromedriver + 751128
+10  chromedriver                        0x00000001009c58f0 chromedriver + 465136
+11  chromedriver                        0x00000001009c6974 chromedriver + 469364
+12  chromedriver                        0x0000000100d2b788 chromedriver + 4028296
+13  chromedriver                        0x0000000100d2fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000100d35c98 chromedriver + 4070552
+15  chromedriver                        0x0000000100d308d8 chromedriver + 4049112
+16  chromedriver                        0x0000000100d07d84 chromedriver + 3882372
+17  chromedriver                        0x0000000100d4e720 chromedriver + 4171552
+18  chromedriver                        0x0000000100d4e878 chromedriver + 4171896
+19  chromedriver                        0x0000000100d62014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[28/100] go.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by go.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001009aed3c chromedriver + 4222268
+1   chromedriver                        0x00000001009358e8 chromedriver + 3725544
+2   chromedriver                        0x00000001005ebda4 chromedriver + 277924
+3   chromedriver                        0x000000010065fc2c chromedriver + 752684
+4   chromedriver                        0x000000010065f618 chromedriver + 751128
+5   chromedriver                        0x00000001006198f0 chromedriver + 465136
+6   chromedriver                        0x000000010061a974 chromedriver + 469364
+7   chromedriver                        0x000000010097f788 chromedriver + 4028296
+8   chromedriver                        0x0000000100983c1c chromedriver + 4045852
+9   chromedriver                        0x0000000100989c98 chromedriver + 4070552
+10  chromedriver                        0x00000001009848d8 chromedriver + 4049112
+11  chromedriver                        0x000000010095bd84 chromedriver + 3882372
+12  chromedriver                        0x00000001009a2720 chromedriver + 4171552
+13  chromedriver                        0x00000001009a2878 chromedriver + 4171896
+14  chromedriver                        0x00000001009b6014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001009aed3c chromedriver + 4222268
+1   chromedriver                        0x00000001009358e8 chromedriver + 3725544
+2   chromedriver                        0x00000001005ebda4 chromedriver + 277924
+3   chromedriver                        0x000000010065fc2c chromedriver + 752684
+4   chromedriver                        0x000000010065f618 chromedriver + 751128
+5   chromedriver                        0x00000001006198f0 chromedriver + 465136
+6   chromedriver                        0x000000010061a974 chromedriver + 469364
+7   chromedriver                        0x000000010097f788 chromedriver + 4028296
+8   chromedriver                        0x0000000100983c1c chromedriver + 4045852
+9   chromedriver                        0x0000000100989c98 chromedriver + 4070552
+10  chromedriver                        0x00000001009848d8 chromedriver + 4049112
+11  chromedriver                        0x000000010095bd84 chromedriver + 3882372
+12  chromedriver                        0x00000001009a2720 chromedriver + 4171552
+13  chromedriver                        0x00000001009a2878 chromedriver + 4171896
+14  chromedriver                        0x00000001009b6014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[29/100] cpanel.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[30/100] time.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[31/100] shopify.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[32/100] www.gov.uk
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[33/100] dailymail.co.uk
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by dailymail.co.uk
+ERROR:root:Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010338ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001033118e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102fc7da4 chromedriver + 277924
+3   chromedriver                        0x0000000102fb3240 chromedriver + 193088
+4   chromedriver                        0x0000000102fb142c chromedriver + 185388
+5   chromedriver                        0x0000000102fb16e4 chromedriver + 186084
+6   chromedriver                        0x0000000102fcfac8 chromedriver + 309960
+7   chromedriver                        0x0000000102ffff70 chromedriver + 507760
+8   chromedriver                        0x0000000102ff71b0 chromedriver + 471472
+9   chromedriver                        0x000000010303b618 chromedriver + 751128
+10  chromedriver                        0x0000000102ff58f0 chromedriver + 465136
+11  chromedriver                        0x0000000102ff6974 chromedriver + 469364
+12  chromedriver                        0x000000010335b788 chromedriver + 4028296
+13  chromedriver                        0x000000010335fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000103365c98 chromedriver + 4070552
+15  chromedriver                        0x00000001033608d8 chromedriver + 4049112
+16  chromedriver                        0x0000000103337d84 chromedriver + 3882372
+17  chromedriver                        0x000000010337e720 chromedriver + 4171552
+18  chromedriver                        0x000000010337e878 chromedriver + 4171896
+19  chromedriver                        0x0000000103392014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 451, in <module>
+    get_screenshot(website_dict, file_local=True)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 102, in get_screenshot
+    driver.find_element(By.TAG_NAME, "body").screenshot(website_dict["filename"] + website_dict["suffix"] + suffix + ".png")
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 362, in screenshot
+    png = self.screenshot_as_png
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 340, in screenshot_as_png
+    return b64decode(self.screenshot_as_base64.encode("ascii"))
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 328, in screenshot_as_base64
+    return self._execute(Command.ELEMENT_SCREENSHOT)["value"]
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 410, in _execute
+    return self._parent.execute(command, params)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010338ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001033118e8 chromedriver + 3725544
+2   chromedriver                        0x0000000102fc7da4 chromedriver + 277924
+3   chromedriver                        0x0000000102fb3240 chromedriver + 193088
+4   chromedriver                        0x0000000102fb142c chromedriver + 185388
+5   chromedriver                        0x0000000102fb16e4 chromedriver + 186084
+6   chromedriver                        0x0000000102fcfac8 chromedriver + 309960
+7   chromedriver                        0x0000000102ffff70 chromedriver + 507760
+8   chromedriver                        0x0000000102ff71b0 chromedriver + 471472
+9   chromedriver                        0x000000010303b618 chromedriver + 751128
+10  chromedriver                        0x0000000102ff58f0 chromedriver + 465136
+11  chromedriver                        0x0000000102ff6974 chromedriver + 469364
+12  chromedriver                        0x000000010335b788 chromedriver + 4028296
+13  chromedriver                        0x000000010335fc1c chromedriver + 4045852
+14  chromedriver                        0x0000000103365c98 chromedriver + 4070552
+15  chromedriver                        0x00000001033608d8 chromedriver + 4049112
+16  chromedriver                        0x0000000103337d84 chromedriver + 3882372
+17  chromedriver                        0x000000010337e720 chromedriver + 4171552
+18  chromedriver                        0x000000010337e878 chromedriver + 4171896
+19  chromedriver                        0x0000000103392014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[34/100] eventbrite.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[35/100] g.page
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[36/100] usatoday.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[37/100] telegraph.co.uk
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[38/100] mp.weixin.qq.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[39/100] cnet.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Nuxt
+INFO:root:Framework found: Vue
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[40/100] npr.org
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[41/100] ted.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Next
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[42/100] cloudfront.net
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by cloudfront.net
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010533ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f77da4 chromedriver + 277924
+3   chromedriver                        0x0000000104febc2c chromedriver + 752684
+4   chromedriver                        0x0000000104feb618 chromedriver + 751128
+5   chromedriver                        0x0000000104fa58f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fa6974 chromedriver + 469364
+7   chromedriver                        0x000000010530b788 chromedriver + 4028296
+8   chromedriver                        0x000000010530fc1c chromedriver + 4045852
+9   chromedriver                        0x0000000105315c98 chromedriver + 4070552
+10  chromedriver                        0x00000001053108d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052e7d84 chromedriver + 3882372
+12  chromedriver                        0x000000010532e720 chromedriver + 4171552
+13  chromedriver                        0x000000010532e878 chromedriver + 4171896
+14  chromedriver                        0x0000000105342014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010533ad3c chromedriver + 4222268
+1   chromedriver                        0x00000001052c18e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104f77da4 chromedriver + 277924
+3   chromedriver                        0x0000000104febc2c chromedriver + 752684
+4   chromedriver                        0x0000000104feb618 chromedriver + 751128
+5   chromedriver                        0x0000000104fa58f0 chromedriver + 465136
+6   chromedriver                        0x0000000104fa6974 chromedriver + 469364
+7   chromedriver                        0x000000010530b788 chromedriver + 4028296
+8   chromedriver                        0x000000010530fc1c chromedriver + 4045852
+9   chromedriver                        0x0000000105315c98 chromedriver + 4070552
+10  chromedriver                        0x00000001053108d8 chromedriver + 4049112
+11  chromedriver                        0x00000001052e7d84 chromedriver + 3882372
+12  chromedriver                        0x000000010532e720 chromedriver + 4171552
+13  chromedriver                        0x000000010532e878 chromedriver + 4171896
+14  chromedriver                        0x0000000105342014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[43/100] wired.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[44/100] beian.gov.cn
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by beian.gov.cn
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010463ed3c chromedriver + 4222268
+1   chromedriver                        0x00000001045c58e8 chromedriver + 3725544
+2   chromedriver                        0x000000010427bda4 chromedriver + 277924
+3   chromedriver                        0x00000001042efc2c chromedriver + 752684
+4   chromedriver                        0x00000001042ef618 chromedriver + 751128
+5   chromedriver                        0x00000001042a98f0 chromedriver + 465136
+6   chromedriver                        0x00000001042aa974 chromedriver + 469364
+7   chromedriver                        0x000000010460f788 chromedriver + 4028296
+8   chromedriver                        0x0000000104613c1c chromedriver + 4045852
+9   chromedriver                        0x0000000104619c98 chromedriver + 4070552
+10  chromedriver                        0x00000001046148d8 chromedriver + 4049112
+11  chromedriver                        0x00000001045ebd84 chromedriver + 3882372
+12  chromedriver                        0x0000000104632720 chromedriver + 4171552
+13  chromedriver                        0x0000000104632878 chromedriver + 4171896
+14  chromedriver                        0x0000000104646014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x000000010463ed3c chromedriver + 4222268
+1   chromedriver                        0x00000001045c58e8 chromedriver + 3725544
+2   chromedriver                        0x000000010427bda4 chromedriver + 277924
+3   chromedriver                        0x00000001042efc2c chromedriver + 752684
+4   chromedriver                        0x00000001042ef618 chromedriver + 751128
+5   chromedriver                        0x00000001042a98f0 chromedriver + 465136
+6   chromedriver                        0x00000001042aa974 chromedriver + 469364
+7   chromedriver                        0x000000010460f788 chromedriver + 4028296
+8   chromedriver                        0x0000000104613c1c chromedriver + 4045852
+9   chromedriver                        0x0000000104619c98 chromedriver + 4070552
+10  chromedriver                        0x00000001046148d8 chromedriver + 4049112
+11  chromedriver                        0x00000001045ebd84 chromedriver + 3882372
+12  chromedriver                        0x0000000104632720 chromedriver + 4171552
+13  chromedriver                        0x0000000104632878 chromedriver + 4171896
+14  chromedriver                        0x0000000104646014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[45/100] blogger.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[46/100] amzn.to
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[47/100] statista.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Vue
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+WARNING:root:Exception raised by statista.com
+ERROR:root:'utf-8' codec can't encode characters in position 47-48: surrogates not allowed
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 442, in <module>
+    get_css(website_dict, sanitize=False)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 285, in get_css
+    css_classes, css_properties, css_classes_skipped, css_properties_skipped = parse_css(response.content, website_dict["html_tags"], website_dict["html_classes"], file=f, sanitize=sanitize)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/css_parser.py", line 37, in parse_css
+    print(process_qualified_rule(rule, css_dict, sanitize), end="", file=output_file)
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 47-48: surrogates not allowed
+INFO:root:[48/100] ebay.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Ember
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[49/100] surveymonkey.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised inside accept_cookies by https://www.surveymonkey.com/
+WARNING:root:Message: element click intercepted: Element is not clickable at point (186, 345492)
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104532d3c chromedriver + 4222268
+1   chromedriver                        0x00000001044b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010416fda4 chromedriver + 277924
+3   chromedriver                        0x00000001041b2a78 chromedriver + 551544
+4   chromedriver                        0x00000001041b04c0 chromedriver + 541888
+5   chromedriver                        0x00000001041adc80 chromedriver + 531584
+6   chromedriver                        0x00000001041acb78 chromedriver + 527224
+7   chromedriver                        0x000000010419f9cc chromedriver + 473548
+8   chromedriver                        0x000000010419f1b0 chromedriver + 471472
+9   chromedriver                        0x00000001041e3618 chromedriver + 751128
+10  chromedriver                        0x000000010419d8f0 chromedriver + 465136
+11  chromedriver                        0x000000010419e974 chromedriver + 469364
+12  chromedriver                        0x0000000104503788 chromedriver + 4028296
+13  chromedriver                        0x0000000104507c1c chromedriver + 4045852
+14  chromedriver                        0x000000010450dc98 chromedriver + 4070552
+15  chromedriver                        0x00000001045088d8 chromedriver + 4049112
+16  chromedriver                        0x00000001044dfd84 chromedriver + 3882372
+17  chromedriver                        0x0000000104526720 chromedriver + 4171552
+18  chromedriver                        0x0000000104526878 chromedriver + 4171896
+19  chromedriver                        0x000000010453a014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+WARNING:root:Exception raised by surveymonkey.com
+ERROR:root:Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104532d3c chromedriver + 4222268
+1   chromedriver                        0x00000001044b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010416fda4 chromedriver + 277924
+3   chromedriver                        0x000000010415b240 chromedriver + 193088
+4   chromedriver                        0x000000010415942c chromedriver + 185388
+5   chromedriver                        0x00000001041596e4 chromedriver + 186084
+6   chromedriver                        0x0000000104177ac8 chromedriver + 309960
+7   chromedriver                        0x00000001041a7f70 chromedriver + 507760
+8   chromedriver                        0x000000010419f1b0 chromedriver + 471472
+9   chromedriver                        0x00000001041e3618 chromedriver + 751128
+10  chromedriver                        0x000000010419d8f0 chromedriver + 465136
+11  chromedriver                        0x000000010419e974 chromedriver + 469364
+12  chromedriver                        0x0000000104503788 chromedriver + 4028296
+13  chromedriver                        0x0000000104507c1c chromedriver + 4045852
+14  chromedriver                        0x000000010450dc98 chromedriver + 4070552
+15  chromedriver                        0x00000001045088d8 chromedriver + 4049112
+16  chromedriver                        0x00000001044dfd84 chromedriver + 3882372
+17  chromedriver                        0x0000000104526720 chromedriver + 4171552
+18  chromedriver                        0x0000000104526878 chromedriver + 4171896
+19  chromedriver                        0x000000010453a014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 451, in <module>
+    get_screenshot(website_dict, file_local=True)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 102, in get_screenshot
+    driver.find_element(By.TAG_NAME, "body").screenshot(website_dict["filename"] + website_dict["suffix"] + suffix + ".png")
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 362, in screenshot
+    png = self.screenshot_as_png
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 340, in screenshot_as_png
+    return b64decode(self.screenshot_as_base64.encode("ascii"))
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 328, in screenshot_as_base64
+    return self._execute(Command.ELEMENT_SCREENSHOT)["value"]
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webelement.py", line 410, in _execute
+    return self._parent.execute(command, params)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Unable to capture screenshot"}
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000104532d3c chromedriver + 4222268
+1   chromedriver                        0x00000001044b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010416fda4 chromedriver + 277924
+3   chromedriver                        0x000000010415b240 chromedriver + 193088
+4   chromedriver                        0x000000010415942c chromedriver + 185388
+5   chromedriver                        0x00000001041596e4 chromedriver + 186084
+6   chromedriver                        0x0000000104177ac8 chromedriver + 309960
+7   chromedriver                        0x00000001041a7f70 chromedriver + 507760
+8   chromedriver                        0x000000010419f1b0 chromedriver + 471472
+9   chromedriver                        0x00000001041e3618 chromedriver + 751128
+10  chromedriver                        0x000000010419d8f0 chromedriver + 465136
+11  chromedriver                        0x000000010419e974 chromedriver + 469364
+12  chromedriver                        0x0000000104503788 chromedriver + 4028296
+13  chromedriver                        0x0000000104507c1c chromedriver + 4045852
+14  chromedriver                        0x000000010450dc98 chromedriver + 4070552
+15  chromedriver                        0x00000001045088d8 chromedriver + 4049112
+16  chromedriver                        0x00000001044dfd84 chromedriver + 3882372
+17  chromedriver                        0x0000000104526720 chromedriver + 4171552
+18  chromedriver                        0x0000000104526878 chromedriver + 4171896
+19  chromedriver                        0x000000010453a014 chromedriver + 4251668
+20  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+21  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[50/100] addtoany.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[51/100] unsplash.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[52/100] hp.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[53/100] mysql.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[54/100] bp.blogspot.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by bp.blogspot.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001051e6d3c chromedriver + 4222268
+1   chromedriver                        0x000000010516d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104e23da4 chromedriver + 277924
+3   chromedriver                        0x0000000104e97c2c chromedriver + 752684
+4   chromedriver                        0x0000000104e97618 chromedriver + 751128
+5   chromedriver                        0x0000000104e518f0 chromedriver + 465136
+6   chromedriver                        0x0000000104e52974 chromedriver + 469364
+7   chromedriver                        0x00000001051b7788 chromedriver + 4028296
+8   chromedriver                        0x00000001051bbc1c chromedriver + 4045852
+9   chromedriver                        0x00000001051c1c98 chromedriver + 4070552
+10  chromedriver                        0x00000001051bc8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000105193d84 chromedriver + 3882372
+12  chromedriver                        0x00000001051da720 chromedriver + 4171552
+13  chromedriver                        0x00000001051da878 chromedriver + 4171896
+14  chromedriver                        0x00000001051ee014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x00000001051e6d3c chromedriver + 4222268
+1   chromedriver                        0x000000010516d8e8 chromedriver + 3725544
+2   chromedriver                        0x0000000104e23da4 chromedriver + 277924
+3   chromedriver                        0x0000000104e97c2c chromedriver + 752684
+4   chromedriver                        0x0000000104e97618 chromedriver + 751128
+5   chromedriver                        0x0000000104e518f0 chromedriver + 465136
+6   chromedriver                        0x0000000104e52974 chromedriver + 469364
+7   chromedriver                        0x00000001051b7788 chromedriver + 4028296
+8   chromedriver                        0x00000001051bbc1c chromedriver + 4045852
+9   chromedriver                        0x00000001051c1c98 chromedriver + 4070552
+10  chromedriver                        0x00000001051bc8d8 chromedriver + 4049112
+11  chromedriver                        0x0000000105193d84 chromedriver + 3882372
+12  chromedriver                        0x00000001051da720 chromedriver + 4171552
+13  chromedriver                        0x00000001051da878 chromedriver + 4171896
+14  chromedriver                        0x00000001051ee014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[55/100] googleusercontent.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+WARNING:root:Exception raised by googleusercontent.com
+ERROR:root:Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100832d3c chromedriver + 4222268
+1   chromedriver                        0x00000001007b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010046fda4 chromedriver + 277924
+3   chromedriver                        0x00000001004e3c2c chromedriver + 752684
+4   chromedriver                        0x00000001004e3618 chromedriver + 751128
+5   chromedriver                        0x000000010049d8f0 chromedriver + 465136
+6   chromedriver                        0x000000010049e974 chromedriver + 469364
+7   chromedriver                        0x0000000100803788 chromedriver + 4028296
+8   chromedriver                        0x0000000100807c1c chromedriver + 4045852
+9   chromedriver                        0x000000010080dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001008088d8 chromedriver + 4049112
+11  chromedriver                        0x00000001007dfd84 chromedriver + 3882372
+12  chromedriver                        0x0000000100826720 chromedriver + 4171552
+13  chromedriver                        0x0000000100826878 chromedriver + 4171896
+14  chromedriver                        0x000000010083a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+Traceback (most recent call last):
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 438, in <module>
+    get_html(website_dict)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 233, in get_html
+    html = get_html_selenium(url)
+  File "/Users/giuseppesalvi/Desktop/Tesi/tools/website-screenshot-and-code-getter/main.py", line 141, in get_html_selenium
+    driver.get(url)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 455, in get
+    self.execute(Command.GET, {"url": url})
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 444, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 249, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument: 'url' must be a string
+  (Session info: headless chrome=111.0.5563.64)
+Stacktrace:
+0   chromedriver                        0x0000000100832d3c chromedriver + 4222268
+1   chromedriver                        0x00000001007b98e8 chromedriver + 3725544
+2   chromedriver                        0x000000010046fda4 chromedriver + 277924
+3   chromedriver                        0x00000001004e3c2c chromedriver + 752684
+4   chromedriver                        0x00000001004e3618 chromedriver + 751128
+5   chromedriver                        0x000000010049d8f0 chromedriver + 465136
+6   chromedriver                        0x000000010049e974 chromedriver + 469364
+7   chromedriver                        0x0000000100803788 chromedriver + 4028296
+8   chromedriver                        0x0000000100807c1c chromedriver + 4045852
+9   chromedriver                        0x000000010080dc98 chromedriver + 4070552
+10  chromedriver                        0x00000001008088d8 chromedriver + 4049112
+11  chromedriver                        0x00000001007dfd84 chromedriver + 3882372
+12  chromedriver                        0x0000000100826720 chromedriver + 4171552
+13  chromedriver                        0x0000000100826878 chromedriver + 4171896
+14  chromedriver                        0x000000010083a014 chromedriver + 4251668
+15  libsystem_pthread.dylib             0x00000001a6bd826c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a6bd308c thread_start + 8
+
+INFO:root:[56/100] i0.wp.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[57/100] loc.gov
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[58/100] webmd.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Framework found: Vue
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[59/100] berkeley.edu
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:[60/100] etsy.com
+INFO:root:Generating HTML code ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:HTML code obtained!
+
+INFO:root:Sanitizing Html Code
+INFO:root:Generating CSS code ...
+INFO:root:Generating CSS code ...
+INFO:root:Generating the screenshot ...
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [/Users/giuseppesalvi/.wdm/drivers/chromedriver/mac_arm64/111.0.5563/chromedriver] found in cache
+INFO:root:Screenshot obtained!
+
+INFO:root:End date and time: 2023-03-17 11:32:27, elapsed time  : 00:41:49
+INFO:root:Start date and time: 2023-03-17 11:36:00
+INFO:root:[1/100] harvard.edu
+INFO:root:Already present
+INFO:root:[2/100] doi.org
+INFO:root:Already present
+INFO:root:[3/100] mit.edu
+INFO:root:Already present
+INFO:root:[4/100] php.net
+INFO:root:Already present
+INFO:root:[5/100] wikimedia.org
+INFO:root:Already present
+INFO:root:[6/100] wsj.com
+INFO:root:Already present
+INFO:root:[7/100] bing.com
+INFO:root:Already present
+INFO:root:[8/100] weibo.com
+INFO:root:Already present
+INFO:root:[9/100] wiley.com
+INFO:root:Already present
+INFO:root:[10/100] nature.com
+INFO:root:Already present
+INFO:root:[11/100] un.org
+INFO:root:Already present
+INFO:root:[12/100] msn.com
+INFO:root:Already present
+INFO:root:[13/100] businessinsider.com
+INFO:root:Already present
+INFO:root:[14/100] gnu.org
+INFO:root:Already present
