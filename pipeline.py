@@ -7,9 +7,10 @@
 ## python3 main.py --website_list websites_majestic_million_big.txt --task code --just_new --task all --batch 2
 
 # Find included / excluded results
-#find_included_excluded(results_folder)
+## find_included_excluded(results_websites_majestic_million_big.txt)
 
 # Use screenshot classifier to check if included results are good or bad
 # And write final list of good results
 
 # Run script to calculate stats
+## python3 stats.py --results_folder results_websites_majestic_million_big

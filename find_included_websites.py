@@ -10,7 +10,7 @@ def find_included_excluded(results_folder):
     included = []
     for filename in os.listdir("experiments/" + results_folder + "/"):
         if filename.endswith(".json"):
-            with open(results_folder + "/" + filename) as f:
+            with open("experiments/" + results_folder + "/" + filename) as f:
                 content = json.load(f)
 
                 # If website is excluded, add it to the excluded list and skip it

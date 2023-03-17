@@ -1,7 +1,7 @@
 from keras.models import load_model
 from keras.preprocessing import image
 import tensorflow as tf
-import numpy as np
+import argparse
 
 
 # Define a function to perform majority voting on multiple image crops
@@ -39,7 +39,7 @@ def classify_image(model, image_path) :
 
 def classify_new_images(images_names, folder):
     # Load the saved model
-    model = load_model("screenshot_classifier/resnet50.h5")
+    model = load_model("screenshot_classifier/model.h5")
 
     # Read images to process
     with open(images_names, "r") as f:
@@ -49,8 +49,17 @@ def classify_new_images(images_names, folder):
     return
 
 if __name__ == "__main__":
-    experiment ="websites_majestic_million2"
-    folder = "results_" + experiment
-    images_names = "included_" + folder + ".txt" 
-    classify_new_images(images_names, folder)
+    results_folder = "results_websites_majestic_million2"
+
+    # Initialize args parser
+    parser = argparse.ArgumentParser(description="find included and excluded websites", usage="python3 find_included_websites.py --results_folder {results_folder}")
+    parser.add_argument("--results_folder", help="folder with websites json files")
+
+    # Read args
+    args = parser.parse_args()
+    if args.results_folder:
+        results_folder= args.results_folder
+
+    images_names = "experiments/included_" + results_folder + ".txt" 
+    classify_new_images(images_names, "experiments/" + results_folder)
 
