@@ -52,7 +52,8 @@ def classify_new_images(images_names, folder):
 
 if __name__ == "__main__":
     experiment ="websites_majestic_million_2"
-    folder = "results_" + experiment
-    images_names = "included" + folder + ".txt" 
+    base_name = "results_" + experiment
+    folder = "../" + base_name 
+    images_names = "included" + base_name + ".txt" 
     classify_new_images(images_names, folder)
 

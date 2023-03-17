@@ -13,6 +13,8 @@ results_websites_majestic_million
 results_websites_majestic_million_blog
 errors_*
 excluded_*
-included_*
+included_results_websites_majestic_million_blog.txt
+included_results_websites_majestic_million.txt
+included_results_websites.txt
 *.pyc
 classifier/dataset
