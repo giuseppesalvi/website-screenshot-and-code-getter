@@ -3,6 +3,7 @@ import json
 from genericpath import isfile
 import os
 from statistics import mean
+import argparse
 
 def print_stats(website_dict):
 
@@ -233,4 +234,14 @@ def stats_summary(results_folder):
 
 if __name__ == "__main__":
     results_folder = "results_websites_majestic_million2"
+
+    # Initialize args parser
+    parser = argparse.ArgumentParser(description="do stats summary for the websites in the given folder", usage="python3 stats.py --results_folder {results_folder}")
+    parser.add_argument("--results_folder", help="folder with websites json files")
+
+    # Read args
+    args = parser.parse_args()
+    if args.results_folder:
+        results_folder= args.results_folder
+        
     stats_summary(results_folder)

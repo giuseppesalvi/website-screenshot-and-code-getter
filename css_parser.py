@@ -3,10 +3,7 @@ from types import SimpleNamespace
 
 CSS_INDENTATION = "    "
 
-
 css_forbidden_properties_1= ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position", "hyphens", "border-radius","border-style","border-color","border-width"]
-#LIST 1 css_forbidden_properties = ["font-style", "text-transform", "letter-spacing", "word-spacing", "line-height", "text-shadow", "box-shadow", "background-image", "background-repeat", "background-position"]
-#LIST 2 "font-weight" ,"font-family" ,"color" ,"opacity","word-wrap","hyphens","overflow-wrap","text-indent","text-overflow","white-space","word-break","border-radius","border-style","border-color","border-width"
 css_my_forbidden_properties = ["moz-osx-font-smoothing","-webkit-font-smoothing", "-ms-user-select","-moz-user-select", "-moz-transform", "-moz-transform-origin", "-moz-columns", "-moz-osx-font-smoothing", "-moz-column-break-inside"]
 
 css_mozilla_properties = [ "-moz-appearance", "-moz-binding", "-moz-border-bottom-colors", "-moz-border-left-colors", "-moz-border-right-colors", "-moz-border-top-colors", "-moz-box-align", "-moz-box-direction", "-moz-box-flex", "-moz-box-ordinal-group", "-moz-box-orient", "-moz-box-pack", "-moz-box-shadow", "-moz-box-sizing", "-moz-column-count", "-moz-column-gap", "-moz-column-rule-color", "-moz-column-rule-style", "-moz-column-rule-width", "-moz-column-width", "-moz-float-edge", "-moz-font-feature-settings", "-moz-font-language-override", "-moz-force-broken-image-icon", "-moz-hyphens", "-moz-image-region", "-moz-margin-end", "-moz-margin-start", "-moz-outline-radius-bottomleft", "-moz-outline-radius-bottomright", "-moz-outline-radius-topleft", "-moz-outline-radius-topright", "-moz-padding-end", "-moz-padding-start", "-moz-text-align-last", "-moz-text-blink", "-moz-text-decoration-color", "-moz-text-decoration-line", "-moz-text-decoration-style", "-moz-text-size-adjust", "-moz-user-focus", "-moz-user-input", "-moz-user-modify", "-moz-user-select", "-moz-window-shadow"]
@@ -181,21 +178,8 @@ def process_content_at_rule(content, css_dict, sanitize, indentation=""):
         if node.type == 'at-keyword':
             nested_rule = SimpleNamespace()
             nested_rule.at_keyword = content[idx].value
-
-            # nested_rule.prelude = [content[idx+1], content[idx+2]]
-            # nested_rule.content = content[idx+3].content
-
-            #nested_rule.prelude = get_nested_prelude(content, idx)
-            #nested_rule.content = get_nested_content(content, idx)
-
             nested_rule.prelude, nested_rule.content, skipped = get_nested_prelude_content(content, idx)
-            # prelude
-            # content
-
-            # if CurlyBracketBlock -> get content, else previous is prelude
-
             buffer += process_at_rule(nested_rule, css_dict, sanitize, indentation=indentation+CSS_INDENTATION)
-            #skip = 3
             skip = skipped
         elif node.type != "{} block":
             qualified_rule_prelude.append(node)

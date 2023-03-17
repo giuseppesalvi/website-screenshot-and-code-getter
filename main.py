@@ -5,8 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException
-from selenium.webdriver.chrome.options import Options
-from PIL import Image
 from utils import *
 from os import path
 from os import makedirs
@@ -50,7 +48,7 @@ def accept_cookies(driver, website_url):
             print(e, end="\n\n") 
             logging.warning("Exception raised inside accept_cookies by " + website_url)
             logging.warning(e) 
-            with open("errors.txt", "a") as f:
+            with open("experiments/errors.txt", "a") as f:
                 print("Exception raised inside accept_cookies by", website_url, file=f)
                 print(e, end="\n\n", file=f)
 
@@ -340,7 +338,7 @@ def init_args_parser():
     """ Initialize args parser with arguments """
 
     parser = argparse.ArgumentParser(description="get screenshot and code for a website",
-                                     usage="python3 run.py [--website {website_url} | --website_list {file_path}]")
+                                     usage="python3 main.py [--website {website_url} | --website_list {file_path}]")
     parser.add_argument("--website", help="website url")
     parser.add_argument(
         "--website_list", help="file path with list of website urls")
@@ -446,7 +444,7 @@ if __name__ == "__main__":
                 get_html(website_dict)
                 sanitize(website_dict["domain"], test_name=args.test_name)
                 get_css(website_dict)
-                # DBG: Get both the non sanitized and the sanitized version screenshot
+                # DBG: Get both the non sanitized and the sanitized version css 
                 get_css(website_dict, sanitize=False)
                 replace_css_urls(website_dict)
 
@@ -475,10 +473,10 @@ if __name__ == "__main__":
             print(e, end="\n\n")
             logging.warning("Exception raised by " + website)
             logging.exception(e)
-            with open("results/errors.txt", "a") as f:
+            with open("experiments/errors.txt", "a") as f:
                 print("Exception raised by ", website, file=f)
                 print(e, end="\n\n", file=f)
-            with open("results/errors_" + RESULTS_FOLDER + ".txt", "a") as f:
+            with open("experiments/errors_" + RESULTS_FOLDER + ".txt", "a") as f:
                 print(website, file=f)
             #break # DEBUG
 

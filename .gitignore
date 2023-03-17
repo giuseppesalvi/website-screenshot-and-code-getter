@@ -18,3 +18,4 @@ included_results_websites_majestic_million.txt
 included_results_websites.txt
 *.pyc
 classifier/dataset
+experiments/*
