@@ -97,7 +97,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
     driver.set_window_size(w, h)
 
     # Obtain screenshot of page within body tag
-    driver.find_element(By.TAG_NAME, "body").screenshot(website_dict["filename"] + website_dict["suffix"] + suffix + ".png")
+    driver.find_element(By.TAG_NAME, "body").screenshot("experiments/" + website_dict["filename"] + website_dict["suffix"] + suffix + ".png")
 
     # Close web driver
     driver.close()
@@ -234,7 +234,7 @@ def get_html(website_dict):
     check_website_framework(html, website_dict)
 
     # Write html source code to file
-    with open(website_dict["filename"]+ website_dict["suffix"] + "_raw.html", "w") as f:
+    with open("experiments/" + website_dict["filename"]+ website_dict["suffix"] + "_raw.html", "w") as f:
         f.write(html)
 
     print("HTML code obtained!\n")
@@ -273,7 +273,7 @@ def get_css(website_dict, sanitize=True):
         website_dict["excluded"] = True
 
     for i, url in enumerate(website_dict["css_urls"]):
-        with open(filename + suffix + (sanitize_suffix if not sanitize else "") + ".css", "a") as f:
+        with open("experiments/" + filename + suffix + (sanitize_suffix if not sanitize else "") + ".css", "a") as f:
             try: 
                 response = requests.get(url)
             except Exception as e:
@@ -304,7 +304,7 @@ def sanitize(domain, test_name):
     html = result.stdout.decode("utf-8")
 
     # Run command for cleaning the white spaces and formatting the html file
-    subprocess.run("clean-html " + RESULTS_FOLDER + "/" + domain + ".html --in-place", shell=True, check=True)
+    subprocess.run("clean-html " + "experiments/" + RESULTS_FOLDER + "/" + domain + ".html --in-place", shell=True, check=True)
 
 
     # Update website info in the dictionary
@@ -320,7 +320,7 @@ def sanitize(domain, test_name):
 
 def replace_css_urls(website_dict):
     # Replace all css_urls inside html file with local css filename
-    with open(website_dict["filename"] + ".html") as f:
+    with open("experiments/" + website_dict["filename"] + ".html") as f:
         content = f.read()
 
     replace_dict = {url: website_dict["domain"] + ".css" for index, url in enumerate(website_dict["css_urls"])}
@@ -330,7 +330,7 @@ def replace_css_urls(website_dict):
         content = content.replace(key, value)
 
 
-    with open(website_dict["filename"] + ".html", 'w') as f:
+    with open("experiments/" + website_dict["filename"] + ".html", 'w') as f:
         f.write(content)
 
 
@@ -387,11 +387,11 @@ if __name__ == "__main__":
 
     # make results folder if not present
     if args.website_list:
-        results_folder = "results/results_" + args.website_list.split(".txt")[0]
-        if not path.exists(results_folder):
-            makedirs(results_folder)
+        results_folder = "results_" + args.website_list.split(".txt")[0]
+        if not path.exists("experiments/" + results_folder):
+            makedirs("experiments/" + results_folder)
     else:
-        results_folder = "results/results_websites"
+        results_folder = "results_websites"
 
     RESULTS_FOLDER = results_folder 
 

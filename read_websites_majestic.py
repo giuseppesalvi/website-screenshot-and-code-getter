@@ -18,18 +18,16 @@ if __name__ == "__main__":
     # Read args
     args = parser.parse_args()
     if args.input_file:
-        input_file = args.input_file
+        input_filename = args.input_file
     if args.output_file:
-        output_file = args.output_file
+        output_filename = args.output_file
     if args.n_websites:
         n_websites = args.n_websites
     if args.n_skipped:
         skip_rows = args.n_skipped
 
 
-    args = parser.parse_args()
-
-    df = pd.read_csv(input_filename, nrows=n_websites, skiprows=list(range(1, skip_rows+1)))
+    df = pd.read_csv(input_filename, nrows=int(n_websites), skiprows=list(range(1, int(skip_rows)+1)))
     domains = df["Domain"].values
     with open(output_filename, "w") as f:
         for domain in domains:

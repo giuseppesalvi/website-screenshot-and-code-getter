@@ -10,7 +10,7 @@ def print_stats(website_dict):
     # screenshot
 
     # Get screenshot dimensions
-    img = Image.open(website_dict["filename"]+ ".png")
+    img = Image.open("experiments/" + website_dict["filename"]+ ".png")
     height = img.height
     width = img.width
     website_dict["screenshot_dimensions"] = [width, height] 
@@ -35,23 +35,23 @@ def print_stats(website_dict):
 
     # add to the dictionary the number of lines of the html and css file
     number_of_lines = {}
-    if isfile(website_dict["filename"] + ".css"):
-        with open(website_dict["filename"] + ".css", "r") as file:
+    if isfile("experiments/" + website_dict["filename"] + ".css"):
+        with open("experiments/" + website_dict["filename"] + ".css", "r") as file:
             number_of_lines[website_dict["filename"] + ".css"] = len(file.readlines())
-    if isfile(website_dict["filename"] + "_raw.css"):
-        with open(website_dict["filename"] + "_raw.css", "r") as file:
+    if isfile("experiments/" + website_dict["filename"] + "_raw.css"):
+        with open("experiments/" + website_dict["filename"] + "_raw.css", "r") as file:
             number_of_lines[website_dict["filename"] + "_raw.css"] = len(file.readlines())
-    if isfile(website_dict["filename"] + ".html"):
-        with open(website_dict["filename"] + ".html", "r") as file:
+    if isfile("experiments/" + website_dict["filename"] + ".html"):
+        with open("experiments/" + website_dict["filename"] + ".html", "r") as file:
             number_of_lines[website_dict["filename"] + ".html"] = len(file.readlines())
-    if isfile(website_dict["filename"] + "_raw" + ".html"):
-        with open(website_dict["filename"] + "_raw"+ ".html", "r") as file:
+    if isfile("experiments/" + website_dict["filename"] + "_raw" + ".html"):
+        with open("experiments/" + website_dict["filename"] + "_raw"+ ".html", "r") as file:
             number_of_lines[website_dict["filename"] + "_raw"+ ".html"] = len(file.readlines())
     website_dict["number_of_lines"] = number_of_lines 
 
 
     # Write stats in json file
-    with open(website_dict["filename"]+ website_dict["suffix"] + ".json", "w") as f:
+    with open("experiments/" + website_dict["filename"]+ website_dict["suffix"] + ".json", "w") as f:
         json.dump(website_dict, f, sort_keys=True, indent=2)
 
     return
@@ -107,19 +107,11 @@ def stats_summary(results_folder):
     # List of included websites
     included = []
 
-    for filename in os.listdir(results_folder + "/"):
-        if filename.endswith(".json"):
-            with open(results_folder + "/" + filename) as f:
+    with open("experiments/" + results_folder + ".txt", "r") as f:
+        for domain in f:
+            with open("experiments/" + results_folder + "/" + domain + ".json") as f:
                 content = json.load(f)
 
-                # If website is excluded, add it to the excluded list and skip it
-                #if content["excluded"]:
-                if len(content["css_classes"]) == 0:
-                    excluded.append(content["domain"])
-                    continue
-                else:
-                    included.append(content["domain"])
-                
                 # Sizes
                 summary["css_classes"].append(content["sizes"]["css_classes"])
                 summary["css_classes_skipped"].append(content["sizes"]["css_classes_skipped"])

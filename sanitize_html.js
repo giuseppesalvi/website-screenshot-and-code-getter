@@ -10,7 +10,7 @@ if (args.length != 4) {
   console.log("Usage: node sanitize_html <website_url> <folder>");
 } else {
   const results_folder = args[3]
-  const filepath = results_folder + "/" + args[2] + "_raw.html";
+  const filepath = "experiments/" + results_folder + "/" + args[2] + "_raw.html";
   const excludedTags = ["script", "meta", "noscript", "svg", "path", "iframe"];
   readFile(filepath, (err, dirtyHtml) => {
     if (err) throw err;
@@ -310,7 +310,7 @@ if (args.length != 4) {
       // ol: "ul",
       // },
     });
-    writeFile(results_folder + "/" + args[2] + ".html", cleanHtml, (err) => {
+    writeFile("experiments/" + results_folder + "/" + args[2] + ".html", cleanHtml, (err) => {
       if (err) throw err;
     });
     console.log(cleanHtml);
