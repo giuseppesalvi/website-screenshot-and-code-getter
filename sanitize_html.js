@@ -3,8 +3,8 @@ import { readFile, writeFile } from "fs";
 
 //console.log("Sanitizing Html Code");
 
-const default_img = "../images/default_img.jpeg";
-const default_svg = "../images/default_img.svg";
+const default_img = "../../images/default_img.jpeg";
+const default_svg = "../../images/default_img.svg";
 const args = process.argv;
 if (args.length != 4) {
   console.log("Usage: node sanitize_html <website_url> <folder>");
@@ -43,9 +43,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "img",
@@ -73,9 +73,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "href",
@@ -103,9 +103,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "picture",
@@ -133,9 +133,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "a",
@@ -163,9 +163,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "source",
@@ -194,9 +194,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "link",
@@ -224,9 +224,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "div",
@@ -254,9 +254,9 @@ if (args.length != 4) {
             attribs[key] = value
               .replace(
                 /(\s|^)[^ ]+\.(jpeg|jpg|png|webp)/g,
-                "$1../images/default_img.jpeg"
+                "$1" + default_img
               )
-              .replace(/(\s|^)[^ ]+\.svg/g, "$1../images/default_img.svg");
+              .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
             tagName: "div",
