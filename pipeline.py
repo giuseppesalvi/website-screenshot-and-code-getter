@@ -7,11 +7,11 @@
 ## python3 main.py --website_list websites_majestic_million_big.txt --task code --just_new --task all --batch 1000
 
 # Find included / excluded results
-## python3 find_included_excluded --results_folder results_websites_majestic_million_big.txt
+## !python3 find_included_websites.py --results_folder results_websites_majestic_million_big
 
 # Use screenshot classifier to check if included results are good or bad
 # And write final list of good results
-## python3 screenshot_classifier/classify_new_images --results_folder results_websites_majestic_million_big
+## python3 screenshot_classifier/classify_new_images.py --results_folder results_websites_majestic_million_big
 
 # Move good results in folder
 ## python3 move_good_results --results_folder results_websites_majestic_million_big

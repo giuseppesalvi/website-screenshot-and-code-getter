@@ -23,9 +23,10 @@ def classify_image_majority_voting(image_path, num_crops=5):
     return
 
 # Define a function to perform majority voting on multiple image crops
-def classify_image(model, image_path) :
+def classify_image(model, folder, domain) :
     img_height, img_width = 256, 256
 
+    image_path = "experiments/" + folder + "/" + domain + ".png"
     img = tf.keras.utils.load_img(image_path, target_size=(img_height, img_width))
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
@@ -33,18 +34,18 @@ def classify_image(model, image_path) :
     prediction = model.predict(img_array)[0][0]
     predicted_class = "bad_images" if prediction < 0.5 else "good_images"
     print(image_path, " : ", prediction, predicted_class)
-    with open("predictions_" + predicted_class + ".txt", "a") as f:
-      print(image_path, f)
+    with open("experiments/"+ predicted_class + "_" + folder + ".txt", "a") as f:
+      print(domain, file=f)
     return 
 
 def classify_new_images(images_names, folder):
     # Load the saved model
-    model = load_model("screenshot_classifier/model.h5")
+    model = load_model("screenshot_classifier/resnet50.h5")
 
     # Read images to process
     with open(images_names, "r") as f:
         for image_name in f:
-            classify_image(model, folder + "/" + image_name.strip() + ".png")
+            classify_image(model, folder, image_name.strip())
 
     return
 
@@ -61,5 +62,5 @@ if __name__ == "__main__":
         results_folder= args.results_folder
 
     images_names = "experiments/included_" + results_folder + ".txt" 
-    classify_new_images(images_names, "experiments/" + results_folder)
+    classify_new_images(images_names, results_folder)
 
