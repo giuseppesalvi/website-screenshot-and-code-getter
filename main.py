@@ -21,7 +21,7 @@ import datetime
 
 
 RESULTS_FOLDER = "experiments/results_websites/"
-WAIT_SCREENSHOT = 1
+WAIT_SCREENSHOT = 0
 COLAB = False 
 
 def accept_cookies(driver, website_url):
