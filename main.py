@@ -21,8 +21,8 @@ import datetime
 
 
 RESULTS_FOLDER = "experiments/results_websites/"
-WAIT_SCREENSHOT = 0
-COLAB = False 
+WAIT_SCREENSHOT = 1
+COLAB = True 
 
 def accept_cookies(driver, website_url):
     """ Click to dismiss Cookies popup """
@@ -357,13 +357,6 @@ def init_args_parser():
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='experiments/logs/websites.log', level=logging.INFO)
-
-    # Log start date and time
-    start = datetime.datetime.now()
-    logging.info("Start date and time: {}".format(start.strftime("%Y-%m-%d %H:%M:%S")))
-
-
     website_list = []
 
     # Initialize args parser
@@ -397,6 +390,22 @@ if __name__ == "__main__":
 
     BATCH_SIZE = args.batch
     batch = 0
+
+
+    if not path.exists("experiments/logs/"):
+        makedirs("experiments/logs")
+    try: 
+        file = open("experiments/logs/" + results_folder + ".log", "r")
+        file.close()
+    except FileNotFoundError:
+        file = open("experiments/logs/" + results_folder + ".log", "w")
+        file.close()
+    logging.basicConfig(filename='experiments/logs/' + results_folder + ".log", level=logging.INFO)
+
+    # Log start date and time
+    start = datetime.datetime.now()
+    logging.info("Start date and time: {}".format(start.strftime("%Y-%m-%d %H:%M:%S")))
+
 
     # Process each website in the list
     for i, website in enumerate(website_list):
