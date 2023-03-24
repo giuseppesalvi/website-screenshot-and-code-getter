@@ -21,7 +21,7 @@ import datetime
 
 
 RESULTS_FOLDER = "experiments/results_websites/"
-WAIT_SCREENSHOT = 1
+WAIT_SCREENSHOT = 0
 COLAB = True 
 
 def accept_cookies(driver, website_url):
@@ -76,7 +76,7 @@ def get_screenshot(website_dict, file_local, suffix=""):
 
     # Launch URL
     if file_local:
-        driver.get("file://" + path.abspath(website_dict["filename"] + website_dict["suffix"] + suffix + ".html"))
+        driver.get("file://" + path.abspath("experiments/" + website_dict["filename"] + website_dict["suffix"] + suffix + ".html"))
     else:
         driver.get(website_dict["website_url"])
 
