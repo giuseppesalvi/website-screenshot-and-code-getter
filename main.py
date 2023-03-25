@@ -22,7 +22,9 @@ import datetime
 
 RESULTS_FOLDER = "experiments/results_websites/"
 WAIT_SCREENSHOT = 0
-COLAB = True 
+COLAB = False 
+CLUSTER = True
+DBG = False
 
 def accept_cookies(driver, website_url):
     """ Click to dismiss Cookies popup """
@@ -61,7 +63,9 @@ def get_screenshot(website_dict, file_local, suffix=""):
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
-    if COLAB:
+    if CLUSTER:
+        options.binary_location = "./chrome/chrome"
+    if COLAB or CLUSTER:
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
 
@@ -121,13 +125,15 @@ def get_html_selenium(url):
     # Set webdriver options
     options = webdriver.ChromeOptions()
     options.headless = True
-    if COLAB:
+    if COLAB or CLUSTER:
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
 
     # Set window size
     options.add_argument("--window-size=1280,1024")
-
+    if CLUSTER:
+        options.binary_location = "./chrome/chrome"
+    
     # Start web browser
     if COLAB:
         driver = webdriver.Chrome('chromedriver', options=options)
@@ -487,7 +493,8 @@ if __name__ == "__main__":
                 print(e, end="\n\n", file=f)
             with open("experiments/errors_" + RESULTS_FOLDER + ".txt", "a") as f:
                 print(website, file=f)
-            #break # DEBUG
+            if DBG:
+                break
 
     # Log end date and time elapsed time from start
     end = datetime.datetime.now()
