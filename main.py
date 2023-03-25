@@ -449,7 +449,15 @@ if __name__ == "__main__":
                 logging.info("[%d/%d] %s" %(i + 1, len(website_list), domain))
 
             # If just_new option, process only new websites
-            if args.just_new and ((args.task in ["all", "code"] and (isfile("experiments/" + filename + "_raw.html") or isfile("experiments/" + filename + ".html"))) or args.task in ["stats", "log"] and isfile("experiments/" + filename + ".log") or args.task == "screenshot" and isfile("experiments/" + filename + ".png")):
+            if args.just_new and ((args.task in ["all", "code"] and 
+                                   (isfile("experiments/" + filename + "_raw.html") or 
+                                    isfile("experiments/" + filename + ".html") or 
+                                    isfile("experiments/" + results_folder + "_good" + domain + "_raw.html") or 
+                                    isfile("experiments/" + results_folder + "_good" + domain + ".html"))) or 
+                                    args.task in ["stats", "log"] and 
+                                    isfile("experiments/" + filename + ".log") or 
+                                    args.task == "screenshot" and 
+                                    isfile("experiments/" + filename + ".png")):
                 print("Already present\n")
                 logging.info("Already present")
                 continue
