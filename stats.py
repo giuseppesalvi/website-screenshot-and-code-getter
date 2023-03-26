@@ -101,11 +101,10 @@ def stats_summary(results_folder):
     summary["screenshot_height"] = []
 
 
-    #with open("experiments/" + "good_" + results_folder + ".txt", "r") as f:
-    with open("experiments/" + "included_" + results_folder + ".txt", "r") as f:
+    with open("experiments/" + "good_images_" + results_folder + ".txt", "r") as f:
         for domain in f:
             domain = domain.rstrip("\n")
-            with open("experiments/" + results_folder + "/" + domain + ".json") as f:
+            with open("experiments/" + results_folder + "_good/" + domain + ".json") as f:
                 content = json.load(f)
 
                 # Sizes
@@ -206,7 +205,7 @@ def stats_summary(results_folder):
     summary["n_websites"] = len(summary["n_html_nodes"])
 
     # Write summary in json file
-    with open("experiments/" + "summary_" + results_folder + ".json", "w") as f:
+    with open("experiments/" + "summary_" + results_folder + "_good.json", "w") as f:
         json.dump(summary, f, sort_keys=True, indent=2)
     return
 

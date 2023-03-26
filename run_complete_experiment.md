@@ -118,11 +118,11 @@ python3 screenshot_classifier/classify_new_images.py --results_folder results_we
 ### 2.6 Move good results in folder
 
 ```
-python3 move_good_results --results_folder results_websites_majestic_million_big
+python3 move_good_results.py --results_folder results_websites_majestic_million_big
 ```
 
 ### 2.7 Run script to calculate stats
 
 ```
-python3 stats.py --results_folder results_websites_majestic_million_big_good
+python3 stats.py --results_folder results_websites_majestic_million_big
 ```

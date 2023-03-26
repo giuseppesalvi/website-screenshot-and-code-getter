@@ -23,7 +23,7 @@ import datetime
 RESULTS_FOLDER = "experiments/results_websites/"
 WAIT_SCREENSHOT = 0
 COLAB = False 
-CLUSTER = True
+CLUSTER = True 
 DBG = False
 
 def accept_cookies(driver, website_url):
@@ -149,6 +149,7 @@ def get_html_selenium(url):
     # Try to address js
     html = driver.execute_script('return document.documentElement.outerHTML')
 
+
     # Close web driver
     driver.close()
     return html
@@ -174,7 +175,7 @@ def check_website_framework(html, website_dict):
     if re.search(r'_app\.js|_document\.js|_error\.js|_documentSetup|_appContent', html) or re.search(r'__NEXT_DATA__', html):
         print("Framework found: Next")
         logging.info("Framework found: Next")
-        frameworks_found.append('Next.js')
+        frameworks_found.append('Next')
 
     # Check for Nuxt-specific code
     if re.search(r'nuxt-', html) or re.search(r'__NUXT__|fetch__|nuxt\.js', html):
@@ -308,6 +309,11 @@ def sanitize(domain, test_name):
         stdout=subprocess.PIPE,
     )
     html = result.stdout.decode("utf-8")
+
+
+    #with open("experiments/" + website_dict["filename"]+ website_dict["suffix"] + "_sanitize_not_cleansed.html", "w") as f:
+        #f.write(html)
+
 
     # Run command for cleaning the white spaces and formatting the html file
     subprocess.run("clean-html " + "experiments/" + RESULTS_FOLDER + "/" + domain + ".html --in-place", shell=True, check=True)

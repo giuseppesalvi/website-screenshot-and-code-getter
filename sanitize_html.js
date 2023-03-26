@@ -259,7 +259,7 @@ if (args.length != 4) {
               .replace(/(\s|^)[^ ]+\.svg/g, "$1" + default_svg);
           }
           return {
-            tagName: "div",
+            tagName: "figure",
             attribs: attribs,
           };
         },

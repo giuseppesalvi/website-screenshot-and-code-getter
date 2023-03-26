@@ -13,8 +13,10 @@ def find_included_excluded(results_folder):
             with open("experiments/" + results_folder + "/" + filename) as f:
                 content = json.load(f)
 
+
+
                 # If website is excluded, add it to the excluded list and skip it
-                if content["excluded"] or len(content["css_classes"]) == 0:
+                if content["excluded"] or len(content["css_classes"]) == 0 or any(item in content["frameworks_list"] for item in ["React", "Gatsby", "Next", "Next.js", "Nuxt", "Backbone"]):
                     excluded.append(content["domain"])
                 else:
                     included.append(content["domain"])
