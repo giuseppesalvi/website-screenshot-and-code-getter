@@ -5,10 +5,12 @@ from os import path
 from os import makedirs
 import shutil
 from genericpath import isfile
+COPY = True
+COMMON_FOLDER = True
 
 def move_good_results(results_folder):
     source_folder = "experiments/" + results_folder
-    destination_folder = "experiments/" + results_folder + "_good"
+    destination_folder = "experiments/" + results_folder + "_good" if not COMMON_FOLDER else "experiments/" + "results_good"
     if not path.exists(destination_folder):
             makedirs(destination_folder)
 
