@@ -40,7 +40,7 @@ def classify_image(model, folder, domain) :
 
 def classify_new_images(images_names, folder):
     # Load the saved model
-    model = load_model("screenshot_classifier/resnet50.h5")
+    model = load_model("screenshot_classifier/modelV2")
 
     # Read images to process
     with open(images_names, "r") as f:
