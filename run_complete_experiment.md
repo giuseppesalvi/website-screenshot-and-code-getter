@@ -37,19 +37,19 @@ screenshot_classifier/screenshot_classifier.ipynb
 ### 2.2 Create websites list
 
 ```
-python3 read_websites_majestic.py --input_file majestic_million.csv --output_file websites_majestic_million_big6.txt --n_websites 5000 --n_skipped 35000
+python3 read_websites_majestic.py --input_file majestic_million.csv --output_file websites_majestic_million_big7.txt --n_websites 10000 --n_skipped 40000 
 ```
 
 ### 2.3 Run script to get websites code and screenshots
 
 ```
-python3 main.py --website_list websites_majestic_million_big6.txt --just_new --task all --batch 5000
+python3 main.py --website_list websites_majestic_million_big7.txt --just_new --task all --batch 10000
 ```
 
 ### 2.4 Find included / excluded results
 
 ```
-python3 find_included_websites.py --results_folder results_websites_majestic_million_big5
+python3 find_included_websites.py --results_folder results_websites_majestic_million_big6
 ```
 
 ### 2.5 Use screenshot classifier to check if included results are good or bad and write final list of good results
@@ -61,7 +61,7 @@ python3 screenshot_classifier/classify_new_images.py --results_folder results_we
 ### 2.6 Move good results in folder
 
 ```
-python3 move_good_results.py --results_folder results_websites_majestic_million_big5
+python3 move_good_results.py --results_folder results_websites_majestic_million_big
 ```
 
 ### 2.7 Run script to calculate stats
