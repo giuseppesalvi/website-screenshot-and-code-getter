@@ -349,21 +349,15 @@ def replace_css_urls(website_dict):
 def init_args_parser():
     """ Initialize args parser with arguments """
 
-    parser = argparse.ArgumentParser(description="get screenshot and code for a website",
-                                     usage="python3 main.py [--website {website_url} | --website_list {file_path}]")
+    parser = argparse.ArgumentParser(description="get screenshot and code for a website", usage="python3 main.py [--website {website_url} | --website_list {file_path}]")
     parser.add_argument("--website", help="website url")
-    parser.add_argument(
-        "--website_list", help="file path with list of website urls")
-    parser.add_argument("--just_new", action='store_true',
-                        help="process only the websites not already present")
-    parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log",
-                        default="all", choices=["all", "screenshot", "code", "stats", "log", "sanitize"])
-    parser.add_argument(
-        "--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
-    parser.add_argument("--batch", type=int,
-                        help="max number of websites processed", default=10)
-    parser.add_argument(
-        "--file_local", help="use the local html file for the screenshot instead of the url", default=False, type=bool)
+    parser.add_argument("--website_list", help="file path with list of website urls")
+    parser.add_argument("--just_new", action='store_true', help="process only the websites not already present")
+    parser.add_argument("--task", help="task of the script: get screenshot, get code, sort statistics, get log", default="all", choices=["all", "screenshot", "code", "stats", "log", "sanitize"])
+    parser.add_argument("--test_name", help="name of the test when running log task, will be used as output name concatenated with the website domain", default=None)
+    parser.add_argument("--batch", type=int,help="max number of websites processed", default=10)
+    parser.add_argument("--file_local", help="use the local html file for the screenshot instead of the url", default=False, type=bool)
+    parser.add_argument("--skip", help="skip the first n websites", default=0, type=int)
 
     return parser
 
@@ -419,8 +413,12 @@ if __name__ == "__main__":
     logging.info("Start date and time: {}".format(start.strftime("%Y-%m-%d %H:%M:%S")))
 
 
+
     # Process each website in the list
     for i, website in enumerate(website_list):
+
+        if args.skip and i < args.skip:
+            continue
 
         try:
             domain = website2domain(website)
