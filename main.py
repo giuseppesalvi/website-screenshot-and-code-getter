@@ -418,6 +418,8 @@ if __name__ == "__main__":
     for i, website in enumerate(website_list):
 
         if args.skip and i < args.skip:
+            print("[%d/%d] %s" %(i + 1, len(website_list),"skipped\n"))
+            logging.info("[%d/%d] %s" %(i + 1, len(website_list), "skipped\n"))
             continue
 
         try:
