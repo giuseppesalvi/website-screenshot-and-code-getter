@@ -1,6 +1,4 @@
 import argparse
-import os
-import json
 from os import path
 from os import makedirs
 import shutil
@@ -32,7 +30,7 @@ def move_good_results(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites_majestic_million2"
+    results_folder = "results_websites"
 
     # Initialize args parser
     parser = argparse.ArgumentParser(description="move good results", usage="python3 move_good_results.py --results_folder {results_folder}")

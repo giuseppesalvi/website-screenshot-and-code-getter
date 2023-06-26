@@ -103,6 +103,8 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 <!-- GETTING STARTED -->
 ## Getting Started
 
+TODO: This README document needs to be updated (WORK IN PROGRESS...)
+
 ### Prerequisites
 
 * python 3.9.13

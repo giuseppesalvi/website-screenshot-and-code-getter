@@ -3,7 +3,7 @@ import argparse
 
 if __name__ == "__main__":
     input_filename = "majestic_million.csv"
-    output_filename = "websites_majestic_million_big.txt"
+    output_filename = "websites_majestic_million.txt"
     n_websites = 100
     skip_rows = 0 
 

@@ -210,7 +210,7 @@ def stats_summary(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites_majestic_million2"
+    results_folder = "results_websites"
 
     # Initialize args parser
     parser = argparse.ArgumentParser(description="do stats summary for the websites in the given folder", usage="python3 stats.py --results_folder {results_folder}")

@@ -33,7 +33,7 @@ def find_included_excluded(results_folder):
     return
 
 if __name__ == "__main__":
-    results_folder = "results_websites_majestic_million2"
+    results_folder = "results_websites"
 
     # Initialize args parser
     parser = argparse.ArgumentParser(description="find included and excluded websites", usage="python3 find_included_websites.py --results_folder {results_folder}")

@@ -1,8 +1,6 @@
 import sanitizeHtml from "sanitize-html";
 import { readFile, writeFile } from "fs";
 
-//console.log("Sanitizing Html Code");
-
 const default_img = "../../images/default_img.jpeg";
 const default_svg = "../../images/default_img.svg";
 const args = process.argv;
@@ -265,50 +263,6 @@ if (args.length != 4) {
         },
         ol: "ul",
       },
-
-      // transformTags: {
-      // img: function (tagName, attribs) {
-      // //if (attribs["data-src"]) {
-      // //delete attribs["data-src"];
-      // //}
-      // //if (attribs["data-srcset"]) {
-      // //delete attribs["data-srcset"];
-      // //}
-      // //if (attribs["data-lazy-src"]) {
-      // //delete attribs["data-lazy-src"];
-      // //}
-      // //if (attribs["data-lazy-srcset"]) {
-      // //delete attribs["data-lazy-src"];
-      // //}
-      // //if (attribs["srcset"]) {
-      // //delete attribs["srcset"];
-      // //}
-      // //if (attribs["src"] && attribs.src.endsWith(".svg")) {
-      // //attribs.src = default_svg;
-      // //} else {
-      // //attribs.src = default_img;
-      // //}
-
-      // // TODO: understand when to use width/height/size/
-      // // reuse lazy-size in size or smthg
-      // // try also adding alt
-      // /*if (attribs["src"] && (!attribs["width"] && !attribs["height"] && !attribs["size"] && !attribs["sizes"])) {
-      // // Download the image and look its size, then add size
-      // const image = new Image();
-      // image.onload = function() {
-      // attribs.width= this.naturalWidth
-      // attribs.height= this.naturalHeight
-      // }
-      // image.src = attribs["src"]
-      // }
-      // */
-      // return {
-      // tagName: "img",
-      // attribs: attribs,
-      // };
-      // },
-      // ol: "ul",
-      // },
     });
     writeFile("experiments/" + results_folder + "/" + args[2] + ".html", cleanHtml, (err) => {
       if (err) throw err;
