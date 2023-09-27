@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 import multiprocessing
 from tqdm import tqdm
 
-
 # Lists of known inline and block tags for reference
 INLINE_TAGS = ['a', 'abbr', 'acronym', 'area', 'b', 'base', 'bdo', 'big', 'br', 'button', 'cite', 'code', 'data', 'datalist', 'dfn', 'em', 'i', 'img', 'input', 'kbd', 'label', 'map', 'mark',
                'meter', 'object', 'progress', 'q', 'rp', 'rt', 'ruby', 's', 'samp', 'script', 'select', 'small', 'span', 'strong', 'sub', 'sup', 'svg', 'textarea', 'time', 'tt', 'u', 'var', 'wbr']
@@ -47,6 +46,7 @@ def remove_css_comments(text):
 def remove_spaces_and_break_lines(text):
     # Remove multiple spaces, tabs and newlines
     without_new_line = text.replace('\n', ' ').replace('\t', ' ')
+    #without_new_line = text # MODIFICATION
     with_single_space = ' '.join([string_ for string_ in (
         without_new_line.split(' ')) if string_ != ''])
     return with_single_space
@@ -97,6 +97,17 @@ def replace_unknown_tags(text):
     return str(soup)
 
 
+def clean_html_text_content(text):
+    # Replace non-standard tags with default ones
+    soup = BeautifulSoup(text, 'html.parser')
+    
+    # Iterate over each text part and clean it
+    for text_node in soup.find_all(text=True):
+        text_node.replace_with(re.sub(r'[^a-zA-Z0-9 \.,;?!-]', '', text_node))
+    
+    return str(soup)
+
+
 def process_html_file(content, filename):
     text_without_comments = remove_html_comments(content)
     text_without_floats = round_floats_in_text(text_without_comments)
@@ -106,7 +117,8 @@ def process_html_file(content, filename):
     text_without_local_links = replace_local_hrefs(
         text_without_http_urls, f"{filename}.css")
     text_without_unknown_tags = replace_unknown_tags(text_without_local_links)
-    return text_without_unknown_tags
+    text_cleansed = clean_html_text_content(text_without_unknown_tags)
+    return text_cleansed
 
 
 def process_css_file(content):
@@ -123,13 +135,20 @@ def save_processed_file(html_processed, css_processed, filename, destination_fol
     delimeter = " /* START CSS */ "
     composed_file = html_processed + delimeter + css_processed
 
+    with open(destination_folder / f"{filename}.html", "w") as f:
+        f.write(html_processed)
+        
+    with open(destination_folder / f"{filename}.css", "w") as f:
+        f.write(css_processed)
+        
     with open(destination_folder / f"{filename}.txt", "w") as f:
         f.write(composed_file)
 
     return
 
 
-def process_file(filename, source_folder, destination_folder):
+def process_file(args):
+    filename, source_folder, destination_folder = args
     html_filename = source_folder / f"{filename}.html"
     css_filename = source_folder / f"{filename}.css"
 
@@ -150,21 +169,27 @@ def preprocessing(filenames, source_folder, destination_folder):
     if not destination_folder.exists():
         destination_folder.mkdir(parents=True)
 
-    pool_size = multiprocessing.cpu_count()
+    #pool_size = multiprocessing.cpu_count()
 
-    with multiprocessing.Pool(processes=pool_size) as pool:
-        tqdm(pool.starmap(process_file, [(filename, source_folder, destination_folder) for filename in filenames]), total=len(filenames))
+    #with multiprocessing.Pool(processes=pool_size) as pool:
+        #for _ in tqdm(pool.imap_unordered(process_file, [(filename, source_folder, destination_folder) for filename in filenames]), total=len(filenames)):
+            #pass
+    #return
+    
+    for filename in tqdm(filenames):
+        process_file((filename, source_folder, destination_folder))
     return
 
 
 if __name__ == "__main__":
     filenames_file = "experiments/results_good.txt"
     source_folder = "experiments/results_good/"
-    destination_folder = "preprocessed_files/"
+    destination_folder = "preprocessed_files_with_newlines/"
+    
     start = time.time()
 
     with open(filenames_file, "r") as f:
-        filenames = [filename.rstrip() for filename in f]
+        filenames = [filename.rstrip().replace(".txt","") for filename in f]
 
     preprocessing(filenames, source_folder, destination_folder)
     print(time.time() - start)
