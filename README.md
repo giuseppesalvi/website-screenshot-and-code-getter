@@ -70,7 +70,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -83,9 +82,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project is part of my Master's Degree thesis in Computer Engineering at Politecnico di Torino.
-The goal is to have a tool able to extract easily screenshots and code from websites, to create a Database, that will be used later in a Machine Learning task.
+This project is a part of my Master's Degree thesis in Computer Engineering at Politecnico di Torino. 
+The tool can automatically extract screenshots and code from websites while minimizing the noise in the extracted textual files and the number of resources. 
 
+This automated pipeline can be utilized to generate a dataset comprising pairs of website code and images, which can be used for subsequent machine-learning tasks.
+
+The main repository of the Thesis can be found at [webUI2ode](https://github.com/giuseppesalvi/webUI2code).
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com)
  -->
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -103,7 +105,6 @@ The goal is to have a tool able to extract easily screenshots and code from webs
 <!-- GETTING STARTED -->
 ## Getting Started
 
-TODO: This README document needs to be updated (WORK IN PROGRESS...)
 
 ### Prerequisites
 
@@ -118,19 +119,30 @@ TODO: This README document needs to be updated (WORK IN PROGRESS...)
    ```sh
    git clone https://github.com/giuseppesalvi/website-screenshot-and-code-getter.git
    ```
-2. Install Selenium 
-   ```
-   pip install selenium -U
-   ```
+2. Install requirements 
+- Python Dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+- Node Modules:
+    ```bash
+    npm install
+    ```
+
+- Clean HTML Tool (Global Installation):
+    ```bash
+    npm install clean-html -g
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+A guide on how to run a complete extraction experiment is available [here](https://github.com/giuseppesalvi/website-screenshot-and-code-getter/blob/main/run_complete_experiment.md)
+The tool can be used in several ways and some of the features can be disabled by not passing specific command line arguments.
 
 ### Command Line Arguments
 - `--website` : specify the url of the website 
@@ -141,22 +153,14 @@ TODO: This README document needs to be updated (WORK IN PROGRESS...)
 
 ### Examples
 
-#### Get the screenshot for the website www.polito.it
-```python3 main.py --website https://www.polito.it --task screenshot```
+#### Get the screenshot for the website www.google.com
+```python main.py --website https://www.google.com --task screenshot```
 
 #### Get the screenshot and the code for the first 5 websites in the list websites.txt
-```python3 main.py --website_list websites.txt --batch 5```
+```python main.py --website_list websites.txt --batch 5```
 
 #### Get the screenshot and the code for 10 new websites from the list in websites.txt
-```python3 main.py --website_list websites.txt --just_new```
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Accept Cookies automatically, before taking the screenshot 
-- [ ] Simplify / Prettify the output html code 
-- [ ] Remove Dynamic elements from the output html code 
+```python main.py --website_list websites.txt --just_new```
 
 See the [open issues](https://github.com/giuseppesalvi/website-screenshot-and-code-getter/issues) for a full list of proposed features (and known issues).
 
@@ -167,7 +171,7 @@ See the [open issues](https://github.com/giuseppesalvi/website-screenshot-and-co
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -205,9 +209,9 @@ Project Link: [https://github.com/giuseppesalvi/website-screenshot-and-code-gett
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [sanitize-html](https://github.com/apostrophecms/sanitize-html)
+* [tinycss2](https://pypi.org/project/tinycss2/)
+* [clean-html](https://github.com/dave-kennedy/clean-html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
